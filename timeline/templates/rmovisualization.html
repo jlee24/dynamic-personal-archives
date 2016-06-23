@@ -1,0 +1,557 @@
+<html>
+  <head>
+    <meta charset="utf=8" />
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>    
+
+    <style>
+		body,html {
+		    margin: 0;
+		    padding: 0;
+		    overflow-x:hidden;
+		    font-size: 12px;
+		}
+
+		.main_title{
+			position: fixed;
+			top: 20px;
+			left: 20px;
+		}
+		.cat_title{
+			position: fixed;
+			top: 50px;
+			left: 20px;
+		}
+		.arch_title{
+			position: fixed;
+			top: 109px;
+			left: 20px;
+		}
+		.strips {
+		    position: absolute;
+		    top: 140px;
+		    height: calc(100% - 140px);
+		}
+		.strips .imcont {
+		    position: absolute;
+		    background-color: white;
+		    min-height: 30px;
+		    height: 100%;
+		    overflow-y: auto;
+		    top: 0;
+		    transition-property: left, width, height, opacity;
+		    transition-duration: 0.3s;
+		    opacity: 0.05;
+		}
+		.strips .imcont img {
+		    width: 100%;
+		}
+		.strips .imcont.preview {
+		    opacity: 1;
+		}
+		.strip_info .detail {
+		    position: absolute;
+		    opacity: 1;
+		}
+		.infos{
+		    top: 110px;
+		    position: absolute;
+		    height: 15px;
+		    overflow: hidden;
+		    opacity: 0;
+		    background:white;
+		}
+		.infos .hidden{
+		    color:blue!important;
+		}
+		.infos .preview{
+		    color:red!important;
+		}
+		.infos.infovisible, .infos.infovisible div {
+		    opacity: 1;
+		}
+
+		.taglist{
+			position: fixed;
+		    top: 70px;
+		    left: 20px;
+		}
+
+		.taglist .tag {
+		    float: left;
+		    width: 20px;
+		    height: 20px;
+		    margin-right: 3px;
+		    border: 2px solid white;
+		   	-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+
+		}
+		
+		.taglist .tag:hover {
+			background-color: black;
+		}
+		
+		.cat_selected {
+			border: 2px solid red!important;
+		}
+
+		.barcont {
+			position: absolute;
+			height: 20px;
+			top: 130px;
+			z-index: 1000;
+		}
+
+		.barcont .bars {
+			position: absolute;
+			top: 0;
+			height: 3px;
+			width: 100%;
+			opacity: 0.1;
+			transition-property: left, width, height;
+			transition-duration: 0.3s;
+		}
+
+		.barcont .bars.preview {
+			opacity: 1; 
+		}
+
+		.year {
+			position: absolute;
+			top: -20px;
+			background-color: white;
+			z-index: 3000;
+		}
+
+		/*Extra (temporary) category which doesn't exist in new database*/
+		.Archive_Initiatives{  background: #000000 url(icons/Archive_Initiatives.png) no-repeat center center; }
+
+		.Press{  background: #004d00 url(icons/Press.png) no-repeat center center; }
+		.Videos{  background: #FFFF40 url(icons/Videos.png) no-repeat center center; }
+		.Photos{  background: #e69500 url(icons/Photos.png) no-repeat center center; }
+		.Documents{  background: #008000 url(icons/Documents.png) no-repeat center center; }
+		.Graffiti{  background: #700f70 url(icons/Graffiti.png) no-repeat center center; }
+		.Voices_From_The_Egyptian_Revolution{  background: #b30000 url(icons/Voices_From_The_Egyptian_Revolution.png) no-repeat center center; }
+		.Politics{  background: #e60000 url(icons/Politics.png) no-repeat center center; }
+		.Women_In_The_Revolution{  background: #b418b4 url(icons/Women_In_The_Revolution.png) no-repeat center center; }
+		.Blogs{  background: #6800b3 url(icons/Blogs.png) no-repeat center center; }
+		.Timelines{  background: #00b300 url(icons/Timelines.png) no-repeat center center; }
+		.Data_Visualizations{  background: #46d246 url(icons/Data_Visualizations.png) no-repeat center center; }
+		.Projects{  background: #4d4dff url(icons/Projects.png) no-repeat center center; }
+		.Archival_Sites{  background: #800000 url(icons/Archival_Sites.png) no-repeat center center; }
+		.Wikipedia{  background: #0000b3 url(icons/Wikipedia.png) no-repeat center center; }
+		.Social_Media{  background: #0000ff url(icons/Social_Media.png) no-repeat center center; }
+		.Miscellaneous{  background: #4b0082 url(icons/Miscellaneous.png) no-repeat center center; }
+
+
+		.barcont .bars div {
+			background-image: url();
+			width: 100%;
+			height: 100%;
+		}
+
+    </style>
+  </head>
+  <div class="main_title">
+  	Engelbart Archives
+  </div>
+  <div class="cat_title" id="cat_title">
+  	Categories:
+  </div>
+  <div class="arch_title">
+  	Archives:
+  </div>
+  <body>
+  
+  <script>
+		function _get(url, cb) {
+		    var xhr = new XMLHttpRequest();
+		    xhr.open("GET", url, true);
+		    xhr.onload = function() {
+			cb(this.responseText);
+		    }
+		    xhr.send();
+		}
+		function _get_json(url, cb) {
+		    _get(url, function(dat) {
+			cb(JSON.parse(dat));
+		    })
+		}
+
+		var db = [];
+		var aoa;
+		var window_padding = 20;
+
+		var ArchiveOfArchives = function(data) {
+		    this.$el = document.createElement("div");
+		    this.$el.className = "archive";
+
+		    this.$taglist = document.createElement("div");
+		    this.$taglist.className = "taglist";
+		    this.$el.appendChild(this.$taglist);
+
+		    this.$strips = document.createElement("div");
+		    this.$strips.className = "strips";
+		    this.$el.appendChild(this.$strips);
+
+		    this.$bars = document.createElement("div");
+		    this.$bars.className = "barcont";
+		    this.$el.appendChild(this.$bars);
+
+		    this.$strip_info = document.createElement("div");
+		    this.$strip_info.className = "strip_info";
+		    this.$el.appendChild(this.$strip_info);
+
+		    this.hires_ims$ = {};	// uid -> $im
+		    this._ims_loading = {};	// uid -> cb
+
+		    this.data = data;
+
+		    this.tags = {};		// Tagname -> [idx, ]
+
+		    this.cur_hover = null;
+		    this.cur_detail = null;
+		    this.cur_tag = null;    
+		    this.cur_tag_preview = null;    
+
+		    this.imgs$ = [];
+		    this.bars$ = [];
+		    this.infos$ = [];
+		    
+		    this.load_images();
+		    this.load_tags();
+		    this.load_timeline();
+		    this.load_info();
+
+		    this.render_tags();
+		    this.render();
+
+		    window.onresize = function() {
+			this.render();
+		    }.bind(this);
+		}
+		ArchiveOfArchives.prototype.load_hires = function(uid, cb) {
+		    if(uid in this.hires_ims$) {
+			// already loaded
+			cb(this.hires_ims$[uid]);
+			return;
+		    }
+		    if(uid in this._ims_loading) {
+			// already loading - clobber cb
+			this._ims_loading[uid] = cb;
+			return;
+		    }
+		    // load
+		    var $im = document.createElement("img");
+		    $im.src = "jpg/archive-" + uid + "-320x.jpg";
+		    this._ims_loading[uid] = cb;
+		    $im.onload = function() {
+			this.aoa.hires_ims$[uid] = this.$im;
+			// hit CB if it exists
+			if(this.aoa._ims_loading[uid]) {
+			    this.aoa._ims_loading[uid](this.$im);
+			}
+		    }.bind({aoa: this, "$im": $im})
+		}
+		ArchiveOfArchives.prototype.render_tags = function() {
+		    var tagnames = Object.keys(this.tags);
+		    var c_title = document.getElementById("cat_title");
+		    var c_title_store = c_title.innerHTML;
+
+		    tagnames.sort();
+		    tagnames
+			.forEach(function(tag) {
+			    var $tag = document.createElement("div");
+			    $tag.className = "tag " + tag;
+			    //$tag.id = "category_button";
+			    $tag.title = tag;
+			    $tag.onmouseover = function() {
+					this.preview_tag(tag);
+					c_title.innerHTML = 'Categories: Hover: '+tag;
+			    }.bind(this);
+			    $tag.onmouseout = function() {
+					// show all
+					this.preview_tag("");
+					c_title.innerHTML = c_title_store;
+			    }.bind(this);
+			    $tag.onclick = function() {
+			   
+				/*revert other cat_buttons*/
+				var d = document.getElementsByClassName("tag"),
+		      		len = d !== null ? d.length : 0,
+				    i = 0;
+				for(i; i < len; i++) {
+				    d[i].className = d[i].className.replace('cat_selected','');
+				}
+
+				if(this.cur_tag != tag) {
+				    this.show_tag(tag);
+			    	$tag.className = "tag " + tag + " cat_selected";
+				}
+				else {
+				    this.show_tag("");
+				    $tag.className = "tag " + tag;
+				}
+			    }.bind(this);
+			    this.$taglist.appendChild($tag);
+			}, this);
+		}
+		ArchiveOfArchives.prototype.preview_tag = function(tag) {
+		    this.cur_tag_preview = tag;
+		    this.render();
+		}
+		ArchiveOfArchives.prototype.show_tag = function(tag) {
+		    // Hide detail
+		    this.cur_detail = null;
+		    
+		    this.cur_tag = tag;
+		    this.render();
+		}
+		ArchiveOfArchives.prototype.show_detail = function(idx) {
+		    this.cur_detail = idx;
+		    this.render();
+
+		    // Swap in hires image
+		    if(idx !== null) {
+			this.load_hires(this.data[idx]._id, function($im) {
+			    
+			    var $par = this.imgs$[idx];
+			    // swap
+			    console.log("par", $par);
+			    $par.removeChild($par.querySelector("img"));
+			    $par.appendChild($im);
+			    
+			}.bind(this));
+		    }
+		}
+		ArchiveOfArchives.prototype.show_hover = function(idx) {
+		     this.cur_hover = idx;
+		     this.render();
+		 }
+		ArchiveOfArchives.prototype.load_tags = function() {
+
+		    var TAG_BLACKLIST = {"Data_Visualization": true, "Video": true, "Voices_of_the_Revolution": true};
+		    
+		    this.data
+			.forEach(function(x, idx) {
+			    get_categories(x)
+				.forEach(function(tagname) {
+				    if(tagname in TAG_BLACKLIST) {
+					return;
+				    }
+				    if(!(tagname in this.tags)) {
+					this.tags[tagname] = [];
+				    }
+				    this.tags[tagname].push(idx);
+				}, this)
+			}, this);
+		}
+		ArchiveOfArchives.prototype.load_timeline = function() {
+		    var cur_year;
+		    
+		    this.data
+			.forEach(function(x, idx) {
+			    var $div = document.createElement("div");
+			    $div.className = "bars";
+			    this.bars$.push($div);
+
+			    var year = get_start_year(x);
+			    if(year != cur_year) {
+				cur_year = year;
+
+				if(year > 2009) {
+				    var $year = document.createElement('span');
+				    $year.className = "year";
+				    $year.textContent = "" + year;
+				    $div.appendChild($year);
+				}
+			    }
+			    
+			    this.$bars.appendChild($div);
+			    
+			    get_categories(x)
+				.forEach(function(tagname, cat_idx) {
+				    var $tbar = document.createElement("div");
+				    $tbar.className = tagname;
+				    $tbar.title = tagname;
+				    $tbar.style.top = 3*cat_idx;
+				    $div.appendChild($tbar)
+				});
+			}, this)
+		}
+		ArchiveOfArchives.prototype.load_info = function() {
+		    this.data
+			.forEach(function(x, idx) {
+			    var $div = document.createElement("div");
+			    $div.className = "infos";
+			    this.infos$.push($div);
+			    this.$strip_info.appendChild($div);
+
+				var $ainfo = document.createElement("div");
+				$ainfo.className = get_titles(x);
+				$ainfo.title = get_titles(x);
+				$ainfo.innerHTML = '<a href="'+get_url(x)+'" target="_blank">[open]</a> '+get_titles(x).replace(/_/g, ' ');;
+				// $ainfo.style.top = 3*arch_idx;
+				$div.appendChild($ainfo);
+			}, this)
+		}
+		ArchiveOfArchives.prototype.load_images = function() {
+		    this.data
+			.forEach(function(x, idx) {
+			    var $imcont = document.createElement("div");
+			    $imcont.className = "imcont";
+			    
+			    var $img = document.createElement("img");
+			    // Start with low resolution image
+			    $img.src = "jpg/archive-" + x._id + "-60x.jpg";
+			    $imcont.onclick = function() {
+				if(this.cur_detail == idx) {
+				    this.show_detail(null);
+				}
+				else {
+				    this.show_detail(idx);
+				}
+			    }.bind(this);
+			    /*ON HOVER STRIP, SHOW TITLE*/
+			     $imcont.onmouseover = function() {
+			    	this.show_hover(idx);
+			     }.bind(this);
+
+			    $imcont.appendChild($img);
+			    
+			    this.$strips.appendChild($imcont);
+			    this.imgs$.push($imcont);
+			}, this)
+		}
+		ArchiveOfArchives.prototype.render = function() {
+		    var page_w = document.body.clientWidth - 2*window_padding;
+			
+		    //set selected category (tag) label
+		    var c_title = document.getElementById("cat_title");
+
+		    var nimages = this.data.length;
+
+		    if(this.cur_tag) {
+			nimages = this.data
+			    .filter(function(x) {
+				return x.CATEGORY.indexOf(this.cur_tag) >= 0;
+			    }, this).length;
+			c_title.innerHTML = 'Categories: Selected: '+this.cur_tag;
+		    }
+		    else {
+			c_title.innerHTML = 'Categories: Select a category';
+		    }
+			
+		    // Basic render
+		    var cur_x = 0;
+
+		    var img_w = Math.min(60, Math.max(5, Math.floor(page_w / nimages) - 3));
+		    var padding = (page_w - (img_w*nimages)) / nimages;
+
+		    if(this.cur_detail) {
+			padding = (page_w - (img_w*(nimages-1)) - 320) / nimages;
+		    }
+
+		    padding = Math.min(20, padding);
+		    
+		    this.imgs$
+			.forEach(function($img, idx) {
+			    var row = this.data[idx];
+			    
+			    var $info = this.infos$[idx];
+			    var $bars = this.bars$[idx];
+
+			    var $divs = [$img, $info, $bars];
+
+			    if(this.cur_tag && row.CATEGORY.indexOf(this.cur_tag) < 0) {
+				// Not in category: don't display
+
+				$divs.forEach(function(x) { x.style.left = page_w + 2*window_padding; });
+
+				return;
+			    }
+
+			    $divs.forEach(function(x) { x.style.left = cur_x+window_padding; });
+
+			    if(this.cur_tag_preview && row.CATEGORY.indexOf(this.cur_tag_preview) < 0) {
+				// Not in hover category
+				$divs.forEach(function(x) { x.classList.remove("preview"); })
+			    }
+			    else {
+				// Shown in full
+				$divs.forEach(function(x) { x.classList.add("preview"); })
+			    }
+			    
+			    if(this.cur_detail === idx) {
+				cur_x += 320 + padding;
+				$divs.forEach(function(x) {
+				    x.style.width = 320;
+				    x.classList.add("detail");
+				})
+			    }
+			    else {
+				$divs.forEach(function(x) {
+				    x.style.width = img_w;
+				    x.classList.remove("detail");
+				})
+				
+				cur_x += img_w + padding;
+			    }
+
+			    if(this.cur_hover === idx) {
+				$info.classList.add("infovisible");
+				$info.style.width = 320;
+			    }
+			    else {
+				$info.classList.remove("infovisible");
+				$info.style.width = img_w;
+			    }
+			}, this);
+		}
+
+
+		_get_json("db.json", function(ret) {
+
+		    db = ret;
+		    db.forEach(function(x,idx) {
+			x._id = idx;
+		    });
+
+		    // Sort by start
+		    db.sort(function(x,y) {
+			return get_start_year(x) > get_start_year(y) ? 1 : -1;
+		    });
+
+		    aoa = new ArchiveOfArchives(db);
+		    document.body.appendChild(aoa.$el);
+
+		})
+
+		function get_start_year(x) {
+		    var d = (x.YEAR);
+		    if(y > 1000) {
+			return y;
+		    }
+		    return 0;
+		}
+		function get_categories(x) {
+			return x.CATEGORY;
+		 //    return x.CATEGORY.split(",")
+			// .map(function(_tagname) {
+			//     return _tagname.replace(" ", "");
+			// })
+			// .filter(function(x) {
+			//     return x.length > 0;
+			// });
+		}
+		function get_titles(x) {
+		    return x.TITLE;
+		}    
+		function get_url(x) {
+		    return x.SOURCE;
+		}      
+    </script>
+  </body>
+</html>
