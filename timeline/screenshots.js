@@ -24,7 +24,7 @@ page.open(url, function() {
 
 	console.log("render", idx);
 
-	page.render("images/archive-" + idx + ".jpg");
+	page.render("static/images/archive-" + idx + ".jpg");
 
 	phantom.exit();
     }, 4000);

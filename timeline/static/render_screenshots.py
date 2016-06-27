@@ -1,9 +1,10 @@
 import json
 import subprocess
+import os
 from multiprocessing.pool import ThreadPool as Pool
 
 N_THREADS = 8
-data = json.load(open("db.json"))
+data = json.load(open("static/db.json"))
 
 def render(row):
     print 'render ', row["_id"], row["SOURCE"]

@@ -1,0 +1,142 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+    font-size: 12px;
+}
+
+.main_title{
+	position: fixed;
+	top: 20px;
+	left: 20px;
+}
+.cat_title{
+	position: fixed;
+	top: 50px;
+	left: 20px;
+}
+.arch_title{
+	position: fixed;
+	top: 109px;
+	left: 20px;
+}
+.strips {
+    position: absolute;
+    top: 140px;
+    height: calc(100% - 140px);
+}
+.strips .imcont {
+    position: absolute;
+    background-color: white;
+    min-height: 30px;
+    height: 100%;
+    overflow-y: auto;
+    top: 0;
+    transition-property: left, width, height, opacity;
+    transition-duration: 0.3s;
+    opacity: 0.05;
+}
+.strips .imcont img {
+    width: 100%;
+}
+.strips .imcont.preview {
+    opacity: 1;
+}
+.strip_info .detail {
+    position: absolute;
+    opacity: 1;
+}
+.infos{
+    top: 110px;
+    position: absolute;
+    height: 15px;
+    overflow: hidden;
+    opacity: 0;
+    background:white;
+}
+.infos .hidden{
+    color:blue!important;
+}
+.infos .preview{
+    color:red!important;
+}
+.infos.infovisible, .infos.infovisible div {
+    opacity: 1;
+}
+
+.taglist{
+	position: fixed;
+    top: 70px;
+    left: 20px;
+}
+
+.taglist .tag {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    border: 2px solid white;
+   	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+
+.taglist .tag:hover {
+	background-color: black;
+}
+
+.cat_selected {
+	border: 2px solid red!important;
+}
+
+.barcont {
+	position: absolute;
+	height: 20px;
+	top: 130px;
+	z-index: 1000;
+}
+
+.barcont .bars {
+	position: absolute;
+	top: 0;
+	height: 3px;
+	width: 100%;
+	opacity: 0.1;
+	transition-property: left, width, height;
+	transition-duration: 0.3s;
+}
+
+.barcont .bars.preview {
+	opacity: 1; 
+}
+
+.year {
+	position: absolute;
+	top: -20px;
+	background-color: white;
+	z-index: 3000;
+}
+
+/**.Video{  background: #FFFF40 url(icons/Video.png) no-repeat center center; }**/
+.Video{  background: #FFFF40 url(/static/icons/Video.png) no-repeat center center; }
+.Document{  background: #008000 url(/static/icons/Document.png) no-repeat center center; }
+.Photo{  background: #e69500 url(/static/icons/Photo.png) no-repeat center center; }
+
+/*Extra (temporary) categories which doesn't exist in new database
+.Blogs{  background: #6800b3 url(icons/Blogs.png) no-repeat center center; }
+.Timelines{  background: #00b300 url(icons/Timelines.png) no-repeat center center; }
+.Data_Visualizations{  background: #46d246 url(icons/Data_Visualizations.png) no-repeat center center; }
+.Projects{  background: #4d4dff url(icons/Projects.png) no-repeat center center; }
+.Archival_Sites{  background: #800000 url(icons/Archival_Sites.png) no-repeat center center; }
+.Wikipedia{  background: #0000b3 url(icons/Wikipedia.png) no-repeat center center; }
+.Social_Media{  background: #0000ff url(icons/Social_Media.png) no-repeat center center; }
+.Miscellaneous{  background: #4b0082 url(icons/Miscellaneous.png) no-repeat center center; }
+*/
+
+.barcont .bars div {
+	background-image: url();
+	width: 100%;
+	height: 100%;
+}
