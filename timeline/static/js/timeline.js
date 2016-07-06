@@ -1,18 +1,3 @@
-function _get(url, cb) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.onload = function() {
-		cb(this.responseText);
-    }
-    xhr.send();
-}
-
-function _get_json(url, cb) {
-    _get(url, function(dat) {
-		cb(JSON.parse(dat));
-	});
-}
-
 var db = [];
 var aoa;
 var window_padding = 20;
@@ -66,31 +51,6 @@ var Timeline = function(data) {
     }.bind(this);
 }
 
-Timeline.prototype.load_hires = function(uid, cb) {
-    if(uid in this.hires_ims$) {
-		// already loaded
-		cb(this.hires_ims$[uid]);
-		return;
-    }
-    if(uid in this._ims_loading) {
-		// already loading - clobber cb
-		this._ims_loading[uid] = cb;
-		return;
-    }
-
-    // load
-    var $im = document.createElement("img");
-    $im.src = "/static/jpg/archive-" + uid + "-320x.jpg";
-    this._ims_loading[uid] = cb;
-    $im.onload = function() {
-		this.aoa.hires_ims$[uid] = this.$im;
-		// hit CB if it exists
-		if(this.aoa._ims_loading[uid]) {
-		    this.aoa._ims_loading[uid](this.$im);
-		}
-    }.bind({aoa: this, "$im": $im});
-}
-
 Timeline.prototype.render_tags = function() {
     var tagnames = Object.keys(this.tags);
     var c_title = document.getElementById("cat_title");
@@ -123,32 +83,55 @@ Timeline.prototype.render_tags = function() {
 			if(this.cur_tag != tag) {
 			    this.show_tag(tag);
 		    	$tag.className = "tag " + tag + " cat_selected";
-		    	//$tag.className = tag + " cat_selected";
 			}
 			else {
 			    this.show_tag("");
 			    $tag.className = "tag " + tag;
-			    //$tag.className = tag;
 			}
 	    }.bind(this);
 	    this.$taglist.appendChild($tag);
 	}, this);
 }
+
 Timeline.prototype.preview_tag = function(tag) {
     this.cur_tag_preview = tag;
     this.render();
 }
+
 Timeline.prototype.show_tag = function(tag) {
     // Hide detail
     this.cur_detail = null;
-    
     this.cur_tag = tag;
     this.render();
 }
+
+Timeline.prototype.load_hires = function(uid, cb) {
+    if(uid in this.hires_ims$) {
+		// already loaded
+		cb(this.hires_ims$[uid]);
+		return;
+    }
+    if(uid in this._ims_loading) {
+		// already loading - clobber cb
+		this._ims_loading[uid] = cb;
+		return;
+    }
+    // load
+    var $im = document.createElement("img");
+    $im.src = "/static/jpg/archive-" + uid + "-320x.jpg";
+    this._ims_loading[uid] = cb;
+    $im.onload = function() {
+		this.aoa.hires_ims$[uid] = this.$im;
+		// hit CB if it exists
+		if(this.aoa._ims_loading[uid]) {
+		    this.aoa._ims_loading[uid](this.$im);
+		}
+    }.bind({aoa: this, "$im": $im});
+}
+
 Timeline.prototype.show_detail = function(idx) {
     this.cur_detail = idx;
     this.render();
-
     // Swap in hires image
     if(idx !== null) {
 		this.load_hires(this.data[idx]._id, function($im) {
@@ -256,6 +239,7 @@ Timeline.prototype.load_images = function() {
 	    this.imgs$.push($imcont);
 	}, this)
 }
+
 Timeline.prototype.render = function() {
     var page_w = document.body.clientWidth - 2*window_padding;
 	
@@ -345,6 +329,21 @@ Timeline.prototype.render = function() {
 	}, this);
 }
 
+function _get(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onload = function() {
+		cb(this.responseText);
+    }
+    xhr.send();
+}
+
+function _get_json(url, cb) {
+    _get(url, function(dat) {
+		cb(JSON.parse(dat));
+	});
+}
+
 _get_json("/static/db.json", function(ret) {
 
     db = ret;
@@ -365,6 +364,7 @@ _get_json("/static/db.json", function(ret) {
 function get_start_year(x) {
 	return x.YEAR;
 }
+
 function get_type(x) {
 	var arr = [];
 	arr.push(x.TYPE);
