@@ -1,0 +1,31 @@
+
+AUGMENTING SOCIETY'S COLLECTIVE IQ
+
+Keynote Abstract Hypertext 2004
+Douglas C. Engelbart
+Bootstrap Institute
+(AUGMENT,133319,)
+
+Republished from the Hypertext 2004 Conference Proceedings 
+� Copyright 2004 by ACM, Inc.
+The complexity and urgency of the problems faced by us earth-bound humans are increasing much faster than are our aggregate capabilities for understanding and coping with them. This is a very serious problem; and there are strategic actions we can take, collectively.
+
+Consider a community's "Collective IQ" to represent its capability for dealing with complex, urgent problems-i.e., to understand them adequately, to unearth the best candidate solutions, to assess resources and operational capabilities and select appropriate solution commitments, to be effective in organizing and executing the selected approach, to monitor the progress and be able to adjust rapidly and appropriately to unforeseen complications, etc.
+
+I contend that a strategy for "facilitating the evolution" of our organizations' Collective IQs will be the optimum approach. Hypertext will be of basic importance, and SIGWeb ought to be a leader.
+
+"Collective IQ" is a special set of collective capabilities, built upon our basic human capabilities, such as sensory, perceptual, cognitive, motor, etc. Any significant collective capability is achieved by "augmenting" such basic human capabilities by means of training, enculturation, etc. in operational use of: (a) appropriately coordinated systems of artifacts and tools (the "Tool System"); and (b) vocabulary, conventions, roles, organizational structues, rules of conduct, methods of cooperation and education, etc. (the "Human System"). Together the Tool and Human Systems comprise the "Augmentation System."
+
+My hypothesis is that ever-more effective "Dynamic Knowledge Repositories" (DKRs) will be central to improving a community's Collective IQ-essentially the capability, in dealing with a complex problem, for providing the best, up-to-date understanding of the current state of both the problem and of its solution efforts. Specially trained teams will be involved for instance, to ingest the ongoing dialog, help in adapting to the relevant ontological shifts, help monitor and solidify the "argument structures" involved in seeking coherence and plausibility, etc. And also for providing correctly associated "views" of the knowledge structure to facilitate learning-probably different such viewing forms for different categories of learners.
+
+Consider an "Improvement Community" (IC) as collectively engaged in improving an agreed-upon set either of individual capabilities, or of collective group capabilities-e.g. a professional society. Let's introduce a new category, a "Networked Improvement Community" (NIC): an IC that is consciously and effectively employing best-possible DKR development and usage.
+
+To be strategically prepared, we have formed the Bootstrap Alliance, to be a "Meta NIC", or NIC of NICs, for collectively improving its NIC-member capabilities to in turn each improve its particular capability-improvement activities.
+
+So we should encourage the launching of a first NIC, and feel quite strongly that the best strategic formulation for it's capability-improvement focus would be improvement of DKR development and utilization.
+
+There are many sub-configurations of a community's augmentation system for which provocative improvement possibilities will arise. The proposed evolution-facilitation strategy would be to provide the best possible "frontier map" of what is happening within the various out-front organizations employing their various approaches to increase their CIQ capability. A mutually supported "CIQ-Frontier DKR" would provide every organization with the best view of what's happening on the frontier, enabling each to make its own decision as to which direction it should next move in its survival quest of increased CIQ.
+
+This same "frontier-mapping DKR" strategy would also facilitate progress in any other NIC-based collective-improvement process.
+
+In my years wrestling with this Facilitated-Evolution Strategy, there have emerged many candidate Tool- and Human-System innovations about which I hope to have continuing dialog with parties interested in considering this strategic approach. For instance, colleagues and I have very interesting things going in trial undergraduate university classes-exciting results, and a candidate "Education NIC" (EDNIC).

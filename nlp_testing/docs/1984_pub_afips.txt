@@ -1,0 +1,163 @@
+COLLABORATION SUPPORT PROVISIONS IN AUGMENT
+
+Douglas C. Engelbart
+Tymshare, Inc.
+October 25, 1983
+Journal Document (OAD,2221,) 
+
+
+INTRODUCTION
+
+AUGMENT is an integrated system of knowledge-worker tools that originated at SRI International over an extended period under the sponsorship of NASA, DARPA and RADC. (The system was then named "NLS.") Commercial rights were transferred to Tymshare in 1978, where it has since been enhanced and marketed as an integrated Office Automation system. A short history of AUGMENT's development may be found in [Ref-1], along with a summary of system characteristics and features.
+
+The system evolved on time-shared, mainframe computers, and in a packet-switched network environment. In 1970 our computer was the second to be attached to the ARPANET, and since 1978 we have also operated extensively in the TYMNET environment. Special attributes of each the timesharing and the network environments contribute uniquely to the support of collaboration.
+
+The architecture and general character of AUGMENT were directly oriented toward augmenting the capability of humans to deal with tough knowledge work and to process effectively the large volumes of information that burden the modern office. An explicit sub-goal was to support close, active collaboration among groups of workers. In this spirit, we volunteered to develop and operate the Network Information Center (NIC) for the original ARPANET user and research community, aiming to learn about collaborative support by really doing it.
+
+Below are listed the primary community activities which we aimed to support in providing "coordinated information services for a discipline- or mission-oriented community" -- shown in the order recommended for evolutionary implementation. The rationale for the selection and ordering of these particular activities, and the approach for providing computerized support for them, were described in [Ref-2]:
+
+A1: Collaborative Dialog
+
+A2: Document Development, Production, and Control
+
+A3: Research Intelligence
+
+A4: Community Handbook Development
+
+A5: Computer-Based Instruction
+
+A6: Meetings and Conferences
+
+A7: Community Management and Organization
+
+A8: Special Knowledge Work by Individuals and Teams
+
+The range of services conceived for this purpose had a major effect upon the system architecture and user features. However, the ARPANET user community grew much faster than was planned for, so this range had to be trimmed considerably and much less exploratory support development was carried out than was planned for. As a consequence, it was only for the first two of these activities that enough resources were available for developing significant computerized support.
+
+[Note: The NIC remained at SRI when the rest of the Augmentation Research Center left, and is healthily serving a very sizeable community.]
+
+This paper summarizes some of the principles, concepts and special provisions embodied in AUGMENT that most directly provide this collaborative support.
+
+SOME GENERAL PRINCIPLES
+
+When considering an array of candidate provisions for augmenting a knowledge worker's capability for doing his individual work, the question of skill level must be faced. In working toward enhanced human capability, there seems to be no substitute for the workers' skill in the utilization of their tools. That is, assuming the best efforts of equally competent tool-system developers, the system designed to support the more-skilled workers will always provide higher human performance than the one designed to support the less-skilled workers.
+
+This principle holds true in the domain of computer-augmented collaboration also. The joint effectiveness of the collaborative group will benefit from the skills of all of the participants. And here there is a double level of skills involved: (1) skills of each person in employing computer support for doing individualized work; and (2) skills of each person at employing computer support for collaboration. The higher the group's skills at both levels, the more effective the group will be.
+
+Some collaborative provisions may be employed by skilled users to support their collaboration with unskilled users -- and in some cases, skilled users may support collaboration between other, totally unskilled people.
+
+AUGMENT TELEVIEWING
+
+The remote televiewing provision in AUGMENT is an example of the latter provision, where skilled users can collaborate with lesser-skilled people, and indeed, can support collaboration between those who are totally unskilled in using the system's tools.
+
+In this mode of teleconferencing, between two or more people positioned at separated display terminals, the screen image that is being produced for one of them by whatever computer tool(s) he is currently employing can also be simultaneously displayed on each of the other terminals.
+
+This televiewing state is set up and controlled by executing commands in a special AUGMENT "Conference" subsystem. The Conference subsystem permits a user to call an on-line conference of two or more people, view and edit files, add and remove conferees, pass the gavel, and transparently connect to other tool-bearing machines via TYMNET or ARPANET. Televiewing is usually done in conjunction with a telephone connection, and is often used to support document review and revision in a synchronous mode, where all conferees can see and discuss changes as they are made.
+
+This "Conference" subsystem, as with any "tool" in the AUGMENT "workshop," will be accessed through the AUGMENT User Interface System (UIS) software module. The UIS modules serving the respective televiewing participants may be running in the same computer, or in different computers that are inter-connected by a network. (The relevant architecture which supports this AUGMENT televiewing capability is outlined in [Ref-3], along with a description of the major functions served by the User Interface System.)
+
+One function of the UIS module is to support a variety of terminals for AUGMENT use. The UIS transforms the display views constructed by the tools into a form that works for the particular type of terminal equipment employed by each user. Therefore, there may be a variety of display terminals used by the different televiewing participants as they watch the common, "shared view."
+
+Control of the tool(s) that create and manipulate this shared view can be passed from one participant to another.
+
+When simultaneously talking on the telephone, the resulting dialog becomes analogous to working around a shared blackboard, upon which individual, group, and public information can be manipulated with chalk and eraser that can be passed around among the participants. Among skilled participants, each is easily able to pull forth and share materials from his private notes or familiar reference sources and copy across into his private workplace any material offered from what the other participants may bring forth. He can demonstrate his own methods, conventions, and special skills, or demonstrate the circumstances where he has trouble and would like advice.
+
+Typical session goals include coaching, reviewing, mutual problem solving, demonstrating, etc. The more comprehensive and efficient the collective tools and skills are for doing a single individual's kind of work, the more effective these collaborative sessions can be.
+
+BASIC SUPPORT PROVISIONS: 
+IN-FILE ADDRESSING AND EMBEDDED LINKS
+
+There are a number of unique characteristics in the structure of AUGMENT files, and in the associated provisions for manipulation and viewing. Generally, their purpose is to increase the facility with which files can be studied and manipulated, and to provide for mixed media (e.g. text, graphics, recorded speech). As mentioned above, increasing each individual collaborator's ability to study and manipulate working information will increase his ability to contribute in an augmented collaborative process.
+
+The provisions in AUGMENT for flexible and explicit in-file addressing provide collaborative benefit not only through their enhancement of individual's capabilities, but also by direct support of collaborative activities.
+
+Any given text entity in any AUGMENT file or document -- e.g. chapter, section, paragraph, word or even an individual character -- can be addressed explicitly by a string of characters that every experienced AUGMENT user can construct or read. These address strings may be optionally used in any AUGMENT command that designates an entity to be operated upon or a place in a document to do something about.
+
+Selecting that entity or place by pointing with a mouse is always an option (and almost always would be employed if that entity or place is visible on the screen). But a user always has the option of using an address string to designate an entity or place that is not being shown. That entity or place may be in in any on-line document to which that user has appropriate access rights (including documents belonging to other users or to a public pool).
+
+As an aid for specifying useful locations within a document, a user may affix a unique "name" of his own choice to any statement. When employed in an address string making it unambiguous which document is being cited, that name will serve to designate its named statement for any AUGMENT operation. Name examples: "Ref-1" names the first reference item below; and "A3" names the third activity item listed above.
+
+If an address string is enclosed by parentheses or brackets, the whole is called a "link." Examples: " [Ref-1]" is a link pointing to that item in the Reference section below; "(OAC84-Draft,3B)" would point to Paragraph 3B in the document file named "OAC84-Draft." Links may be created and edited just as any other text, and may be embedded anywhere in the text of an AUGMENT document. They are understood by a reader to be a citation that "links" this location to some other document entity or place. It is useful to consider the address in a link as specifying a path leading to the cited object.
+
+A reader who wanted to take a look at the place or entity at the other end of a link could execute a "Jump (to) Address" command and type in the corresponding address string -- whereupon AUGMENT would then change the view in a designated display window to be positioned in the designated document at the designated location.
+
+Alternatively the reader could use a "Jump (on) Link" command, and merely: (a) point to the embedded link; then (b) point to the window in which he wanted the cited passage to be displayed. AUGMENT would extract the destination address from the link (instead of expecting the user to type it) and display the referenced passage in the indicated window. For instance, when reading the text of this OAC84 document on line, an AUGMENT user could do a Jump Link on one of the reference citations (which are bonafide links) and immediately be shown the associated citation statement.
+
+A very useful, "indirect addressing" provision may be employed in a link's address string. This amounts to saying, "when your path reaches Location X, scan along the text there until you find the next link, and then follow that second link to its destination." This provision may be employed through an indefinite number of indirect links. That is, this second link at Location X may in fact contain a similar indirect-address expression -- i.e. "proceed to Location Y and follow the link you find there" -- etc.
+
+Example: "(Ref-1.l)". To follow this link, the AUGMENT Jump Link command would find the statement in this document that has been named "Ref-1" (in the Reference Section below), scan along that statement's text to the first link, "(AUGMENT,71279,)", and then follow that link. The user would be shown the opening section of document 71279 (from the AUGMENT Journal -- see below -- containing the complete text of the published document cited in [Ref-1]).
+
+SHARED FILES
+
+In timesharing environments, users have grown accustomed to being able to share the use of files in the process of collaboration. Users of stand-alone workstations and personal computers generally haven't benefitted from this. The emerging wide-band interconnection options (e.g. local-area networks and public, packet networks) and the integration of file servers into on-line working environments will bring shared-file collaboration into much more prevalence.
+
+AUGMENT's architecture and general design philosophy assume this kind of working environment. Files containing the hierarchically stored information can be made available to any selected participants, utilizing a number of agreed-upon options for privacy and access. Geographical distances separating collaborators become transparent with remote computer access through networks.
+
+By employing the above-described, embedded links, these files may be interlinked to create a shared network of information. A jointly developed document for instance begins with the entry of the ideas and continues with the elaboration of the idea nodes into a narrative by each member of the collaborating team. In the case of a single product by a team effort (a proposal, report, study, etc.), agreements must be made to control access to specific files.
+
+The effect on the document as each person adds to, manipulates, and studies the common information is equivalent to passing around a paper draft for comments. But here the drafts are distributed very quickly and there is no retyping phase; the material can constantly reflect the latest modifications for all involved to see and use.
+
+Expanded, shared spaces require some retrieval support, which can take many forms. For file sharing, the use of an on-line table of contents is generally pertinent. The table of contents for public files (or private subsets) consists of lists of titles and names of files, abstract-like descriptions, with links to desired nodes in each file. The table of contents (a "locator") is hierarchically organized, permitting categorical relationships and viewing that facilitate searching the locator.
+
+Once any information is located (with one of many searching mechanisms), it is available for direct copying and integrating into any newly developing text. If plagiarism is a concern, there are protective measures to restrict access -- but when collaboration is the intent, the free availability of information to facilitate cooperation and collaborative synergism can be much enhanced.
+
+AUGMENT automatically maintains an authorship-change record for each statement in each file, indicating the date, time, and author of the statement's creation or last change. This supports coordination among shared-file collaborators -- there are special AUGMENT provisions for viewing these records, and for scanning for statements entered or changed in a given time span or by a given author.
+
+AUGMENT MAIL
+
+As a component of our overall development activity, we have made heavy use of our own AUGMENT mail system since 1970, as well as interacting with many non-AUGMENT users through the ARPANET mail systems that have emerged since the early '70s. Today, an AUGMENT user can interact with people on these other mail systems (as served by either ARPANET or TYMNET) in a uniform way, along with his AUGMENT mail interactions, from within his coherent AUGMENT environment.
+
+After thirteen years of hard-use evolution, the general features and provisions within AUGMENT Mail are probably as complete and sophisticated as any. The system provides speed and flexibility for all message-processing tasks, including composing, addressing, acknowledging, answering, forwarding, studying, and filing them. This allows our users to collaborate with high effectiveness.
+
+There is a rapidly growing availability to on-line workers of various sorts of inter-personal message handling. The general benefit to collaborative work seems well recognized. Some of the features of AUGMENT add unique benefits beyond what seems generally experienced, and are worth mentioning here.
+
+One unique source of benefit for AUGMENT Mail collaborators is that the content of a mail item is actually an AUGMENT document -- perhaps only a one-sentence document, but optionally a full-sized one. As such it carries structure, may include embedded graphics, may be directly copied into a recipient's document, etc.
+
+And another unique benefit is derived from use of AUGMENT links. For instance, a simple, one-sentence message might be, "Frank: Your comment in (Market-Bin, New-Plan, 4b3) seems to conflict directly with the boss's directive in (Division-Records, Dev-Policy, 7c)." When Frank gets the message, he can hold this passage in one display window, and via Jump Link commands, put each of the cited passages into other windows for immediate study.
+
+AUGMENT JOURNAL
+
+Ongoing collaboration will benefit from provisions in addition to those for sharing files and handling mail. Dialogue implies a longitudinal series of transactions that are interrelated in various ways. For full support of task-oriented dialogue, a history of the dialogue is often valuable, and must be easily accessible through retrieval mechanisms.
+
+The history should provide a chronicle of dialog "transactions," i.e. a Journal. Within the AUGMENT system, there is provision for installing, maintaining and utilizing what we call Journal systems. A Journal system supports a recorded form of dialog having attributes similar to those provided to professional circles by the combination of their professional journals and the libraries that store, catalog and provide access to them..
+
+Having created an on-line record of thoughts and ideas, the author (or a clerk) may direct the system to distribute it to a larger group. Such a contribution may range in size from a one-sentence message to a two-hundred-page document.
+
+In submitting this contribution a document to an AUGMENT Journal, the author specifies a title, and may include comments (analogous to a preface or other notes attached to a report). A distribution list may be specified -- using the same personal and group identifiers as for AUGMENT Mail. Other fields will be added automatically upon submission, such as date and time. Less frequently used fields provide the computer with a basis for fairly complete bibliographical handling of this dialogue item. The author is given on-line computer guidance for easily filling out the necessary fields.
+
+Upon submission to a specified Journal, the item is automatically given a number and is stored permanently in a central location. A full bibliographical citation will be generated and installed in library-like, computer-held catalogs. For each individual in the distribution list, a short citation will be delivered into his AUGMENT Mail box. One of the elements in this citation is a link pointing to the centrally stored Journal document. Using this link, a recipient may employ a simple Jump Link command to gain immediate access to the Journal document, and can study it or copy all or parts of it into working files.
+
+For example, References Ref-1, Ref-2 and Ref-3 were stored in the "AUGMENT" journal, as their Journal-reference links indicate, and an AUGMENT user with Journal-system access may still retrieve those documents from the system. There are of the order of 100,000 entries in that "AUGMENT" Journal collection -- going back to August 1970.
+
+This current document was entered as Item # 2221 into the more-recently established, "OAD" Journal collection. I exercised a Journal-system option and obtained a pre-assigned number so that I could include the number in the text of the document before final submission. Henceforth, another AUGMENT document may use the citation link "(OAD,2221,A2)" to cite the second "activity item" listed above in this document. A completely unambiguous citation, good for the indefinite future.
+
+General access to the data base of Journal documents is through an on-line catalog. Searches through the cataloged citations can retrieve citations by author, accession number, title word, or key-word descriptor.
+
+Subcollections for special groups or activity themes may be optionally maintained. Descriptors assigned at the time a document is submitted can classify it as belonging to a given "conference"; but such initial classifications needn't be restrictive, since at any later time a document may be published (in the Journal) which lists a set of documents and/or of passages, from among the entire prior collection of Journal items, which are deemed to be relevant to a given theme.
+
+Or, a dynamic collection may be maintained by an interested party, in shared files, as a list of citations with links pointing directly to the items (documents or passages) in the Journal.
+
+No one is able to modify the centrally held Journal document -- these documents are considered to be just as permanent a record as one that has been published and put into a library. If Journal documents are not accessed for a given period of time, they are removed from on-line storage and archived on tape. Later, if given the Journal accession number, AUGMENT operations will retrieve the item from archive tapes, just as a library would retrieve from its stacks if a little-used document had been removed from the open shelves.
+
+The central storage of dialogue entries represents the recorded dialogue, including replies and cross-reference links -- essentially a network of interrelated submissions.
+
+The Journal systems provide central storage for the same reasons that libraries do: it is too costly for each individual to maintain his or her own collection; and there is need for assurance that a specified document may be provided in unaltered form.
+
+These Journal provisions encourage freer use by authors of commentary on prior entries, since an author knows that every reader has a simple means for accessing any of the earlier documents that may be cited.
+
+A new participant, entering into an established dialog process, may simply be given a relevant set of citations to be brought completely into the picture.
+
+Often, a passage in an earlier Journal document which was originally submitted as relevant only to a given theme or issue, will later be discovered by someone to be relevant to another, current issue. In this case, a new document may be entered into this newer "dialog network" that points out this relevance and provides a citation link to this old document, which now has become linked into the new dialog.
+
+
+ACKNOWLEDGEMENTS
+
+The principles underlying this work and the basic implementation of system architecture and features were done at SRI International, sponsored by the Air Force, NASA and DARPA, and contributed to by many bright colleagues in the Augmentation Research Center. Solid enhancements have been made to the Conference Sub-system, the Mail System, and the Journal System since AUGMENT was moved to Tymshare in 1978, with many good ideas contributed out of the experience of essentially the entire Office Automation Division.
+
+REFERENCES 
+
+Ref-1: Engelbart, D. C., "Toward Integrated, Evolutionary Office Automation Systems," Proceedings of the 26th Joint Engineering Management Conference, Denver, CO, Oct. 16-18, 1978, pp. 63-68. (AUGMENT,71279,)
+
+Ref-2: Engelbart, D. C., "Coordinated Information Services for a Discipline- or Mission-Oriented Community," Proceedings of the Second Annual Computer Communications Conference in San Jose, California, Jan 24, 1973 -- also, Proceedings of the NATO Conference on Computer Networks, University of Sussex, England, September 1974. (AUGMENT, 12445,)
+
+Ref-3: Engelbart, D. C., "Toward High-Performance Knowledge Workers," OAC '82 Digest (Proceedings of the 1982, AFIPS Office Automation Conference, San Francisco, Ca., April 5-7), pp. 279-290. (AUGMENT, 81010,)

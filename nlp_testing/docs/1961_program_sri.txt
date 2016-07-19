@@ -1,0 +1,112 @@
+Program On Human Effectiveness
+
+by Douglas C. Engelbart 
+Stanford Research Institute, Computer Techniques Laboratory, Menlo Park, California. 
+December 1961
+
+ 
+I. Introduction
+
+Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society. A human is effective not just because he applies to a problem a high degree of native intelligence or physical strength (with a full measure of motivation and purposefulness), but also because he makes use of efficient tools, methods, and strategies. These latter may be directly modified for increased effectiveness. A plan to systematically evolve such modifications has been developedl at Stanford Research Institute. The plan is a long-range one and is based on the premise that a strong, coordinated attack is necessary if significant progress is to be made.
+The possibilities we are pursuing involve an integrated man-machine working relationship, where close, continuous interaction with a computer avails the human of radically changed information-handling and -portrayal skills, and where clever utilization of these skills provides radical changes in the way the human attacks problems. Our aim is to bring significant improvement to the real-life problem-solving effectiveness of individuals. Tt is felt that such a program competes in social significance with research toward harnessing thermonuclear power, exploring outer space, or conquering cancer, and that the potential payoffs warrant a concerted attack on the principal problem areas.
+
+The basic concept of utilizing technological aids in close cooperation with an individual's detailed problem-solving activities is not new. Indeed, our books, pencils and typewriters attest to a long evolution of the concept. In recent yearst however, a number of basically new approaches to the problem have been initiated. Several researchers (2-8) have pointed out the gains offered by close integration of modern information-handling equipment with the human problem solver. Many contributions have been made in different disciplinary areas--e.g. human engineering, problem-solvillg and educational psychology, linguistics, computer programming, electronic display systems, computer time sharing, operations research, management science, systems engineering, and industrial engineering--all of which appear to form part of a normal evolutionary development toward increased understanding of man-machine integration problems. Also, a number of efforts (9-13) are under way that bear more directly upon the type of man-computer cooperation envisaged in our program; however, none of these has revealed as basic an approach as that proposed herein. Perhaps the most useful work to guide our early activities is that in artificial intelligence and heuristic programming (14-16), where problem-solving processes and nlethods of approach have been developed for totally man-made systems.
+
+II. Background
+
+For other than intuitional or reflexive actions, an individual thinks and works his way through his problems by manipulating concepts before his mind's eye. His powers of memory and visualization are too limited to let him solve very mally of his problellls by doing this entirely in his mind. For most real-life problems, an individual needs to represent these concepts with numbers, letters, words, graphs, drawings, etc. (i.e., with symbols) that can be assembled and rearranged before his eyes in patterns that portray the conceptual relationships to be considered. We conventionally use marks on paper for thus augmenting our visualization and memory capabilities.
+Thus, a large part of an individual's meaningful intellectual activity involves the purposeful manipulation of concepts; and of this concept-manipulation activity, a very important part is accomplished by the external manipulation of symbols. A fundamental hypothesis of the proposed approach is that the ability of a given human to control the real-time external manipulation of symbols, in response to the minute-by-minute needs of his thought processes, has a profound effect upon the whole structure of concepts and methods utilized in his intellectual activity. The approach can be succinctly described by saying that our aim is to use the best that technology can offer in providing increased symbol-manipulation power to the human, and then to explore the resulting possibilities for redesigning his structure of concepts and methods in order to make him significantly more effective in solving real-life problems.
+
+For this application, the stereotyped image of the computer as only a mathematical instrument is too limiting--essentially, a computer can manipulate any symbol in any describable way. It is not just mathematical or other formal methods that are being considered.Our aim is to give help in manipulating any of the concepts that the individual usefully symbolizes in his work, of which those of mathematical nature comprise but a limited portion in most real-life instances.
+
+Initially, at least, ours is all engineering approach toward the task of redesigning different parts of a functioning system in order to increase its performance. Our model stems from the picture of the "neuro-muscular" human, with his basic sensory, mental, and motor capabilities, and the means employed to match these capabilities to the problems he must face. These means have for the most part been evolved within the culture in which he is born, and he has been training in their use since childhood. We refer here to all of the tricks, tools, techniques, methods, strategies, special skills, etc., that the individual human can bring to bear upon his struggle with his problems. Our initial approach toward making the human more effective is to try to do a coordinated re-vamping of these means of augmenting basic human capabilities.
+
+We have found four useful categories with which to divide these augmentation means:
+
+(1 ) Language, which includes (a) the way the human's picture of his world is parcelled into tlle concepts that his mind uses to model that world, and (b) the symbols that he attaches to those concepts and with which he represents them when he does his concept manipulation (or "thinking").
+
+(2) Artifacts, which we define as (a) the physical things designed to provide for his physical comfort and movements, (b) the tools and equipment that help him manipulate physical objects or materials, and (c) the tools and equipment that help him manipulate symbols (and therefore, concepts, or information).
+
+(3) Methodology, which represents the methods, procedures, strategies, etc., with which he organizes his execution of a process.
+
+(4) Training, which represents the conditioning needed by the human to bring his skills in the utilization of Items (1), (2), and (3) to the point where they are operationally effective.
+
+We then have a functional model of a trained human, with his Language, Artifacts and Methodology, as the problem-solving system whose effectiveness we want to improve. Our aim is to make coordinated improvements upon the Language, Artifacts, and Methodology that he uses, and the Training that he is given.
+
+III. The Plan
+
+A. Objectives
+
+1.Long Range
+
+The long-range objective of this program is to increase significantly the effectiveness of human problem solvers. At any given stage of progress, our aim will be to recognize the controllable factors that limit the individual's particular level of effectiveness, and to develop means for raising that level.
+We are concerned with an individual's ability to gain comprehension in complex problem situations, to recognize the key factors therein, to develop effective solutions to these problems, and to see that these solutions are successfully implemented. Problem-solving effectiveness is improved if solutions can be found to problems that previously were too "hard" to solve at all, or (for previously solveable [sic] problems) if the same solutions could be found in a shorter time, or if a better solution could be found within the same time.
+
+2.Short Range(Two to Three Years)
+
+The immediate objective of this program is to increase the effectiveness of individuals at special problem-solving tasks of our own designation, using the most sophisticated approach we can, and striving for comprehensive and integrated re-design of the individuals' means for working (see Section III B for discussion of these special tasks). We want to use this effort as a calibration of what can be achieved, as an introduction to the variety of difficulties associated with this particular type of an engineering approach to a human-capability problem and as an opportunity to develop sound research methods within a workably limited scope of activity.
+B. General Approach
+
+In view of the tremendous worth to society of any new development that could bring significant increase to the effectiveness of its planners, researchers, coordinators, arbitrators, etc., we feel that the approach offering the highest possible research payoff should be taken. This, together with the tremendous rate of development in the information-processing technology (hence the predictable widespread utilization of sophisticated equipment), impel us toward starting right out with the best that technology can offer now in the way of equipment to help the individual manipulate symbols.
+A test subject will therefore have a digital computer whose capabilities are immediately available to his every call for service. He will communicate with the computer from a working station equipped with personal display and input devices that hopefully need make no compromise in giving him the best useable features that we can buy or develop. These facilities shall be continuously re-evaluated in light of other developments within the program, and it is expected that equipment modifications will be developed and tested as part of the program.
+
+At any given stage of our research, we shall be making a coordinated development of both the special programmed-computer services that the subject can call upon, and the associated special methods for his using these services in manipulating symbols. Different sets of services and methods will be evaluated by measuring the subject's performance while using them on specially selected test tasks, until we have isolated a set of such services and methods that provide him with a significant degree of effectiveness at the given type of test task.
+
+We plan a sequence of tasks, initially involving primitive but essential symbol-manipulation capabilities such as composing and modifying different forms of information portrayal (text, diagrams, etc.). This will lead progressively through developments for intermedi ate capabilities of personal "bookkeeping," composing or modifying computer-service designations (programming), calculating, planning, etc. Upon an integrated base of such human-controlled, machine-aided capabilities, we plan finally to develop the highest-ordered processes that real-world problem solvers can utilize.
+
+The special problem-solving areas to which we first wish to apply our efforts toward increased effectiveness have been selected to satisfy the following criteria:
+
+(a) The areas should involve a limited domain of information, and limited exterllal-world interaction, to keep the system we are studying within a manageable scope.
+
+(b) The areas should involve intellectually challenging problems of the same qualitative character as possessed by our more general real-world problems.
+
+(c) The areas should be such that we can build upon our results if we are successful and decide to tackle a more general problem-solving area in a next stage of pursuit of our main objective. (i.e., the services and methods developed here can be extended to meet the needs of the problem solver of the succeeding stage of our program.)
+
+(d) In general, the areas should be such that success could lead fairly directly to worthwhile real-world applications for bringing increased effectiveness to specialists in critical areas, in parallel with continued research work toward helping the solvers of more general problems.
+
+(e) In particular, the areas should be such that success here could be applied to meaningful parts of our continuing research activity, to make significant increases in the effectiveness with which we do research on human effectiveness.
+
+IV. Personnel and Facilities
+
+It is estimated that eight to ten professional people representing a variety of disciplines will be required for successful pursuit of the objectives of the proposed program. Psychology, computer programming, and computer engineering comprise a set of essential disciplines; in addition, considerable benefit would be derived from personnel backgrounds in such fields as artificial intelligence, systems analysis, display engineering, time-and-motion study, management science, psycho-linguistics, and information retrieval. Since the program will be developing a new conceptual structure involving a number of disci plines, researchers from each discipline will to some extent tbe [sic] expected to adjust to this newly evolving structure and its terminology.
+The heart of the experimental facilities will be a digital computer capable of working in real time with test subjects. The computer must be highly flexible with respect to the amount of internal high-speed storage and the type and amount of external storage that can be added. In addition, the computer must lend itself readily to time-sharing utilization. The internal structure of the computer must be susceptible to ready modification as must also be the specially developed peripheral equipment with which it must work closely.
+
+Two principal alternatives for realizing such experimental facilities exist. The first involves acquiring a small, fast medium-priced machine especially suited to the needs of this program. The second involves acquiring the basic computational service from a large machine whose use is shared (on a time-shared basis) with other users; in this case, only special-purpose matching and buffering equipment will be required for the particular needs of the program. In either case, the working station(s), with individual input and display provisions, will initially be composed of commercially available equipment but will undergo a fair degree of modification as the desired functional requirements evolve.
+
+V. Development and Application Activity
+
+There will be a progression of special problem-solving areas through which the program moves as we methodically build up the different capabilities which comprise the full and integrated repertoire needed for generalized real-world problem solving. It is planned to guide this progression so that within a few years we can begin to utilize our results in an associated Development and Application activity, where we develop special system designs (equipment, processes, methods, training, etc.) that can be applied practically to the tasks of real-world specialists. A computer programmer seems a natural candidate for the first such development, and cryptographers, information specialists, teaching-machine program composers, etc., can be considered subsequently. This type of activity is expected to provide very valuable feedback to the research work.
+Ultimately the development work will progress toward even more general types of problem solvers, to lead us toward the researchers, the planners, the leaders, and the doers upon whom our society depends so critically.
+
+Endnotes
+
+1. Under SRI sponsorship, with the assistance, since March 1961, of the Air Force Office of Scientific Research under Contract AF 49(638)-1024.
+2. Vannevar Bush, "As We May Think," Atlantic Month1y, (July 1945).
+
+3. Simon Ramo, "A New Technique of Education," Engineering and Science. Vol. XXI (October 1957).
+
+4. B.F. Skinner, "Teaching Machines," Science, Vol. 128, No. 3330 (October 24, 1958).
+
+5. I.J. Good, "How Much Science Can You Have at your Fingertips?" IBM Journal of Resenrch and Development, v. 2, no. 4 (October 1958).
+
+6. J.C.R. Licklider, "Man-Computer Symbiosis," IRE Transactions on Human Factors in Electronics (March 1960).
+
+7. D.B. Yntema and W.S. Torgerson, "Man-Computer Cooperation in Decisions Requiring Common Sense," IRE Transactions on Human Factors in Electronics, V. HFE-2, No. 1 (March 1961).
+
+8. Douglas C. Engelbart, "Special Considerations of the Individual as a User, Generator, and Retriever of Information," American Documentation, vol. 12, no. 2, p. 121 (April 1961).
+
+9. Merse, P.M. and Teager, H.M. "Real-Time, Time-Shared Computer Project," MlT Fourth Quarterly Progress Report Contract #Near-1841(69) DSR #8644 (October 31, 1961).
+
+10. See Quarterly Progress Reports of Division 5 (Information Processing), Lincoln Laboratory MIT, especially the work of Group 58 under Bert F.Green. Yntema and Torgerson (see Item 7 above) are in this group.
+
+11. RAND Corporation's Johniac Open Shop System currently under development. Private communication with Keith Uncopher.
+
+12. Ramo-Woolridge, see A. Vazsonyi, "An On-Line Management System Using English Language," Proceedings of the Western Joint Computer Conference, Los Angeles, California (May 9-11, 1961).
+
+13. Systems Development Corporation--see their brochure no. BR-2(2-61) entitled Automated Teaching Project.
+
+14. The work of A. Newell, J.C. Shaw, H.A. Simon, "A Variety of Intelligent Learning in a General Problem Solver," RAND report P-1742, Mathematics Division, The RAND Corporation (July 6, 1959).
+
+15. The work of J. McCarthy, "Programs with Common Sense," Mechnanisation of Thought Processes, Vol. l, National Physical Laboratory Symposium No.10 held in November 1958, London: Her Majesty's Stationery Office (1959).
+
+16. The work of Marvin Minsky, "Steps Toward Artificial Intelligence,"Proceedings of the IRE, vol. 49, No. 1 (January 1961). 

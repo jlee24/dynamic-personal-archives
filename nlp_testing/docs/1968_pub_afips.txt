@@ -1,0 +1,575 @@
+A research center for augmenting human intellect
+
+by DOUGLAS C. ENGELBART 
+and WILLIAM K. ENGLISH
+
+
+SUMMARY
+
+This paper describes a multisponsor research center at Stanford Research Institute in man-computer interaction.
+
+For its laboratory facility, the Center has a time-sharing computer (65K, 24-bit core) with a 4.5 megabyte swapping drum and a 96 megabyte file-storage disk. This serves twelve CRT work stations simultaneously.
+
+Special hardware completely removes from the CPU the burden of display re freshing and input sampling, even though these are done directly out of and into core.
+
+The display in a user's office appears on a high-resolution (875-line) commercial television monitor, and provides both char acter and vector portrayals. A relatively standard typewriter keyboard is supplemented by a five-key handset used (optionally) for entry of control codes and brief literals. An SRI cursor device called the "mouse" is used for screen pointing and selection.
+
+The "mouse" is a hand-held X-Y transducer usable on any flat surface; it is described in greater detail further on.
+
+Special-purpose. high-level languages and associated compilers provide rapid, flexible development and modification of the repertoire of service functions and of their control procedures (the latter being the detailed user actions and computer feedback involved in controlling the application of these service functions) .
+
+User files are organized as hierarchical structures of data entities, each composed of arbitrary combinations of text and figures. A repertoire of coordinated service features enables a skilled user to compose, study, and mod ify these files with great speed and flexibility, and to have searches, analyses data manipulation, etc. executed. In particular, special sets of conventions, functions, and working methods have been developed to air programming, logical design, documentation, retrieval, project management, team interaction, and hard copy production. 
+
+
+INTRODUCTION
+
+In the Augmented Human Intellect (AHI) Research Center at Stanford Research Institute a group of researchers is developing an experimental laboratory around an interactive, multi-console computer-display system, and is working to learn the principles by which interactive computer aids can augment their intellectual capability.
+
+The research objective is to develop principles and techniques for designing an "augmentation system."
+
+This includes concern not only for the technology of providing interactive computer service, but also for changes both in ways of conceptualizing, visualizing, and organizing working material, and in procedures and methods for working individually and cooperatively.
+
+The research approach is strongly empirical. At the workplace of each member of the subject group we aim to provide nearly full-time availability of a CRT work station, and then to work continuously to improve both the service available at the stations and the aggregate value derived therefrom by the group over the entire range of its roles and activities.
+
+Thus the research group is also the subject group in the experiment.
+
+Among the special activities of the group are the evolutionary development of a complex hardware-softwalre system, the design of new task procedures for the system's users, and careful documentation of the evolving system designs and user procedures.
+
+The group also has the usual activities of managing its activities, keeping up with outside developments, publishing reports, etc.
+
+Hence, the particulars of the augmentation system evolving here will reflect the nature of these task--i.e., the system is aimed at augmenting a system-development project team. Though the primary research goal is to develop principles of analysis and design so as to understand how to augment human capability, choosing the researchers them selves as subjects yields as valuable secondary benefit a system tailored to help develop com plex computer-based systems.
+
+This "bootstrap" group has the interesting (recursive) assignment of developing tools and techniques to make it more effective at carrying out its assignment.
+
+Its tangible product is a developing augmentation system to provide increased capability for developing and studying augmenta tion systems.
+
+This system can hopefully be transferred, as a whole or by pieces of concept, principle and technique, to help others develop augmentation systems for aiding many other disciplines and activities.
+
+In other words we are concentrating fully upon reaching the point where we can do all of our work on line--placing in computer store all of our specifications, plans, designs, programs, documentation, reports, memos, bibliography and reference notes, etc., and doing all of our scratch work, planning, designing, debugging, etc., and a good deal of our intercommunication, via the consoles.
+
+We are trying to maximize the coverage of our documentation, using it as a dynamic and plastic structure that we continually develop and alter to represent the current state of our evolving goals, plans, progress, knowledge, designs, procedures, and data.
+
+The display-computer system to support this experiment is just (at this writing) becoming operational. Its functional features serve a basic display-oriented user system that we have evolved over five years and through three other computers. Below are described the principal features of these systems. 
+ 
+
+THE USER SYSTEM
+
+Basic Facility
+
+As "seen" by the user, the basic facility has the following characteristics:
+
+CRT consoles, of which 10 are normally located in offlces of AHI research staff.
+
+The consoles are served by an SDS 940 time-sharing computer dedicated to full-time service for this staff, and each console may operate entirely independently of the others.
+
+Each individual has private file space, and the group has community space, on a high-speed disc with a capacity of 96 million characters.
+
+The system is not intended to serve a general community of time-sharing users, but is being shaped in its entire design toward the special needs of the "bootstrapping" experiment. 
+ 
+
+Work Stations
+
+As noted above, each work station is equipped with a display, an alphanumeric keyboard, a mouse, and a five-key handset.
+
+The display at each of the workstations (see Figure 1) is provided on a high-resolution, closed-circuit television monitor. 
+
+FIGURE 1--Typical work station with TV display, typewriter keyboard, mouse and chord handset
+
+The alphanumeric keyboard is similar to a Teletype keyboard. It has 96 normal characters in two cases. A third-case shift key provides for future expansion, and two special keys are used for system control.
+
+The mouse produces two analog voltages. As the two wheels (see Figure 2) rotate, each changing in proportion to the X or Y movement over the table top. 
+  
+FIGURE 2 -- Underside of the Mouse
+
+These voltages control, via an A/D converter, the computer's memory, and the display generator, the coordinates of a tracking spot with which the user may "point" to positions on the screen.
+
+Three buttons on top of the mouse are used for special control.
+
+A set of experiments, comparing (within our techniques of interaction) the relative speed and accuracy obtained with this and other selection devices showed the mouse to be better than a light pen or a joystick (see Refs. English 1 and English 2).
+
+Compared to a light pen, it is generally less awkward and fatiguing to use, and it has a decided advantage for use with raster-scan, write-through storage tube, projection, or multiviewer display systems.
+
+The five-key handset has 31 chords or unique key-stroke combinations, in five "cases."
+
+The first four cases contain lower and upper-case letters and punctuation, digits, and special characters. (The chords for the letters correspond to the binary numbers from 1 to 26.)
+
+The fifth case is "control case." A particular chord (the same chord in each case) will always transfer subsequent in put-chord interpretations to control case.
+
+In control case, one can "backspace" through recent input, specify underlining for subsequent input, transfer to another case, visit another case for one character or one word, etc.
+
+One-handed typing with the handset is slower than two-handed typing with the standard keyboard. However, when the user works with one hand on the handset and one on the mouse, the coordinated interspersion of control characters and short literal strings from one hand with mouse control actions from the other yields con siderable advantage in speed and smooth ness of operation.
+
+For literal strings longer than about ten characters, one tends to transfer from the handset to the normal key board.
+
+Both from general experience and from specific experiment, it seems that enough handset skill to make its use worthwhile can generally be achieved with about five hours of practice. Beyond this, skill grows with usage. 
+ 
+
+Structure of Files
+
+Our working information is organized into files, with flexible means for users to set up indices and directories, and to hop from file to file by display-selection or by typed-in file-name designations. Each file is highly structured in its internal organization.
+
+The specific structure of a given file is determined by the user, and is an important part of his conceptual and "study-manipulate" treatment of the file.
+
+The introduction of explicit "structuring" to our working information stems from a very basic feature of our conceptual framework (see Refs. Engelbart1 and Engelbart2) regarding means for augmenting human intellect.
+
+With the view that the symbols one works with are supposed to represent a mapping of one's associated concepts, and further that one's concepts exist in a "network" of relationships as opposed to the essentially linear form of actual printed records, it was decided that the concept manipulation aids derivable from real-time computer support could be appreciably enhanced by structuring conventions that would make explicit (for both the user and the computer) the various types of network relationships among concepts.
+
+As an experiment with this concept, we adopted some years ago the convention of organizing all information into explicit hierarchical structures, with provisions for arbitrary cross-referencing among the ele ments of a hierarchy.
+
+The principal manifestation of this hierarchical structure is the breaking up of text into arbitrary segments called "statements," each of which bears a number showing its serial location in the text and its "level" in an "outline" of the text. This paper is an example of hierarchical text structure.
+
+To set up a reference link from Statement A to Statement B, one may refer in Statement A either to the location number of B or to the "name" of B. The difference is that the number is vulnerable to subsequent structural change, whereas the name stays with the statement through changes in the structure around it.
+
+By convention, the first word of a statement is treated as the name of the statement, if it is enclosed in paren theses. For instance, Statement 0 on the screen of Figure 1 is named "FJCC."
+
+References to these names may be embedded anywhere in other statements, for instance as "see(AFI)," where special format informs the viewer explicitly that this refers to a statement named "AFI," or merely as a string of char acters in a context such that the viewer can infer the referencing.
+
+This naming and linking, when added to the basic hierarchical form, yields a highly flexible general structuring capability. These structuring conventions are expected to evolve relatively rapidly as our research progresses.
+
+For some material, the structured statement form may be undesirable. In these cases, there are means for suppress ing the special formatting in the final print out of the structured text.
+
+The basic validity of the structured text approach has been well established by our subsequent experience.
+
+We have found that in both off-line and on-line computer aids, the conception, stipulation, and execution of significant manipulations are made much easier by the structuring conventions.
+
+Also, in working on line at a CRT console, not only is manipulation made much easier and more powerful by the structure, but a user's ability to get about very quickly within his dataJ and to have special "views" of it generated to suit his need, are significantly aided by the structure.
+
+We have come to write all of our documentation, notes, reports, and proposals according to these conventions, because of the resulting increase in our ability to study and manipulate them during composition, modification, and usage. Our programming systems also incorporate the conventions. We have found it to be fairly universal that after an initial period of negative reaction in reading explicitly structured material, one comes to prefer it to material printed in the normal form. 
+ 
+
+File Studying
+
+The computer aids are used for two principal "studying" operations, both concerned with construction of the user's "views", i.e., the portion of his working text that he sees on the screen at a given moment.
+
+Display Start
+
+The first operation is finding a particular statement in the file (called the "display start"); the view will then begin with that statement. This is equivalent to finding the beginning of a par ticular passage in a hard-copy document.
+
+Form of View
+
+The second operation is the specification of a "form" of viewÑit may simply consist of a screenful of text which sequentially follows the point specified as the display start, or it may be constructed in other ways, frequently so as to give the effect of an outline.
+
+In normal, off-line document studying, one often does the first type of operation, but the second is like a sissors-and staple job and is rarely done just to aid one's studying.
+
+(A third type of service operation that will undoubtedly be of significant aid to studying is question answering. We do not have this type of service.)
+
+Specification of Display Start
+
+The display start may be specified in several ways:
+
+By direct selection of a statement which is on the displayÑthe user simply points to any character in the statement, using the mouse.
+
+If the desired display start is not on the display, it may be selected in directly if it bears a "marker."
+
+Markers are normally invisible. A marker has a name of up to five characters, and is attached to a character of the text. Referring to the marker by name (while holding down a special button) is exactly equivalent to pointing to the character with the mouse.
+
+The control procedures make it extremely quick and easy to fix and call markers.
+
+By furnishing either the name or the location number of the statement, which can be done in either of two basic way:
+
+Typing from the keyboard
+
+Selecting an occurrence of the name or number in the text. This may be done either directly or via an in direct marker selection.
+
+After identifying a statement by one of the above means, the user may request to be taken directly there for his next view. Alternately, he may request instead that he be taken to some statement bearing a specified structure relationship to the one specifically identified. For instance, when the user identifies Statement 3E4 by one of the above means (assume it to be a member of the list 3E1 through 3E7), he may ask to be taken to
+
+Its successor, i.e., Statement 3E5
+
+Its predecessor, i.e., Statement 3E3
+
+Its list tail, i.e., Statement 3E7
+
+Its list head, i.e., Statement 3E1
+
+Its list source, i.e., Statement 3E
+
+Its subhead, i.e., Statement 3E4A
+
+Besides being taken to an explicitly identified statement, a user may ask to go to the first statement in the file (or the next after the current location) that contains a specified word or string of char acters.
+
+He may specify the search string by typing it in, by direct (mouse) selection, or by indirect (marker) selection.
+
+Specification of Form of View
+
+The "normal" view beginning at a given location is like a frame cut out from a long scroll upon which the hierarchical set of statements is printed in sequential order. Such a view is displayed in Figure 1.
+
+Otherwise, three independently variable view-specification conditions may be applied to the construction of the displayed view: level clipping, line truncation, and content filtering. The view is simultaneous ly affected by all three of these.
+
+Level: Given a specified level parameter, L (L 1, 2, ...., ALL), the view generator will display only those statements whose "depth" is less than or equal to L. (For example, Statement 3E4 is third level, 3E second, 4B2C1 fifth, etc.) Thus it is possible to see only first level statements, or only first-, second-, and third level statements, for example.
+
+Truncation: Given a specified truncation parameter, T (T = 1, 2, ..., ALL), the view generator will show only the first T lines of each statement being displayed.
+
+Content: Given a specification for desired content (written in a special high-level content-analysis language) the view generator optionally can be directed to display only those statements that have the specified content.
+
+One can specify simple strings, or logical combinations thereof, or such things as having the word "memory" within four words of the word "alloca tion."
+
+Content specifications are written as text, anywhere in the file. Thus the full power of the system may be used for composing and modifying them.
+
+Any one content specification can then be chosen for application (by select ing it directly or indirectly). It is compiled immediately to produce a machine code content-analysis routine, which is then ready to "filter" statements for the view generator.
+
+In addition, the following format features of the display may be independently varied: indentation of statements accord ing to level, suppression of location num bers and/or names of statements, and separation of statements by blank lines.
+
+The user controls these view specifications by means of brief, mnemonic character codes. A skilled user will readjust his view to suit immediate needs very quickly and frequently; for example, he may change level and truncation settings several times in as many seconds.
+
+"Freezing" Statements
+
+One may also pre-empt an arbitrary amount of the upper portion of the screen for holding a collection of "frozen" statements. The remaining lower portion is treated as a reduced-size scanning frame, and the view generator follows the same rules for filling it as described above.
+
+The frozen statements may be independently chosen or dismissed, each may have line truncation independent of the rest, and the order in which they are displayed is arbitrary and readily changed. Any screen-select operand for any command may be selected from any portion of the display (including the frozen statements) .
+
+Examples
+
+Figures 3 and 4 show views generated from the same starting point with different level-clipping parameters. This example happens to be of a program written in our Machine-Oriented language (MOL, see below). 
+
+Figure 3 -- View of Part of an MOL Program, Level parameter = 2, truncation parameter = 1
+
+Figure 4 -- Same Program as Figure 3, but with with level parameter changed to ALL. 
+3d5b Figure 5, demonstrates the freezing feature with a view of a program (the same one shown in Figure 8) written in our Control Metalanguage (CML, see below). Statemente 3C, 3C2, 2B, 2Bl, 2B2, 2B3, and 2B4 are frozen, and statements from 2J on are shown normally with L = 3, T = 1. 
+
+Figure 5 -- View of a CML Program, showing the frozen statements and illustrating use of reference hopping
+
+
+The freezing here was used to hold for simultaneous view four different functionally related process descriptions. The subroutines (+BUG1SPEC) and (+ WAIT were located by use of the hop-to-name feature described above.
+
+File Modification
+
+Here we use a standard set of editing operations, specifying with each operation a particular type of text entity.
+
+Operations: Delete, Insert, Replace, Move, Copy.
+
+Entities (within text of statements): Character, Text (arbitrary strings), Word, Visible (print string), Invisible (gap string) .
+
+Entities (for structure manipulation): Statement, Branch (statement plus all substructure), Group (sublist of branches), Plex (complete list of branches).
+
+Structure may also be modified by joining statements, or breaking a statement into two at a specified point.
+
+Generally, an operation and an entity make up a command, such as "Delete Word." To specify the command, the user types the first letter of each word in the command: thus "DW" specifies "Delete Word." There are occasional cases where a third word is used or where the first letter cannot be used because of ambiguities.
+
+File Output
+
+Files may be sent to any of a number of different output devices to produce hardcopyÑan upper/lower-case line printer, anon-line high-quality typewriter, or paper tape to drive various typewriters.
+
+In future it will be possible to send files via magnetic tape to an off-line CRT-to-film system from which we can produce Xerox prints, Multilith masters, or microform records.
+
+Flexible format control may be exercised in this process by means of specially coded directives embedded in the filesÑrunning headers, page numbering, line lengths, line centering, suppression of location numbers, indenting, right justification (hyphenless), etc., are controllable features.
+
+Compiling and Debugging
+
+Source-code files written in any of our compiler languages (see below), or in the SDS 940 assembly language (ARPAS, in which our compiler output is produced) may be compiled under on-line control. For debugging, we have made a trivial addition to the SDS 940's DDT loader-debugger so as to operate it from the CRT displays. Though it was designed to operate from a Teletype terminal, this system gains a great deal in speed and power by merely showing with a display the last 26 lines of what would have been on the Teletype output.
+
+Calculating
+
+The same small innovation as mentioned above for DDT enables us to use the CAL system from a display terminal.
+
+Conferencing
+
+We have set up a room specially equipped for on-line conferencing. Six displays are arranged in the center of a square table (see Figure 6) so that each of twenty participants has good visibility. One participant controls the system, and all displays show the same view. The other participants have mice that control a large arrrow on the screen, for use as a pointer (with no control function). 
+  
+FIGURE 6--On-line conference arrangement
+
+As a quick means of finding and display ing (with appropriate forms of view) any desired material from a very large collection, this system is a powerful aid to presentation and review conferences.
+
+We are also experimenting with it in project meetings, using it not only to keep track of agenda items and changes but also to log progress notes, action notes, etc. The review aid is of course highly useful here also.
+
+We are anxious to see what special conventions and procedures will evolve to allow us to harness a number of independent consoles within a conference group. This obviously has considerable potential. 
+ 
+
+SERVICE-SYSTEM SOFTWARE
+
+The User's Control Laguage
+
+Consider the service a user gets from the computer to be in the form of discrete operations--i. e., the execution of individual "service functions" from a repertoire comprising a "service system."
+
+Examples of service functions are deleting a word, replacing a character, hopping to a name, etc.
+
+Associated with each function of this repertoire is a "control-dialogue procedure." This procedure involves selecting a service function from the repertoire, setting up the necessary parameter designations for a particular application, recovering from user errors, and calling for the execution of the function.
+
+The procedure is made up of the sequence of keystrokes, select actions, etc. made by the user, together with the interspersed feedback messages from the computer.
+
+The repertoire of service functions, together with their control-dialogue procedures, constitutes the user's "control language." This is a language for a "master-slave" dialogue, enabling the user to control application of the computer's capabilities to his own service.
+
+It seems clear that significant augmentation of one's intellectual effectiveness from the harnessing of computer services will require development of a broad and sophisticated control-language vocabulary.
+
+It follows that the evolution of such a control language is a very important part of augmentation-system research.
+
+For the designer of user systems, it is important to have good means for specifying the nature of the functions and their respec tive control-dialogue procedures, so that a design specification will be
+
+Concise, so that its essential features are easily seen
+
+Unambiguous, so that questions about the design may be answered clearly
+
+Canonical, so that information is easily located
+
+Natural, so that the form of the de scription fits the conceptual frame of the design
+
+Easy to compose, study, and modify, so that the process of evolutionary design can be facilitated.
+
+It is also important for the user to have a description of the service functions and their control-dialogue procedures.
+
+The description must again be concise, unambiguous, canonical, and natural; furthermore, it must be accurate, in that everything relevant to the user about the service functions and their control-dialogue procedures is described, and everything described actually works as indicated.
+
+State-Chart Representation of Control-Language Design
+
+Figure 7 shows a charting method that was used in earlier stages of our work for designing and specifying the control-pro cedure portions of the control language. Even though limited to describing only the control-dialogue procedures, this representation nonetheless served very well and led us to develop the successive techniques described below.
+
+Figure 7 shows actual control procedures for four service functions from the repertoire of an interactive system: Delete Word, Delete Text, Place Up Statement, and Forward Statement.
+
+The boxes contain abbreviated descriptions of relevant display-feedback conditions, representing the intermediate states between successive user actions. Both to illustrate how the charting conventions are used and to give some feeling for the dynamics of our user-system con trol procedures, we describe briefly below both the chart symbols and the associated display-feedback conventions that we have developed.
+
+The writing at the top of each box indicates what is to be shown as "command feedback" at the top of the display (see Figures 3, 4 and 5).
+
+An uparrow sometimes appears under the first character of one of the words of Command Feedback.
+
+This indicates to the user that the next character he types will be interpreted as designating a new term to replace that being pointed to--no uparrow under Command Feedback signifies that keyboard ac tion will not affect the command designation.
+
+"Entity" represents the entity word (i.e., "character," "word, "statement," etc.) that was last used as part of a fully specified command.
+
+The computer often "offers" the user an entity option.
+
+The circle in the box indicates the character to be used for the "bug" (the tracking spot), which alternates between the characters uparrow and plus.
+
+The uparrow indicates that a select action is appropriate, and the plus indicates that a select action is inappropriate.
+
+The string of X's, with under lines, indicates that the selected char acters are to be underlined as a means of showing the user what the computer thinks he has selected.
+
+There is frequently an X on the output line from a box on the chart. This indicates that the computer is to wait until the user has made another action.
+
+After this next action, the computer follows a branching path, depending upon what the action was (as indicated on the chart) to reach another state-description box or one of the function-execution processes.
+
+The Control Metalanguage
+
+In search for an improvement over the state chart, we looked for the following special features, as well as the general features ted above:
+
+A representational form using structural text so as to harness the power of our on-line text-manipulation techniques for composing, studying, and modifying our designs.
+
+A form that would allow us to specify the service functions as well as the control dialogue procedures.
+
+A form such that a design-description file could be translated by a computer program into the actual implementation of the control language.
+
+Using our Tree Meta compiler-compiler (described below), we have developed a next step forward in our means of designing, specifying, implementing and documenting our on-line control languages. The result is called "Control Metalanguage" (CML).
+
+Figure 8 shows a portion of the description for the current control language, written in Control Metalanguage.
+
+This language is the means for describing both the service functions and their control-dialogue procedures.
+
+The Control Metalanguage Translator (CMLT) can process a file containing such a description, to produce a corresponding version of an interactive system which responds to user actions exactly as described in the file.
+
+There is a strong correspondence between the conventions for representing the control procedures in Control Metalanguage and in the state chart, as a comparison of Figures 8 and 7 will reveal.
+
+The particular example printed out for Figure 8 was chosen because it specifies some of the same procedures as in Figure 7.
+
+For instance, the steps of display feedback states, leading to execution of the "Delete Word" function, can readily be followed in the state chart.
+
+The steps are produced by the user typing "D," then "W," then select ing a character in a given word, and then hitting "command accept" (the CA key).
+
+The corresponding steps are outlined below for the Control Metalanguage description of Figure 8, progressing from Statement 3, to Statement 3c, to Statement 3c2, to Subroutine +BUGSPEC, etc. 
+
+FIGURE 8 --- Metalanguage description of part of control language 
+3 (wc:) zap case 
+
+3A (b) [edit] dsp(backward tes*) . case  
+.  
+.  
+.  
+3B (c) [edit] dsp(copy ^es*) :s true => <am>adj1: . case 
+
+3Bl (c) s*=cc dsp(^copy character) e*=c,character +bug2spec  
++cdlim(b1,p1,p2,p3,p4) +cdlim(b2,p5,p6,p7,p8)  
++cpchtx(b1,p2,p4,pS,p6); 
+
+3B2 (w) s*=cw dsp(^copy word) e*=w,word +bug2spec  
++wdr2(b1,p1,p2,p3,p4) +wdr2(b2,p5,p6,p7,p8)  
++cpwdvs(b1,p2,p4,p5,p6); 
+
+3B3 (l) s*=cl dsp(^copy line) e*=l,line +bug2spec  
++ldlim(b1,p1,p2,p3,p4) +ldlim(b2,p5,p6,p7,p8) :c st b1<-sf(b1) p2,  
+rif :p p2>p1 cr: then (cr) else (null) , p5 p6, p4 se(b1): goto  
+[s] 
+
+3B4 (v) s*=cv dsp(^copy visible) e*=v,visible +bug2spec  
++vdr2(b1,p1,p2,p3,p4) +vdr2(b2,p5,p6,p7,p8)  
++cpwdvs(b1,p2,p4,p5,p6) ;  
+.  
+.  
+.  
+3b10 endcase +caqm ; 
+
+3C (d) [edit] dsp(delete ^es*) . case 
+
+3C1 (c) s*=dc dsp(^delete character) e*=c,character +bug1spec  
++cdlim(b1,p1,p2,p3,p4) +del; 
+
+3C2 (w) s*=dw dsp(^delete word) e*=w,word +bug1spec +wdr  
+(b1,p1,p2,p3,p4) +del ;  
+3C3 (l) s*=-dl dsp(^delete line) e*=l,line +bug1spec...  
+.  
+.  
+. 
+
+The points or regions in Figure 7 corresponding to these statements and subroutines are marked by (3), (3C), (3C2), and (+ BUG1SPEC), to help compare the two representations
+
+The same steps are indicated in Figure 8, starting from Statement 3:
+
+"D" sets up the state described in Statement 3C
+
+"W" sets up the state described in Statement 3C2
+
+The subroutine +BUG1SPEC waits for the select-word (1) and CA (2) actions leading to the execution of the delete-word function.
+
+Then the TWDR subroutine takes the bug-position parameter and sets pointers P1 through P4 to delimit the word in the text data.
+
+Finally, the +DEL subroutine deletes what the pointers delimit, and then returns to the last-defined state (i.e., to where S* = DW) .
+
+Basic Organization of the On-Line System (NLS)
+
+Figure 9 shows the relationships among the major components of NLS. 
+ 
+Figure 9-- Basic organization of NLS showing use of compilers and compiler-compiler to implement it
+
+The Tree Meta Translator is a processor specially designed to produce new translators.
+
+There is a special language the Tree Meta Language--for use in describing the translator to be produced.
+
+A special Tree Meta library of subroutines must be used, along with the output of the Tree Meta Translator, to produce a functioning new translator. The same library serves for every translator it produces.
+
+For programming the various subroutines used in our 940 systems, we have developed a special Machine-Oriented Language (MOL), together with an MOL Translator to convert MOL program descriptions into machine code (see Ref. Hay1 for a complete description) .
+
+The MOL is designed to facilitate system programming, by providing a high level language for iterative, conditional, and arithmetic operations, etc., along with a block structure and conventions for labeling that fit our structured-statement on line manipulation aids.
+
+These permit sophisticated computer aid where suitable, and also allow the programmer to switch to machine level coding (with full access to variables, labels, etc.) where core space, speed, timing, core-mapping arrangements, etc., are critical.
+
+The NLS is organized as follows (letters refer to Figure 9):
+
+The Control Processor (E) receives and processes successive user actions, and calls upon subroutines in the library (H) to provide it such services as the following:
+
+Putting display feedback on the screen
+
+Locating certain data in the file
+
+Manipulating certain working data
+
+Constructing a display view of specified data according to given view ing parameters, etc.
+
+The NLS library subroutines (H) are produced from MOL programs (F), as translated by the MOL Translator (G).
+
+The Control Processor is produced from the control-language description (D), written in Control Metalanguage, as translated by the CMLT (C).
+
+The CMLT, in turn, is produced from a description (A) written in Tree Meta, as translated by the Tree Meta Translator (B)
+
+Advantages of Metalanguage Approach to NLS Implementation
+
+The metalanguage approach gives us improved-means for control-language specification, in terms of being unambiguous, concise, canonical, natural and easy to compose, study and modify.
+
+Moreover, the Control Metalanguage specification promises to provide in itself a users' documentation that is completely accurate, and also has the above desirable characteristics to facilitate study and reference.
+
+Modifying the control-dialogue procedures for existing functions, or making a reasonable range of changes or additions to these functions, can often be accomplished solely by additions or changes to the control-language record (in CML).
+
+With our on-line studying, manipulating and compiling techniques, system additions or changes at this level can be thought out and implemented (and automatically documented) very quickly.
+
+New functions that require basic operations not available through existing subroutines in the NLS library will need to have new subroutines specified and pro grammed (in MOL), and then will need new terms in CML to permit these new functions to be called upon. This latter requires a change in the record (A), and a new compilation of CMLT by means of the Tree Meta Translator.
+
+On-line techniques for writing and modifying the MOL source code (F), for executing the compilations, and for debugging the routines, greatly reduce the effort involved in this process.
+
+
+SERVICE-SYSTEM HARDWARE (OTHER THAN SDS 940)
+
+In addition to the SDS 940, the facility in cludes peripheral equipment made by other manufacturers and equipment designed and constructed at SRI.
+
+All of the non-SDS equipment is interfaced through the special devices channel which con nects to the second memory buss through the SDS memory interface connection (MIC).
+
+This equipment, together with the RAD, is a significant load on the second memory buss. Not including the proposed "special operations" equipment, the maximum expected data rate is approximately 264,000 words per second or one out of every 2.1 memory cycles. However, with the 940 variable priority scheme for memory access (see Pirtle1), we expect less than 1 percent degradation in CPU efficiency due to this load.
+
+This channel and the controllers (with the exception of the disc controller) were de signed and constructed at SRI.
+
+In the design of the hardware serving the workstations, we have attempted to minimize the CPU burden by making the system as automatic as possible in its access to memory and by formatting the data in memory so as to minimize the executive time necessary to process it for the users.
+
+Figure 10 is a block diagram of the special devices channel and associated equipment. The major components are as follows: 
+
+Figure 10--Special devices channel
+
+Executive Control
+
+This is essentially a sophisticated multiplexer that allows independent, asynchronous access to core from any of the 6 controllers connected to it. Its functions are the following:
+
+Decoding instructions from the computer and passing them along as signals to the controllers.
+
+Accepting addresses and requests for memory access (input or output) from the controllers, determining rela tive priority among the controllers, syn chronizing to the computer clock, and passing the requests along to memory via the MIC.
+
+The executive control includes a comprehensive debugging panel that allows any of the 6 controllers to be operated off line without interfering with the operation of other controllers.
+
+Disc File
+
+This is a Model 4061 Bryant disc, selected for compatibility with the continued 940-system development by Berkeley's Project GENIE, where extensive file handling software was developed.
+
+As formatted for our use, the disc will have a storage capacity of approximately 32 million words, with a data-transfer rate of roughly 40,000 words per second and average access time of 85 milliseconds.
+
+The disc controller was designed by Bryant in close cooperation with SRI and Project GENIE.
+
+Display System
+
+The display systems consists of two identical subsystems, each with display controller, display generator, 6 CRT's, and 6 closed-circuit television systems.
+
+The display controllers process display-command tables and display lists that are resident in core, and pass along display-buffer contents to the display genera tors.
+
+The display generators and CRT's were developed by Tasker Industries to our specifications. Each has general character vector plotting capability They will accept display buffers consisting of instructions (beam motion, character writing, etc. ) from the controller. Each will drive six 5-inch high-resolution CRT's on which the display pictures are produced.
+
+Character writing time is approxi mately 8 microseconds, allowing an average of 1000 characters on each of the six monitors when regenerating at 20 cps.
+
+A high-resolution (875-line) closed circuit television system transmits display pictures from each CRT to a television monitor at the corresponding work-station console.
+
+This system was developed as a "best solution" to our experimental-laboratory needs, but it turned out to have properties which seem valuable for more widespread
+
+Since only all-black or all-white signal levels are being treated, the scan beam current on the cameras can be reduced to achieve a short-term image storage effect that yields flicker-free TV output even when the display refresh rate is as low as 15 cps. This allows a display generator to sustain about four times more displayed material than if the users were viewing direct-view refreshed tubes.
+
+The total cost of small CRT, TV camera, amplifier-controller, and monitor came to about $ 5500 per workstation-- where a random-deflection, display-qual ity CRT of similar size would cost con siderably more and would be harder to drive remotely.
+
+Another cost feature which is very important in some system environ ments favors this TV approach: The expensive part is centrally located; each outlying monitor costs only about $600, so terminals can be set up even where usage will be low, with some video switching in the central establishment to take one terminal down and put another up.
+
+An interesting feature of the video system is that with the flick of a switch the video signal can be inverted, so that the image picked up as bright lines on dim background may be viewed as black lines on a light background. There is a definite user preference for this inverted form of display.
+
+In addition to the advantages noted above, the television display also invites the use of such commercially available devices as extra cameras, scan converters, video switches, and video mixers to enrich system service.
+
+For example, the video image of a user's computer-generated display could be mixed with the image from a camera focused on a collaborator at another terminal; the two users could communicate through both the computer and a voice intercom. Each user would then see the other's face superimposed on the display of data under discussion.
+
+Superimposed views from cameras focused on film images or drawings, or on the computer hardware, might also be useful.
+
+We have experimented with these techniques (see Figure 11) and found them to be very effective. They promise to add a great deal to the value of remote display terminals. 
+  
+
+FIGURE 11--Television display obtained by mixing the video sognal from remote camera with that from the computer-generated display
+
+
+Input-Device Controller
+
+In addition to the television monitor, each work-station console has a keyboard, binary keyset, and mouse.
+
+The controller reads the state of these devices at a preset interval (about 30 milli seconds) and writes it into a fixed location table in core.
+
+Bits are added to information from the keyboards, keysets and mouse switches to indicate when a new character has been received or a switch has changed state since the last sample. If there is a new character or switch change, an interrupt is issued after the sample period.
+
+The mouse coordinates are for matted as a beam-positioning instruction to the display generator. Provisions are made in the display controller for including an entry in the mouse-position table as a display buffer. This allows the mouse position to be continuously displayed without any attention from the CPU.
+
+Special Operations
+
+The box with this label in Figure 10 is at this time only a provision in the executive control for the addition of a high-speed device. We have tentative plans for add ing special hardware here to provide opera tions not available in the 940 instruction set, such as character-string moves and string-pattern matching.
+
+Low-Priority Devices
+
+This controller accommodates three devices with relatively low data-transfer rates. At this time only the line printer is implemented, with provisions for adding an on-line typewriter (Dura), a plotter, and a terminal for the proposed ARPA computer network.
+
+The line printer is a Potter Model HSP-3502 chain printer with 96 printing characters and a speed of about 230 lines per minute.
+
+
+REFERENCES
+
+(English 1) W K ENGLISH D C ENGELBART B HUDDART Computer-aided display control Final Report Contract NAS 1-3988 SRI Project 5061 Stanford Research Institute Menlo Park California July 1965
+
+(English2) W K ENGLISH D C ENGELBART M L BERMAN Display-selection techniques for text manipulation IEEE Trans on Human Factors in Electronics Vol HFE-8 No 1 1967
+
+(Engelbartl) D C ENGLEBART Augmenting human intellect: A conceptual framework Summary Report Contract AF 49 638 1024 SRI Project 3578 Stanford Research Institute Menlo Park California October 1962
+
+(Engelbart2) D C ENGELBART A conceptual frarnework for the augmentation of man's intellect In Vistas in Information Handling Vol 1 D W Howerton and D C Weeks eds Spartan Books Washington D C 1963
+
+(Hay1) R E HAY J F RULIFSON MOL940 Preliminary speifications for an ALGOL like machine-oriented language for the SDS 940 Interim Technical Report Contract NAS 1-5940 SRI Project 5890 Stanford Research Institute Menlo Park California March 1968
+
+(Pirtle1) M PIRTLE Intercommunication of Processors and memory Proc Fall Joint Computer Conference Anaheim California November 1967

@@ -1,0 +1,186 @@
+TOWARD INTEGRATED, EVOLUTIONARY OFFICE AUTOMATION SYSTEMS 
+
+Douglas C. Engelbart
+Tymshare, Inc. • Cupertino, CA
+1978 (AUGMENT,71279,)
+
+INTRODUCTION 
+
+Office Automation involves the planned application of integrated information handling tools and methods to improve the productivity of people in office operations. Although the handling of information by office people is the focus of this new technology, other aspects of the office will be affected. These include factors such as the organization of functions and lines of reporting, training for new methods, work space design, travel patterns, branch office location, home vs office work, hours of work, employee morale, and job classifications. Organizations that harness office automation products will need to deal with many more than just technological issues.
+
+About 22% of the US work force is now in the office, with that percentage rising. Labor costs account for about 70% of the total office costs in our economy and salary costs are increasing about 6% each year. During the past 15 years there has been relatively little increase in productivity of the office work force, contrasting with the manufacturing sector where the average productivity has more than doubled (1). The cost of new technology aimed at increasing the productivity of office workers is going down, while the capabilities of office automation systems have been rapidly increasing.
+
+The US "white collar" salary costs totaled $ 354 billion in 1974. This was divided into the following categories (2):
+
+in $   
+billions	
+Managers and Administrators:	99	28.0 %
+Professional and Technical:	150	42.4 %
+Other Clerical:	83	23.4 %
+Secretaries and Typists:	22	6.2 %
+
+Office automation will impact industry and government organizations in very significant ways with both COST DISPLACEMENT and VALUE-ADDED results. These two terms are now being used by people who are considering the potential payoffs of office automation to their organizations.
+
+Cost displacement applications have the objective of achieving overall reductions in support staff costs or of increasing work volumes without adding support staff. Such applications typically center around WORD PROCESSING and provide the base for the more advanced value-added applications.
+
+Value-added applications are viewed as being directed toward improving managerial and professional staff productivity (and effectiveness) through use of more integrated office automation systems that can directly affect their work.
+
+The value-added approach deals with far more fundamental issues than the replacement of some support staff positions with word processing pools. Its focus upon individuals and groups of managers and professionals as targets for productivity improvement brings with it opportunities for significant increases in organizational effectiveness and major cost benefits in the largest segment of the office cost spectrum.
+
+For any organization, management choices at many levels will affect the balance between reducing total office costs (cost displacement) or increasing the total office effectiveness (value-added effects).
+
+Word processing applications have, until recently, been equated with the term office automation. It is interesting to note that, on the average, typing tasks comprise only 30% of the secretaries' and typists' work -- and thus account for only about 2% of the total office salaries (2). The next few years will see a very rapid growth in the introduction of advanced technology into offices and in applications with more impact on managers and other non-clerical people, bringing with it broadened perceptions of what office automation really includes.
+
+Office Automation is likely to become one of the fastest-growing and most significant new industries of the century. It will apply electronic technology to a broad new set of applications and bring significant change to many of the ways in which people and organizations work -- AUGMENTING their capabilities and increasing both the quantity and quality of their contributions.
+
+EVOLUTION OF AN AUGMENTATION SYSTEM
+
+At SRI International (formerly Stanford Research Institute), I began explicit planning in 1959 for an R&D program toward augmenting the human intellect by use of computer aids. The Air Force Office of Scientific Research supported my study for several years, resulting in a publication that provided a conceptual framework and a basic strategy for a long-term program (3). In 1963 the Advanced Research Projects Agency began twelve years of continuous funding, during which there was also significant support from the Air Force Electronic Systems Division, NASA Langley Reseach Center, Air Force Rome Air Development Center, and the Office of Naval Research.
+
+By 1968, we had a core system, called NLS, that was quite powerful for editing mixed text and graphics, for managing project-sized knowledge bases for design, documentation and financial activities, and for supporting group collaboration. This was described in a paper in that year's Proceedings of the Fall Joint Computer Conference, held in San Francisco (4). We also put on a real-time description and demonstration in a special session at the Conference, controlling the system from a work station on the podium, piping video to San Francisco from Menlo Park via two specially leased TV links, and projecting video images of mixed camera views and computer displays on an 18-foot screen. In the course of the session, we made considerable use of direct, shared-screen collaboration between me (on the podium at the conference) and different of my staff in our laboratory at Menlo Park.
+
+In the following years, we added some basic features to further facilitate collaboration. We also concentrated heavily upon system architecture to facilitate the subsequent evolution of a coherent "knowledge workshop", with a command-language interface providing consistency and easy expansion, and a general facility for inclusion of "foreign" application systems as workshop tools even if they are programmed in other languages, or run in other computers under other operating systems.
+
+By 1974, after eleven years of evolution, a considerably matured NLS was running under TENEX on a DEC PDP-10, and we initiated a subscription service to make this system available to user organizations. Computer service was supplied by a dedicated PDP-10, owned, maintained and operated by a commercial facilities-management company, on their premises, under contract to us at SRI. We had mostly government clients who used the ARPANET for access communication. We conceived of this as our "Knowledge Workshop Utility service," providing a coordinated set of tools to support knowledge workers. We also emphasized personal support through field trainers and application consultants.
+
+It may seem strange for a not-for-profit research institute to have fielded a commercial-grade service, but from a larger-system research viewpoint it was the only option: if we wanted to pursue significant augmentation results, it was absolutely necessary to have a community of real-world users. Within the whole augmentation-system domain, there are to be sure many significant technical problems remaining, but to my mind, by far the more numerous and challenging augmentation system problems lie in the human and organization domain -- to learn how to harness the services that technology offers, toward human ends. For this purpose it is necessary to have a significant number of people who are stably and skillfuly doing their everyday work with such tools, which requires in turn a solid, reliable set of computer-tool and people-support services.
+
+In 1977, it was judged better to move the Utility-service and NLS-evolution activities out from the research-institute environment and into a suitable commercial environment. SRI advertised, entertained prospective bidders, made a selection, and negotiated a transfer of the business to TYMSHARE, Inc., of Cupertino, California. The system has been renamed AUGMENT, and is being marketed as part of TYMSHARE's integrated Office Automation services. Following is a brief outline of the features and services as brought over into that marketplace, organized under application areas of most relevance to the engineering-management theme of this conference.
+
+DOCUMENT PRODUCTION
+
+Almost all phases of any simple to complex document production process may be accomplished using AUGMENT. These include initial text entry by authors or by typists, editing, draft reviews (optionally printed-out), spelling correction, generation of tables of contents and indices, word counts, draft and final formatting (with provisions for graphics), routing for approvals, final proofing, printing or processing for photocomposition, and online filing (with electronic mail delivery optional).
+
+AUGMENT features for document production include:
+
+	Powerful text editing, for example:
+
+		Display and hardcopy terminals
+		Mouse and keyset (optional) for added efficiency
+		Very large set of integrated commands (tools)
+		Commands in logically grouped subsets
+		Paragraphs (statements) as structural entities
+		Hierarchically-structured files
+		Flexible file view presentations: level and line clipping
+		Easy cross-file editing
+		Multi-display window viewing
+		Powerful reference-linking
+		Plus many general features, such as:
+
+			File privacy and integrity
+			Optional off-line text entry (also interfaces to other WP systems)
+			Geographically distributed user-access to AUGMENT system capabilities and working information through computer networks such as TYMNET and ARPANET
+			Spelling checking and correction
+			Tables of contents
+			Indexing and word counts
+			Pre-set and user-entered formatting
+			Electronic photocomposition
+			Remote collaboration during document development and production
+			Document filing, control, and retrieval
+			Calculating
+			Table manipulation
+			Sorting
+			Mixed text and graphics
+			Proofing
+			Forms design and presentation for data entry
+
+INTER-OFFICE COMMUNICATIONS
+
+To complement AUGMENT's powerful document production capabilities, online messages or long documents may be transmitted through "electronic mail" facilities to other users of the system. There is also a unique "shared screen" feature where two remotely separated (e.g. across the country) users both can share in viewing and controlling the same screen image on their respective display stations while talking together on the telephone. These two capabilities, described in Reference (5), provide users with a very useful, new kind of "dialogue support system" that has the following features:
+
+	Immediate or delayed delivery of messages or references
+	Individual or group distribution lists selected by the user
+	Action or information-copy specification
+	Identification system for selecting distribution list data
+	Title, special comment, author, clerk, descriptors, and other document-related information capture, transmission, and filing
+	Permanent filing of all messages and document for later retrieval
+	Forwarding of items to additional recipients
+	Indices of public items by number, author, and title keywords, for online access or hardcopy printout
+	Automatic indexing of individual recipients' mail by date
+	Entry of references to hardcopy documents for information and control purposes
+
+PERSONAL INFORMATION MANAGEMENT
+
+The foregoing features introduce many facilities and methods which are very effective for other applications as well, such as the management of an individual's day-to-day personal, working information. This value is particularly dependent upon the level of usage. When access to the AUGMENT system occurs regularly, preferably daily, a user can keep items such as reminders, agendas, calendars, notes, telephone numbers, and to-do lists structured as he or she prefers within AUGMENT files. When these are coordinated with documents being written, electronic mail transactions, and access to other database information, most of an individual's daily business can be aided by use of the AUGMENT system.
+
+ORGANIZATIONAL INFORMATION MANAGEMENT
+
+The document production and electronic mail features outlined above bring useful new capabilities into the office. The emphasis in those applications is on free textual information where the structural nodes are paragraphs, headings, citations, names, and addresses, etc. These may be retrieved by scanning text "pages" while viewing different levels in the hierarchy, or by searching for strings of text.
+
+There is also support for more structured approaches to information management. Flexible data structures can be defined using the basic features of AUGMENT where retrieval may be accomplished in a number of ways. Retrievals are aided by designating text strings as the "names" of nodes during the creation of such data bases. Special file searching is provided on these names, and their use for labeling data elements provides a simple means for organizing linked and structured data files with relatively rapid retrieval.
+
+A special form of organizational entity where AUGMENT can be of significant value is an "engineering community" (6). Instead of being a coherent element in a monolithic, hierarchical organization, a community (in this sense of the word) is composed of elements from a number of such organizations, where community membership is established by being in a common discipline or a common mission. Examples: a community of groups each of whom is involved in some aspect of solar-power R&D; or a community of groups all of whom have inter-related responsibilities within a large project (members all may belong to scattered elements within one organization, or there may be many members from different organizations).
+
+SOFTWARE ENGINEERING
+
+AUGMENT provides an exceptional environment for the development and maintenance of large software systems (7). The basic features discussed above are directly applicable to generating and managing the texts of specifications, source code, program libraries, and all levels of system documentation.
+
+It should be noted that the hierarchical organization of AUGMENT's text files, the flexible level-clipping view control, and the built-in labelling features for paragraphs (statements) naturally support structured programming practices in a uniquely effective manner. [Under Air Force sponsorship, IBM conducted an evaluative study of NLS (AUGMENT) as a support system for their structured-program methodology (8). From the report's Abstract: "This unique combination of capabilities can contribute positively to improved productivity and product reliability in programming development."]
+
+There has also been continual evolution of debugging aids coordinated with the rest of the software engineer's "workshop" (9). With his workshop on Machine A, he has means for applying his full range of debugging tools in a uniform manner to debug processes on distant machines -- including distributed processes that pass control from one machine to another. These processes can be running in mixed types of machines, under mixed types of operating systems, and can be programmed in mixed types of programming languages.
+
+EVOLUTION AND OTHER-SYSTEM INTEGRATION
+
+Perhaps the most important aspects of the system's design are (a) flexible provision for evolution, and (b) the ability to interface "through" AUGMENT to other systems while retaining a consistent user interface style. The underlying system of AUGMENT is designed to allow for all of a user's different data bases and application-program services to be integrated into one, coherent "knowledge workshop" (10). A Command Language Interpreter, operating upon the compiled "grammars" from descriptions written in a Command Meta Language, provides unique uniformity and flexibility in the user interface over a wide variety of application systems (new or old) (11) (12).
+
+There are internal provisions for a user's commands to evoke "reach-through" operations to other systems that may run on another machine, and/or run under a different operating system, and/or be programmed in a different language (13). Using the internal services of AUGMENT as his "home workplace" for preparing data or queries and for integrating remotely retrieved or processed data, a user may do a large share of the work related to other-system use within a familiar environment where fast, flexible study and manipulation are constantly used skills, and where special design attention has been given to the process of integrating information of varied form and source into working plans, reports, etc.
+
+HIGH PAYOFF FOR LARGE ENGINEERING PROJECTS
+
+In a "joint, engineering and management" domain, the potential payoff of comprehensive, integrated office automation systems would seem extraordinarily large when applied in a whole-system fashion to the support of large projects. Here, a strong element of VALUE ADDED consideration is introduced -- in this kind of application, there are significant NEW WAYS FOR PROFESSIONALS TO DO THEIR WORK.
+
+As individuals, the planners, designers, documenters, managers, or expediters will find considerable support for their particular types of work -- as will the secretaries and clerks in the individual-work part of their support roles. But it is the impact at the organizational level, particularly for the distributed "community" form, where the special payoff will seem most dramatic.
+
+Besides the basic capabilities outlined above, there have been developed special AUGMENT sybsystems directly relevant to support of an engineering community: for financial and technical management of multi-project programs; for developing, maintaining, and querying directories of people and resources within a large community; for producing highly formatted and indexed, quality-publication "handbooks" from the directory information; and for cataloging, indexing, and controlling an extensive collection of hard-copy items (documents, letters, catalogs, clippings, etc.).
+
+And new subsystems are under development to add special support for: calendar management; large-program budget development and review; large-program requisition generation and control; and reach-through services to other-machine data-base management systems.
+
+The capability is directly available to connect AUGMENT to existing special systems for supporting design, analysis, testing and manufacturing, integrating these tools smoothly into the engineer's "coherent workshop."
+
+For instance, selected diagrams, curves, and tables generated from these systems can be automatically integrated into an engineer's AUGMENT files as "illustrations" in his "engineering notebooks" -- instead of his pasting photographs or plotter sheets into a binder. Besides providng for flexible studying and evolution of the individual's "notebook," the system enables flexible remote collaboration in developing plans, analyzing results, etc. And it is subsequently an easy matter to assemble selected components from this record for outputting through graphic printers to produce mixed, text-graphic documents (drafts, or high-quality productions).
+
+A similar situation exists for managers within the large project: a valuable set of tools within AUGMENT providing a powerful "home workplace" with many special services to support the manager role; a capability for reaching through to other systems (e.g., PERT, IMS) and for integrating their products into the home workplace; and the multi-form means for communicating within the coherent, community working domain.
+
+CONCLUSION
+
+It is extremely important to note the multiple levels of synergism at work here:
+
+The synergistic effect of integrating many tools into one coherent workshop makes each tool of considerable more value than if it were used alone -- for instance, the value of teleconferencing is very much greater when the participants are already doing a large proportion of their everyday work on line, so that any of the working material is available for selective citing and accessing, and when the users are already at home with the basic techniques of preparing and studying on-line material and of organizing and finding related passages.
+
+And at another level, the synergistic effect of integrating many augmanted individuals into one coherent community makes each element of augmentation of considerable more value than if it were applied just to support its one indiviual -- this is derived from the collaborative communication capabilities as applied through extended organizational methods to integrate the augmented capabilities of individuals into augmented teams and communities.
+
+And finally, for any application of significant power -- of which augmentation of an enginnering project would be a good example -- the adaptability and evolutionary flexibility of the computer-communication system is extremely important. The working methods of individuals will shift markedly as they settle into use of a comprehensive workshop, and with these new methods and skills will come payoff potential for changes and additions to their workshops -- a cycle that will be significantly active for many years to come. A similar cycle will be even more dramatically evident at the organizational level.
+
+An evolutionary approach seems the only viable alternative when the effects of a prospective change are not well known; and for many years to come this will be the case relative to the impacts of significant, prospective steps in office automation upon the operations of our organizations. We have an immense amount to learn about how people can better harness their basic capabilities toward individual and organizational ends.
+
+It will be a long time before there is developed a stable framework within which to (a) design large next-step augmentation increments, or (b) plan an orderly transition for an organization that would adopt a large increment in one, discrete step.
+
+Evolution of the service system, evolution of the indivual's working life, and evolution of the organization's working mode -- all must be provided for if an organization wants to capitalize significantly upon the potential of the technology that is arriving.
+
+REFERENCES
+
+Purchase, Alan, "Office of the Future," SRI Business Intelligence Program, Guidelines, April 1978.
+
+Harkness, R. C. "Office Information Systems: an overview and agenda for public policy research," Telecommunications Policy, V. 2, No. 2, June 1978, pp. 91-105
+
+Engelbart, D. C., "A Conceptual Framework for the Augmentation of Man's Intellect," in Vistas in Information Handling, Howerton and Weeks (Editors), Spartan Books, Washington, D. C., 1963, pp. 1-29.
+
+Engelbart, D. C., English William K., "A Research Center for Augmenting Human Intellect," AFIPS Conference Proceedings, Vol. 33, Fall Joint Computer Conference, San Francisco, December 1968, pp. 395-410.
+
+Engelbart, D. C., "NLS Teleconferencing Features: The Journal, and Shared-Screen Telephoning," Proceedings of 1975 COMPCON, Washington D.C., September 1975.
+
+Engelbart, D. C., "Coordinated Information Services for a Discipline- or Mission-Oriented Community," Proceedings of the Second Annual Computer Communications Conference in San Jose, California, Jan 24, 1973 -- also, Proceedings of the NATO Conference on Computer Networks, University of Sussex, England, September 1974.
+
+Victor, K. E., "A Software Engineering Environment," Proceedings of AIAA/NASA/IEEE/ACM Computers In Aerospace Conference, Los Angeles, Ca., October 31-November 2, 1977, pp. 399-403.
+
+Hall, C., Kessler, M., Kinnie, G., Kopp, R., "NLS Support of Modern Programming Practices," Final Report, IBM Federal Systems Division, for AF Contract F30602-76-C-0115, September 1976, 72 pp.
+
+Victor, K. E., "The Design and Implementation of DAD, a Multiprocess, Multimachine, Multilanguage interactive debugger," Proceedngs of the Tenth Hawaii International Conference on System Sciences, University of Hawaii, 1977, pp. 196-199.
+
+Engelbart, D. C., Watson, R. W., and Norton, J. C. "The Augmented Knowledge Workshop," AFIPS Conference Proceedings, Volume 42, pp. 9-21 , National Computer Conference, June 4-8, 1973.
+
+Watson, R. W., "User Interface Design Issues for a Large Interactive System," AFIPS Conference Proceedings, NCC Vol 45, 1976, pp. 357-364.
+
+Irby, C. H., "The Command Meta Language System," AFIPS Conference Proceedings, NCC Vol. 45, 1976.
+
+White, J. E., "A High-Level Framework for Network-based Resource Sharing," AFIPS Conference Proceedings, 1976, NCC, Vol. 45.

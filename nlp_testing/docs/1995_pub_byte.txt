@@ -1,0 +1,36 @@
+Dreaming of the Future 
+
+Douglas C. Engelbart
+Bootstrap Institute
+1995 (AUGMENT,133189,) 
+
+Published in BYTE Magazine, issue 20:9, the special "20 Years" Anniversary issue, September 1995, p.330. From the Table of Contents: 
+"Can digital technology make a better world? Improve our collective IQ? In the dreams of this  visionary inventor it can." 
+
+Photo of Doug in his home by David Toerge 1995
+COMMENTARY :: Douglas Engelbart
+for BYTE magazine
+
+Digital technology could help make this a better world. But we've also got to change our way of thinking.
+
+Despite the rapid progression of computing technology, the world faces incredible hazards as we enter a common economic-political vehicle, traveling at an ever-accelerating pace through increasingly complex terrain. Our headlights are much too dim and blurry, and we have totally inadequate steering and braking controls.
+
+Many years ago, I dreamed that digital technology could greatly augment our collective human capabilities for dealing with complex, urgent problems. Computers, high-speed communications, displays, interfaces � it's as if suddenly, in an evolutionary sense, we're getting a super new nervous system to upgrade our collective social organisms. I dreamed that people were talking seriously about the potential of harnessing that technological and social nervous system to improve the collective IQ of our various organizations.
+
+Then I dreamed that we got strategic and began to form cooperative alliances of organizations, employing advanced networked computer tools and methods to develop and apply new collective knowledge. Call these alliances NICs (Networked Improvement Communities). This seemed eminently sensible. The new technologies could enable much more effective distributed collaboration, and the potential for shared risk and multiplied benefits seemed promising.
+
+In the dream, the solution involves giving high priority to the collective capability for a distributed community (or organization) to develop, integrate, and apply new knowledge. We already had this capability, of course; organizations handle new collective problems all the time. But yes, it would be nice if we could be a lot more effective at it. In the dream, this collaborative capability was called CoDIAK, for Concurrent Development, Integration, and Application of Knowledge.
+
+Sounds great. The better we get, the better we get at getting better. Call it bootstrapping. And just think of the important role for technologists.
+
+Although exciting new technology innovations have indeed been introduced within the NICs, the technology efforts have been overshadowed by the concurrent efforts in "human-system" innovation. This includes new skills, methods, collaborative organizational structures, telecommuting, knowledge-worker teams, distributed goal setting, planning and management processes.
+
+One of the ideas computer-oriented folks have contributed is the open hyperdocument system. For this to make a difference, we must shed our outdated concept of a document. We need to think in terms of flexible jumping and viewing options. The objects assembled into a document should be dealt with explicitly as representaions of kernel concepts in the authors' minds, and explicit structuring options have to be utilized to provide a much enhanced mapping of the source concept structures.
+
+The Web/HTML ( Hypertext Markup Language) publishing-browsing landslide has moved steadily toward a highly structured, object-oriented architecture with integrated editor-browser tool sets. But his needs to become the way the majority of people do all their work. Draft notes, E-mail, plans, source code, to-do lists, what have you � all can be hyperdocument pieces, instantly and intrinsically linkable, and with work processes involving fewer and fewer hard-copy printouts.
+
+It has been exciting to watch the emergence of total-quality management, process reengineering, NII (National Information Infrastructure), the World Wide Web, and so forth. But it pains me that we haven't yet put up an explicit CoDIAK target, nor explored how NICs could fly. Since the first of these dreams got fixed in my head, decades ago, I've struggled with the realization that the sooner the world gets serious about pursuing the possibilities, the greater the chance that we can reduce the hazards facing this careening vessel carrying us along.
+
+If the dream of improving human destiny doesn't move people, how about the thought that the companies that adopt the best CoDIAK-improvement strategy will have a significant competitive advantage. Wouldn't you want your group to have the highest collective IQ?
+
+I confess that l am a dreamer. Someone once called me "just a dreamer." That offended me, the "just" part; being a real dreamer is hard work. It really gets hard when you start believing in your dreams.

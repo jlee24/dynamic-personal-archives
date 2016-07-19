@@ -1,0 +1,154 @@
+EVOLVING THE ORGANIZATION OF THE FUTURE: 
+A POINT OF VIEW
+
+Douglas C. Engelbart
+Tymshare, Inc. • Cupertino, Calif.
+(AUGMENT,80360)
+
+INTRODUCTION
+
+For over two decades, I have been actively committed to the pursuit of something that I initially called "Augmenting the Human Intellect" -- integrating interactive computer tools into the minute-by-minute activities of people over their whole range of think work. (The attached reprint, Ref1, summarizes events and results over this period.) I re-named the pursuit about ten years ago, after reading Peter Drucker's discussions (Ref-2) about "knowledge workers," "knowledge organizations," and "knowledge industries." I decided that a better term would be "Augmenting the Knowledge Worker." And, from that perspective, a natural image emerged of a "Knowledge Workshop" as the place where a knowledge worker does his work -- and where, if we extended his tools, his means of collaborative communication, his working methods and his organizational roles, we could speak of an "Augmented Knowledge Workshop."
+
+As to be expected, my viewpoint has steadily evolved over the years: many inter-related concepts and elements gradually settled into an ever-more comprehensive and consistent framework. In recent years, my pursuit has often been identified as belonging in the emergent fields of Office Automation and The Office of The Future. In a generally useful way, this is true enough. But there are frequent, large differences -- mostly stemming from differences in viewpoint. I think the major difference is that I have come to sense a much larger scale of opportunity and probable impact than I originally did. This paper attempts to summarize those aspects of my framework that relate to this issue of scale.
+
+UNDERLYING CONCEPTS
+
+My own perception of potential gain in human capability didn't clarify until I realized how pervasive and extensive were the things that our cultural evolution had already developed to augment our basic human capabilities. For me these developments boiled down to three main categories of "cultural invention":
+
+Language -- how we conceptualize, attach labels and symbols, externalize, portray, model, communicate, ...
+
+Artifacts -- physical gadgets -- tools, instruments, crutches, ...
+
+Methodology -- procedures, methods, ways to organize people and resources, ...
+
+For completeness, I found that I needed two other ingredients to fill out a "whole augmentation system."
+
+Skills and knowledge required for humans to harness these inventions (a matter of training);
+
+Attitudes, spirit, beliefs, etc. required to make the system work (a matter of indoctrination).
+
+Note that new technology, no matter how dramatic, contributes directly only to the Artifact category. Also, consider the immense amount of invention that over the centuries has been integrated into the other categories of our knowledge-worker Augmentation System.
+
+So, if it isn't new to be bringing technology into our Augmentation System, what then will be so remarkable about introducing the new, computer-communication technology?
+
+Consider the four, non-technology categories as comprising a "cultural system, into which an immense amount of invention over the centuries has been integrated. Its scope, complexity and ingenuity transcend those of any system we humans know how to develop by explicit design, and engender within me a great respect for the effectiveness of "organic" cultural evolution.
+
+For me then, much of the answer to the above question came from from one particularly important realization which emerged from this conceptual approach: elements within these different categories have a great deal of mutual affect upon one another's evolution; an innovation in the Artifacts category has almost always produced changes in the Cultural System categories -- such side-effect changes will usually follow as a natural means of taking full advantage of the initial innovation's potential.
+
+When one considers the number and degree of the changes which this emergent technology can fruitfully introduce into our Artifact category, their quantitative effect portends a qualitative impact of unprecedented degree upon the whole, five-part Augmentation System.
+
+Perhaps this is too sketchily presented -- but this type of conceptualization has been very important in shaping my viewpoint. A detailed treatment of these and other relevant concepts is presented in (Ref-3), also (Ref-4). For me, they are gaining in validity and significance every year, and still support very well the growing framework within which I perceive the possibilities and payoffs of augmentation.
+
+A QUICK SKETCH
+
+My viewpoint seems persistently to highlight the amount of organizational evolution that will have to be accommodated in the coming decades. This section provides some substantive imagery toward understanding what is in my mind in that regard. (These things are at the heart of what we have been working at for fifteen years.)
+
+Consider a few of the things that the knowledge-worker professional (KW-Professional) must learn to do within his augmented workshop:
+
+compose, study and modify the proposals, memoranda, plans, budgets, etc. that are his products; [Note: "Study" means much more to us than "read."]
+
+find earlier drafts and compare them with a current one;
+
+send, receive, and keep track of his electronic mail;
+
+solicit comments from his colleagues about a draft plan, then keep track of the comments and their cited passages;
+
+manage his "office-full" of computer-held files, notes, lists, mail, reference pieces (e.g. office procedures, contract specs, or etc. against which he must work).
+
+Consider also a knowledge-worker support person (KW-Support) -- tomorrow's secretary, stenographer, records manager, documentation specialist, staff assistant, etc.
+
+Much of their support work will involve the same assortment of basic operations as for the KW-Professional above;
+
+and we can expect special value in their supportive assistance to be derived from their being skilled in the application of specialized computer services (e.g. data-base querying and analysis, graphic-portrayal developing, copy editing, quality-document typography, etc.).
+
+Now consider a type of support from this technology that generally doesn't get much appreciation -- a much-enhanced means for close collaboration among distributed workers. Here is what current technology can provide in this respect:
+
+Fast, flexible electronic mail/messages: Where it is easy to formulate a short note, selectively including passages from other files, and distribute it to selected people. With a full mail service, one can send entire documents this way -- including graphic illustrations. A very useful option is to have a document or message be assigned a permanent accession number and then be stored in an official archive where subsequent access is guaranteed under that accession number.
+
+Sharable work spaces: One's working records, notes, plans, etc. can selectively be made accessible to others with a new kind of flexibility and visibility. For example, a common occurrence is to send off a short, quick message saying, "Check my passage in (Jones, Draft-Plan, 3B) to see if it meets the objections you expressed in (27143,6A5)." [The first citation being to a specific passage in a private, working file; the second to a specific passage in a formally recorded, prior message or document.]
+
+Shared-screen teleconferencing (Show-and-Tell Dialog): Consider two persons, working at a distance from one another, at their respective display screens (not necessarily the same brand of hardware, not necessarily working with the same computerized tools).
+
+Assume that they are in telephone conversation and decide to shift to a more powerful dialog mode. Each of them elicits a conferencing set-up action from his computer, where for instance User A requests connection to User B for Showing, and User B requests connection to User A for Viewing.
+
+Then on the screen at User B's workstation will be shown (as nearly as possible, depending upon the respective capabilities of their display equipment) what User A has on his screen. User B will be able to see what User A "points" to; User A can talk, point, and work in a normal fashion, doing a "show and tell" dialog with User B. At any time, User A can pass control to User B to reverse the flow of the show and tell dialog.
+
+Assume that the interconnection processes for frequent collaborators can be preset for switching in and out of contact in a few seconds. Assume also that an almost arbitrary number of people can be connected into the conference hookup. Also, assume that there will be background, query-scheduling processes that can be used to facilitate the mutual arrangements that establish the time at which a conference session will be set up.
+
+We can now appreciate that, besides the skills required by the Professional and Support persons to do their respective kinds of knowledge work, there will be a very important added set of skills -- how to interact closely in collaborating at a new level and degree of teamwork.
+
+Consider how capabilities such as sketched above will affect the interplay between skilled professional specialists, and provide for the smooth integration of their respective contributions. Their "group capability" can be so much more flexible and efficient than ever before possible that we will have to re-consider our entire set of attitudes and beliefs about human teams or other organizational units -- about their possible working modes and potential effectiveness, about more-effective harnessing of special human talents, about extending the critical limits of complexity and urgency for the problems that human organizations can successfully handle.
+
+All of the above-sketched scenario for an augmented organization is very real; more than this can in fact be supported with today's technology, and one assumes that tomorrow's offerings will at least provide as much.
+
+QUESTIONS OF PERCEPTION
+
+Here is a list of questions that are of special significance to my point of view:
+
+What scale of gains do you see being derived from the adoption of this technology? (Productivity, capability, efficiency, performance, ... ?)
+
+How much change will there be in the way we work? How much change will there be in skills and knowledge required for our jobs? How much time will you as an individual probably spend learning the new skills, knowledge, and ways of working?
+
+How much change will there be within our organizations -- in structure, roles, and modes of interaction? How much time and cost will be involved in working out the major part of these organizational changes? How will this "organizational cost" compare with the cost of buying, installing and operating the new equipment?
+
+This list suits me because of my particular viewpoint about the Office of the Future. I happen to believe (BELIEVE) that this is the start of a very large revolution -- bigger in qualitative impact than the combined effects of the printing press and the industrial revolution. In my view, the above gains and changes are going to be very (extremely) large. Please hold this in mind as you digest what I say.
+
+One way to help illustrate my viewpoint is to talk about "high performance" for knowledge workers and for knowledge organizations. This is what has lured me on for many years -- the image of a new, much-enhanced level of capability for individual knowledge workers, and of startling gains in effectiveness for our knowledge organizations. In my framework, I much prefer to talk of "augmenting" rather than "automating" our individuals and organizations, because the principle value to me is in extending our capability for human-directed knowledge work, rather than in churning out our invoices with production-line efficiency.
+
+Maybe they aren't fair, but these rhetorical questions convey something of my feeling: From these opportunities, do you picture a more-efficient ox cart or a more-effective vehicle (e.g. a jeep)? A more-efficient tablet-cutting chisel or a more-effective graphic writer/copier (e.g. a printing press)?
+
+As you can see, my primary concern would better be characterized as pursuit of the organization of the future rather than of the office of the future.
+
+ORGANIZATIONAL HILL CLIMBING
+
+A useful metaphor, "hill climbing." Each knowledge organization has to relocate itself, upwards through gradient lines of new skills, knowledge, methods and roles; struggling against the constant gravitational drag of uncertainty, the reaction to newness, the fatigue from unusual new exertions and postures, the false starts and wrong turns -- and the climbing energy can only come from within the organization..
+
+In my view, the only feasible approach involves an explicitly chartered, full-time, internal organizational unit whose main work is to facilitate the organization's self-development. It provides planning, coaching in hill-climbing techniques, guiding, and general facilitation; but each of the other organizational units has to do its own scrambling and sweating to get its membership into a coherent new grouping up on the next level place.
+
+There will have to be exploratory groups that are the first to establish themselves at new levels on new parts of the hill; theirs will be much more difficult transitions than for the following groups, and the larger organization has to subsidize these exploratory probes as a general expense within its whole-organization evolutionary costs.
+
+"Prototype" efforts seem so important; and they can't be done using minimal service systems. They have to be considered as an exploratory investment. And, consider that the process of conducting the first such prototype activities will constitute an exploratory investment in learning how to conduct prototype activities.
+
+SOME SOME ADMONITIONS
+
+Do assume that everybody in the knowledge-work community within your organization will have a terminal that is connected within an organization-wide network; that every terminal can be in touch with any other; that every knowledge worker will potentially make use of service elicited from access to almost any data base or any person or any computer process in the organization.
+
+Do assume that your organization's internal network will have communication gateways to public networks -- and that almost every worker within the organization will benefit from some kind of service derived through these public networks.
+
+Don't fight the idea of making changes in people's ways of thinking and working; look at it as an opportunity to expedite our evolution.
+
+Don't buy on tight requirements -- i.e. don't buy from the position of "I want exactly this, no more and no less." Leave expansion room.
+
+Do assume that your organization will benefit from an explicit, conscious effort applied to the process of its evolution, for at least the next decade -- and get to work upon an initial, important bit of organizational evolution, the creation of an effective, internal "evolutionary mechanism."
+
+Do assume that the important part of the organization's evolution is the human part -- the changes in skills, knowledge, methods, roles and organizational structure. These elements take much longer to establish or change than do new hardware or software parts of the system. These latter should be employed to SUPPORT the human-system evolution and operation.
+
+Do realize that your human system will be strongly affected (and limited) by the hardware-software systems you buy. It is all too easy to let system acquisition wag the dog.
+
+Do realize that you can throw away a hardware-software system, and roll in a new one; yes, they all will become obsolete and you can't keep waiting for the best one. BUT, understand that the associated changes in the human system will really be the important factors in summing up the cost vs. payoff of junking System A and installing System B.
+
+ON MATTERS OF SCALE
+
+The qualitative aspects of essentially every phenomenon will change as associated parameters shift in scale. Engineers long ago learned that their judgment and intuition could be drastically in error when the scale would be shifted beyond a certain range. Bridges and buildings collapsed and a Spruce Goose couldn't fly. And in natural systems, too -- a flea can jump to heights dozens of times its own size, but it couldn't even walk if it were scaled up to the size of a human.
+
+After watching the man-computer thing from close up, for nearly thirty years, I am convinced that the matter of scale is a critical factor. Our earlier capabilities for judgment and intuition about the nature and effects of projected change simply aren't going to be applicable.
+
+On the one hand, things that will start to change about our ways of thinking and working will catch us by surprise -- in the framework within which we grew up, they just weren't candidates for being changed. Also, shifts in phenomena-scaling (number and degree of changes) are moving us into a qualitatively different, whole-environment domain. For our intuition and judgment to continue serving us, they will have to be re-conditioned -- a process only accomplished by experience.
+
+A PERSONAL FOCUS
+
+I am turning my focus toward developing specially equipped and specially trained "high-performance augmented teams." To produce examples and gain experience is the only way that I can see, today, to take on effective pursuit of the augmentation potential. A team, of from five to ten people, will serve as a prototype organizational model. Here, we can experiment with much higher levels of specialty skills and knowledge, and can work out effective modes of high-performance collaboration and new organizational roles. Conscious evolution in the whole-system character of a team can be carried out far more quickly and economically than with larger organizational units.
+
+I also aim to awaken interest in some larger organizations that want to begin developing internal mechanisms and experiences for establishing an effective mode of organizational evolution -- gearing up for the "hill climbing." Lets say that they are willing to start investing now toward evolving into a "high-performance organization." As our laboratory begins to turn out a succession of working-prototype, high-performance augmented teams, we will want them to find active use in support of real-life organizational needs. The participating organizations will serve an important role in helping establish the application targets, and in providing field-test environments and constructive feedback. There seems to be good likelihood that the applications for such teams can be selected to provide very effective facilitation of the organization's hill-climbing process -- a sort of "bootstrapping" strategy.
+
+Much of the development and experience represented in the attached reprint will be used as a base. With the "integrative and evolutionary" character of AUGMENT, we can for instance attach the highest-quality terminal equipment, very easily extend the computer horsepower per worker, and in a straightforward matter bring almost any existing software into "reach-through" access. And for any-sized extension of functional capability, our User Interface System enables us very flexibly to extend the command language and evolve in a powerful and coherent manner.
+
+REFERENCES
+
+Engelbart, D. C., "Toward Integrated, Evolutionary Office Automation Systems," Proceedings of the Joint Engineering Management Conference, Denver, Colo., 16-18 Oct 78, pp 63-68.
+
+Drucker, Peter F., "Age of Discontinuity: Guidelines to Our Changing Society," Harper & Row, New York. 1969.
+
+Engelbart, D. C., "Augmenting Human Intellect: A Conceptual Framework," Stanford Research Institute, Research report, sponsored by the Air Force Office of Scientific Research -- AFOSR-3223, AD-289 565, October 1962.
+
+Engelbart, D. C., "A Conceptual Framework for the Augmentation of Man's Intellect," in Vistas in Information Handling, Howerton and Weeks (Editors), Spartan Books, Washington, D. C., 1963, pp. 1-29.

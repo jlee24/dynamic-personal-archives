@@ -1,0 +1,355 @@
+FACETS OF THE TECHNICAL INFORMATION PROBLEM 
+
+Charles P. Bourne & Douglas C. Engelbart
+SRI Journal, Vol.2, No. 1, 
+1958 (AUGMENT,133180,) 
+
+Reprinted in The Magazine of DATAMATION, September/October 1958 
+
+Technology, so adept in solving problems of man and his environment, must be directed to solving a gargantuan problem of its own creation. A mass of technical information has been accumulated and at a that has far outstripped means for making it available to those working in science and engineering. But first the many concepts that must be considered in fashioning such a system and the needs to be served by it must be appraised. The complexities in any approach to an integrated information system are suggested by the following questions.
+
+RECENT world events have catapulted the problem of the presently Unmanageable mass of technical information from one that should be solved to one that must be solved. The question is receiving serious and thoughtful consideration in many places in government, industry, and in the scientific and technical community.
+
+One of the most obvious characteristics of the situation is its complexity. A solution to the problem must serve a diversity of users ranging from academic scientists engaged in fundamental investigations to industrial and governmental executives faced with management decisions that must be based on technical considerations. The solution must accommodate an almost overwhelming quantity of technical and scientific information publicly available in many forms through many kinds of media and in many languages.
+
+Some students of the problem, including men with many years' Experience in various aspects of information handling, have viewed this complexity and concluded that the problem cannot be solved in its entirety. These authorities have recommended a piecemeal attack on components of the problem.
+
+Stanford Research Institute believes that the techniques of systems analysis coupled with an understanding of the potentials of machines permit a powerful approach to the solution of this many-faceted problem. In fact, it may very well be that only by grappling with the problem as a single, integrated system can a realistic and lasting solution be attained.
+
+However, to deal with the information system as a whole it is necessary first to define its complexities with as great detail as possible. As an aid to the preliminary mapping of the system, a study group at SRI polled a portion of the Institute's own professional staff of engineers and scientists for questions they believe must be answered before an effective system can be designed. A representative list of the questions raised in this fashion is given in this article
+
+The list is impressive, but obviously not exhaustive. It does confirm the multiplicity of points of view that must be appreciated before this problem can be attacked.
+
+Many of the questions require simple factual answers (see Data Needed About Information Sources and Services p. 5). They can be answered by straightforward techniques of counting, surveying, sampling, and estimating. A few of the answers are already available, but the fact that most questions of this type cannot be answered from available sources emphasizes the pressing need for a much better quantitative assessment of the size and nature of the information problem before a rational attempt to solve it can be undertaken.
+
+Another group of questions involves essentially matters of national and scientific policy that ultimately must be answered arbitrarily. Data and analysis can give guidance to the answers but the ultimate decision will be based on judgment of relative needs and relative values.
+
+QUESTIONS RELATING TO POLICY
+
+What are the specific aims of the program?
+
+Will the system start with only new information? Or will it process back literature, and, if so, how far back?
+
+Will the Service process requests from allied countries? To what extent? Will it coordinate with the Soviet Union?
+
+Can part of the operations be done abroad? What about translation?
+
+Will an international classification, indexing, or retrieval system be adopted or promoted?
+
+Will the system be designed to serve the brilliant, the sophisticated, as well as the more unsophisticated?
+
+Will the Service be financially self-supporting?
+
+Will big business have any better access than small businesses or individuals?
+
+Would a private citizen or scholar afford to use the Service?
+
+How will prices be established for the Service?
+
+What is the range of subject matter to be included?
+
+Will classified information be included?
+
+Will safeguards be established to insure that classified information is kept under proper control?
+
+What type of information should be included? Books (texts, tables)?Technical and trade journals? Conference proceedings and papers presented but not published? Industrial and government interim and final project reports, etc ? Operation and instruction manuals? Patents? Manufacturers catalogs? Newspapers and general magazines?
+
+Who will be responsible for selecting the material to be included?
+
+What protection will be provided users who want their queries to Remain confidential?
+
+Shou1d service be provided outside the technical community? To congressmen? Executives? Businessmen? High-school students?
+
+Who will control the policy in the matter of designing, establishing, and/or operating the Service? An appointed committee, such as for the NACA?A civil servant? A political appointee? A committee elected by scientific organizations?
+
+Would it be feasible to establish legal authority to speed up the Standardization and coordination of existing facilities (such as the F.C.C.)?
+
+Who is competent to design, establish, and/or operate the System? Would this be a civil-service organization?
+
+Could the objectives of the Service be achieved by expanding Existing government agencies (e.g. Bureau of Standards, the Library of Congress, Armed Services Technical Information Agency)?
+
+If the Service were not directed by some existing government agency, would it not be best handled by some university?
+
+Would it be economically feasible for any sort of commercial enterprise or non-profit corporation organized by the professional community, or by private industry, to establish and run a Service which would assure continued social and technical progress?
+
+If we must look to the federal government for support, what residual responsibilities remain with the professional societies? Should Private groups continue to sponsor special collections?
+
+What economic and political limiting factors exist with respect to the freedom one would have in utilizing or changing those organizations Already active in the documentation field, and whose existence could be over-shadowed by a national Service?
+
+What about copyrights? Would royalties be forthcoming to the owner of the copyright if the Service distributes the material? What will be the impact on the technical publishing industry?
+
+Should the Service act as a publisher for collections of papers (reprints)in very new and special fields?
+
+How will the priority schedules be fixed for the Service?
+
+How soon could the Service be initiated? With an immediate manual system? With an ultimate mechanized system?
+
+What factors will determine the location? Can strategic dispersal Considerations influence the location without adversely affecting efficiency?
+
+Is the proposed Service simply an attempt to copy Russia?
+
+Might not an interim solution be to translate and distribute the Exhaustive Russian abstracts, thus leaving our interim energies free for other uses?
+
+Might it not be better to reduce the amount of literature produced Rather than go to the tremendous expense of providing super-service for all of it? Can a quality filter be applied to this output?
+
+Why not allocate federal money to support more direct interchange between working scientists? Perhaps more meetings, special conventions, seminars, etc., would be more economical than better literature processing? Couldn't the money be better spent on education to achieve a given increase in scientific effectiveness?
+
+Could a substantial portion of the information problem be solved By teaching the users more about present-day documentation techniques?
+
+QUESTIONS REQUIRING RESEARCH
+
+Some of the questions posed to the study group will require considerable study and research to produce valid answers. The research will be in many fields -- in the social as well as in the natural sciences. Some of the study must be quite profound -- even theoretical. Some will be more straightforward. Many of these questions must be answered before the policy decisions implied in the previous group can be made with confidence.
+
+Can we separate apparent need, influenced by present concepts and experience, from real need? Lack of awareness of the potentialities of recently developed methods (or methods not yet developed) can easily result in an unimaginative formulation of the possibilities and opportunities for advantageously using recorded information.
+
+How will users' habits and needs evolve as a good System becomes available?
+
+How are the information needs of a user affected by his age, Educational level, profession, type of position held, etc.?
+
+What are the characteristic information needs of the basic (academic)scientist? The applied researcher? The engineer? The decision maker? Are they all equally critical or is the "applier" of knowledge the one with the biggest problem?
+
+What is the role of information retrieval, storage, etc in the decision-making process of the research worker, engineer, scholar, administrator, etc.?
+
+How much use does the scientist and engineer make of the facilities that are presently available?
+
+By what processes does the scientist and engineer abreast of the advances in the art now? What are the relative importances of each of these processes?
+
+How many scientists and engineers have a definite program of "keeping up with the literature"? How much tirne would they "like to spend"? What keeps them from spending more time?
+
+How much of the literature that would, with reasonably high probability, be useful to a scientist or engineer, is caught by him now by his own regular surveillance of the literature? How far out of his way will the average user go to be sure that he hasn't missed some possible information ... considering the usual distracting pressures on him, his familiarity with the sources, etc.?
+
+How many pages of literature in various categories relative to the level and interest-area of the user can we expect him to scan or search for his different information needs?
+
+What are the relative merits of the different types of reference information services with regard to the user and his needs, desires, habits, and limitations?
+
+What are the relative importances of the users' various informational needs? On one hand, he needs to know the newsy items such as who is working on what, what his current attack is, who disagrees with whom and basically why, etc.; and on the other hand, he also needs to be able to study in detail the carefully written treatises that may have bearing on his work. Can these different kinds of needs be met by a single system?
+
+What are the special information requirements for different specialty fields?
+
+Does the user, when he goes outside his special field for supporting information, want information in different form or different levels than which he seeks in his own field? For instance, would he be looking more for "cook book" techniques or for survey-type information?
+
+How valuable would broad, multi-disciplinary searches be if they could be conducted effectively? How great is the problem of differences in nomenclature between fields?
+
+What type of questions now go unanswered at the libraries?
+
+Isn't the main problem of information retrieval one of identification--since people so seldom express satisfactorily their needs to the documentalist?
+
+What are the major limitations in the various methods presently used in classifying and indexing scientific literature?
+
+Is the problem that the information now is just not available at all, or is it that it is just hard to find?
+
+Why aren't the existing services that process technical information satisfactory?
+
+How many places does a user of each discipline have to look for index listings of a given special interest?
+
+How can the processing of recorded information be planned so that it can be effective in spite of human limitations, or of limitations in numbers of human beings?
+
+How much is missed by technical people leaning too heavily on librarians?
+
+What relative gain in efficiency could be achieved by integration, merging, or better managing of existing documentation services?
+
+What increase in efficiency of the scientist or engineer would Result from improving the accessibility of recorded information?
+
+What are the probable net benefits, short and long range, of an effective information Service to military, industrial, commercial, scholarly, government groups?
+
+Can dollar costs be derived for reasonably well-proven delays and duplications, and can the total national loss rate due to this problem be realistically estimated? Can it be determined that the expense of delay and duplication now is greater than that of establishing and operating an information service?
+
+What is the lack of an information Service costing government agencies?
+
+Can the savings in Federal money now spent on other information Programs be diverted to a national information Service?
+
+What are the relative costs and characteristics of different reproduction techniques that might be applicable to some of the dissemination and massive processing problems of an information service?
+
+What are the techniques and costs involved in keeping up and in Using large mailing lists in taking care of distribution of journals, etc.?
+
+What are relative costs of providing the information in micro form as against making original-size photo copies?
+
+Of the currently-operating abstracting services, how many are Operating merely to satisfy an obligation of a professional society that would rather have somebody else do the abstracting?
+
+What services does the Russian All-Union Institute really provide? What is the reaction of a Russian scientist to this information center?
+
+How important is it to know what the rest of the world is doing?
+
+Are any projects or areas of work reported almost exclusively in foreign literature?
+
+What is the expected rate of growth of the system?
+
+What are the potential information processing capabilities of existing mechanical devices?
+
+What are the theoretical capabilities of existing or anticipated machine components which might be applied to the information processing problem?
+
+How often will the system presumably be searched? How definitive willthe search have to be? What volume of information should a search produce? How fast should the system respond?
+
+CHARACTERISTICS OF THE INFORMATION SERVICE 
+
+As increasing data become available it will become possible to consider some of the last group of questions -- those dealing with the desired or necessary operating characteristics of a comprehensive technical-information processing system Certainly, the first system implemented would be of an interim nature using existing resources, which unfortunately employ largely manual techniques However, ultimately it is inevitable, in view of the impressive advances made almost daily in information processing techniques, that a highly mechanized system will be possible
+
+How soon can an interim system be functioning?
+
+How much can be done just by concentrating on abstract distribution and better dissemination techniques?
+
+Would it be feasible for the abstracting publications to use a standard format and type font, such that mats (or something similar) could easily be distributed to other interested publishers, thus saving printing expenses?
+
+What technical societies could cooperate to publish a single journal instead of numerous splinter journals?
+
+What about the scale of the Service? Does it have to be a big system or nothing?
+
+Does "having a large information Service" necessarily mean the physical collection of all activities at one central location?
+
+Would a group of smaller centers, for specific fields, be of greater utility and more tractable?
+
+Would a collection of special libraries be more useful?
+
+What can a national service provide that is different than what is now available? Is this to be an entirely new type of service, a real advance in the state of the art, or is it to be just more and better of the same thing?
+
+Will the system have a finite capacity? One system might work well with a few million entries, but be hopeless with a hundred million
+
+As the System grows in size, will it be possible to make changes easily in the classification scheme and bring the old coding into the new scheme?
+
+If a private consultant, with "need to know" established, were to work on a government project, how would he locate and procure pertinent classified material?
+
+Will financial filtering of requests by a uniform fee structure be desirable or effective, or would it be necessary to make non-uniform fee Structure so that there is essentially some "priority" given?
+
+What means can be used to pry loose useful information that customarily doesn't get into the published technical information channels?
+
+Will the service include a positive program to declassify material under security restrictions?
+
+What is an acceptable delay in getting information entered into this system?
+
+Will all material in the subject fields be included or will there bean editor or a censor?
+
+Will an attempt be made to standardize the form of the material before it gets into the center? Does the material have to be on standard-size sheets or forms?
+
+What happens when the system becomes overloaded? Should service to users just be late, or should the service just be less complete?
+
+How can we protect against freezing the specifications until enough systems work has been done to make clear what would be optimal?
+
+Will the policy makers make sure that the final methods chosen for a retrieval system are not influenced too heavily by the requirement of compatibility with past systems?
+
+Will abstractions be done? What kind? Descriptive? Critical? Informative? How can we get good-quality abstracts? Should the Service use volunteer abstractors directly or a staff of full-time abstractors? Or should it allow the various technical societies to organize their own volunteer abstracting services?
+
+Will any effort be made to review old documents, and to remove or Recode when necessary?
+
+Is a standard (or artificial) vocabulary necessary? How much work will be required to design and institute such a vocabulary?
+
+What techniques and devices can reasonably be developed and applied for facilitating such immediate requirements as printing, reproducing, storing, microfilming, billing, communicating, etc.?
+
+What kind of a data-processing system will the Service need just to keep track of its operation?
+
+Would the information Service keep a collection of the original documents?
+
+What special precautions must be taken to store primary records? Would a duplicate file and collection be maintained to prevent disruption of service due to fires, or other catastrophes? How much would this cost?
+
+What is the useful life of various forms of records? In use? In storage?
+
+What will the information Service physically provide in response To information requests?
+
+Will the output be in English, or a code that must be translated?
+
+Will microform copies be acceptable to the users? If not, what Improvements need be made in order to gain user acceptance?
+
+Will the information Service output be in a form that the researcher can determine which of the documents are in a locally accessible collection?
+
+Will the system give answers (e.g., "yes," "no,""5,000 tons in 1945," etc.) as well as references?
+
+Why not periodically publish inventories of research in progress, To indicate what research projects are currently being undertaken in Each specialty field, thus helping to eliminate duplication?
+
+Will there be a "special communication network" in which workers in the various specialized fields can easily circulate working papers or "think pieces?" A central agency could maintain printing, listing,(in appropriate subject-interest categories), and mailing facilities for this sort of service.
+
+Will the information Service be able to retain a file of questions to be asked of all new input material, thus providing up-to-the-minute data for standing questions?
+
+Will it be possible to stimulate more writing of "review-the-literature" papers by qualified people in the various fields, in order to provide guides for other workers?
+
+Can a partial search be made? (For example, can 1/10 of the file Be searched and the results checked to determine if further searching is justified?)
+
+Could the information Service operate on a "just search 1/2 the file for me; I don't need a comprehensive search" basis?
+
+What kind of communications network will be needed for the operation of the interim information Service? Will it be accessible to anyone by telephone or other direct device, such that the searcher can interrogate the file directly and at will?
+
+Would the Service be available for browsing?
+
+What technical-manpower drain would the proposed information service program have on other high-priority scientific programs?
+
+What professional and educational background is needed for the Personnel to operate the Service?
+
+Could university science students be used part time and during summers to help with the various processing tasks, as a means of alleviating the shortage of people with adequate technical backgrounds?
+
+Will there be special training for abstractors and translators or For documentation and information specialists, etc.?
+
+How much research is needed? What research budget is reasonable?
+
+If an information Service were established, how soon could present Partial services by government agencies be terminated and funds diverted to the Service? Could some special activities in industrial libraries be eliminated?
+
+These questions, by the very nature of their origin, are random And fragmentary. Even the full list from which they have been selected is Far from comprehensive. However, we have found them a helpful stimulus as Well as a disciplinary aid in viewing the technical-information problem in its broadest dimensions. We hope that others interested in this problem will be similarly served.
+
+A PROPOSAL FOR A NATIONAL TECHNICAL INFORMATION SERVICE
+
+Members of Stanford Research Institute have long given thought to The increasing disparity between the accumulation of new knowledge and the means for organizing it for widespread utility. With this problem brought into sharp focus by recent events on the international scene, the Institute believed it appropriate to formalize its views on the magnitude of the problem and to suggest a possible solution. In January, a draft program for a National Technical Information Service was prepared and copies distributed to members of the Presidents staff, to selected members of Congress, to various agencies within the federal establishment, and to industrial leaders and technical societies, all known to be concerned over the state of technical information affairs. This document describes a program to solve the nation's technical information problem through the establishment of a national service for the collection, processing, storing, retrieval, and dissemination of scientific and technical information from both foreign and domestic sources. The program comprises five phases, interrelated and partially concurrent:
+
+Establish a central organizing and administering, federally constituted Agency.
+
+Determine the gross dimensions of the problem.
+
+Establish an interim information center using existing services and techniques
+
+Analyze the factors that determine the design and operation of an ultimate National Technical Information Service.
+
+Encourage present and initiate additional research and engineering development programs leading to systems and equipment necessary to implement the ultimate National Technical Information Service.
+
+This proposal, and others, for solution of the problem are currently under study by the interested bodies of the nation. Meanwhile, at the Institute study of various phases of the technical information problem, both in the gross, and of specialized aspects of data handling storage, and retrieval, is continuing.
+
+DATA NEEDED ABOUT INFORMATION SOURCES AND SERVICES
+
+Before the designers of an overall information center can sketch in the outlines of the system problem, a large amount of data about the information input and the existing information services must be collected. Some of the kinds of essential data are suggested by the following.
+
+What subject fields are covered by the various journals, books, And reports? And in each case, in what depth?
+
+What are the physical sizes of journals, books, and reports? Page Size and number of pages? Frequency of publication? Kind and size of distribution? Cost or subscription price?
+
+In what language(s) do the journals, books and reports appear?
+
+Does each have an index? Are abstracts published, and where? Where is the information indexed?
+
+Who, principally, are the contributors to the technical journals? Who selects or reviews papers for publication? How long, generally, Between preparation and publication?
+
+Are microfilm copies of books, journals, and reports available?
+
+Who are the publishers of technical journals, books, and reports? Where is each located? And how long in operation?
+
+How is each publishing operation financed?
+
+What are the policies and objectives of the respective publishers in each field?
+
+What fields of science and technology does each publisher operate in? In what fields does each concentrate or specialize?
+
+In what language(s) does each publisher produce his journal(s), books, or reports?
+
+Could publishers of journals, books, and reports provide paper tape or other machine-readable copies of their works? At what cost?
+
+How much has been produced to date in the various technical Subject categories in journal, book, and report form? What is the physical mass of each? Are back copies available?
+
+What libraries with technical collections, abstracting services, Indexing services, and translating services are in existence? Where is each located? What is its organization? How is it financed?
+
+What is the size and training of the staff of the various technical-information handling or processing organizations? In each case is the organization equipped to handle classified material? In what field(s) does each information handling or processing unit operate?
+
+What classification and indexing systems are in use?
+
+What is the normal time between publication of a document and its Appearance in the libraries? When is it abstracted? Indexed? Translated?
+
+What are the types and numbers of scientific and technical people Using libraries, and the abstracting, indexing, and translating services? In what ways does the technical community feel it is being adequately or Inadequately aided by these services?
+
+Would the various libraries and services be amenable to negotiation of changes or increase in area of coverage, or other changes of service, to fit a reasonable, overall system, if government controlled and subsidized?
+
+What are the charges for service by libraries? Abstractors? Indexes? Translators? Which of these services are self-supporting?
+
+Are special compilations of abstracts, bibliographies, or Translations available? And for what fees? How long required to provide such special services?
+
+THE SOVIET APPROACH TO THE INFORMATION PROBLEM
+
+The Soviet Union has a comprehensive technical information system in operation. In 1952 the Soviet All Union Institute of Scientific and Technical Information was established in Moscow. By 1957 the Institute had a permanent staff of 2300 translators, abstractors, and publishers. This staff is supplemented by more than 20.000 cooperating professional scientists and engineers throughout the U.S.S.R. who act as part-time translators and abstractors in their specialized fields. The Institute publishes 13 "abstract journals" which annually contain over 400,000 abstracts of technical articles from more than 10,000 journals originating in about 80 countries. It systematically translates, indexes, and abstracts about 1400 of the 1800 scientific journals published in the United States.
+
+To reduce the time between the initial appearance of the more Important information in any of the world's journals and its reaching the hands of Soviet scientists and engineers through the normal route of the abstract journals, "Express Information Journals" are also printed. These carry summary information on foreign technological developments Within two or three weeks after their receipt. The work done is reported to be not only comprehensive but also of high quality.
+
+The Institute provides numerous other technical in formation services, such as provision of bibliographies, micro and full size copies of original printed material, technical dictionaries, and foreign-language dictionaries.
+
+The Institute maintains an extensive program aimed to introduce Machine methods to information handling. This includes translating machines, and mechanisms for codifying, storing, and retrieving technical information. Significant progress by the Institute towards information mechanization methods and systems is reported.

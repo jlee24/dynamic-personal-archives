@@ -1,0 +1,374 @@
+Display-Selection Techniques for Text Manipulation
+
+WILLIAM K. ENGLISH, MEMBER, IEEE, DOUGLAS C. ENGELBART, MEMBER, IEEE, AND MELVYN L. BERMAN
+
+Abstract: Tests and analysis to determine the best display selection techniques for a computer-aided text-manipulation system reveal that the choice does not hinge on the inherent differences in target-selection speed and accuracy between the different selection devices. Of more importance are such factors as the mix of other operations required of the select-operation hand, the ease of getting the hand to and gaining control of a given selection device, or the fatique effects of its associated operating posture. Besides a light pen, several cursor-controlling devices were tested, including a joystick and an SRI-developed device known as a "mouse." The study was aimed directly at finding the best display selection means for our own text-manipulation system but generalizations applicable to other types of on-line systems were derived.
+
+1. INTRODUCTION
+
+This paper describes an experimental study into the relative merits of different CRT display-selection devices as used within a real-time, computer-display, text-manipulation system in use at Stanford Research Institute.
+
+Briefly, we have developed a comprehensive on line text-manipulation system. We wanted to determine the best means by which a user can designate textual entities to be used as "operands" in the different text-manipulation operations.
+
+Techniques and devices for display-entity operand selcction represent a major component in any display control scheme, and are readily isolated for purposes of comparative testing, once the procedural environment in which selection is done has been established.
+
+An important conclusion of our experimentation is that this environment has considerable effect upon the choice of display-selection means for a given display-control system.
+
+Our text-manipulation system is designed for daily usage, and our experiments and conclusions stem from extensive personal experience as users as well as designers.
+
+To emphasize this, we point out that for two years we have been using the system for producing most of the internal memos -- and all of the proposals and reports -- associated with our research program.
+
+This paper itself was extracted from one of these reports -- reorganized and modified by use of the system. See 1 (ENGLISH 1).
+
+The format and writing style which represent an important experimental component of our research, are left in the form with which we work.
+
+Statements -- be they subheads, phrases, sentences, or paragraphs -- are numbered and presented in hierarchical order. These statement numbers are one "handle" by which a statement may be grasped for any of the operations performed on- or off-line.
+
+References, which appear in the Bibliography at the end of the paper, are shown in the text by a mention of their statement numbers "see 1 (ENGLISH 1)", rather than by the more familiar superscript notation.
+
+The tests of the display-selection devices simulated the general situation faced by a user of our on-line system when he must interpose a screen-selection operation into his on-going working operations. See Fig. 1 for a layout of the on-line work station. 
+
+Fig. 1. The on-line system workstation showing the CRT display, keyboard, pushbuttons, and mouse.
+
+The user has generally been entering information on the typewriter-like keyboard.
+
+To begin making the screen selection, his righl hand leaves the keyboard and takes hold of ("accesses," in our terminology) the selection device.
+
+By moving this device he controls the position on the screen of an associated tracking mark (or "bug"), placing it over the "target" text entity.
+
+He then actuates a pushbutton associated with the particular selection device, to tell the computer that he is now "pointing at" the target entity.
+
+The computer puts a special mark under the entity which it determines as having been selected, to give the user an opportunity to see if a correct selection has been made.
+
+We designed and conducted our experiments in order to learn more about the following characteristics of the operand-selecting devices currently available in our on line system:
+
+The comparative speed with which they could be used to select material on the display screen. Two kinds of time period were measured:
+
+"Access time": the time it takes for the user to move his hand from the keyboard to the operand selecting device.
+
+"Motion time": the time period beginning with the first movement of the bug and ending with the "select" action fixing the bug at some particular character position.
+
+The comparative ease with which an untrained user could become reasonably proficient in using the various devices.
+
+The comparative error rates of the various devices.
+
+2. DESCRIPTION OF THE DEVICES TESTED
+
+The tests included both a light pen and various devices to position a cursor (or "bug" as we call it) on the CRT screen.
+
+Operand entities displayed on the screen are chosen by selecting a character within the operand entity (word, line, or statement).
+
+The light pen or bug is first located near the desired character, then the SELECT switch on the device is depressed (or in the case of the knee control a special "CA" key on the keyboard is struck).
+
+Grafacon (see Fig. 2): 
+
+Fig.2 Bug-positioning devices from left to right: joystick, Grafacon, and mouse
+
+The Grafacon was manufactured by Data Equipment Company as a graphical input device for curve tracing. See 2 (FLETCHER 1). The particular device that we tested is no longer marketed under this name. Data Equipment Company now markets the Rand Tablet under the name "Grafacon." See 3 (DAVIS 1).
+
+It consists of an extensible arm connected to a linear potentiometer, with the housing for the linear potentiometer pivoted on an angular potentiometer.
+
+The voltage outputs from the Grafacon represent polar coordinates about the pivot point, but are interpreted by the system exactly as the outputs from the "mouse" or joystick, which represent rec tangular coordinates.
+
+This means that to trace a straight line across the screen with the bug, the user must actually move his hand in a slight arc.
+
+We planned to program polar-to-rectangular conversion into our bug-tracking process, but we initially coupled the Grafacon "directly" (i.e., with this geometric "tracking distortion") to get a general feel for its performance. We found no evidence tha the user was aware of this distortion and never didwrite the conversion routine to eliminate it.
+
+A knob on the Grafacon arm is moved about by the user, and is depressed to activate the select switch (added by SRI) associated with the Grafacon.
+
+The Grafacon as originally obtained was equipped with a pen mounted on the potentiometer arm. This was replaced with a knob to better suit our purposes.
+
+Joystick (see Fig. 2):
+
+The joystick that we used was manufactured by Bowmar Associates (Model X-2438).
+
+It is constructed from two potentiometers, mounted perpendicularly and coupled to a vertical stick in such a way that they resolve the motion of the stick into two components.
+
+The original stick was 1 1/2 inches long; a 3 inch extension to the shaft, housing a switch actuated by pressing down on the stick itself, was added by SRI.
+
+Two modes of operation with the joystick were implemented:
+
+An "absolute" mode, in which the bug's position on the screen corresponds to the position of the joystick handle; and
+
+A "rate" mode, in which the bug's direction of motion is determined by the direction of joystick handle deflection, and the bug's rate of motion is determined by the amount of joystick deflection.
+
+Mouse (see Fig. 2):
+
+The "mouse" was developed by SRI in connection with this research.
+
+It is constructed from two potentiometers, mounted orthogonally, each of which has a wheel attached to its shaft (see Fig. 3). 
+
+Fig. 3 Bottom side of mouse, showing mechanical details
+
+The mounting frame for the potentiometers is enclosed in a 2 inch x 3 inch x 4 inch wooden case.
+
+As the case is moved over a surface (e.g., the table surface in front of a display)
+
+the wheels ride on the surface and turn the potentiometer shafts, with a combined sliding and turning action depending upon the relative orientation of the motion and the wheel axes,
+
+to resolve the motion into two orthogonal components in much the same manner as do the disks in planimeters or in the old-fashioned mechanical differential analyzers.
+
+A travel of about five inches is required for full edge-to-edge or top-to-bottom coverage of the CRT screen.
+
+A switch mounted on the case is used for the select function.
+
+Knee Control (see Fig. 4): 
+  
+Fig 4 Knee Control bug-positioning device
+
+A preliminary model of a knee control was made for this research.
+
+It consists of two potentiometers and associated linkage plus a knee lever. The linkage is spring-loaded to the right and gravity-loaded downward.
+
+The user pushes the lever with his knee; a side to-side motion of the knee moves the bug edge-to-edge, while the top-to-bottom bug movement is controlled by an up-and-down motion of the knee (i.e., a rocking motion on the ball of the foot).
+
+Light Pen (see Fig. 5): 
+
+Light pen
+ 
+The light pen used was manufactured by Sanders Associates of Nashua, New Hampshire (Model EO-CH).
+
+It consists of a hand-held pen coupled to a photo multiplier tube by a fiber optic bundle.
+
+The pen is pointed at the desired character on the CRT screen with the aid of a projected circle of orange light indicating the approximate field of view of the lens system.
+
+A switch on the pen unit is used for making the selection.
+
+3. DESCRIPTION OF THE EXPERIMENTS
+
+The experiments were designed to test the various operand-Selecting devices under conditions similar to those that the user would encounter when actually working
+
+However, certain features of the live working conditions were not closely related to the actual efficiency of the operand-selecting devices, such as
+
+The need to enter literal input from the keyboard,
+
+The need to designate commands, and
+
+The user's indecision in choosing which display elltity to select.
+
+We tried either to eliminate these features from the experimental environment, or to fix them in some standard way through the experiment
+
+Two different kinds of display-entity "targets" were presented in the experiments: "word" targets and "character" targets. The target patterns presented to the subject were configurations of x's rather than actual text. 
+
+Fig 6: Targets used to experimentally evaluate the operand-locating devices and results of an incorrect selection  
+a) "Character mode" operation showing the target (Middle X) and bug (plus sign)  
+b) "Word Mode" operation. The target is the middle five X's  
+c) An incorrect selection is underlined. The configuration of X's and the bug remain on the display  
+d) A correc selection. The position of the target is indicated by the bug mark and underline
+
+A configuration simulating the "character mode" operation of the system consisted of nine x's, in a three by three array, with the array as a whole randomly placed on the display. The specific target entity was the middle x [see Fig. 6(a)].
+
+A configuration simulating the "word mode" operation of the system consisted of nine groups of five x's each, in a three by three "word" array, with the array as a whole randomly placed on the display. The target entity was any one of the five middle x's [i.e., any character in the middle " word"; see Fig. 6(b)].
+
+The subject was given a series of tests with each of these two types of targets, and was to perform the following task sequence:
+
+When the target appeared on the display screen, the subject was to strike the keyboard space-bar with his right hand, causing the bug to appear on the display. (Requiring that he use his right hand for both the space bar and the operand-selecting device made the experimental task closer to the actual on-line environment, where the user would often have both hands at the keyboard before moving to the operand selecting device. It also gave us a way of measuring the access times for the various devices.)
+
+The subject was then to move his hand to the bug-positioning device being tested, and use it to guide the bug to the target entity on the display.
+
+When the bug and the target coincided the subject was to "fix" the bug at that location, using the select switch of the bug-positioning device.
+
+An incorrect selection was signalled by a bell, and the incorrectly selected entity was underlined in the displayed target pattern [see Fig. 6(c)]; the subject was then to relocate the bug and reselect the target entity.
+
+A correct selection caused the target to dis appear, and the word "CORRECT" to appear on the display screen [see Fig. 6(d)]. About three seconds later, the next target pattern was displayed (in some new randomly-determined position), and the process was repeated.
+
+When the light pen rather than a bug-positioning device was used, the task sequence was much the same: after the target appeared, the subject was to strike the keyboard space bar with his right hand, then grasp the light pen and point it at the target entity (with the aid of the finder beam). The subject "fixed" his choice by depressing the select switch on the light pen. Correct and incorrect selections were signaled in the same way as with the bug-positioning devices.
+
+There were two groups of subjects: eight "experienced" subjects who were already somewhat familiar with the on-line system, and three "inexperienced" subjects who had never before used either the system or the particular devices being tested. The experienced group were given experiments to test the devices after a reasonable amount of practice. The inexperienced group were tested to see how quickly and how well they learned to use the devices without previous practice.
+
+For the experienced subjects, the entire testing procedure, which was broken into two time periods proceeded as follows:
+
+The subject was given a brief explanation of the experiment and the target patterns.
+
+He was then given his first device and allowed to practice with it for about two minutes.
+
+Next he was tested using this first device, in both the "word" mode and the "character" mode of selection. Thirty-two targets of each type were presented. 3d1d After a two-minute rest period, the subject was given his second device and allowed to practice with it for about two minutes. He was then tested with this device -- again, with 32 targets of each type.
+
+This same sequence of rest, practice, and testing was carried out for each of the devices being tested. This constituted the first time period of the experiment.
+
+During the second time period, the subject proceeded backward through the list of devices, begining with the last device he had used in the previous time period, then using the next-to-last device, and so on.
+
+Each subject began with a different device and was presented with devices in a different order.
+
+For inexperienced subjects, the experimental procedure was somewhat different:
+
+The subject was given an explanation of the experiment, the target patterns, and the way the particular operand-selecting device worked. He was allowed to get the feel of the device, but was not given a practice period. He was then presented with ten sequences of eight target-patterns each, in the "character" mode.
+
+This procedure was followed for each of the devices being tested.
+
+Each subject began with a different device, and was given a different order of devices to work with.
+
+The computer was used extensively in conducting these experiments: for presenting target patterns, signalling of correct and incorrect selections, determining the (random) position of the next target pattern, determining the short time-delays between a correct selection and the presentation of the next target, etc. In addition, for each presentation-selection event, the computer recorded the following information on magnetic tape for later analysis:
+
+The position of the bug (in relation to the target entity) was recorded each 10 mulliseconds.
+
+The times the subject hit the space bar, and the times he made either a correct or an incorrect entity selection, were recorded and appropriately tagged to aid in identifying these significant points in the late data analysis.
+
+The length of the experimental runs; the rest periods allowed between runs; the order in which the various de vices were tested; and the modes of operation ("character" or "word" targets) were controlled by the person con ducting the experiments.
+
+4. DESCRIPTION OF THE DATA ANALYSIS
+
+The analysis software was designed to allow flexibility in studying individual performance curves and results. This software provided operator commands for scanning the recorded data on the magnetic tape, selectively printing out results, producing CRT-displayed curves of each subject's performance, and calculating certain averages over a block of tests.
+
+Tape-handling operations, controlled by commands from the on-line keyboard, facilitate searching through the data recorded on the magnetic tapes. These commands allowed one to scan forward or backward by one 32-target block of tests (or, an 8-target block, in the records for inexperienced subjects); and, within that block, to scan forward or backward one target (i.e. one presentation-selection event) at a time.
+
+For each target-fix, the CRT could display a graph showing the bug's distance from its target entity as a function of time. This was displayed as two curves (see Fig. 7), one showing variation with time of horizontal distance, and the other of vertical distance. The time-count was begun when the target appeared on the display. Vertical lines on the curves mark the time at which the space bar was struck and the time at which the target was correctly selected. Incorrect selections are shown as x's on the curve. 
+  
+Fig. 7. Analysis curves of the experiments
+
+Figure 7 presents two examples of these curves. Figure 7(a) shows a typical performance curve for the Grafacon; Fig. 7(b) shows an example of joystick performance in which the subject made several errors before selecting the correct target entity.
+
+When viewed on-line on the CRT display, the scale of these curves can be changed by keyboard entered commands that independently change either the distance or the time scale. This time scale change feature was included because of the radical variations in the times, among various devices and various subjects. The distance scale change allows detailed examination of performance when the bug is near the target.
+
+When studying a given target-fix event, the experimenter can, if he wishes, initiate output (to the on-line typewriter) of performance data: the time at which the space bar was struck, the time at which the bug movement began, the time at which the target was correctly selected, and the number of errors (incorrect selections) made. This software also computed and printed out the following incre mental times: the access time (from the time the space bar was struck until the time the bug movement began, measuring how long it took the subject to move his hand from the keyboard to the device); the motion time (from the time the bug began moving until the time the target was correctly selected); and total time (from the time the space bar was struck until the time the target was correctly selected -- i.e., the sum of access time plus motion time).
+
+Finally, there is another command which causes the computer to search through a 32-target block of target fixes and compute (for output to the on-line typewriter) the average incremental times, and total number of errors, for that block.
+
+The CRT curves of distance-vs.-time could be scanned with the on-line system, in order to determine where the subjects spent most of their time; how much time they spent in actually selecting the target entity after the bug was already positioned correctly; whether the errors seemed more predominant in one direction than in another (horizontally or vertically); and other such detailed information relating to individual per formances.
+
+The numerical averages computed with the help of the rest of the analysis software were collected and summarized as experimental results, presented in the following description.
+
+5. EXPERIMENTAL RESULTS
+
+Summary data: Figs. 8 through 10 contain the bar charts comparing the various operand-selecting devices with respect to the time required for a correct selection. 
+  
+Fig. 8. Comparison of the operand-locating devices for "experienced" subjects, "Character Mode" operations  
+Fig. 9. Comparison of the operand-locating devices for "experienced" subjects, "Word Mode" operations  
+Fig. 10. Comparison of the operand-locating devices for "inexperienced" subjects, "Character Mode" operation
+
+Figures 8 and 9 are taken from the results of the eight experienced subjects, some of whom were very familiar with the on-line system and had used the devices often. Figure 8(a) shows the average total time (for all experienced subjects) required for a correct selection of the "character" target, with no penalty for errors; Figure 8(b) shows the results of the same tests with a 30 percent penalty for errors. Figure 9(a) and 9(b), respectively, show the same for the "word" target.
+
+The 30 percent error penalty is an approximate figure arrived at by the following argument: if a user wished to correct an incorrectly selected operand, he would need to strike the "Command Delete" key with his other hand before re-attempting a correct operand selection. This would take about as long as the time required to strike the space bar when the target first appeared. From the experiments we found that the time required to strike the space bar accounted for about 30 of the total time. Thus we computed the time for the error-penalty graphs by multiplying the subject's error rate on that device by 30 percent of his average time, and adding that figure to the total time.
+
+Figure 10 shows the results from the tests of subjects who had had no previous experience with the devices. Figure 10(a) imposes no penalty for errors. Figure 10(b) imposes a 30 percent penalty for errors, as explained above. 
+
+Fig. 11. Error rates for "experienced" sujects  
+Fig. 12. Error rates for "inexperienced" sujects, "Character Mode" operations
+
+Figures 11 and 12 compare the error rates for the various devices. Figure 11 shows the results for the "character" and "word" tests, as performed by experienced subjects (using four different operand locating devices); Figure 12(a) shows the results of the "character" tests for inexperienced subjects (using six different operand-locating devices).
+
+These results indicate that for the more experienced subjects the mouse was both faster and more accurate than any other device -- including the light pen. Inexperienced subjects, however, tended to perform better with both the light pen and the knee control than with the mouse.
+
+As mentioned above, the knee control was not developed soon enough to include it in the tests for the experienced subjects (where we included only devices that had been available for some time, in order to avoid bias). We did, however, perform a few individual check tests with experienced subjects, using the knee control; in these tests the knee control appeared both slower and less accurate than the light pen and mouse.
+
+Inexperienced subjects found the knee control was the fastest device. Undoubtedly the main reason for this was that the knee control, unlike all the others, has no access time. (If the access time is subtracted from the total times measured for the other devices, the knee control no longer show up so favorably.)
+
+Inexperienced subiects also found the light pen faster than the mouse. A reason for this may be that the light pen exploits one's inherent tendency to select something by straightforwardly "pointing" at it rather than by guiding a bug across a screen toward it from a remote control. This means that an inexperienced subject can become reasonably proficient in using a light pen with relatively little practice.
+
+The joystick proved to be both the slowest and the least accurate of the devices we tested, in both modes of its operation ("absolute" and "rate"), and among both the experienced and inexperienced subjects.
+
+It is interesting to note, however, that both the joystick and the Grafacon showed up more favorably (relative to the other devices) when used to select word entities rather than character entities. These two devices seem to perform better where fine control is less critical; they can move into range quickly at the grosser level.
+
+There were some obvious defects in the particular devices tested. For this reason, and because of the very limited nature of the tests, we should be careful not to apply these results to the class of device used, but only to the particular examples that were tested.
+
+Both the Grafacon and joystick suffer from a lack of independence in the actions required to actuate the select switch and to move the bug. By contrast, the mouse is moved by an action of the entire hand, while the switch is easily operated by one finger and does not tend to cause bug motion.
+
+With the joystick the scale factor between bug motion and device motion was about 4:1 for a normal finger position on the stick; for the mouse and Grafacon, the scale was about 2:1. This may have contributed to the lack of fine control (and high error rate) for the joystick.
+
+The rate mode with the joystick is very poor, partly because of the software implementation.
+
+We used a nonlinear relationship between deflection and rate of bug motion (approximating a square law), and left too much dead space around the center position of the stick. This made large bug motions very easy, but too much stick motion was involved in changing directions.
+
+In the experiments one reason for the very high error rate in this mode is that the subjects tried to "catch" the target on the way past, to avoid changing direction.
+
+The light pen may have showed up poorly for several reasons.
+
+The mounting was somewhat clumsy and the subject had to reposition the pen on this mounting after each target selection, returning to the keyboard in time for the next target presentation. This tended to cause hurried motions, and may have resulted in many of the incorrect selections made.
+
+A second reason for the higher error rate is that for some tests the intensity-of the displayed targets was too high, making it easy for the pen to pick up light from an adjoining character. This difficulty could be overcome, and the overall per formance of the light pen improved, if computer feedback were provided, to indicate to the subject which character the pen was actually detecting.
+
+We initially expected to find that the starting distance between the bug and its target entity on the face of the display would significantly affect the motion time required for selecting the target.
+
+However, the results compiled and plotted to test this hypothesis did not show any significant correlation.
+
+An examination of the CRT-displayed perform ance curves suggests that this may be because the time to move the bug close to the target is relatively small compared to the average access time, and to the average time required for selecting the target after the bug has been moved close to it.
+
+Examination of the CRT-displayed curves (distance from target as a function of time) allows several other observations as well:
+
+In using the Grafacon and the joystick (rate mode), the subjects tended to overshoot the target, losing a significant amount of time in changing the bug's direction and bringing it back into position for a select action.
+
+While our experiments did not provide a measure of access time for the light pen, we found (from observing the subjects) that a good deal of time was consumed in reaching from the keyboard to grasp the light pen.
+
+Though the knee control showed up well in its performance as compared with the other devices, an examination of its CRT-displayed curves shows that its operation is relatively unsmooth; the bug tends to move erratically, and it appears to be difficult to move the bug vertically on the display.
+
+Our other source of "data" -- gained by asking the subjects how they liked the various devices -- reveals that the light pen, while operating in a natural way, does tend to be fatiguing; and that the mouse -- though it requires some practice -- seems to be a satisfying device to use (accurate, and non-fatiguing).
+
+6. CONCLUSIONS
+
+Some specific conclusions about the relative merits of the devices.
+
+The operand-selecting devices that showed up well in our tests were the mouse; the knee control; and the light pen. These three were generally both faster and more accurate than the other devices tested.
+
+Inexperienced subjects did not perform quite as well with the mouse as with the light pen and knee control, but experienced subjects found the mouse the "best" of the devices tested, and both groups of subjects found that it was satisfying to use and caused little fatigue.
+
+The select switches on both the Grafacon and joystick tended to move the bug and cause an incorrect fix. These two devices could probably be improved by redesigning their select switch mechanisms.
+
+Although the knee control was only primitively developed at the time it was tested, it ranked high in both speed and accuracy, and seems very promising. It offers the major advantage that it leaves both hands free to work at the keyboard.
+
+The major advantage of the light pen appeared to be its psychological "naturalness" of operation in pointing at the item to be selected. This means that an untrained user can quickly understand it and gain enough proficiency to do useful work.
+
+Weighed against this, however, is the disadvantage that the pen must be held in the air while it is being used. Many subjects expressed feelings of fatigue while using it for a prolonged time. To some extent, this disadvantage might be alleviated by a carefully designed mounting for the pen.
+
+Observations about the experiments.
+
+The principal value of our experimental work to date was in developing the techniques of experiment and analysis, and in isolating some of the factors in the design of display-selection means that are important to fast operation. 6b2 Any comparative evaluation of the different types of devices must be qualified to such an extent that it is not significantly useful in a direct sense toward choosing from among the types of devices.
+
+What is important to fast, efficient display selection is the particular feel to the user of the thing he grasps and moves, e.g.:
+
+Where he reaches to grasp it;
+
+How it fits his grasp;
+
+How the scale of horizontal displacement is related to bug motion on the screen;
+
+How he actuates the select switch;
+
+How much mass he moves;
+
+How the large-motion capability of arm and wrist can coordinate with fine-motion capability of the fingers;
+
+How he can rest his arm, hand, and wrist (or how much weight he has to support);
+
+And whether, when he removes his hand, the thing stays put, returns to a standard position, drifts away (as our modified form of the Grafacon did), falls down on the table, or has to be put down or hung on something.
+
+To make final judgments between display-selection devices, more must be learned about the desirable way to adjust and coordinate each of these factors. Then it must be seen which basic-device approach can best provide this.
+
+Comparative comments of a general sort can follow these observations:
+
+For the light pen, there is enough less freedom to vary the above-listed design factors (than there is for the other devices) that its probability of being the best candidate diminishes appreciably.
+
+Any final, significant differences between best designs for joy stick, Grafacon, and mouse are not descernible now.
+
+The fact that a no-hands bug-control device can allow both hands to remain on the keyboard is an important factor in its consideration. Even if its selection speed and resolution could not be developed to match that of a good hand-controlled device, what we are learning about the importance of smooth coordination between the different prim itive operations would make it a strong candidate.
+
+An important, general conclusion from our tests is that the relative value of different schemes cannot be judged on the basis of their appeal to inexperienced users.
+
+The net conclusions drawn from our work to date seem disappointingly nonspecific -- but therein lies one of the most important lessons we have learned.
+
+This "lesson" can be expressed as follows:
+
+Display-control research is important because it provides basic processes whose speed and fiexibility promise to affect strongly the speed and flexibility that can be developed for higher-level processes. And it is this latter speed and flexibility, for a human to execute tasks at a meaningful intellectual level, which is the goal of research in on-line working systems.
+
+Thus, the display-control processes whose design is our direct concern are really important only in the way in which they serve as components in larger processes.
+
+The value of our design effort then must be measured in the improvement it thus provides in higher-level performance.
+
+To pursue this kind of development and evaluation work, it is necessary to consider the interaction of higher-level considerations with those of direct involvement with the low-level processes where concern is likely to focus.
+
+Thus, it seems unrealistic to expect a flat statement that one device is better than another. The details of the usage system in which the device is to be embedded make too much difference.
+
+Irrespective of the speeds with which one can make successive display selections with a given device, the tradeoffs for the characteristics of fatigue, quick transfer to and from a keyboard, etc., will heavily weight the choice among the devices. And these tradeoffs, and the possibilities for designing around them, are not apparent until after a good deal of design and analysis has been done for the rest of the system.
+
+BIBLIOGRAPHY
+
+1 (ENGLISH 1 ) W. K. English, D. C. Engelbart, and Bonnie Huddart, "Computer aided display control," Stanford Research Institute, Menlo Park, Calif., Contract NAS 1-3988, July 1965.
+
+2 (FLETCHER 1 ) W. E. Fletcher, "On-line input of graphical data," presented at the 1963 Digital Equipment Computer Users Society Meeting, Livermore, C.alif.
+
+3 (DAVIS 1) M. R. Davis and T. O. Ellis, "The RAND tablet: a man-machine graphical communication device," Proc. 1964 Fall AFIPS Joint Computer Conf., vol. 26.
+
+4 (BARMACK 1) J. E. Barmack and H. W. Sinaiko, "Human factors problems in computer-generated graphic displays, " Institute for Defense Analyses IDA/HQ 66-4820, April 1966.
+
+5 (ENGELBART 1) D. C. Engelbart, "Augmenting human intellect: a conceptual framework," Stanford Research Institute, Menlo Park, Calif., Summary Report, Contract AF 49(638) 1024, SRI Project 3578, October 1962.
+
+6 (ENGELBART 2) P. W. Howerton and D. C. Weeks, Vistas In Information Handling, vol. 1, The Augmentation of Man's Intellect by Machine. Washington, D. C.: Spartan Books, 1963.

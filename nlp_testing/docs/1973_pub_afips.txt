@@ -1,0 +1,301 @@
+DESIGN CONSIDERATIONS FOR KNOWLEDGE WORKSHOP TERMINALS 
+
+DOUGLAS C. ENGELBART 
+14-MAR-73 17:15 (AUGMENT,13851,)
+
+
+INTRODUCTION
+
+The theme of this paper ties directly to that developed in a concurrent paper "The Augmented Knowledge Workshop," [1], and assumes that: "intelligent terminals" will come to be used very, very extensively by knowledge workers of all kinds; terminals will be their constant working companions; service transactions through their terminals will cover a surprisingly pervasive range of work activity, including communication with people who are widely distributed geographically; the many "computer-aid tools" and human services thus accessible will represent a thoroughly coordinated "knowledge workshop"; most of these users will absorb a great deal of special training aimed at effectively harnessing their respective workshop systems -- in special working methods, conventions, concepts, and procedural and operating skills.
+
+Within the Augmentation Research Center (ARC), we have ten years of concentrated experience in developing and using terminal systems whose evolution has been explicitly oriented toward such a future environment; from this background, two special topics are developed in this paper:
+
+What we (at ARC) have learned about controlling interactive-display services, and the means we have evolved for doing it -- the particular devices (mouse, keyset, keyboard), feedback, and protocol/skill features; and design data, usage techniques, learnability experience, and relevant needs and possibilities for alternatives and extensions.
+
+Our considerations and attitudes regarding the distribution of functions between terminal and remote/shared resources -- including assumptions about future-terminal service needs, our networking experience, and foreseen trends in the associated technologies.
+
+The references [2-19] include considerable explicit description of developments, principles, and usage (text, photos, and movies) to support the following discussion. Annotation is included, not only to provide a guide for selective follow up, but also to supplement the substance to the body of the paper by the nature of the commentary.
+
+
+CONTROL MEANS 
+
+Introduction
+
+Our particular system of devices, conventions, and command-protocol evolved with particular requirements: we assumed, for instance, that we were aiming for a workshop in which these very basic operations of designating and executing commands would be used constantly, over and over and over again, during hour-after-hour involvement, within a shifting succession of operations supporting a wide range of tasks, and with eventual command vocabularies that would become very large.
+
+The Mouse for Display Selection
+
+During 1964-65 we experimented with various approaches to the screen selection problem for interactive display work within the foregoing framework. The tests [6,7] involved a number of devices, including the best light pen we could buy, a joy stick, and even a knee control that we lashed together. To complete the range of devices, we implemented an older idea, what became known as our "mouse," that came through the experiments ahead of all of its competitors and has been our standard device for eight years now.
+
+The tests were computerized, and measured speed and accuracy of selection under several conditions. We included measurement of the "transfer time" involved when a user transferred his mode of action from screen selection with one hand to keyboard typing with both hands; surprisingly, this proved to be one of the more important aspects in choosing one device over another.
+
+The nature of the working environment diminished the relative attractiveness of a light pen, for instance, because of fatigue factors and the frustrating difficulty in constantly picking up and putting down the pen as the user intermixed display selections with other operations.
+
+The mouse is a screen-selection device that we developed in 1964 to fill a gap in the range of devices that we were testing. It is of palm-filling size, has a flexible cord attached, and is operated by moving it over a suitable hard surface that has no other function than to generate the proper mixture of rolling and sliding motions for each of the two orthogonally oriented disk wheels that comprise two of the three support points.
+
+Potentiometers coupled to the wheels produce signals that the computer uses directly for X-Y positioning of the display cursor. It is an odd-seeming phemomenon, but each wheel tends to do the proper mix of rolling and sideways sliding so that, as the mouse is moved, the wheel's net rotation closely matches the component of mouse movement in the wheel's "rolling" direction; one wheel controls up-down and the other left-right cursor motion.
+
+Exactly the same phenomenon, applied in the mechanical integrators of old-fashioned differential analyzers, was developed to a high degree of accuracy in resolving the translation components; we borrowed the idea, but we don't try to match the precision. Imperfect mapping of the mouse-movement trajectory by the cursor is of no concern to the user when his purpose is only to "control" the position of the cursor; we have seen people adapt unknowingly to accidental situations where that mapping required them to move the mouse along an arc in order to move the cursor in a straight line.
+
+That the mouse beat out its competitors, in our tests and for our application conditions, seemed to be based upon small factors: it stays put when your hand leaves it to do something else (type, or move a paper), and re-accessing proves quick and free from fumbling. Also, it allows you to shift your posture easily, which is important during long work sessions with changing types and modes of work. And it doesn't require a special and hard-to-move work surface, as many tablets do. A practiced, intently involved worker can be observed using his mouse effectively when its movement area is littered with an amazing assortment of papers, pens, and coffee cups, somehow running right over some of it and working around the rest.
+
+One-Handed, Chording Keyset as Universal "Function" Keyboard
+
+For our application purposes, one-handed function keyboards providing indvidual buttons for special commands were considered to be too limited in the range of command signals they provided. The one-handed "function keyboard" we chose was one having five piano-like keys upon which the user strikes chords; of the thirty-one possible chords, twenty six represent the letters of the alphabet. One is free to design any sort of alphabetic-sequence command language he wishes, and the user is free to enter them through either his standard (typewriter-like) keyboard or his keyset.
+
+The range of keyset-entry options is extended by co-operative use of three control buttons on the mouse. Their operation by the mouse-moving hand is relatively independent of the simultaneous pointing action going on. We have come to use all seven of the "chording" combinations, and for several of these, the effect is different if while they are depressed there are characters entered -- e.g. (buttons are number 1 to 3, right to left) Button 2 Down-Up effects a command abort, while "Button 2 Down, keyset entry, Button 2 Up" does not abort the command but causes the computer to interpret the interim entry chords as upper case letters.
+
+These different "chord-interpretation cases" are shown in the table of Appendix A; Buttons 2 and 3 are used effectively to add two bits to the chording codes, and we use three of these "shift cases" to represent the characters available on our typewriter keyboard, and the fourth for special, view-specification control. ("View specification" is described in [1].)
+
+Learning of Cases 1 and 2 is remarkably easy, and a user with but a few hours practice gains direct operational value from keyset use; as his skill steadily (and naturally) grows, he will come to do much of his work with one hand on the mouse and the other on the keyset, entering short literal strings as well as command mnemonics with the keyset, and shifting to the typewriter keyboard only for the entry of longer literals.
+
+The keyset is not as fast as the keyboard for continuous text entry; its unique value stems from the two features of (a) being a one-handed device, and (b) never requiring the user's eyes to leave the screen in order to access and use it. The matter of using control devices that require minimum shift of eye attention from the screen during their use (including transferring hands from one device to another), is an important factor in designing display consoles where true proficiency is sought. This has proven to be an important feature of the mouse, too.
+
+It might be mentioned that systematic study of the micro-procedures involved in controlling a computer at a terminal needs to be given more attention. Its results could give much support to the designer. Simple analyses, for instance, have shown us that for any of the screen selection devices, a single selection operation "costs" about as much in entry-information terms as the equivalent of from three to six character strokes on the keyset. In many cases, much less information than that would be sufficient to designate a given displayed entity.
+
+Such considerations long ago led us to turn away completely from "light button" schemes, where selection actions are used to designate control or information entry. It is rare that more than 26 choices are displayed, so that if an alphabetic "key" character were displayed next to each such "button," it would require but one stroke on the keyset to provide input designation equivalent to a screen-selection action. Toward such tradeoffs, it even seems possible to me that a keyboard-oriented scheme could be designed for selection of text entities from the display screen, in which a skilled typist would keep his hands on keyboard and his eyes on the screen at all times, where speed and accuracy might be better than for mouse-keyset combination.
+
+NOTE: For those who would like to obtain some of these devices for their own use, a direct request to us is invited. William English, who did the key engineering on successive versions leading to our current models of mouse and keyset is now experimenting with more advanced designs at the Palo Alto Research Center (PARC) of Xerox, and has agreed to communicate with especially interested parties.
+
+Language, Skills and Training
+
+I believe that concern with the "easy-to-learn" aspect of user-oriented application systems has often been wrongly emphasized. For control of functions that are done very frequently, payoff in higher efficiency warrants the extra training costs associated with using a sophisticated command vocabulary, including highly abbreviated (therefore non-mnemonic) command terms. and requiring mastery of challenging operating skills. There won't be any easy way to harness as much power as is offered, for closely supporting one's constant, daily knowledge work, without using sophisticated special languages. Special computer-interaction languages will be consciously developed, for all types of serious knowledge workers, whose mastery will represent a significant investment, like years of special training.
+
+I invite interested skeptics to view a movie that we have available for loan [13], for a visual demonstration of flexibility and speed that could not be achieved with primitive vocabularies and operating skills that required but a few minutes (or hours even) to learn. No one seriously expects a person to be able to learn how to operate an automobile, master all of the rules of the road, familiarize himself with navigation techniques and safe-driving tactics, with little or no investment in learning and training.
+
+
+SERVICE NETWORK
+
+One's terminal will provide him with many services. Essential among these will be those involving communication with remote resources, including people. His terminal therefore must be part of a communication network. Advances in communicatiion technology will provide very efficient transportation of digital packets, routed and transhipped in ways enabling very high interaction rates between any two points. At various nodes of such a network will be located different components of the network's processing and storage functions.
+
+The best distribution of these functions among the nodes will depend upon a balance between factors of usage, relative technological progress, sharability, privacy, etc. Each of these is bound to begin evolving at a high rate, so that it seems pointless to argue about it now; that there will be value in having a certain amount of local processor capability at the terminal seems obvious, as for instance to handle the special communication interface mentioned above.
+
+
+EXTENDED FEATURES
+
+I have developed some concepts and models in the past that are relevant here, see especially [5]. A model of computer-aided communication has particular interest for me; I described a "Computer-Aided Human-Communication Subsystem," with a schematic showing symmetrical sets of processes, human and equipment, that serve in the two paths of a feedback loop between the central computer-communication processes and the human's central processes, from which control and information want to flow and to which understanding and feedback need to flow.
+
+There are the human processes of encoding, decoding, output transducing (motor actions), and input transducing (sensory actions), and a complementary set of processes for the technological interface: physical transducers that match input and output signal forms to suit the human, and coding/decoding processes to translate between these signal forms in providing I/O to the main communication and computer processes.
+
+In Reference [5], different modes of currently used human communcation were discussed in the framework of this model. It derived some immediate possibilities (e.g., chord keysets), and predicted that there will ultimately be a good deal of profitable research in this area. It is very likely that there exist different signal forms that people can better harness than they do today's hand motions or vocal productions, and that a matching technology will enable new ways for the humans to encode their signals, to result in significant improvements in the speed, precision, flexibility, etc. with which an augmented human can control service processes and communicate with his world.
+
+It is only an accident that the particular physical signals we use have evolved as they have -- the evolutionary environment strongly affected the outcome; but the computer's interface-matching capability opens a much wider domain and provides a much different evolutionary environment within which the modes of human communication will evolve in the future.
+
+As these new modes evolve, it is likely that the transducers and the encoding/decoding processes will be built into the local terminal. This is one support requirement that is likely to be met by the terminal rather than by remote nodes.
+
+To me there is value in considering what I call "The User-System, Service-System Dichotomy" (also discussed in [5]). The terminal is at the interface between these two "systems," and unfortunately, the technologists who develop the service system on the mechanical side of the terminal have had much too limited a view of the user system on the human side of the interface.
+
+That system (of concepts, terms, conventions, skills, customs, conventions, organizational roles, working methods, etc.) is to receive a fantastic stimulus and opportunity for evolutionary change as a consequence of the service the computer can offer. The user system has been evolving so placidly in the past (by comparison with the forthcoming era), that there hasn't been the stimulus toward producing an effective, coherent system discipline. But this will change; and the attitudes and help toward this user-system discipline shown by the technologists will make a very large difference. Technologists can't cover both sides of the interface, and there is critical need for the human side (in this context, the "user system") to receive a lot of attention.
+
+What sorts of extensions in capability and application are reasonable-looking candidates for tomorrow's "intelligent terminal" environment? One aspect in which I am particularly interested concerns the possibilities for digitized strings of speech to be one of the data forms handled by the terminal. Apparently, by treating human speech-production apparatus as a dynamic system having a limited number of dynamic variables and controllable parameters, analysis over a short period of the recent-past speech signal enables rough prediction of the forthcoming signal, and a relatively low rate of associated data transmissioon can serve adequately to correct the errors in that predictions. If processors at each end of a speech-transmission path both dealt with the same form of model, then there seems to be the potential of transmitting good quality speech with only a few thousand bits per second transmitted between them.
+
+The digital-packet communication system to which the "computer terminal" is attached can then become a very novel telephone system. But consider also that then storage and delivery of "speech" messages are possible, too, and from there grows quite a spread of storage and manipulation services for speech strings, to supplement those for text, graphics, video pictures, etc. in the filling out of a "complete knowledge workshop."
+
+If we had such analog-to-digital transducers at the display terminals of the NLS system in ARC, we could easily extend the software to provide for tying the recorded speech strings into our on-line files, and for associating them directly with any text (notes, annotations, or transcripions). This would allow us, for instance, to use cross-reference links in our text in a manner that now lets us by pointing to them be almost instantly shown the full text of the cited passage. With the speech-string facility, such an act could let us instantly hear the "playback" of a cited speech passage.
+
+Records of meetings and messages could usefully be stored and cited to great advantage. With advances in speech-processing capability, we would expect for instance to let the user ask to "step along with each press of my control key by a ten-word segment" (of the speech he would hear through his speaker), or "jump to the next occurrence of this word". Associated with the existing "Dialogue Support System" as discussed in [1], this speech-string extension would be very exciting. There is every reason to expect a rapid mushrooming in the range of media, processes, and human activity with which our computer terminals are associated.
+
+REFERENCES
+
+Ref-1. D C ENGELBART R W WATSON J C NORTON
+The Augmented Knowledge Workshop
+AFIPS Proceedings National Computer Conference June 1973 (SRI-ARC Journal File 14724)
+
+Ref-2. D C ENGELBART
+Augmenting Human Intellect: A Conceptual Framework
+Stanford Research Institute Augmentation Research Center AFOSR-3223 AD-289 565 October 1962 (SRI-ARC Catalog Item 3906)
+
+The framework developed a basic strategy that ARC is still following -- "bootstrapping" the evolution of augmentation systems by concentrating on developments and applications that best facilitate the evolution and application of augmentation systems. See the companion paper [1] for a picture of today's representaton of that philosophy; the old report still makes for valuable reading, to my mind -- there is much there that I can't say any better today.
+
+In a "science-fiction" section of the report, I describe a console with features that are clear precedents to the things we are using and doing today -- and some that we haven't yet gotten to.
+
+Ref-3. D C ENGELBART
+A Conceptual Framework For the Augmentation of Man's Intellect
+Vistas in Information Handling Howerton and Weeks (Editors)
+Spartan Books Washington D C 1963 pp 1-29 (SRI-ARC Catalog Item 9375)
+
+This chapter contains the bulk of the report [2]; with the main exclusion being a fairly lengthy section written in story-telling, science-fiction prose about what a visit to the augmented workshop of the future would be like. That is the part that I thought tied it all together -- but today's reader probably doesn't need the help the reader of ten years ago did. I think that the framework developed here is still very relevant to the topic of an augmented workshop and the terminal services that support it.
+
+Ref-4. D C ENGELBART, P H SORENSON
+Explorations in the Automation of Sensorimotor Skill Training
+Stanford Research Institute NAVTRADEVCEN 1517-1 AD 619 046 January 1965 (SRI-ARC Catalog Item 11736)
+
+Here the objective was to explore the potential of using computer-aided instruction in the domain of physical skills rather than of conceptual skills. It happened that the physical skill we chose, to make for a manageable instrumentation problem, was operating the five-key chording keyset. Consequently, here is more data on keyset-skill learnability; it diminished the significance of the experiment on computerized skill training because the skill turned out to be so easy to learn however the subject went about it.
+
+Ref-5. D C ENGELBART
+Augmenting Human Intellect: Experiments, Concepts, and Possibilities - Summary Report
+Stanford Research Institute Augmentation Research Center March 1965 (SRI-ARC Catalog Item 9691)
+
+This includes a seven-page Appendix that describes our first keyset codes and usage conventions -- which have since changed. Two main sections of about twelve pages, each of which is very relevant to the general topic of "intelligent terminal" design, are discussed above under "Extended Features".
+
+Ref-6. W K ENGLISH, D C ENGELBART, B HUDDART
+Computer Aided Display Control - Final Report
+Stanford Research Institute Augmentation Research Center July 1965 (SRI-ARC Catalog Item 9692)
+
+About twenty percent of this report dealt explicitly with the screen-selection tests (that were published later in [7]); most of the rest provides environmental description (computer, command language, hierarchical file-structuring conventions, etc.) that is interesting only if you happen to like comparing earlier and later stages of evolution, in what has since become a very sophisticated system through continuous, constant-purpose evolution.
+
+Ref-7. W K ENGLISH, D C ENGELBART, M A BERMAN
+Display-Selection Techniques for Text Manipulation
+IEEE Transactions on Human Factors in Electronics Vol HFE-8 Number 1 pp 5-15 March 1967 (SRI-ARC Catalog Item 9694)
+
+This is essentially the portion of [6] above that dealt with the screen-selection tests and analyses. Ten pages, showing photographs of the different devices tested (even the knee-controlled setup), and describing with photographs the computerized selection experiments and displays of response-time patterns. Some nine different bar charts show comparative, analytic results.
+
+Ref-8. J C R LICKLIDER, R W TAYLOR, E HERBERT
+The Computer as a Communication Device
+International Science and Technology Number 76 pp 21-31 April 1968 (SRI-ARC Catalog Item 3888)
+
+The first two authors have very directly and significantly affected the course of evolution in time-sharing, interactive-computing, and computer networks, and the third author is a skilled and experienced writer; the result shows important foresight in general, with respect to the mix of computers and communications in which technologists of both breeds must learn to anticipate the mutual impact in order to be working on the right problems and possibilities. Included is a page or so describing our augmented conferencing experiment, in which Taylor had been a participant.
+
+Ref-9. D C ENGELBART
+Human Intellect Augmentation Techniques, Final Report
+Stanford Research Institute Augmentation Research Center CR-1270 N69-16140 July 1968 (SRI-ARC Catalog Item 3562)
+
+A report especially aimed at a more general audience, this one rather gently lays out a clean picture of research strategy and environment, developments in our user-system features, developments in our system-design techniques, and (especially relevant here) some twenty pages discussing "results," i.e. how the tools affect us, how we go about some things differently, what our documentation and record-keeping practices are, etc. And there is a good description of our on-line conferencing setup and experiences.
+
+Ref-10. D C ENGELBART 
+Augmenting Your Intellect (Interview With D C Engelbart)
+Research/Development pp 22-27 August 1968 (SRI-ARC Catalog Item 9698)
+
+The text is in a dialog mode -- me being interviewed. I thought that it provided a very effective way for eliciting from me some things that I otherwise found hard to express; a number of the points being very relevant to the attitudes and assertions expressed in the text above. There are two good photographs: one of the basic work station (as described above), and one of an on-going augmented group meeting.
+
+11. D C ENGELBART, W K ENGLISH
+A Research Center for Augmenting Human Intellect
+AFIPS Proceedings-Fall Joint Computer Conference Vol 33 pp 395-410 1968 (SRI-ARC Catalog Item 3954)
+
+Our most comprehensive piece, in the open literature, describing our activities and developments. Devotes one page (out of twelve) to the work-station design; also includes photogaphs of screen usage, one of an augmented group meeting in action, and one showing the facility for a video-based display system to mix camera-generated video (in this case, the face of Bill English) with computer-generated graphics about which he is communicating to a remote viewer.
+
+Ref-12. R HAAVIND
+Man-Computer 'Partnerships' Explored
+Electronic Design Vol 17 Number 3 pp 25-32 1 February 1969 (SRI-ARC Catalog Item 13961)
+
+A very well-done piece, effectively using photographs and diagrams to support description of our consoles, environment, working practices, and experiences to a general, technically oriented reader.
+
+Ref-13.
+Augmentation of the Human Intellect - A Film of the SRI-ARC Presentation at the 1969 ASIS Conference, San Francisco (A 3-Reel Movie)
+Stanford Research Institute Augmentation Research Center October 1969 (SRI-ARC Catalog Item 9733)
+
+Ref-14. R K FIELD
+Here Comes the Tuned-In, Wired-Up, Plugged-In, Hyperarticulate Speed-of-Light Society - An Electronics Special Report: No More Pencils, No More Books -- Write and Read Electronically
+Electronics pp 73-104 24 November 1969 (SRI-ARC Catalog Item 9705)
+
+A special-feature staff report on communications, covering comments and attitudes from a number of interviewed "sages." Some very good photographs of our terminals in action provide one aspect of relevance here, but the rest of the article does very well in supporting the realization that a very complex set of opportunities and changes are due to arise, over many facets of communication.
+
+Ref-15. D C ENGELBART
+Intellectual Implications of Multi-Access Computer Networks
+Paper presented at Interdisciplinary Conference on Multi-Access Computer Networks Austin Texas April 1970 Preprint (SRI-ARC Journal File 5255)
+
+This develops a picture of the sort of knowledge-worker marketplace that will evolve, and gives examples of the variety and flexibility in human-service exhanges that can (will) be supported. It compares human institutions to biological organisms, and pictures the computer-people networks as a new evolutionary step in the form of "institutional nervous systems" that can enable our human institutions to become much more "intelligent, adaptable, etc." This represents a solid statement of my assumptions about the environment, utilization and significance of our computer terminals.
+
+Ref-16. D C ENGELBART SRI-ARC STAFF
+Advanced Intellect-Augmentation Techniques - Final Report
+Stanford Research Institute Augmentation Research Center CR-1827 July 1970 (SRI-ARC Catalog Item 5140)
+
+Our most comprehensive report in the area of usage experience and practices. Explicit sections on: The Augmented Software Engineer, The Augmented Manager, The Augmented Report-Writing Team, and The Augmented Presentation. This has some fifty-seven screen photographs to support the detailed descriptions; and there are photographs of three stages of display-console arrangement (including the one designed and fabricated experimentally by Herman Miller, Inc, where the keyboard, keyset and mouse are built onto a swinging control frame attached to the swivel chair).
+
+Ref-17. L G ROBERTS
+Extensions of Packet Communication Technology to a Hand Held Personal Terminal
+Advanced Research Projects Agency Information Processing Techniques 24 January 1972 (SRI-ARC Catalog Item 9120)
+
+Technology of digital-packet communiation can soon support mobile terminals; other technologies can soon provide hand-held display terminals suitable for interactive text manipulation.
+
+Ref-18. R SAVOIE
+Summary of Results of Five-Finger Keyset Training Experiment, Project 8457-21
+Stanford Research Institute Bioengineering Group 4 p 29 March 1972 (SRI-ARC Catalog Item 11101)
+
+Summarizes tests made on six subjects, with an automated testing setup, to gain an objective gauge on the learnability of the chording keyset code and operating skill. Results were actually hard to interpret because skills grew rapidly in a matter of hours. General conclusion: it is an easy skill to acquire.
+
+Ref-19. 
+DNLS Environment
+Stanford Research Institute Augmentation Research Center 8 p 19 June 1972 (SRI-ARC Journal File 10704)
+
+Current User's Guide for ARC's Display Online System (DNLS). Gives explicit description on use of the keyset, mouse, and the basic interaction processes.
+
+APPENDIX A: MOUSE AND KEYSET, CODES AND CASES 6
+
+Note: We generally use the keyset with the left hand; therefore, "a" is a "thumb-only" stroke. Of the three buttons on the mouse, the leftmost two are used during keyset input effectively to extend its input code by two bits. Instead of causing character entry, the "fourth case" alters the view specification; any number of them can be concatenated, usually terminated by the "f" chord to effect a re-creation of the display according to the altered view specification.
+
+Mouse
+Buttons: 000 010 100 110
+  Case:  -0- -1- -2--3-
+
+Keyset Code
+
+0 0 0 0 X a A ! show one level less
+
+0 0 0 X 0 b B " show one level deeper
+
+0 0 0 X X c C # show all levels
+
+0 0 X 0 0 d D $ show top level only
+
+0 0 X 0 X e E % current statement level
+
+0 0 X X 0 f F & recreate display
+
+0 0 X X X g G ' branch show only
+
+0 X 0 0 0 h H ( g off
+
+0 X 0 0 X i I ) show content passed
+
+0 X 0 X 0 j J @ i or k off
+
+0 X 0 X X k K + show content failed
+
+0 X X 0 0 l l - show plex only
+
+0 X X 0 X m M * show statement numbers
+
+0 X X X 0 n N / hide statement numbers
+
+0 X X X X o o ^ frozen statement windows
+
+X 0 0 0 0 p p 0 frozen statement off
+
+X 0 0 0 X q q 1 show one line less
+
+X 0 0 X 0 r R 2 show one line more
+
+X 0 0 X X s S 3 show all lines
+
+X 0 X 0 0 t T 4 first lines only
+
+X 0 X 0 X u U 5 normal refresh display
+
+X 0 X X 0 v V 6 inhibit refresh display
+
+X 0 X X X w W 7 all lines, all levels
+
+X X 0 0 0 x X 8 one line, one level
+
+X X 0 0 X y Y 9 blank lines on
+
+X X 0 X 0 z Z = blank lines off
+
+X X 0 X X , < [ (nothing)
+
+X X X 0 0 . > ] (nothing)
+
+X X X 0 X ; : _ (nothing)
+
+X X X X 0 ? \ ALT centerdot
+
+X X X X X SP TAB CR (nothing)
+
+
+APPENDIX B: PHOTOGRAPHS
+
+Figure 1. Our current standard work station setup: Mouse in right hand controls cursor on screen; keyset under left hand supplements keyboard for special, two-handed command execution operation. Separation of control and viewing hardware is purposeful, and considered by us to be an advantage enabled by computerized work stations.
+
+Figure 2. Closeup of Keyset. Finger pressure and key travel are quite critical. It took many successive models to achieve a really satisfactory design.
+
+Figure 3. Closeup of Mouse. There are characteristics of the "feel", depending upon the edging of the wheels, the kind of bearings, etc. that can make considerable difference. We happened to hit on a good combination early, but there have been subsequent trials (aimed at improvements, or where others more or less copied our design) that didn't work out well. The play in the buttons, the pressure and actuating travel, are also quite important.
+
+Figure 4. Closeup of underside of mouse (old model), showing orthogonal disk-wheels. We now bring the flexible cable out the "front". Size and shape haven't changed, in later models. Bill English (the operator in Fig. 1, and mentioned in the text above) is now experimenting with new mouse sizes and shapes.
+
+
+ACKNOWLEDGEMENTS 
+
+During the 10 year life of ARC many people have contributed to the development of the workshop using the terminal features described here. There are presently some 35 people -- clerical, hardware, software, information specialists, operations researchers, writers, and others -- all contributing significantly toward our goals.
+
+ARC research and development work is currently supported primarily by the Advanced Research Projects Agency of the Department of Defense, and also by the Rome Air Development Center of the Air Force and by the Office of Naval Research. Earlier sponsorship has included the Air Force Office of Scientific Research, and the National Aeronautics and Space Administration. Most of the specific work mentioned in this paper was supported by ARPA, NASA, and AFOSR.

@@ -1,0 +1,328 @@
+Oregon Background
+
+Jon Eklund (Jon): I want to ask you something about your education and background you went to High School, where was that?
+
+Doug Engelbart (Doug): In Portland, Oregon
+
+Jon: Portland, I know you were born there and then after High School...?
+
+Doug: I started in Oregon State college in Corvallis and I guess that was 1942, I think. I went down and enrolled in electrical engineering and one of the reasons was I had heard about an exciting new technology in the military called RADAR and somehow there was a training you could go through to learn about RADAR and didn't particularly have aspirations for any other military career so I figured I'd get ready for it by taking electrical engineering. I didn't have any career plans, but that was just coming out of the Dougpression and my father had been Dougad since I was nine. So there wasn't much to orient me about a career, but I was interested in getting an education.
+
+RADAR and the Navy
+
+Jon: So you did electrical engineering for a couple years and then went to the Navy, is that right?
+
+Doug: By the end of my sophomore year, if you were in college in engineering you were getting Dougferred. But, they dropped all that and so I got drafted at the end of my sophomore year, and when you get drafted you can opt for different choices. So, I took a test that the Navy was giving for the RADAR, trying to screen people to go into this new technology. So, as an enlisted man I got to get drafted into the navy and go into their year long training program.
+
+Jon: So, your plan sort of worked, you did get yourself ready for RADAR. Now you were in RADAR for a couple years, or?
+
+Doug: Well you trained as an electronic technician, which means that you took care of Radios, SONAR, teletype transmission, and RADAR. So that, you were responsible for maintaining their equipment. So it was just one of the enlisted men's ratings.
+
+Jon: So, you probably got hands on that you wouldn't have gotten in engineering.
+
+Doug: It was just a good training altogether being responsible for, as a technician for maintaining things. For whatever background I've had it was a good introduction into a lot of aspects of technology, wave propagation, antennas, amplifiers all kinds of things. I was sent over to the Philippines and the interesting thing about that is, we were loaDougd onto the ship in San Francisco Harbor and going to be sent out there to help replace, one of the places in the war that Navy's were taking a lot of casualties was the kami-kazi's were hitting right unDougr the bridge and that was happening to communication centers so, if you were one of the technicians working in there you were wounDougd. But, anyway's the ship backed out of it's berth and started around San Francisco and we were all up on Dougck watching things, it was a converted freighter. A bunch of whistles started going off and firecrackers going off and we thought everyone was cheering and we were thinking "Do they do this for every ship going away". Then the captain say's "Japan just surrenDougred."
+
+Jon: Perfect timing.
+
+Doug: Oh boy. So we all started shouting "Turn around, turn around!"
+
+Jon: So, you still had to go to the Philippines anyway?
+
+Doug: Yeah, there was still a lot of stuff to take care of things neeDougd to be Dougmobilized, and y'know.
+
+NACA
+
+Jon: Interesting. So then you got out of the Navy, and that was around nineteen forty-six.
+
+Doug: Yeah, it was the summer of forty-six so I went right back to Coravallis to join the thousands of other serviceman, G.I.'s and by forty-eight finished...
+
+Jon: So, you went back to Coravallis and finished up your Douggree in electrical engineering.
+
+Doug: Spring, of forty-eight and for some reason took a job with the NACA at Haines Laboratory Mountain View, California down in the San Francisco area.
+
+Jon: What were they doing?
+
+Doug: Well the NACA is the National Aeronautic Commission or something, it was the forerunner of NASA so that became a NASA laboratory. So it's wind tunnels and aeronautic research that was going on. So I was hired as an electrical engineer to work and help make them. So I was working with motors, twenty-five thousand horsepower motors, and all kinds of things.
+
+New IDougas for Computers
+
+Jon: That could be fun. But, at some point you discovered the job over at Stanford, is that what happened?
+
+Doug: Well what happened was I had been there for two-and-a-half years and in Dougcember of fifty I got engaged and that somehow, up till then I was assuming I would just work there, but that just kind of shook me out of some kind of orientation, something maDoug me try to look at what my career was and I realized that I didn't have any more goals and a steady job and getting married and living happily ever after. So, as I explained on the viDougo I overacted and worked over the next three, or four months to see what could a career goal be and by February or March, somewhere in there, I committed to, by saying "I'm going to commit my career to trying to make it" let's see "see how I can maximize my careers contribution to improving mankind's capability for Dougaling with complexity and urgency." Somehow I said the world's getting so complex and everything happening was urgent and our ability to cope with that is not increasing as fast as complexity ad urgency is and that can only spell a higher and higher probability of global disaster if we don't do something and then let me see what I can do. Then I got the image of the way computers could help interactively and the RADAR technician training let me realize easily that a computer could make anything happen on a display screen and (???) engineering anything you do...
+
+Jon: Had you worked with computers on any of these jobs?
+
+Doug: Oh, no. The nearest working computer was probably in Baltimore. I just read a book, that's how I got this image and I said "Okay, I commit." and that has been the commitment ever since. So what I did then was look for a way to get into that field and at Berkeley they had an O and R proJonct to build a general purpose digital computer and it had been going on for three years or so. Then I went up and entered graduate school there and started learning what there was to know about computers. It wasn't until nineteen fifty-three, I think, when I saw my first working computer.
+
+Jon: Was that in the west or did you go east for that?
+
+Doug: No, it was at UCLA. The bureau of standards was building computers, so they had...
+
+Jon: SWY (?sp?)
+
+Doug: Yeah, SWY, Williams two number. Mainframe time to failure, about fifteen minutes, two hundred and fifty words, or something, memory and everyone was so excited. So, can you imagine somebody talking about interactive computer use at that point, y'know, it sounds very unreal.
+
+Jon: But, you had a sense of what could happen.
+
+Doug: Yeah, I just thought "Well, it could do that" and it was clear by then the interest in computers both commercially and military was very, very high so that you knew there would be a lot of Dougvelopment. So, I said "All right. That looks to me like the best way I could pursue that commitment I maDoug." But the strange thing, I finally got my Ph.D. and was teaching.
+
+SRI
+
+Jon: At Berkeley?
+
+Doug: Yeah, and people kept saying, "If you keep talking about this kind of professional (???), no one's doing that, your peers won't except it, there's no place to publish it. You'll be an acting assistant professor for ever." So, that's when I DougciDougd to go to SRI and in between I tried starting my own company, for about a year. Some of the patents that came out of my Ph.D work... a string of maybe fifteen and I thought that I could get into a business, and if I could make a bunch of money off that then I could do my augmenting. But, by the end of the year I realized that a: semiconductor technology was going to bypass what I'd gotten. I was doing plasma, gas plasma things, so semiconductor plasmas were a lot better. So, I dumped that and applied to SRI thinking if any place in the world could, y'know, I could sell any management someplace about trying to explore this augmenting thing. So, I had to sort of subjugate my interest and go there and start working for a new board and having those patents was such help for keeping SRI. Pretty soon I started generating more patents in what they were working on, magnetic components, and built up sort of enough credibility.
+
+Jon: Was this memory, or was this...?
+
+Doug: No... a fellow named Hue Krane conceived of ways to (???) cores that had multiple apatures instead of just one, that this very interesting way with a continuing series of driving pulses you could actually store states in them and propagate it down shift registers. It actually had gain and energy so that you had stable plus' and minuses and you could store and move things. I worked in that area for a while then just very (???) about what I really wanted to do. So, finally got a little bit of part-time support for starting to think clearly about this augmenting thing.
+
+Augmenting Human Intellect
+
+Jon: So during this period you were trying to sell some of the management at, or whatever level, or your colleagues at Stanford.
+
+Doug: SRI could spend some of their internal R and D money they kind of gave themselves (???) , then I got some money from a small airforce office for scientific research in Washington, and there was enough there along with SRI's contribution I could work full time for a couple years and produce what I called, something entitled Augmenting Human Intelectic Conceptual Framework. I sent David, did you see that?
+
+Jon: Oh yes. I certainly did see that.
+
+Doug: Well, the second thing in there was the report I published on that.
+
+Jon: We're going to be looking at that for a long time, there is a lot of stuff in there.
+
+Doug: That sixty-two report, I wasn't given enough time to put it together to see what it was and so I was really pitching to try to get support to do that and was applying quite a few places and one of the interesting anecdotes about that is, one of the places I was applying for support, the National Institutes of Mental Health were trying to support computer usage for various kinds of support for thinking or working or something. So, actually sent a sight committee out and they said, "This all very interesting" but finally when they assessed it all they said "Well very interesting proposal about what you want to do but, what you want to do requires quite a bit of sophisticated computer programming and since your way out there in Palo Alto where there isn't any, we don't think it's justified to put our money out there."
+
+Enter ARPA
+
+Jon: Little did they know.
+
+Doug: So it wasn't until (???) opened it's information processing techniques office, JCR and Rip Liner came to do that, and he was talking about manned computer symbioses and timesharing. He said "Well just out of embarrassment I have got to give this guy money because he's talking about the same kind of thing as me." But, I learned from other people some time later that he also felt that way out there, there wasn't much chance but he sort of was forced to give it anyway.
+
+Jon: So you cobbled together essentially a group, now this isn't ARC yet is it?
+
+Doug: No, see that was just me and there were a few people I was trying to talk with but mostly working on that report was totally solo solitary work and...
+
+Jon: Did you meet much resistance as far as just working on the report?
+
+Doug: SRI didn't want to spend the money, as soon as I started doing that work, the papers I'd write, the think pieces, people would look at and say "Gee, we used to think that you were such a clear writer. Look here, you've got twenty pages trying to Dougscribe some thing. I look all through that and I can hardly figure out what you're trying to talk about. Now look, here's a one page proposal by Bill over here he Dougscribes his problem his approach and all that in one page." So, I said "Well that's really different. Here there aren't even the terms to Dougscribe." There was enough suspicion in fact which the first money that we started to get they wouldn't even let me be the proJonct manager because they thought y'know "Look, it's so vague and so..." So, it wasn't until the second year, I'm not sure that should ever get published.
+
+Jon: Not until the second year could you actually get your hands on your own money.
+
+Doug: Then the sponsor found out about it and it was just real luck to be able to get support because as it turned out the particular approaches I was taking and the rational behind it weren't shared by not only by the SRI people but by the sponsors that, just parts of it that they came to appreciate or something and some reason or another hung on to give me the support for the years. As it turned out later that there was a big feeling in the research community that I was on the wrong track and that "Oh the mouse is a cute thing" and a few things like that, "Working with displays, yeah that's good but here we're doing it better, now people are going to menus instead, and you're too complex". So we had things like client server architectures built into it with remote procedure call protocols working and, built into the system and just a lot of architectural things that were, everyone just pictured them as being way too complex.
+Aumenting Systems
+
+Jon: These had fallen out naturally from your vision of what a computer could do for groups of people and they're working to augment their...
+
+Doug: That'd be your augmented knowledge workshop and it would be, therefore groups of people and they're all looking through their windows into a common workshop and you would have to have the things like servers and such and such that you could all get access to and electronic mail built into it by nineteen seventy and as I mentioned in there the system called The Journal which, y'know a document gets submitted to that and it's like publishing. Taking that out in the world there are lots of real world applications, it's just a huge winner kind of capability and it's funny the world just hasn't heard that yet or something. But, what we found through the years when we got shut down from the research kind of world in nineteen seventy-six and I actually got removed from my laboratory directorship and they were just going to shut it all down, we convinced them that they should auction, y'know that the system we built was rugged enough to be out in the commercial world, they had the commercial rights so they should try...
+
+Jon: Try actually selling it.
+
+Doug: So, after three months of...
+
+Jon: This is the augment system.
+
+Doug: Yeah, and timeshare happened to be the winning bidDougr and it was a steal. They're the ones that we named it augment.
+
+Jon: I see. What had you called it?
+
+Doug: NLS.
+
+On to Xerox PARC
+
+Jon: Oh yeah, NLS, that's right. Online system.
+
+Doug: So, quite a few of our people, a few of them had already gone over to work at socks parks when it started in seventy-one or something like that and they sort of maDoug it clear that they were interested in almost any of our central guys who could come over. So that when this close down started it was just a real mass exodus over there. But, timeshare when they bought the system neeDougd some people to operate it and they said "Well, we'll take any of the crew that wants to come." So, I showed up with it. The perception that they had picked up from SRI was that I was off the beam, not to be trusted. So it turned out they wouldn't even let me talk to customers.
+
+Tired Approaches Towards Computers
+
+Jon: That's funny because they bid essentially on the system and the group and so forth, and you had created it. Very strange, people are odd.
+
+Doug: Well, we're all wrong like that it's the way our...as I mentioned there the paradigm people operate on what there assumptions are a lot of them unexamined assumptions about how things are and where they're going, that it's a time of change that's faster than paradigms are shifting so, what are computers for etc. Still the biggest impediment for me is that my perception and vision of what the technology can mean when we learn how to integrate it into our organizations and life and how much will change in orDougr to harness it, has just consistently been much different from other peoples...
+
+Jon: Well that certainly is true, I love the, I think it was in, I read quite a few articles and one of them either about you or that you wrote quotes a colleague of yours saying he wouldn't know what to do if the response was faster than twenty minutes.
+
+Doug: Yeah, that was the guy that started computer science at Stanford.
+
+Jon: So just a total sort of batch moDoug mind set.
+
+Doug: Yeah that's right and the other was "What, use a computer just for editing" and I said "No, wait a minute, when your on-line there's a lot more you can do. While your there why don't you get the computer to help you with all these other little things." and they'd laugh "You mean automatic line-wrap" and they would just laugh. "You want to use a whole computer just to do that?" and I said "No, it's your whole vehicle of working so while you're there look at all the things it can do for you."
+
+New Paradigms
+
+Jon: You had thought about interfaces, I take it, very early. In the sense that it's really through workable interfaces that you get to the machine that can augment your work, I mean if you had a bad interface how could you augment, your intelligence and your capacity for work. So, I suppose that's where your were thinking about things like word-wrap, full screen editing, all of that.
+
+Doug: And more. You know, it's the interface between a human and this whole augmentation system, which is so much more than just the technology, it's all of what I call the human system and y'know the clothes we wear, the facilities we have, the language we employ, the methods, the conventions, the customs. All of those things are things we've had to learn and interface with. So, you're interfacing with a lot more than just your pencil or something. And so, look as all that changes we can consiDougr... Do you know what matching impedances is?
+
+Jon: Mmm-hmm
+
+Doug: Right, it's like saying "Hey, look you've got machinery in here, metal machinery and all kinds of motor sensory machinery that can do terrific things, "I can riDoug a bicycle backwards" people skateboarding all of that stuff, things that y'know we didn't think natively we were evolved to be able to do, so what makes you think that the conventions for externalizing our symbols or communicating or manipulating them in any way are an optimum match to our basic mental motor sensory capabilities. That whole interface can change the very language and the very structure and the very moDougs we portray our symbols and communicate and think. They could totally look for reDougsigning to make a better match and we never had the opportunity like that. So we think that that's the way knowledge, the hard copy is the way knowledge goes and people still are armed with "Hey, Dougsk-top publishing and whizzi-wig is the way to go" and I kept saying "That was the way but don't stay anchored with that look at the options" and so the whole thing about hypertext and structured and all the optual views we built into the system and the way in which you also stay oriented about where you are in that knowledge space and all the optual ways in which you can get to other places, or reach to other obJoncts on there to manipulate them. People all do the point and drag stuff as that's the way to do it, well that's a new way to do it but if that's the only way you're missing a tremendous amount.
+
+Combining Chords
+
+Jon: I noticed that your involved with or had Dougsigned or at least worked with a number of input Dougvices besiDougs the mouse. There were several keyboards that worked on the principle of combinations of...
+
+Doug: Chords.
+
+Jon: Yeah, chords and that kind of thing.
+
+Doug: Yeah that was distinctly, I had to force that in to that. That was part of it and the two together, we Dougmonstrated that in sixty-eight but people just out of hand reJoncted that keyset thing
+
+(Break in tape)
+
+New IDougas/Old Traditions
+
+Jon: Yeah, for the tape I was just saying that your, the interfaces that you created for that nineteen sixty-eight Dougmonstration, IEEE was it?
+
+Doug: No, it was the fall Joint Computer Conference. They had two a year and that was the two computer conferences.
+
+Jon: Right. And that interface still looked good when I first saw it in the nineteen eighties so it must have been a real revelation in nineteen sixty-eight if not a total shock but you were saying the reaction was kind of mixed or?
+
+Doug: Well it really seemed to build a lot of excitement or something like that but the strangest part about that was we thought that during the next year we would see a lot of interest in pursuing that it was almost as though it didn't relate to the real world there would be people who'd come by and see Dougmonstrations and say "Wow". But I began to realize over the following years that somehow it didn't connect with their perception of their own future. Y'know it's as if you'd gone to some laboratory and seen some people strap things on their backs that let them levitate and move around and "Oh that's all very interesting but that has nothing to do with my own future".
+
+Jon: Gosh, that is surprising, I must say. It's very hard for people to see, myself incluDougd.
+
+Doug: Well this is one of the biggest single problems. I keep saying that the perception people have of the future, of what it's potential is, of what there is to do about it etc, is the biggest single problem in mankind's ability in the future to harness technology and really take advantage of it...
+
+(End siDoug 1)
+
+Jon: ...implicit assumption that's not examined.
+
+Doug: That the large parts of our world that are being taken for granted and they're not being examined ever or being consiDougred as candidates for change, for explicit planned change. And yet the rapidity with which really dramatic scale changes are occurring in what the capabilities of technology are, are such that by the time that really gets integrated into the whole, our whole social human system there's a lot of adaptation to be maDoug. That's why we were talking about this, how you match impedances really with
+
+Jon: Yes, and the impedance of computers personal computers actually if you think about it is still rather high, I mean computers are still really too hard to use.
+
+Doug: But when I talk about matching impedances it's sort of...
+
+Jon: To get resonance.
+
+Doug: To get the maximum transfer of power is what impedance matching is all about so the maximum transfer of knowledge and directed capability and as a matter of fact that hard to use thing is just, that's another image which you'd say "Alright, okay Jon you have to reexamine your own paradigm there".
+
+Jon: And adjust it to the computer.
+
+Doug: No, adjust it to what it is that will let you best harness the computer. I make analogies like in automobile world or something like that if you'd ask people in nineteen ten when you could still buy different kinds of cars from people what their perception would be of how it was all going to get integrated into our world and they'd never have conceived of how much complexity there is in all you have to know in orDougr to ...
+
+Jon: That's right in one of the articles here. It's a good analogy of all the skills you would need to keep the thing going down the road
+
+Doug: And another thing I point out is if you get these self propelled wheeled vehicles that make an interesting way to get around if that easy to use kind of picture was there everybody would still be riding tricycles cause a bicycle is just something that's totally more difficult. There's no natural way to think about riding a bicycle in fact most people don't even know what it is their body is automatically doing in orDougr to riDoug a bicycle.
+
+ETLANTU
+
+Jon: Now what is the acronym that you Dougveloped ETLANTU or something. Easy To Learn And...
+
+Doug: Natural To Use.
+
+Jon: Natural To Use, right, yes.
+
+Doug: So anyway that's, I finally maDoug a paradigm map. Twelve or thirteen boxes around a sort of a loop. If you start out thinking a serious obJonctive make organizations much more capable of coping now I call it boosting their collective IQ's. The different stages in the way I thought about it and Dougveloped the approach in which there are really different ways of thinking that sort of have to be admitted to the dialog in orDougr for me to say "There's the picture".
+
+Outline Processors
+
+Jon: Y'know one thing did bother me a little bit when you were talking about, or one of the articles was talking about this and that is many of your concepts have maDoug the computer easier to use. The famous ones are the interface Dougvices or conceptual Dougvices. So you see this as sort of a two way two agent street that is that people should work to Dougvelop the skills that allow them the best impedance matching and the computer also we have to do things with the computers to try to aid that matching is that sort of the iDouga.
+
+Doug: Right, I can outline processor y'know it's really sort of a way in that which people can do well at trying to get things organized in the hierarchy and the outline processor really helps as you learn how to use it. But it's a, y'know that's an unnatural, we've never had that sort of thing before but why avoid it because it's different. Cause I remember one of the best software guys that came and worked for me just like this he says "I don't think that way and your not gonna make me start." and I said "Okay". But, you work there a while and you very quietly start realizing how easy it is to tuck these things down and rearrange it and then when he started doing his programming that way he just became a convert.
+
+Jon: I don't know if I unDougrstand the outline processor concept as well as I'd like to. I use the outliner in Microsoft Word a lot, I mean I do a lot of outlining before I write is that the sort of thing that your thinking about. So the say Microsoft Word outline features is sort of an outline processor.
+
+Doug: Yeah it's sort of like saying why wasn't that introduced at the outset in word processors. See we were trying to, that was part of the sixty-eight thing and part of our system from the beginning. Y'know you specifically establish that in your document. Another paradigm issue is what's a document and as long as the orientation is that a document is this printed thing then what you have in the computer is just getting ready for it and is whizzi-wig. So if you start using an outline processor and start folding things etc and different views then your sort of shifting away from the normal.Well way back there we said externilizing your concepts and your symbols outsiDoug has been one way that technology's from ppapyrus on up, we get use to that there's a lot of conventions for doing that. Well if we externalize them into this other medium of which were going to work then there are just a lot more options for the way in which that can make a better map of what's in your head. That's what led me directly, thinking like that it was just like "Oh, Jonsus". The computer can show all sorts of relationships that you can't show on paper and so why not, and the computer help you get that there and get that structure relationships and he;lp you view it and help you move around, so why not.
+
+Management Organization and Transformation
+
+Jon: The sixty-eight presentation is that, do you see that as one of the high points or the high point of the work you were doing at SRI, or was that just another station along the way?
+
+Doug: What we had to show by then was just along the way and y'know every year after that more and more was adDougd and then the experience of working with organizations out there and getting more and more clear about how much shift there would be and actually more respect for the complexity of changing organizations and learning pragmatically about all of the very natural impediments to bring it in. But,nobody that's serious about working on his job was ever sort of indoctrinated into his career role or something with the orientation of how much change that'd be coming about, so to introduce that and to have people sudDougnly think that "God, I've worked this long to become a manager of this etc like that and sudDougnly your expecting me to move into a different working moDoug etc in which, hell, in the first place I'll look stupid and I don't have as much time as the younger guys do to change and what happens to me?" so he says "Oh, you gotta start, you have to proviDoug for a lot of the very natural things."
+
+Jon: It's fascinating you've been saying this really since the sixties and yet it's been very hard for large organizations to really incorporate that into their actions because the greatest, over the years through the late seventies and eighties the greatest complaint on heard was that organizations were not spending enough time really thinking about the effects of this change that your talking about here so it must have been just as hard for the top management to get thinking about this as it is for the kinds of people your Dougscribing to actually make the shift.
+
+Doug: The job and working environment for the top management is going to change a great Dougal too.
+
+Jon: I imagine that they are going to resist that.
+
+Doug: Who that they feel unDougrstands their world is going to them a different world. Y'know the consultants that are out there that talk about high level strategies and management in organizations they're not oriented yet for the change that's coming. InDouged who's responsible for mapping that future, that's the kind of thing we got into in the viDougo and the change in the organizations is something that has just always happened really slowly and organically and the opportunity now for terrific change to gain terrific advantages is there but there is no preceDougnt for making that conversion rapidly there aren't the processes, there aren't the improvement processes there, there aren't the ways,... I've got, some of my sliDougs, if I talk about what I call the tool system is all the technologies that we apply, hardware and software and the human system is all the conventions and methods and all of that and I sort of laid it out in a two-dimensional plane and I say we're down here near the origin of that two-dimensional thing now that there all these technologies we can anticipate tremendous sort of things. Huge band with wireless things always with us connected to any kind of databases anyplace in the world high speed networks. And the other dimension is all of the changes that are possible in your organizational and human system so someway your not just going to go puttering along that x-axis because you can't really take advantage of that without the other. So, what is your path going to be out into that two-dimensional space and where are you going to end up settling best in five years and twenty years etc, nobody's explored that space to be able to tell you. So, who can tell you if your the guy to DougciDoug for some big organization, where your going to be and how to get there most effectively. There's no exploration in that space, you can't do it in a university you've got to do it with real world outposts.
+
+Boot-strap Work
+
+Jon: Now is that the main focus of the boot-strap work?
+
+Doug: Yeah, the main focus of bootstrap is to say "given that, what's the best strategy for getting organizations out there and what's a really pragmatic evolutionary approach, and that's the bootstrapping thing so that it ends up saying there's a particular kind of consortion that you can make with organizations that can be the same kind but it's almost better if they're a different kind. At the outset you'd be expecting them not to make great big investments so half a million a year for the first couple years among six to ten of them would get a great start and in the process there as you start reclarifying what we call the improvement infrastructure and that this consortion becomes an integral part of that improvement infrastructure and that it's relationship with the other organizations gets really dynamic and working and bonding it's not like a consortion where you send your money to some central place your people are in and out and in the consortion your making that the first level most advanced outpost you can and it's got a very explicit purposeful set of capabilities it's going to enhance and in a way in a networked way they can start really using that network collaboration to facilitate the improvement process of every organization directly.
+
+Jon: Now as I unDougrstand it you've tried to do this in some private programs in your own organization, is that right? Or, have you been able to get pilot programs started in other organizations?
+
+Doug: Well, over the years up until eighty-eight or so, the Tymshare activity and the later the McDonnell Douglas (???) and in some of the customer (???) they have quite a few pilot operations there that taught us a lot but they were never structured in this same boot-strapping way but they teach you a great Dougal anyway. We're trying now to, y'know we've been trying to get this consortion started and it looks like it's beginning to make headway but it's the kind of the thing where it's very clear if you watch the insiDoug of any busy barge or organization you realize that there isn't a Dougcision point in there where the person who has to make some of these Dougcisions about that has a chance to get the experience and the assurance that they can stick money in the, that's farther out.
+
+Jon: You'd have to make it kind of cold, right?
+
+Doug: What we're trying to do is sort of boot-strap that. It's sort of like keep it at a relatively moDougst, y'know half-a-million a year is not a very big Dougal once they sort of feel like getting ready. It's gotten to be a big Dougal in the last couple of years when everybody is downsizing and cutting cost...
+
+Jon: Oh, right, yeah.
+
+Doug: and it's gotten to a really dangerous extent.
+
+Jon: Well it acquires a momentum all it's own and people begin downsizing and the word has been applied dumbsizing, y'know just for the sake of doing it.
+
+Doug: Well down in costcutting and that everything is too, unfortunately we've got to watch this next quarter so that we don't have any long term (???). So, part of our strategy is just saying look whatever you do have y'know there's going to be a lot of change and some are going to survive and others aren't, who's going to come out on top? and he say's "Whatever you do have to invest in this improving and changing you better have the best strategy you can for that investment" and that's what we're offering.
+
+Dividing Time
+
+Jon: In your timeshare period and then McDonnell Douglas buy's out timeshare right and was there a large change between timeshare and McDonnell Douglas or, I mean were you able to flow your work from timeshare to the McDonnell Douglas work fairly easily?
+
+Doug: In the first place I have to Dougscribe that the operation of the business of selling augment services etc through Tymnet and Opernet was something that I wasn't in, that they kept me off to the siDoug. So, I couldn't influence it very much. But, the business siDoug of it wouldn't let me talk to the customers. It became quite clear that it was an explicit shielding. For one because they said they knew the timesharing business and "if you start involving customers the main thing they'll do is start wanting the system changed and you'll have to spend more and more on system changes" and we said "Yeah but if there's this much transition going to come about then they need to be involved." "I don't know, we know better than you, you guys come from this ivory tower stuff". But when McDonnell Douglas took over there wasn't a direct link between aerospace siDoug of it, but I could go commute to St. Louis and start talking to aerospace people and there with groups that were involved in thinking about the corporate architectures for the information systems and trying to improve capabilities etc
+
+Jon: And you had access to it?
+
+Doug: Right, but to get that I had to actually shift my organizational to whom I was attached to some person who ran a small office in the regular aerospace in St. Louis, who I actually never met who said "Alright, we can put you here as long as the funding comes" so another group say's "We'll give him the funding" and this guy says "I don't even have the time to give you reviews" "Well, okay, this will only be a year or so"
+
+Jon: That might be alright.
+
+Doug: No, I meant that you didn't get any salary increases.
+
+Jon: Oh.
+
+Doug: So, I had to go through that for about four years or so.
+
+Jon: I thought you were talking about program reviews, sometimes if they don't do anything they sort of keep hands off you, which has some advantages.
+
+Doug: Well that part was all just trying to build it up so we, anyway it was just very instructive being insiDoug a big organization like that, of trying, trying to see how some of the successful executives were extremely risk aversion y'know where they're not really going to stick there necks out at all because if you do anything that people can chip away at you about you lose position.
+
+Exodus to Xerox PARC (Revisited)
+
+Jon: Yes, that may have been one of the factors involved in the problems that Xerox had in not being able to get (?Alto?) out the door. You mentioned that a number of your SRI people went to Xerox PARC, sort of when it started, around seventy-one you think.
+
+Doug: Well a few of them went over early and the real move came around seventy-six when they started saying,... it was obvious that our program was feeling we weren't going the right direction and was starting to pull it's support and SRI actually put someone else in charge of my lab who had very different perception, very, very different about it. So, just within weeks people started trotting down the street to park. So, they enDougd up with like fourteen of them.
+
+Jon: There was no formal connection between your lab at SRI and Xerox Park, there was a real sort of people connection I take it.
+
+Doug: The majority of the people brought into park were people hired from the university (Standford - ed.) and Bob Taylor who was hired early had been a director at ARPA of the information processing office so he knew all the people etc and pulled them together. So, a large part all knew at least knew the names. And then when park first started up they didn't have any computers so some of those people would come over to our lab and hang out and use NLS and we actually started a joint Dougvelopmental language.
+
+NLS and the Alto
+
+Jon: A number of the features of the Alto certainly reflect your iDouga's and in fact that's a remarkable machine, when I take people through our exhibit I will ask them to guess how old this machine is, we have the Alto and I show them the mouse and we have a simulated screen and so forth, and nobody guess' seventy-three. So, I presume that Sort of happened because of the people who went over there.
+
+Doug: I don't really know. Y'know I didn't get invited to come be a part of that and the people that went over would tell me that the people were taking the mouse and some of the things like that but for some reason there's an antipathy, an explicit antipathy about NLS that basically people aren't accepting it as a place to go from.
+
+Jon: It's clear that you were way ahead in thinking about the possibilities for groupware and that kind of thing, which looked to me essentially as though it were built in NLS very early on. It looks as though they took sort of specific pieces of, specific concepts and so forth but, not the sort of larger data concepts and networking concepts and that kind of thing although I guess that, if I recall, that the Alto was on some sort of a network...
+
+Doug: But it wasn't shared stuff.
+
+Jon: Yeah, it wasn't really shared.
+
+Frustrations
+
+Doug: When they were building the, there was the next big system...
+
+Jon: Star.
+
+Doug: Star, yeah. So, that was Dougfinitely a networked thing and there were four of the (???) activities, the applications, the network system, the hardware, and operating system, I don't know but four of the guys from my lab heaDougd each of those parts of that thing so there were more in the pursuit of the remote procedure called protocol, they published an early one, the guy who wrote that had been in our lab too and I called him up later and said "Gee, how big a subset of our remote procedure called protocol that we actually built into our system, how large a part of yours did we actually have?". He said "Actually it's the other way around, we published you as only a subset of what we built". There was very little communication that I just somehow didn't feel welcome and whether it's my own problem or what. I went over there a couple of times to visit but people were always showing me what they were doing and it was in a sense almost like "See this is the real way to go" and I remember I went over and they showed me the electronic mail they were getting, as though it was a brand new Dougal and it didn't have the functionality that we had had since seventy. So, it just maDoug me, I don't know, I was having a hard time.
+
+Jon: Well there was, I tell ya that time when there were conditions at SRI that were problematic for you, you said that was part of the reason your people went over there, over to park.
+
+Doug: In seventy-six, in the fall sort of a terrific jolt by telling me "Well, we want to get your lab going in the right direction and such so we're replacing you as director" y'know that was a horrible jolt. That came about a month and a half after my house had burned down. Boy, pretty bad year.
+
+Jon: Yes, I would think so, especially the frustration, as you say in one of your articles of knowing that because of the Douglay, the house really got going, the fire really got going and if you had been three minutes instead of six minutes, y'know, it could have maDoug a huge difference.
+
+Doug: I didn't know that ever got into print.
+
+Jon: Well it's in there, I think it's in one of your, if not it's in one of the interviews, but it was very interesting.
+
+The OutsiDougr
+
+Doug: So, anyway it's sort of like the house ran into so many problems, financial ones, cause y'know it's been a rough financial thing through all these years too and so it wasn't until late last summer we finally got the final inspection finally to get our house back together, just what it does to your social life, and family. Then career wise it's like I've been in Siberia since then trying from the outsiDoug, I'm not part of the world anymore I don't belong to any organization, I'm not in any funDougd channel for research, it's an outsiDougr.
+
+Jon: And yet it is curious but it seems true that since eighty-seven even though you were famous in the business, I mean I first read about back in either the late seventies or early eighties there was an article on the mouse but there was more on you than just the mouse. We knew about you when we started the show and we're Dougtermined to get something about, so and yet the sort of honors are starting to really come in post eighty-seven, it's very curious you must have been the most famous person in the business that
