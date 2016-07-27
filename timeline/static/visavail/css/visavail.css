@@ -1,0 +1,136 @@
+/* style for visavail.js */
+
+body {
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+}
+
+/*div.heading {
+    text-align: center;
+}*/
+
+.res {
+    font-size: 12px;
+    word-wrap: break-word;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    fill: white;
+}
+
+.rect_res {
+    fill: blue;
+    fill-opacity: 0.5;
+    stroke: white;
+    stroke-width: 1;
+}
+
+.rect_has_data {
+    /* blocks that have data */
+    fill: #e9a3c9;
+    stroke: white;
+    stroke-width: 1;
+}
+
+.rect_has_data:hover {
+    fill: #d75b9f
+}
+
+.rect_has_no_data {
+    /* blocks without data */
+    fill: #a1d76a;
+    stroke: white;
+    stroke-width: 1;
+}
+
+.rect_has_no_data:hover {
+    fill: #73b530;
+}
+
+.tooltip_has_data {
+    /* color of symbol in tooltip if there is data */
+    color: #e9a3c9;
+}
+
+.tooltip_has_no_data {
+    /* color of symbol in tooltip if there is no data */
+    color: #a1d76a;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: left;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 10px;
+    padding-left: 0;
+    width: auto;
+    border: 0;
+    border-left: thin solid #000000;
+    pointer-events: none;
+    line-height: 12px;
+    padding-top: 0;
+    display: block;
+}
+
+.x_tick_emph {
+    font-weight: bold;
+}
+
+.ytitle {
+    /* y axis labels */
+    dominant-baseline: middle;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+}
+
+.axis path,
+.axis line {
+    display: none;
+}
+
+.axis text {
+    font-size: 12px;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    fill: #777;
+}
+
+.vert_grid {
+    fill: none;
+    stroke: #dddddd;
+    stroke-width: 1px;
+}
+
+.vert_grid_emph {
+    fill: none;
+    stroke: #dddddd;
+    stroke-width: 2px;
+}
+
+.horz_grid {
+    fill: none;
+    /*stroke: #dddddd;
+    stroke-width: 1px;*/
+}
+
+.heading {
+    font-size: 16px;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: bold;
+}
+
+.subheading {
+    font-size: 12px;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    fill: #777;
+}
+
+.legend {
+    dominant-baseline: middle;
+    font-size: 12px;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    fill: #777;
+}

@@ -1,21 +1,94 @@
-<html>
+<!-- TODO:
+automating additional layers having different colors
+removing months/days from parsed dates
+adding screenshots or something to resources -->
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta charset="utf=8" />
-	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
-	<script src="/static/js/timeline.js"></script>
+	<meta charset="utf-8">
+	<title>Dynamic Personal Archives</title>
+
+	<!-- Visavail.js style -->
+	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+	<link href='static/visavail/css/visavail.css' rel='stylesheet' type='text/css'>
+
+	<link href='static/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
 </head>
 
-<div class="main_title">
-	Engelbart Archives
-</div>
-<div class="cat_title" id="cat_title">
-	Categories:
-</div>
-<div class="arch_title">
-	Archives:
-</div>
-
 <body>
+
+	<div class="heading">
+		<h1>Dynamic Personal Archives</h1>
+		<!-- <p>The Career of Douglas Engelbart</p> -->
+	</div>
+
+	<p id="example"><!-- Visavail.js chart will be placed here --></p>
+
+	<!-- Visavail.js scripts -->
+	<script src="static/vendors/moment/moment-with-locales.min.js" type="text/javascript"></script>
+	<script>
+		moment.locale('en');
+	</script>
+	<script src="static/vendors/d3/d3.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		var dataset = [{
+			"measure": "Organization",
+			"data": [
+				["1962", 0, "1978", "SRI"],
+				["1978", 0, "1984", "Tymshare"],
+				["1984", 0, "1988", "McDonnel-Douglas"],
+				["1988", 0, "2010", "Bootstrap"]
+			]
+		}, {
+			"measure": "Project",
+			"data": [
+				["1962", 1, "1969", "NLS"],
+				["1969", 1, "1978", "AUGMENT"],
+				["1978", 1, "1984", "Aircraft Specs"],
+				["1984", 1, "1988", "Bootstrap Seminars"],
+				["1988", 1, "1995", "Bootstrap Institute"]
+			]
+		}];
+
+		function _get(url, cb) {
+		    var xhr = new XMLHttpRequest();
+		    xhr.open("GET", url, true);
+		    xhr.onload = function() {
+				cb(this.responseText);
+		    }
+		    xhr.send();
+		}
+
+		function _get_json(url, cb) {
+			_get(url, function(dat) {
+				cb(JSON.parse(dat));
+			});
+		}
+
+		_get_json("static/data/db.json", function(ret) {
+			var corpus = ret;
+			var chart = visavailChart(corpus).width(800);
+
+			d3.select("#example")
+					.datum(dataset)
+					.call(chart);
+		});
+
+
+	</script>
+	<script src="static/visavail/js/visavail.js"></script>
+
+	<script>
+		// draw Visavail.js chart
+		// var chart = visavailChart(corpus).width(800);
+
+		// d3.select("#example")
+		// 		.datum(dataset)
+		// 		.call(chart);
+	</script>
 
 </body>
 

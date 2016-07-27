@@ -348,7 +348,7 @@ _get_json("/static/db.json", function(ret) {
 
     db = ret;
     db.forEach(function(x,idx) {
-	x._id = idx;
+		x._id = idx;
     });
 
     // Sort by start

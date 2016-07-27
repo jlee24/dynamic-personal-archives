@@ -2,16 +2,19 @@ from nltk.tokenize import RegexpTokenizer
 from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
 import sys, os, subprocess, operator
-from gensim import corpora, models
-from pprint import pprint
+from gensim import corpora, models, utils
+import DtmModel as DtmModel
+import numpy  # for arrays, array broadcasting etc.
+import numbers
 import logging
-# logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 save_memory = True # if flag on, stores corpus in memory; else, streams docs one at a time 
 
 doc_folder = sys.argv[1] # where corpus files are located
 dict_name = 'my_dictionary.dict'
 texts = [] # all the cleaned, tokenized documents
+my_corpus = []
 
 tokenizer = RegexpTokenizer(r'[a-zA-Z]+\'[a-zA-Z]+|[a-zA-Z]+')
 en_stop = get_stop_words('en') # create English stop words list
@@ -53,8 +56,6 @@ def generate_dtm(num_topics, my_timeslices):
 		my_dictionary = create_dictionary()
 		my_corpus = [my_dictionary.doc2bow(text) for text in texts]
 		dtmmodel = models.wrappers.DtmModel('./dtm-win64.exe', my_corpus, my_timeslices, num_topics=num_topics, id2word=my_dictionary, prefix='./dtm-')
-		# corpus_dtm = dtmmodel[my_corpus]
-		# print(dtmmodel)
 		# for doc in corpus_dtm:
 		#     doc.sort(key=operator.itemgetter(1), reverse=True)
 		#     print(count)
@@ -109,12 +110,12 @@ def generate_tfidf():
 	corpus_tfidf = tfidf[my_corpus]
 	count = 0
 	for doc in corpus_tfidf:
-	    doc.sort(key=operator.itemgetter(1), reverse=True)
-	    print(count)
-	    count += 1
-	    for i in range(0,10):
-	        word = doc[i]
-	        print(my_dictionary[word[0]], word[1])
+		doc.sort(key=operator.itemgetter(1), reverse=True)
+		print(count)
+		count += 1
+		for i in range(0,10):
+			word = doc[i]
+			print(my_dictionary[word[0]], word[1])
 
 
 def main():
@@ -125,8 +126,10 @@ def main():
 		num_words = 15
 
 		dtmmodel = generate_dtm(num_topics, my_timeslices)
+		corpus_dtm = dtmmodel[my_corpus]
+		print(corpus_dtm)
 
-		topics = dtmmodel.show_topics(topics=num_topics, times=num_slices, topn=num_words, log=False, formatted=True)
+		# topics = dtmmodel.show_topics(topics=num_topics, times=num_slices, topn=num_words, log=False, formatted=True)
 		# for i in range(0, num_slices):
 		# 	print('Time_Slice ' + str(i))
 		# 	for j in range(0, num_topics):

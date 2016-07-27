@@ -1,0 +1,515 @@
+[
+  {
+    "TITLE": "Program on Human Effectiveness", 
+    "TYPE": "Document", 
+    "SOURCE": "https://drive.google.com/open?id=0B979i_9iBTwnUjU4N01yME5Ock0", 
+    "YEAR": "1961", 
+    "_id": 1, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnUjU4N01yME5Ock0", 
+    "ID": "1961_program_sri"
+  }, 
+  {
+    "TITLE": "Augmenting Human Intellect - A Conceptual Framework", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/papers/scanned/Doug_Engelbart-AugmentingHumanIntellect.pdf", 
+    "YEAR": "1962", 
+    "_id": 2, 
+    "TRANSCRIPT": ".", 
+    "ID": "1962_pub_sri"
+  }, 
+  {
+    "TITLE": "Binary-Keyset Code", 
+    "TYPE": "Document", 
+    "SOURCE": "https://drive.google.com/open?id=0B979i_9iBTwnQnVxU2pSNjIweWs", 
+    "YEAR": "1963", 
+    "_id": 3, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnQnVxU2pSNjIweWs", 
+    "ID": "*1963_file_personal"
+  }, 
+  {
+    "TITLE": "Preliminary thoughts on using our computer facilities to help us in our computer programming activities", 
+    "TYPE": "Document", 
+    "SOURCE": "https://drive.google.com/open?id=0B979i_9iBTwnYmRvNFlucTNkN2M", 
+    "YEAR": "1963", 
+    "_id": 4, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnYmRvNFlucTNkN2M", 
+    "ID": "*1963_file_research"
+  }, 
+  {
+    "TITLE": "Records, Skill, and our Research Planning ", 
+    "TYPE": "Document", 
+    "SOURCE": "https://drive.google.com/open?id=0B979i_9iBTwndG11T0lvclQyeEU", 
+    "YEAR": "1963", 
+    "_id": 5, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwndG11T0lvclQyeEU", 
+    "ID": "*1963_file_research"
+  }, 
+  {
+    "TITLE": "RCA Computer Seminar Correspondence", 
+    "TYPE": "Document", 
+    "SOURCE": "https://drive.google.com/open?id=0B979i_9iBTwnem9jaHZsZ3h2WUk", 
+    "YEAR": "1967", 
+    "_id": 6, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnem9jaHZsZ3h2WUk", 
+    "ID": "*1967_correspondence_research"
+  }, 
+  {
+    "TITLE": "Display-Selection Techniques for Text Manipulation", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-133184.html", 
+    "YEAR": "1967", 
+    "_id": 7, 
+    "TRANSCRIPT": ".", 
+    "ID": "1967_pub_ieee"
+  }, 
+  {
+    "TITLE": "X-Y Position Indicator for a Display System", 
+    "TYPE": "Document", 
+    "SOURCE": "http://web.stanford.edu/dept/SUL/library/extra4/sloan/MouseSite/Archive/patent/mousepatent.PDF", 
+    "YEAR": "1967", 
+    "_id": 8, 
+    "TRANSCRIPT": ".", 
+    "ID": "*1967_patent"
+  }, 
+  {
+    "TITLE": "Mother of All Demos", 
+    "TYPE": "Video", 
+    "SOURCE": "https://www.youtube.com/watch?v=yJDv-zdhzMY", 
+    "YEAR": "1968", 
+    "_id": 9, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnZ3ZIN1pJY3BuODg", 
+    "ID": "1968_demo_fjcc"
+  }, 
+  {
+    "TITLE": "A Research Center for Augmenting Human Intellect", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-3954.html", 
+    "YEAR": "1968", 
+    "_id": 10, 
+    "TRANSCRIPT": ".", 
+    "ID": "1968_pub_afips"
+  }, 
+  {
+    "TITLE": "Intellectual Implications of a Multi-Access Computer Network", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-5255.html", 
+    "YEAR": "1970", 
+    "_id": 11, 
+    "TRANSCRIPT": ".", 
+    "ID": "1970_pub_mcn"
+  }, 
+  {
+    "TITLE": "Coordinated Information Services for a Discipline- or Mission-Oriented Community", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-12445.html", 
+    "YEAR": "1973", 
+    "_id": 12, 
+    "TRANSCRIPT": ".", 
+    "ID": "1973_pub_ccc"
+  }, 
+  {
+    "TITLE": "Design Considerations for Knowledge Workshop Terminals", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-14851.html", 
+    "YEAR": "1973", 
+    "_id": 13, 
+    "TRANSCRIPT": ".", 
+    "ID": "1973_pub_afips"
+  }, 
+  {
+    "TITLE": "NLS Teleconferencing Features: The Journal and Shared-Screen Telephoning", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-33076.html", 
+    "YEAR": "1975", 
+    "_id": 14, 
+    "TRANSCRIPT": ".", 
+    "ID": "1975_pub_compcon"
+  }, 
+  {
+    "TITLE": "Toward Integrated, Evolutionary Office Automation Systems", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-71279.html", 
+    "YEAR": "1978", 
+    "_id": 15, 
+    "TRANSCRIPT": ".", 
+    "ID": "1978_pub_jem"
+  }, 
+  {
+    "TITLE": "Evolving the Organization of the Future: A Point of View", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-80360.html", 
+    "YEAR": "1982", 
+    "_id": 16, 
+    "TRANSCRIPT": ".", 
+    "ID": "1982_pub_stanford"
+  }, 
+  {
+    "TITLE": "Toward High-Performance Knowledge Workers", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-81010.html", 
+    "YEAR": "1982", 
+    "_id": 17, 
+    "TRANSCRIPT": ".", 
+    "ID": "1982_pub_afips"
+  }, 
+  {
+    "TITLE": "Collaboration Support Provisions in AUGMENT", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/oad-2221.html", 
+    "YEAR": "1984", 
+    "_id": 18, 
+    "TRANSCRIPT": ".", 
+    "ID": "1984_pub_afips"
+  }, 
+  {
+    "TITLE": "Authorship Provisions in AUGMENT", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/oad-2250.html", 
+    "YEAR": "1984", 
+    "_id": 19, 
+    "TRANSCRIPT": ".", 
+    "ID": "1984_pub_compcon"
+  }, 
+  {
+    "TITLE": "Augmented Knowledge Workshop", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD302_86ACM_Prese_AugKnowledgeWorkshopParts1and2", 
+    "YEAR": "1986", 
+    "_id": 20, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnZXRsMFlWdWtIMjA", 
+    "ID": "1986_workshop_acm"
+  }, 
+  {
+    "TITLE": "Demo of Augment System", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1940_87_DescripDemoAugmentSys", 
+    "YEAR": "1987", 
+    "_id": 21, 
+    "TRANSCRIPT": "ORDER: expansion of nls", 
+    "ID": "1987_demo_stanford"
+  }, 
+  {
+    "TITLE": "CSCW-88 Colloquium", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1931_88CSCWColloquium1", 
+    "YEAR": "1988", 
+    "_id": 22, 
+    "TRANSCRIPT": ".", 
+    "ID": "1988_colloquium_cscw"
+  }, 
+  {
+    "TITLE": "Working Together", 
+    "TYPE": "Document", 
+    "SOURCE": "http://dougengelbart.org/pubs/seminars/sembinder1992nov/R.pdf", 
+    "YEAR": "1988", 
+    "_id": 23, 
+    "TRANSCRIPT": ".", 
+    "ID": "*1988_pub_byt"
+  }, 
+  {
+    "TITLE": "Interop-89 Keynote", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1907_89Interop-89GenSes1KeynoteSpkr", 
+    "YEAR": "1989", 
+    "_id": 24, 
+    "TRANSCRIPT": "ORDER: good transition, given names to his past inventions", 
+    "ID": "1989_keynote_interop"
+  }, 
+  {
+    "TITLE": "Co-evolution of Technology and Organizations", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1933_90MItreCoEvolofTechandOrg", 
+    "YEAR": "1990", 
+    "_id": 25, 
+    "TRANSCRIPT": "higher level ideas ", 
+    "ID": "1990_lecture_mitre"
+  }, 
+  {
+    "TITLE": "Norton\u2019s Augment Handbook Demo", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1719_90AugmentHandbk.cdr", 
+    "YEAR": "1990", 
+    "_id": 26, 
+    "TRANSCRIPT": ".", 
+    "ID": "1990_demo_norton"
+  }, 
+  {
+    "TITLE": "Stanford Forum on Engineer Economic Systems", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1938_90StanfordForumEngEcoSystems", 
+    "YEAR": "1990", 
+    "_id": 27, 
+    "TRANSCRIPT": ".", 
+    "ID": "1990_lecture_stanford"
+  }, 
+  {
+    "TITLE": "Knowledge-Domain Interoperability and an Open HyperDocument System", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-132082.html", 
+    "YEAR": "1990", 
+    "_id": 28, 
+    "TRANSCRIPT": ".", 
+    "ID": "1990_pub_cscw"
+  }, 
+  {
+    "TITLE": "Engelbart/Seybold, Together We Can Get There", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD305-1_91EngelbartSeybold.cdr", 
+    "YEAR": "1991", 
+    "_id": 29, 
+    "TRANSCRIPT": "interview looking back on career", 
+    "ID": "1991_interview_seybold"
+  }, 
+  {
+    "TITLE": "High Performance Knowledge Work: User Interfaces and Enterprise-Wide Architectures", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD317_1991HighPerfKnwldgeWorkUsernterfacesEntWideArchPt1", 
+    "YEAR": "1991", 
+    "_id": 30, 
+    "TRANSCRIPT": "calls nls \"creaky old system\", formalizations of his ideas", 
+    "ID": "1991_demo_xerox"
+  }, 
+  {
+    "TITLE": "Bootstrap Seminar 1991", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1908_91BIBootstrapSemDay1Ses1", 
+    "YEAR": "1991", 
+    "_id": 31, 
+    "TRANSCRIPT": ".", 
+    "ID": "1991_seminar_bootstrap"
+  }, 
+  {
+    "TITLE": "Bootstrap Seminar 1992", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1922_92BootstrapSemDay1Ses1", 
+    "YEAR": "1992", 
+    "_id": 32, 
+    "TRANSCRIPT": ".", 
+    "ID": "1992_seminar_bootstrap"
+  }, 
+  {
+    "TITLE": "Computer Pioneer Award and Distinguished Lecture", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD318_93CompPioneerAward", 
+    "YEAR": "1993", 
+    "_id": 33, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnaWI1WGZMWVo3ZDQ", 
+    "ID": "1993_lecture_ieee"
+  }, 
+  {
+    "TITLE": "ARPANET Anniversary Lecture", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1298_1994BBN_ScienceDevProg", 
+    "YEAR": "1994", 
+    "_id": 34, 
+    "TRANSCRIPT": ".", 
+    "ID": "1994_lecture_bbn"
+  }, 
+  {
+    "TITLE": "Douglas Engelbart Oral History", 
+    "TYPE": "Video", 
+    "SOURCE": "http://www.dougengelbart.org/history/exhibits.html", 
+    "YEAR": "1994", 
+    "_id": 35, 
+    "TRANSCRIPT": "http://americanhistory.si.edu/comphist/englebar.htm", 
+    "ID": "1994_interview_smithsonian"
+  }, 
+  {
+    "TITLE": "Bootstrap Seminar 1995", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD320_95BootstrapSeminar", 
+    "YEAR": "1995", 
+    "_id": 36, 
+    "TRANSCRIPT": "teaching people about bootstrap", 
+    "ID": "1995_seminar_bootstrap"
+  }, 
+  {
+    "TITLE": "JCN Profiles: Visionary Leaders of the Information Age", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD304_95JCNProfile-nobreaks", 
+    "YEAR": "1995", 
+    "_id": 37, 
+    "TRANSCRIPT": ".", 
+    "ID": "1995_interview_jcn"
+  }, 
+  {
+    "TITLE": "Keynote Lecture at UCSB Glen Culler Honorary Lecture Event", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD309_95keynoteLec_BoostingCollIQ_UCSBGlenCuller", 
+    "YEAR": "1995", 
+    "_id": 38, 
+    "TRANSCRIPT": ".", 
+    "ID": "1995_lecture_ucsb"
+  }, 
+  {
+    "TITLE": "Vannevar Bush Symposium", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1941_1_95VannevarBushSymTape2_DougEngelbart", 
+    "YEAR": "1995", 
+    "_id": 39, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwndmxtSjE2MksyQzg", 
+    "ID": "1995_symposium_mit"
+  }, 
+  {
+    "TITLE": "Toward Augmenting Human Intellect and Boosting our Collective IQ", 
+    "TYPE": "Document", 
+    "SOURCE": "http://dougengelbart.org/pubs/papers/scanned-original/1995-augment-133188-Toward-Augmenting-Human-Intellect-and-Boosting-Collective-IQ.pdf", 
+    "YEAR": "1995", 
+    "_id": 40, 
+    "TRANSCRIPT": ".", 
+    "ID": "*1995_pub_acm"
+  }, 
+  {
+    "TITLE": "Dreaming of the Future", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-133189.html", 
+    "YEAR": "1995", 
+    "_id": 41, 
+    "TRANSCRIPT": ".", 
+    "ID": "1995_pub_byte"
+  }, 
+  {
+    "TITLE": "Lemelson-MIT Awards Ceremony and Reception - Celebrating American Invention and Innovation", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD316_XD316-2_XD1753_97LemelsonMITAwards_PrizeCer", 
+    "YEAR": "1997", 
+    "_id": 42, 
+    "TRANSCRIPT": ".", 
+    "ID": "1997_ceremony_mit"
+  }, 
+  {
+    "TITLE": "Turing Award Lecture", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1762_98ACMTuringAwardLect", 
+    "YEAR": "1998", 
+    "_id": 43, 
+    "TRANSCRIPT": ".", 
+    "ID": "1998_lecture_cscw"
+  }, 
+  {
+    "TITLE": "Unfinished Revolution", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1901_1EngelbartsUnfinishedRev30AnnSess1", 
+    "YEAR": "1998", 
+    "_id": 44, 
+    "TRANSCRIPT": ".", 
+    "ID": "1998_symposium_stanford"
+  }, 
+  {
+    "TITLE": "Engelbart/Garrett, Management Presentation", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1757_98MangmtSystemsGlobleadership", 
+    "YEAR": "1998", 
+    "_id": 45, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnelR4X3RjMXhfaXM", 
+    "ID": "1998_presentation_pg"
+  }, 
+  {
+    "TITLE": "NIHF Interview", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1756_2_98NIHFInterviewRoughCut", 
+    "YEAR": "1998", 
+    "_id": 46, 
+    "TRANSCRIPT": ".", 
+    "ID": "1998_interview_nihf"
+  }, 
+  {
+    "TITLE": "Boosting Collective IQ", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1606_99_BoostingCollID", 
+    "YEAR": "1999", 
+    "_id": 47, 
+    "TRANSCRIPT": "high-level about his career goal and how far we've come", 
+    "ID": "1999_keynote_cscl"
+  }, 
+  {
+    "TITLE": "Cadence Design Systems Distinguished Speaker - \"Open-Source Approach to Large-Scale System Evolution for Collective Knowledge Work\"", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1607_2000DistSpkrSeries", 
+    "YEAR": "2000", 
+    "_id": 48, 
+    "TRANSCRIPT": ".", 
+    "ID": "2000_lecture_cadence"
+  }, 
+  {
+    "TITLE": "Silicon Valley Entrepreneur - An Interview With Doug Engelbart", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1892_SilliconVllyInnovHistModComp", 
+    "YEAR": "2000", 
+    "_id": 49, 
+    "TRANSCRIPT": ".", 
+    "ID": "2000_interview_entrepreneur"
+  }, 
+  {
+    "TITLE": "Engelbart Colloquium", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/000106EngelbartColloquiumPart1_201503", 
+    "YEAR": "2000", 
+    "_id": 50, 
+    "TRANSCRIPT": "http://dougengelbart.org/colloquium/sessions.html", 
+    "ID": "2000_colloquium_stanford"
+  }, 
+  {
+    "TITLE": "Engelbart Talk to MMETS - \"Facilitated Evolution of Collective IQ\"", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1717_2001WPAFB_EngelbartTalkMMETS", 
+    "YEAR": "2001", 
+    "_id": 51, 
+    "TRANSCRIPT": ".", 
+    "ID": "2001_presentation_mmets"
+  }, 
+  {
+    "TITLE": "Douglas Engelbart Interviewed by John Markoff of the New York Times", 
+    "TYPE": "Video", 
+    "SOURCE": "https://www.youtube.com/watch?v=VeSgaJt27PM", 
+    "YEAR": "2002", 
+    "_id": 52, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnSHZFbzltSGFlZlU", 
+    "ID": "2002_interview_times"
+  }, 
+  {
+    "TITLE": "Improving Our Ability to Improve: A Call for Investment in a New Future", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-133320.html", 
+    "YEAR": "2002", 
+    "_id": 53, 
+    "TRANSCRIPT": ".", 
+    "ID": "2002_pub_byte"
+  }, 
+  {
+    "TITLE": "Google, Collective IQ", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1955_04GooglePresCollIQ", 
+    "YEAR": "2004", 
+    "_id": 54, 
+    "TRANSCRIPT": "https://drive.google.com/open?id=0B979i_9iBTwnUEU4eVVqZ1pLX3M", 
+    "ID": "2004_lecture_google"
+  }, 
+  {
+    "TITLE": "Augmenting Society's Collective IQ", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.dougengelbart.org/pubs/augment-133319.html", 
+    "YEAR": "2004", 
+    "_id": 55, 
+    "TRANSCRIPT": ".", 
+    "ID": "2004_pub_hypertext"
+  }, 
+  {
+    "TITLE": "The Click Heard Around the World", 
+    "TYPE": "Document", 
+    "SOURCE": "http://www.wired.com/2004/01/mouse/", 
+    "YEAR": "2004", 
+    "_id": 56, 
+    "TRANSCRIPT": ".", 
+    "ID": "2004_news_wired"
+  }, 
+  {
+    "TITLE": "Bootstrap Dialogs - Boosting Collective IQ Day #1-4", 
+    "TYPE": "Video", 
+    "SOURCE": "https://archive.org/details/XD1951_08_Bootsrap", 
+    "YEAR": "2008", 
+    "_id": 57, 
+    "TRANSCRIPT": ".", 
+    "ID": "2008_discussion_stanford"
+  }
+]
