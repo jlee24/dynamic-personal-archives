@@ -1,22 +1,5 @@
 http://www.ranks.nl/stopwords
 
-alright
-ha
-oh
-lot
-funny
-y'know
-there're
-would've
-could've
-ve
-re
-torgerson
-joe
-je
-jon
-eklund
-de
 doug
 douglas
 engelbart

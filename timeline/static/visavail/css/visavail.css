@@ -1,24 +1,60 @@
 /* style for visavail.js */
 
+.navigation {
+    width: 75%;
+}
+
+.heading {
+    text-align: left;
+}
+
 body {
     font-family: "Muli", "Helvetica", Arial, sans-serif;
 }
 
-/*div.heading {
+.search {
     text-align: center;
+}
+
+rect.not_selected {
+    fill-opacity: 0.5;
+}
+
+/*rect.selected {
+    fill-opacity: 0.8;
 }*/
 
 .res {
-    font-size: 12px;
+    font-size: 10px;
     word-wrap: break-word;
     font-family: "Muli", "Helvetica", Arial, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     fill: white;
 }
 
-.rect_res {
+/*.title {
+    display: inline-block;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    padding: 2px 4px 2px 2px;
+}*/
+
+.title {
+    display: inline-block;
+    font-size: 10px;
+    word-wrap: break-word;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    padding: 2px 4px 2px 2px;
+}
+
+rect.rect_res {
     fill: blue;
-    fill-opacity: 0.5;
     stroke: white;
     stroke-width: 1;
 }
@@ -45,6 +81,20 @@ body {
     fill: #73b530;
 }
 
+.time_period {
+    fill: #ffb84d;
+    stroke: white;
+    stroke-width: 1;
+}
+
+.time_period:hover {
+    fill: #ff9900;
+}
+
+.time_period_active {
+    fill: #ff9900;
+}
+
 .tooltip_has_data {
     /* color of symbol in tooltip if there is data */
     color: #e9a3c9;
@@ -57,14 +107,14 @@ body {
 
 div.tooltip {
     position: absolute;
-    text-align: left;
+    /*text-align: center;*/
     font-family: "Muli", "Helvetica", Arial, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     font-size: 10px;
     padding-left: 0;
-    width: auto;
+    /*width: auto;*/
     border: 0;
-    border-left: thin solid #000000;
+    /*border-left: thin solid #000000;*/
     pointer-events: none;
     line-height: 12px;
     padding-top: 0;

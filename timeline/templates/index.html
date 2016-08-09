@@ -10,22 +10,31 @@ adding screenshots or something to resources -->
 	<meta charset="utf-8">
 	<title>Dynamic Personal Archives</title>
 
-	<!-- Visavail.js style -->
 	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 	<link href='static/visavail/css/visavail.css' rel='stylesheet' type='text/css'>
-
 	<link href='static/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	<link href='static/vendors/pure-release-0.6.0/buttons-min.css' rel='stylesheet' type='text/css'>
+	<link href='static/vendors/pure-release-0.6.0/forms-min.css' rel='stylesheet' type='text/css'>
+	<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
 
 </head>
 
 <body>
-
 	<div class="heading">
 		<h1>Dynamic Personal Archives</h1>
 		<!-- <p>The Career of Douglas Engelbart</p> -->
 	</div>
+	<div class="navigation">
+		<div class="pure-form search">
+			<input class="pure-form" id="query" placeholder="Enter query">		  
+			<button class="pure-form pure-button button-small" onclick="search()">Search</button>		
+		</div>
 
-	<p id="example"><!-- Visavail.js chart will be placed here --></p>
+		<p id="chart"><!-- Visavail.js chart will be placed here --></p>
+	</div>
+
+	<div class="examination">
+	</div>
 
 	<!-- Visavail.js scripts -->
 	<script src="static/vendors/moment/moment-with-locales.min.js" type="text/javascript"></script>
@@ -37,21 +46,38 @@ adding screenshots or something to resources -->
 		var dataset = [{
 			"measure": "Organization",
 			"data": [
-				["1962", 0, "1978", "SRI"],
+				["1960", 0, "1978", "SRI"],
 				["1978", 0, "1984", "Tymshare"],
 				["1984", 0, "1988", "McDonnel-Douglas"],
-				["1988", 0, "2010", "Bootstrap"]
+				["1988", 0, "2005", "Bootstrap"]
 			]
 		}, {
 			"measure": "Project",
 			"data": [
-				["1962", 1, "1969", "NLS"],
-				["1969", 1, "1978", "AUGMENT"],
-				["1978", 1, "1984", "Aircraft Specs"],
-				["1984", 1, "1988", "Bootstrap Seminars"],
-				["1988", 1, "1995", "Bootstrap Institute"]
+				["1960", 1, "1968", "NLS"],
+				["1968", 1, "1984", "AUGMENT"],
+				["1984", 1, "1988", "Aircraft Specs"],
+				["1988", 1, "1991", "Bootstrap Seminars"],
+				["1991", 1, "2005", "Bootstrap Alliance"]
+			]
+		}, {"measure": "Topic Models",
+			"data": [
+				["1960", 9, "1967", "Period 0"],
+				["1968", 9, "1982", "Period 1"],
+				["1984", 9, "1993", "Period 2"],
+				["1994", 9, "2005", "Period 3"],
 			]
 		}];
+
+		var corpus;
+		var influences;
+
+		function initialize_chart(corpus, influences) {
+			var chart = visavailChart(corpus, influences).width(800);
+			d3.select("#chart")
+					.datum(dataset)
+					.call(chart);			
+		}
 
 		function _get(url, cb) {
 		    var xhr = new XMLHttpRequest();
@@ -68,27 +94,16 @@ adding screenshots or something to resources -->
 			});
 		}
 
-		_get_json("static/data/db.json", function(ret) {
-			var corpus = ret;
-			var chart = visavailChart(corpus).width(800);
-
-			d3.select("#example")
-					.datum(dataset)
-					.call(chart);
+		_get_json("static/data/db.json", function(ret_corpus) {
+			corpus = ret_corpus;
+			_get_json("static/data/dim.json", function(ret_influences) {
+				influences = ret_influences;
+				initialize_chart(corpus, influences);
+			});
 		});
-
 
 	</script>
 	<script src="static/visavail/js/visavail.js"></script>
-
-	<script>
-		// draw Visavail.js chart
-		// var chart = visavailChart(corpus).width(800);
-
-		// d3.select("#example")
-		// 		.datum(dataset)
-		// 		.call(chart);
-	</script>
 
 </body>
 

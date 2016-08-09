@@ -5,7 +5,6 @@ import sys, os, subprocess, operator, argparse
 from gensim import corpora, models, utils
 import numpy  # for arrays, array broadcasting etc.
 import numbers
-import json
 
 # import logging
 # logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -40,10 +39,10 @@ class MyCorpus(object):
 			yield self.dictionary.doc2bow(clean_text(doc_location))
 
 def clean_text(doc_location):
-	# command = "sumy luhn --file=" + doc_location # summarize document string
-	# raw = subprocess.check_output(command, shell=True)
-	file = open(doc_location, 'r')
-	raw = file.read()
+	command = "sumy luhn --file=" + doc_location # summarize document string
+	raw = subprocess.check_output(command, shell=True)
+	# file = open(doc_location, 'r')
+	# raw = file.read()
 	raw = unicode(raw, errors='replace')
 	raw = raw.lower()
 	tokens = tokenizer.tokenize(raw)
@@ -134,7 +133,7 @@ def main():
 
 	elif sys.argv[1] == 'dim':
 		# [-1968, 1968-1984, 1984-1988, 1988-]
-		my_timeslices = [3, 9, 5, 8, 0]
+		my_timeslices = [4, 5, 7, 9]
 		num_slices = len(my_timeslices)
 		num_topics = 7
 		num_words = 15
@@ -143,46 +142,39 @@ def main():
 
 		# printing out the topics
 		topics = dimmodel.show_topics(topics=num_topics, times=num_slices, topn=num_words, log=False, formatted=True)
-		for i in range(0, num_slices):
-			print('Time_Slice ' + str(i))
-			for j in range(0, num_topics):
-				print('Topic ' + str(j))
-				print(topics[i*j])
-			print('\n')
+		# for i in range(0, num_slices):
+		# 	print('Time_Slice ' + str(i))
+		# 	for j in range(0, num_topics):
+		# 		print('Topic ' + str(j))
+		# 		print(topics[i*j])
+		# 	print('\n')
 
 		# structure: {time_slice: {doc: [influence of each topic]}, topics_from_time_slice: [composition of each topic]}
-		dim_influences = {}
+		dim = {}
 
 		time_slice_count = 0
 		docs_count = 0
 		for time_slice in dimmodel.influences_time:
-			print("Time_Slice " + str(time_slice_count))
-
+			# print("Time_Slice " + str(time_slice_count))
+			dim[time_slice_count] = {}
+			dim["topics_" + str(time_slice_count)] = []
 			# add topics
-			dim_influences["time_slice_" + str(time_slice_count) + "_topics"] = []
 			for j in range(0, num_topics):
-				dim_influences["time_slice_" + str(time_slice_count) + "_topics"].append(topics[time_slice_count*j])
-
+				dim["topics_" + str(time_slice_count)].append(topics[time_slice_count*j])
 			# add document influences
-			dim_influences["time_slice_" + str(time_slice_count)] = {}
 			for doc in time_slice:
-				print("Doc " + str(docs_count))
-				dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)] = []
+				# print("Doc " + str(docs_count))
+				dim[time_slice_count][docs_count] = []
 				topics_count = 0
 				for topic in doc:
-					print("Topic " + str(topics_count) + ": " + str(topic))
-					dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)].append(topic)
+					# print("Topic " + str(topics_count) + ": " + str(topic))
+					dim[time_slice_count][docs_count].append(topic)
 					topics_count += 1
-				dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)] = sorted(dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)])
+				dim[time_slice_count][docs_count] = sorted(dim[time_slice_count][docs_count])
 				docs_count += 1
 			time_slice_count += 1
 
-		with open('tmp/dim_influences.json', 'w') as output:
-			dim_influences['info'] = {}
-			dim_influences['info']['num_topics'] = num_topics
-			dim_influences['info']['num_slices'] = num_slices
-			dim_influences['info']['time_slices'] = my_timeslices
-			json.dump(dim_influences, output, sort_keys=True, indent=4, separators=(',',': '))
+		print(dim)
 
 	else:
 		generate_tfidf()
