@@ -1,0 +1,22 @@
+Doug Engelbart:	Just was way over it, just couldn't see that at all, and the general just said, "I can't go ahead," so they stop it and water down the requirements. I think it was $940,000,000 AT&T one 8 months later. I understood that they couldn't meet those water down requirements even. There have been disappointments like that and it's just, again and again, it's the paradigm. It's the conceptualization of where things are going.
+
+	You don't know whether all that batting your head against the bricks is making any process or not because when the world finally starts moving, what made it move? You could have sat home and rested instead.
+
+Audience:	Could you tell me about this in relation to Xanadu?
+
+Doug Engelbart:	When we're looking for different ways to implement OHS2, Xanadu is one of the things we look at, and we'd have to really study it versus this to see how well. They tell us they would and they gave us some briefings that are very impressive and very very bright guys doing great things under there, but there's the difference about living with a lot of this stuff, some of the details will get you. We have to see. Small talk people tell us they can do a fast prototype in 4 months or something like that, just exactly like it. Well, it takes more time to talk between people to figure out whether that's true, but what we really want is a prototype not anchored to be a product and not in competition with the vendors.
+
+	User organizations have to have a chance to learn what it is they want and how they're going to employ all this because there's so much on that human system side of adjustment within an organization that there just no way that they can buy something that vendors think is great because they built it and then they've got to advertise it. How much experimenting with the application did they have time to do? Today the vendors don't. They're pushing for it out. Who's going to start doing that exploration in trying to do it in an objective way and trying to really push in the heavy knowledge work domains that you can get to parallel, be pilot operations. You can compare notes to see. Somebody doing it in computer-aided software engineering may think they need all kinds of exotic things in there, but if you generalize on it and come back you can find out that a lot of times it's the same conceptual need as you have over in this kind of work. You just can't have islands in the future.
+
+	Is there anybody that's been trying for 10 minutes and I've been ignoring besides you?
+
+Audience:	Have you thought about trying to move this to a distributed system or is it sort of more fundamentally tied to the central database?
+
+Doug Engelbart:	We found this distributor like they were 14 mainframes for a while around the country that the journal systems worked all between them automatically. In the end it definitely has to be distributed.
+
+Audience:	It sounded more like personal computer level with communications between [crosstalk 00:03:46].
+
+Doug Engelbart:	I don't see how you're going to have the common files. You're going to have file servers. The journal system there just has to be grouped servers for the publication thing and it's just got so much power to be able to put a document in that journal and then just tell somebody about it later or it's there for proof. If you're going to have any constructive dialogue that gets recorded in there, you have to have these nailed down things that you can point at, that you can go back and find out why a decision was made. There will be a chance if that record is there like that.
+
+Audience:	We're in danger of overstaying our welcome so thank you very much again.
+

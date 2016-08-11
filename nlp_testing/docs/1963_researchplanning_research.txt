@@ -1,0 +1,42 @@
+SOURCE: 	DCE 25 NOV 63 
+TITLE: 	Records, Skill, and our Research Planning 
+
+FILE FOLDER: 	Research Planning 
+
+FORMAL DESCRIPTORS: 
+ABSTRACT: 	Points up central importance of the "coordinated working system" that is to represent both our environment and our subject of research. Anticipated requirements for nerw concentration on the recording of our thoughts and actions and for learning and using new skills are pointed out as immediately visible changes in our working life. 
+
+TEXT: 
+1.0 Introduction 
+	
+	1.1 The design of our AHI research program stipulates that: (a) our augementation developments be put to work in a real-life working environment, within a coordinated working system whose evolution is the essential concern. of our program, (b) the people who use these developments within this coordinated working system be the AHI researchers themselves, and. (c) the coordinated working system is that in which AHI research is done. 
+	
+	l.2 It can be anticipated that we will soon have early developments sufficient for making the first significant changes in our working system. This presents us with the problems of examining our system planning for the coordination of the anticipated changes, and beginning to formulate the structure of the system's developing evolution. 
+	
+	The purpose of this memo is to raise some issues in this regard that both present my viewpoint and provide the basis for continued discussion. 
+
+2.0 The Recording of our Activity 
+The hope that computer aid can significantly increase the working effectiveness of real-wor1d problem solvers (like us) is based entirely upon the symbol-manipulation capability of the computer. The help we expect to get must involve symbols that have significance to our work. To derive full benefit from this help we shall find ourselves making new use of synibols and placing new depemence upon them--indeed, our research involves the development of just such in our way of working. The most significant symbols to us in our work are those that represent the thoughts and actions of ourselves and the people with whom we work. In our augmented systems, we are going to make much more effective use of the records of these thoughts and actions, and we are going to develop many new processes, methods and techniques both for establishing these records for making use of them. 
+	
+	2.2 One practical implication of the above, to our program's working environment, is that we must tolerate the extra labors of establishing the records which our experimental working system is trying to make useful to us. We will want to make this as easy as possible by means of computer aids and system procedures, but there will always remain the fundamental, unavoidable effort of will and mind necessary to decide what to record, how to express it, how to organize it, how to label it, etc. (We will evolve procedures, language, am methods of work that help considerably in these decisions as well as in the labor of transcribing into recorded form.) 
+
+	I see no way of avoiding the burden of establishing these records, and of living and complying with successive changes in procedures, nomenclature, format, etc., associated with our own exploratory and evolutionary working-system design. If sometimes we get restless because "our work"--as we have been used to viewing what our work is--seems to be impeded by the red tape of our working-system methods, we must remember that it is "our work" to use our experimental methods to do our work.
+
+	2.3 Another practical implication--we are soon going to find a lot more data being transcribed into both ham copy and computer-sensible form and we need to accommodate this in our working-system design. 
+
+	2.3.1 Some of this data will be generated as we have mostly been doing it--a hard-copy draft handed to Judy for Flexing. Some work is more urgent than most, and we shall need priority procedures that evolve. We are undoubtedly going to have more work than one girl can handle, and we must plan for increased capacity: by increasing our inventory of tape-punching typewriters, by incorporation computer aids into the transcription system (cf. the see-also items), and by increasing our staff of transcription clerks. Our solution may be to have transcription procedures simple enough that transient contract typists can be brought in on call to accommodate peak loads.
+
+	2.5.2 A different kind of data well become involved in increasing volume--notes for POOC files that may be considerably less formal than for instance our QDOC items or the programming codes. It may prove worthwhile for each researcher to have a dictating machine (portable, perhaps) into which he can enter working notes that, when transcribeda he can weed out, clean up, am organize quickly ani flexibly during his on-line working periods. 
+
+	The urgency for transcription of your PDOC entries will often be much like that associated with the coding sheets a programmer is working with during debug time--you will what it done right away s o that you can use it in the problem in which you are currently engrossed. 
+ 
+	2.3.3 We may well find that some portion of off-line work by AHI researchers could be done to considerable advantage directly on a tape-punch typewriter. With our new transcription codes most errors are easily corrected by a few strokes on the keyboard, and insert or delete in J;B.st work can be specified rather directly. The short "turn-around time" thus obtained, for getting one's working data into the computer and being able to get back new-version hard copy or being able to work with the data on line, is likely to be very  valuable to one's working cycle. 
+
+3.0 New-skill training for AHI researchers. 
+Another practical implication from the foregoing discussion is that AHI researchers are continually going to be faced with learning new skills. Our research planning must accommodate this fact. It will be no seri ous evaluation of a new development if its test application is done by users who have not mastered the basic skills involved. 
+
+We will soon meet such a problem--keyboard skills. It seems unavoidable that every researcher who is to be seriously involved in our experimental working system must require reasonable typing skill. I would say that "reasonable" means at least thirty words a minute (equal to a reasonable rapid handwriting rate), without watching the keyboard. Training to this level should be planned and begun soon, as explicit and necessary research activity and expense. 
+
+I would say that use of the binary keyset has yet to be established as a basic system skill. I currently feel rather definite about its not being a valid substitute for typewriter keyboard skill. Later developments in our equipment, coding, and procedures may well alter this attituie. 
+
+Besides the psycho-motor skills associated with keyboards, light pens, etc., there will be conceptual and symbol skills basic to our working system. We must recognize the need to gain proficiency in these and plan for the necessary training. Procedures, terminology, and format we expect to have to learn in a new working system. But also we will face such a necessary skill as applying a set of category specifications. 

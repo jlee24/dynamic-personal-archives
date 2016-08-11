@@ -15,7 +15,6 @@ adding screenshots or something to resources -->
 	<link href='static/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 	<link href='static/vendors/pure-release-0.6.0/buttons-min.css' rel='stylesheet' type='text/css'>
 	<link href='static/vendors/pure-release-0.6.0/forms-min.css' rel='stylesheet' type='text/css'>
-	<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
 
 </head>
 
@@ -31,17 +30,12 @@ adding screenshots or something to resources -->
 		</div>
 
 		<p id="chart"><!-- Visavail.js chart will be placed here --></p>
+
 	</div>
 
 	<div class="examination">
 	</div>
 
-	<!-- Visavail.js scripts -->
-	<script src="static/vendors/moment/moment-with-locales.min.js" type="text/javascript"></script>
-	<script>
-		moment.locale('en');
-	</script>
-	<script src="static/vendors/d3/d3.min.js" charset="utf-8"></script>
 	<script type="text/javascript">
 		var dataset = [{
 			"measure": "Organization",
@@ -49,25 +43,27 @@ adding screenshots or something to resources -->
 				["1960", 0, "1978", "SRI"],
 				["1978", 0, "1984", "Tymshare"],
 				["1984", 0, "1988", "McDonnel-Douglas"],
-				["1988", 0, "2005", "Bootstrap"]
+				["1988", 0, "2005", "Bootstrap Institute"]
 			]
 		}, {
 			"measure": "Project",
 			"data": [
-				["1960", 1, "1968", "NLS"],
-				["1968", 1, "1984", "AUGMENT"],
+				["1960", 1, "1978", "NLS"],
+				["1978", 1, "1984", "AUGMENT"],
 				["1984", 1, "1988", "Aircraft Specs"],
 				["1988", 1, "1991", "Bootstrap Seminars"],
 				["1991", 1, "2005", "Bootstrap Alliance"]
 			]
-		}, {"measure": "Topic Models",
-			"data": [
-				["1960", 9, "1967", "Period 0"],
-				["1968", 9, "1982", "Period 1"],
-				["1984", 9, "1993", "Period 2"],
-				["1994", 9, "2005", "Period 3"],
-			]
-		}];
+		}
+		// , {"measure": "Themes",
+		// 	"data": [
+		// 		["1960", 9, "1967", "Period 0"],
+		// 		["1968", 9, "1982", "Period 1"],
+		// 		["1984", 9, "1993", "Period 2"],
+		// 		["1994", 9, "2005", "Period 3"],
+		// 	]
+		// }
+		];
 
 		var corpus;
 		var influences;
@@ -103,7 +99,14 @@ adding screenshots or something to resources -->
 		});
 
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="static/visavail/js/visavail.js"></script>
+	<script src="static/vendors/moment/moment-with-locales.min.js" type="text/javascript"></script>
+	<script src="static/vendors/masonry/masonry.pkgd.min.js" type="text/javascript"></script>
+	<script src="static/vendors/d3/d3.min.js" charset="utf-8"></script>
+	<script>
+		moment.locale('en');
+	</script>
 
 </body>
 

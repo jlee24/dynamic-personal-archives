@@ -1,9 +1,9 @@
 from flask import Flask
 from flask import render_template, make_response, after_this_request
 from flask import request
-from flask import jsonify
 import run_search
 import json
+from jinja2 import Template
 
 app = Flask(__name__)
 app.debug = True

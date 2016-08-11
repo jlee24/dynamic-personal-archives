@@ -17,7 +17,7 @@ body {
 }
 
 rect.not_selected {
-    fill-opacity: 0.5;
+    fill-opacity: 0.7;
 }
 
 /*rect.selected {
@@ -25,7 +25,8 @@ rect.not_selected {
 }*/
 
 .res {
-    font-size: 10px;
+    font-size: 9px;
+    color: white;
     word-wrap: break-word;
     font-family: "Muli", "Helvetica", Arial, sans-serif;
     -moz-osx-font-smoothing: grayscale;
@@ -39,7 +40,6 @@ rect.not_selected {
     overflow: hidden;
     text-overflow: ellipsis;
     font-family: "Muli", "Helvetica", Arial, sans-serif;
-    padding: 2px 4px 2px 2px;
 }*/
 
 .title {
@@ -54,31 +54,42 @@ rect.not_selected {
 }
 
 rect.rect_res {
-    fill: blue;
+    fill: #0052cc;
     stroke: white;
-    stroke-width: 1;
+    stroke-width: 2;
 }
+
+rect.not_selected {
+    fill-opacity: 0.7;
+}
+
 
 .rect_has_data {
     /* blocks that have data */
     fill: #e9a3c9;
+    /*fill: blue;*/
+    /*fill-opacity: 0.7;*/
     stroke: white;
     stroke-width: 1;
 }
 
 .rect_has_data:hover {
-    fill: #d75b9f
+    fill: #d75b9f;
+    /*fill-opacity: 1;*/
 }
 
 .rect_has_no_data {
     /* blocks without data */
     fill: #a1d76a;
+    /*fill: blue;*/
+    /*fill-opacity: 0.7;*/
     stroke: white;
     stroke-width: 1;
 }
 
 .rect_has_no_data:hover {
     fill: #73b530;
+    /*fill-opacity: 1;*/
 }
 
 .time_period {
@@ -113,6 +124,22 @@ div.tooltip {
     font-size: 10px;
     padding-left: 0;
     /*width: auto;*/
+    border: 0;
+    /*border-left: thin solid #000000;*/
+    pointer-events: none;
+    line-height: 12px;
+    padding-top: 0;
+    display: block;
+}
+
+div.tooltip_ {
+    position: absolute;
+    text-align: left;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 10px;
+    padding-left: 0;
+    width: auto;
     border: 0;
     /*border-left: thin solid #000000;*/
     pointer-events: none;

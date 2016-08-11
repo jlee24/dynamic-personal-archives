@@ -135,8 +135,8 @@ def main():
 		# [-1968, 1968-1984, 1984-1988, 1988-]
 		my_timeslices = [4, 5, 7, 9]
 		num_slices = len(my_timeslices)
-		num_topics = 7
-		num_words = 15
+		num_topics = 5
+		num_words = 20
 
 		dimmodel = generate_dim(num_topics, my_timeslices)
 

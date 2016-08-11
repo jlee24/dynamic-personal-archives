@@ -6,18 +6,42 @@ var search = function() {
 	  	var search_results = xhr.getResponseHeader('search_results');
 	  	// console.log(search_results);
 	  	search_results = JSON.parse(search_results);
-	  	update_chart(search_results);
+	  	show_search_results(search_results);
 	}
 	xhr.send();
 }
 
-var update_chart = function(search_results) {
-	var g = d3.select('svg').select('g').select('#g_slices');
-	for (i = 0; i < 5; i++) {
-		g.select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
-		 	.style('fill-opacity', 0.8);
+var show_search_results = function(search_results) {
+	d3.select('svg').select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
+		.transition()
+		.duration(0)
+		.attr('class', 'rect_res not_selected')
+		.style('fill-opacity', 0.5)
+
+	for (var i = 0; i < 5; i++) {
+		d3.select('svg').select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
+			.transition()
+			.duration(0)
+			.attr('class', 'rect_res selected')
+			.style('fill-opacity', function() {
+				return search_results[i.toString()]['sim_score'];
+			})
 	}
 }
+
+// svg.select('#g_axis').selectAll('text')
+// 					.data(dataset.slice(startSet, endSet))
+// 					.enter()
+// 					.append('text')
+// 					.attr('x', paddingLeft)
+// 					.attr('y', lineSpacing + dataHeight / 2)
+// 					.text(function (d) {
+// 						return d.measure;
+// 					})
+// 					.attr('transform', function (d, i) {
+// 						return 'translate(0,' + ((lineSpacing + dataHeight) * i) + ')';
+// 					})
+// 					.attr('class', 'ytitle');
 
 var round_down = function(num, divisor) {
 	if (num % divisor != 0) return num - (num % divisor);
@@ -29,7 +53,13 @@ var round_up = function(num, divisor) {
 	else return num;
 }
 
-function visavailChart(corpus) {
+var arraysEqual = function(a, b) {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (a.length != b.length) return false;
+}
+
+function visavailChart(corpus, influences) {
 	// define chart layout
 	var margin = {
 		// top margin includes title and legend
@@ -45,6 +75,15 @@ function visavailChart(corpus) {
 	};
 
 	var corpus = corpus;
+	var influences = influences;
+	var num_slices = influences.info.num_slices;
+	var num_topics = influences.info.num_topics;
+
+	// re.findall(r'0.\d*\*(\w+)', "0.042*techniqu + 0.036*subject + 0.033*target + 0.029*requir + 0.029*aid + 0.026*equip + 0.024*intellect + 0.022*bug + 0.022*solv + 0.022*test + 0.018*motion + 0.018*light + 0.018*keyboard + 0.018*park + 0.017*close")
+
+
+	// for (var i = 0; i < topics.l)
+
 
 	// height of horizontal data bars
 	var dataHeight = 18;
@@ -62,7 +101,7 @@ function visavailChart(corpus) {
 	var paddingLeft = -100;
 
 	// var width = 940 - margin.left - margin.right;
-	var width = screen.width * 0.75;
+	var width = screen.width * 0.60;
 
 	// title of chart is drawn or not (default: yes)
 	var drawTitle = 1;
@@ -78,6 +117,11 @@ function visavailChart(corpus) {
 	// display, chart will show datasets "curDisplayFirstDataset" to
 	// "curDisplayFirstDataset+maxDisplayDatasets"
 	var curDisplayFirstDataset = 0;
+
+	// global div for tooltip
+	var div = d3.selectAll('rect').append('div')
+			.attr('class', 'tooltip')
+			.style('opacity', 1);
 
 	function chart(selection) {
 		selection.each(function drawGraph(dataset) {
@@ -139,7 +183,7 @@ function visavailChart(corpus) {
 					// startDate = series.disp_data[0][0];
 					var startYear = round_down(series.disp_data[0][0].getFullYear(), 10);
 					startDate = parseYear.parse(startYear.toString());
-					var endYear = round_up(series.disp_data[series.disp_data.length - 1][2].getFullYear(), 10);
+					var endYear = round_up(series.disp_data[series.disp_data.length - 1][2].getFullYear(), 5);
 					endDate = parseYear.parse(endYear.toString());
 				} else {
 					if (series.disp_data[0][0] < startDate) {
@@ -177,7 +221,98 @@ function visavailChart(corpus) {
 			svg.append('g').attr('id', 'g_title');
 			svg.append('g').attr('id', 'g_axis');
 			svg.append('g').attr('id', 'g_data');
-			svg.append('g').attr('id', 'g_slices')
+			svg.append('g').attr('id', 'g_slices');
+			svg.append('g').attr('id', 'g_topics');
+
+			var show_influenced_documents = function(topic, slice, i_topic) {
+				var topic_index = i_topic;
+				var influencing_docs = [];
+
+				for (var i = slice; i < num_slices-1; i++) {
+					if (i !== slice) { // find the index of the topic
+						var topics = influences['time_slice_' + i.toString() + '_topics'];
+						for (var j = 0; j < num_topics; j++) {
+							if (topics[j] === topic) {
+								topic_index = j;
+							}
+						}
+					}
+
+					var docs = influences['time_slice_' + i.toString()];
+					var max_influence = 0.0;
+					var max_influencing_doc;
+					for (doc in docs) {
+						var influence = docs[doc][topic_index];
+						if (influence > max_influence) {
+							max_influence = influence;
+							max_influencing_doc = doc;
+						}
+					}
+					influencing_docs.push(max_influencing_doc);
+				}
+				console.log(influencing_docs);
+
+				d3.select('svg').select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
+					.transition()
+					.duration(0)
+					.attr('class', 'rect_res not_selected')
+					.style('fill-opacity', 0.5)
+
+				for (var i = 0; i < influencing_docs.length; i++) {
+					d3.select('svg').select("rect[id='" + parseInt(influencing_docs[i].match(/\d+/)) + "']")
+						.transition()
+						.duration(0)
+						.attr('class', 'rect_res selected')
+						.style('fill-opacity', function() {
+							return 0.8;
+						})
+	}
+			}
+
+			var get_topics = function(slice) {
+				var topic_width = res_width * .6;
+				svg.select('#g_topics').selectAll('rect')
+					.data(influences['time_slice_' + slice.toString() + '_topics'])
+					.enter()
+					.append('rect')
+					.transition()
+					.attr({
+						'class': 'ytitle',
+						'x': paddingLeft,
+						'y': (lineSpacing + dataHeight) * (noOfDatasets + 1),
+						'width': topic_width,
+						'height': lineSpacing * 2,
+						'fill': '#e6e6e6'
+					})
+					.attr('transform', function (d, i) {
+							return 'translate(0,' + ((lineSpacing + dataHeight) * i) + ')';
+					})
+
+				svg.select('#g_topics').selectAll('text')
+					.data(influences['time_slice_' + slice.toString() + '_topics'])
+					.enter()
+					.append('text')
+					.attr({
+						'class': 'ytitle',
+						'x': paddingLeft + (res_width * .3),
+						'y': (lineSpacing + dataHeight) * (noOfDatasets + 1),
+						'width': topic_width / 2,
+						'height': lineSpacing * 2,
+						'text-anchor': 'middle',
+						'alignment-baseline': 'middle',
+						'fill': 'black'
+					})
+					.on('click', function(d, i) {
+						show_influenced_documents(d, slice, i);
+					})
+					.transition()
+					.text(function (d, i) {
+						return 'Topic ' + i.toString();
+					})
+					.attr('transform', function (d, i) {
+							return 'translate(0,' + ((lineSpacing + dataHeight) * i + lineSpacing) + ')';
+					})
+			}
 
 			// create y axis labels
 			svg.select('#g_axis').selectAll('text')
@@ -192,7 +327,7 @@ function visavailChart(corpus) {
 					.attr('transform', function (d, i) {
 						return 'translate(0,' + ((lineSpacing + dataHeight) * i) + ')';
 					})
-					.attr('class', 'ytitle');
+					.attr('class','ytitle');
 
 			// create vertical grid
 			svg.select('#g_axis').selectAll('line.vert_grid').data(xScale.ticks())
@@ -250,16 +385,16 @@ function visavailChart(corpus) {
 						max_index = index_for_decade;
 					}
 				}
-				var y = 14 * (index_for_decade) + (index_for_decade * res_height) + (((lineSpacing + dataHeight) * noOfDatasets) + lineSpacing + dataHeight / 2); 
+				var y = (index_for_decade * res_height) + (((lineSpacing + dataHeight) * noOfDatasets) + lineSpacing + dataHeight / 2); 
 				return y;      
 			}
 
-			svg.select('#g_slices').selectAll('rect')
+			var g_slices = svg.select('#g_slices').selectAll('rect')
 				.data(corpus)
 				.enter()
 				.append('rect')
 				.attr({
-					'class': 'rect_res',
+					'class': 'rect_res not_selected',
 					'x': function(d) {
 						return xScale(parseYear.parse(round_down(d.YEAR, 5).toString()));
 					},
@@ -273,7 +408,8 @@ function visavailChart(corpus) {
 					'height': res_height,
 				})
 
-				svg.select('#g_slices').selectAll('text')
+				// temp labels
+				svg.select('#g_slices').selectAll('text').filter(function() {return this.getAttribute('class') == 'res'})
 					.data(corpus)
 					.enter()
 					.append('text')
@@ -291,8 +427,30 @@ function visavailChart(corpus) {
 						'alignment-baseline': 'middle'
 					})
 					.text(function(d) {
-						return d.TYPE;
+						return d.TYPE + ' ' + d.YEAR;
 					});
+
+				// svg.selectAll('foreignObject')
+				// 	.data(corpus)
+				// 	.enter()
+				// 	.append('foreignObject')
+				// 	.attr({
+				// 		'class': 'title',
+				// 		'x': function(d) {
+				// 			return xScale(parseYear.parse(round_down(d.YEAR, 5).toString()));
+				// 		},
+				// 		'y': function(d) {
+				// 			// return determine_y(d) - 10;
+				// 			return determine_y(d);
+				// 		},
+				// 		'width': res_width,
+				// 		'height': lineSpacing,
+				// 		// 'text-anchor': 'left'
+				// 		// 'alignment-baseline': 'left'
+				// 	})
+				// 	.html(function(d) {
+				// 		return d.TITLE;
+				// 	});
 
 			// make y groups for different data series
 			var g = svg.select('#g_data').selectAll('.g_data')
@@ -305,25 +463,24 @@ function visavailChart(corpus) {
 					.attr('class', 'dataset');
 
 			function highlight_res_in_period(start, end) { // start and end years
-				svg.select('#g_slices').selectAll('rect')
-					.each(function(d) {
+				svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res not_selected' })
+					.transition()
+					.duration(0)
+					.style('fill-opacity', function(d) {
 						var res_year = parseYear.parse(d.YEAR);
-						if (res_year > start && res_year < end) {
-							d3.select(this).transition()
-									.duration(200)
-									.style('fill-opacity', function() {
-										var opacity = Number(d3.select(this).style('fill-opacity'));
-										if (opacity === 0.5) return 0.8;
-										else return 0.5;
-									});
+						if (res_year >= start && res_year <= end) {
+							var opacity = Number(d3.select(this).style('fill-opacity'));
+							if (opacity === 0.5) return 0.8;
+							else return 0.5;
 						}
-					});
+					})
 			}
 
-			var id = 0;
+			var measure;
 			// add data series
 			g.selectAll('rect')
-					.data(function (d) {
+					.data(function(d) {
+						measure = d.measure;
 						return d.disp_data;
 					})
 					.enter()
@@ -340,13 +497,28 @@ function visavailChart(corpus) {
 						if (d[1] === 1) {
 							return 'rect_has_data';
 						}
+						else if (d[1] === 9) {
+							return 'time_period';
+						}
 						return 'rect_has_no_data';
+					})
+					.on('click', function(d, i) {
+						if (this.getAttribute('class') === 'time_period') {
+							this.setAttribute('class', 'time_period_active');
+							var slice = d[3].slice(-1);
+							get_topics(slice);
+						} else if (this.getAttribute('class') === 'time_period_active') {
+							this.setAttribute('class', 'time_period');
+						}
 					})
 					.on('mouseover', function (d, i) {
 						highlight_res_in_period(d[0], d[2]);
 					})
 					.on('mouseout', function (d) {
-						highlight_res_in_period(d[0], d[2]);
+						svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res not_selected' })
+							.transition()
+							.duration(0)
+							.style('fill-opacity', 0.5);
 					});
 
 				g.selectAll('rect')
