@@ -249,13 +249,3 @@ One of the first projects of this community would be to collaborate on the requi
 ACKNOWLEDGEMENTS:
 
 This work was sponsored by grants from the Kapor Family Foundation, Sun Microsystems, Inc., and Apple Computer, Inc.
-
-BACKGROUND READING
-
-For more background on the source experience from which these proposed OHS requirements grew:
-
-Ref-1. Engelbart, Douglas C., "Toward High-Performance Knowledge Workers," OAC'82 Digest, Proceedings of the AFIPS Office Automation Conference, San Francisco, April 5-7, 1982, pp. 279-290 (AUGMENT, 81010,). Re-published in "Computer Supported Cooperative Work: A Book of Readings," ed. Irene Greif, Morgan Kaufmann Publishers, Inc., San Mateo, CA 1988, pp 67-78.
-
-Ref-2. Engelbart, Douglas C., "Authorship Provisions in Augment," COMPCON '84 Digest, Proceedings of the 1984, COMPCON Conference, San Francisco, Ca., February 27 - March 1, pp. 465-472 (OAD,2250,). Re-published in "Computer Supported Cooperative Work: A Book of Readings," ed. Irene Greif, Morgan Kaufmann Publishers, Inc., San Mateo, CA 1988, pp 67-78.
-
-Ref-3. Engelbart, Douglas C., and Lehtman, Harvey G., "Working Together," BYTE Magazine, December 1988, pp. 245-252.

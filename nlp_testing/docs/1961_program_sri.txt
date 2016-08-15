@@ -77,36 +77,3 @@ V. Development and Application Activity
 
 There will be a progression of special problem-solving areas through which the program moves as we methodically build up the different capabilities which comprise the full and integrated repertoire needed for generalized real-world problem solving. It is planned to guide this progression so that within a few years we can begin to utilize our results in an associated Development and Application activity, where we develop special system designs (equipment, processes, methods, training, etc.) that can be applied practically to the tasks of real-world specialists. A computer programmer seems a natural candidate for the first such development, and cryptographers, information specialists, teaching-machine program composers, etc., can be considered subsequently. This type of activity is expected to provide very valuable feedback to the research work.
 Ultimately the development work will progress toward even more general types of problem solvers, to lead us toward the researchers, the planners, the leaders, and the doers upon whom our society depends so critically.
-
-Endnotes
-
-1. Under SRI sponsorship, with the assistance, since March 1961, of the Air Force Office of Scientific Research under Contract AF 49(638)-1024.
-2. Vannevar Bush, "As We May Think," Atlantic Month1y, (July 1945).
-
-3. Simon Ramo, "A New Technique of Education," Engineering and Science. Vol. XXI (October 1957).
-
-4. B.F. Skinner, "Teaching Machines," Science, Vol. 128, No. 3330 (October 24, 1958).
-
-5. I.J. Good, "How Much Science Can You Have at your Fingertips?" IBM Journal of Resenrch and Development, v. 2, no. 4 (October 1958).
-
-6. J.C.R. Licklider, "Man-Computer Symbiosis," IRE Transactions on Human Factors in Electronics (March 1960).
-
-7. D.B. Yntema and W.S. Torgerson, "Man-Computer Cooperation in Decisions Requiring Common Sense," IRE Transactions on Human Factors in Electronics, V. HFE-2, No. 1 (March 1961).
-
-8. Douglas C. Engelbart, "Special Considerations of the Individual as a User, Generator, and Retriever of Information," American Documentation, vol. 12, no. 2, p. 121 (April 1961).
-
-9. Merse, P.M. and Teager, H.M. "Real-Time, Time-Shared Computer Project," MlT Fourth Quarterly Progress Report Contract #Near-1841(69) DSR #8644 (October 31, 1961).
-
-10. See Quarterly Progress Reports of Division 5 (Information Processing), Lincoln Laboratory MIT, especially the work of Group 58 under Bert F.Green. Yntema and Torgerson (see Item 7 above) are in this group.
-
-11. RAND Corporation's Johniac Open Shop System currently under development. Private communication with Keith Uncopher.
-
-12. Ramo-Woolridge, see A. Vazsonyi, "An On-Line Management System Using English Language," Proceedings of the Western Joint Computer Conference, Los Angeles, California (May 9-11, 1961).
-
-13. Systems Development Corporation--see their brochure no. BR-2(2-61) entitled Automated Teaching Project.
-
-14. The work of A. Newell, J.C. Shaw, H.A. Simon, "A Variety of Intelligent Learning in a General Problem Solver," RAND report P-1742, Mathematics Division, The RAND Corporation (July 6, 1959).
-
-15. The work of J. McCarthy, "Programs with Common Sense," Mechnanisation of Thought Processes, Vol. l, National Physical Laboratory Symposium No.10 held in November 1958, London: Her Majesty's Stationery Office (1959).
-
-16. The work of Marvin Minsky, "Steps Toward Artificial Intelligence,"Proceedings of the IRE, vol. 49, No. 1 (January 1961). 

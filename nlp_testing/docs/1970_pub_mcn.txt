@@ -111,17 +111,3 @@ It seems not unreasonable to assume that survival value in our cultural evolutio
 Summary
 
 I think that tomorrow's institutions can be (must be) far better adapted to their environment, much better at providing for a full life style for everyone. These changes require a very significant increase in the institutions' ability to develop, support, and integrate the intellectual power of their individuals and organizations. And, as I see it, this ability will be directly dependent upon advanced application of interactive computers and multi-access computer networks. But the following condition is very strong in this "implications" picture: to harness this technology toward these ends will require intense concurrent development of our very complex and sophisticated system of concepts, conventions, methods, skills, organizational forms, attitudes, and values. It is time, and the means are at hand, to develop a much improved nervous system for our "social organisms".
-
-References
-
-Ref-1. D. C. Engelbart and W. K. English, "A Research Center for Augmenting Human Intellect" in AFIPS Proceedings , Vol. 33, Part One, 1966 Fall Joint Computer Conference, pp. 395-410. Thompson Book Co., Washington, D.C., 1966.
-
-Ref-2. D. C. Engelbart and Staff of the Augmented Human Intellect Research Center, Augmentation Systems and Information Science SRI Project 5890, sound film of presentation at ASIS Annual Meeting, October 1, 1969. 3 reels, 1 hour and 34 min.
-
-Ref-3. D. C. Engelbart and Staff of Augmentation Research Center, Computer-Augmented Management-System Research and Development of Augmentation Facility RADC-TR-70-82, April 1970, Final Report of Contract F30602-68-C-0286, SRI Project 7101, Stanford Research Institute, Menlo Park, California.
-
-Ref-4. D. C. Engelbart and Staff of Augmentation Research Center, Advanced Intellect Augmentation Techniques Final Report NASA Contract NAS1-7897, July 1970, SRI Project 7079, Stanford Research Institute, Menlo Park, California.
-
-Ref-5. L. G. Roberts and B. D. Wessler, "Computer Network Development to Achieve Resource Sharing" in AFIPS Proceedings , Vol. 36, 1970, SJCC, AFIPS Press, Montvale, New Jersey, 1970, pp. 543-549.
-
-Ref-6. L. G. Roberts, "Economic Applications of Multi-Access Computer Networks" paper presented at the Interdisciplinary Conference on Multiple-Access Computer Networks , Austin, Texas, April 20-22, 1970.

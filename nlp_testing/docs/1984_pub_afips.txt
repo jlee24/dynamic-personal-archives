@@ -153,11 +153,3 @@ Often, a passage in an earlier Journal document which was originally submitted a
 ACKNOWLEDGEMENTS
 
 The principles underlying this work and the basic implementation of system architecture and features were done at SRI International, sponsored by the Air Force, NASA and DARPA, and contributed to by many bright colleagues in the Augmentation Research Center. Solid enhancements have been made to the Conference Sub-system, the Mail System, and the Journal System since AUGMENT was moved to Tymshare in 1978, with many good ideas contributed out of the experience of essentially the entire Office Automation Division.
-
-REFERENCES 
-
-Ref-1: Engelbart, D. C., "Toward Integrated, Evolutionary Office Automation Systems," Proceedings of the 26th Joint Engineering Management Conference, Denver, CO, Oct. 16-18, 1978, pp. 63-68. (AUGMENT,71279,)
-
-Ref-2: Engelbart, D. C., "Coordinated Information Services for a Discipline- or Mission-Oriented Community," Proceedings of the Second Annual Computer Communications Conference in San Jose, California, Jan 24, 1973 -- also, Proceedings of the NATO Conference on Computer Networks, University of Sussex, England, September 1974. (AUGMENT, 12445,)
-
-Ref-3: Engelbart, D. C., "Toward High-Performance Knowledge Workers," OAC '82 Digest (Proceedings of the 1982, AFIPS Office Automation Conference, San Francisco, Ca., April 5-7), pp. 279-290. (AUGMENT, 81010,)

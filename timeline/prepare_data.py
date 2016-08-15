@@ -28,7 +28,7 @@ def scale(path):
 	basename = os.path.basename(path).split(".")[0]
 	outpath = os.path.join("static/images/icons", "%s-icon.jpg" % (basename))
 	# subprocess.call(['convert', path, '-resize', '80x', '-crop', '80x45+0+0', '-quality', '92', outpath])
-	subprocess.call(['convert', path, '-resize', '80x45', '-quality', '92', outpath])
+	subprocess.call(['convert', path, '-resize', '80x', '-crop', '80x45+0+0', '-quality', '92', outpath])
 
 from multiprocessing.pool import ThreadPool as Pool
 

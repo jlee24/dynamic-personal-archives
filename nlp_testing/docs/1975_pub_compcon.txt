@@ -95,13 +95,3 @@ Reference 4 provides a framework description of how a community of knowledge wor
 Acknowledgements
 
 The research and development for the described work has been supported by several sponsors over tha past years: the Information Processing Techniques Office of the Defense Advanced Projects Research Agency has given strong basic support over the entire period; the Air Force's Rome Air Development Center has been a steady supporter; the Office of Naval Research provided key support for some of the particulars in managing Journal catalogs; NASA's Langley Research Center gave parallel support with ARPA during the Journal System's formative years. Staff at SRI who have contributed particularly to concept and implementation are William Duvall, David Evans, Jon Hopper, Charles Irby, and Jeanne North.
-
-References
-
-Ref-1. Engelbart, D.C. "A Conceptual Framework For the Augmentation of Man's Intellect" , in Howerton and Weeks, eds., Vistas in Information Handling , Spartan Books, Washington D.C., 1963, p. 1-29.
-
-Ref-2. Engelbart, D.C., Watson, R.W. and Norton, J.C. "The Augmented Knowledge Workshop" . Procedings of AFIPS 1973 National Computer Conference , June 1973, Vol. 42, p.9-21. (NLS Journal -- 14724,)
-
-Ref-3. Engelbart, D.C, and English, W.K. "A Research Center for Augmenting Human Intellect" . Proceedings of AFIPS Fall Joint Computer Conference , Dec. 1968, Vol.33, p. 395-410. (NLS Journal -- 3954,)
-
-Ref-4. Engelbart, D.C, "Coordinated Information Services for a Discipline- or Mission-Oriented Community" in Time Sharing: Past, Present, Future: Proceedings of the Second Annal Computer Communications Conference at California State University, San Jose, California, January 24-25, 1973, p.2.1-2.4. Also published in Grimsdale, R.L., and Kuo, F. F., eds., Computer Communication Networks . NATO Advanced Study Institutes Series, Series E, No. 4, Nordhoff-Leyden, 1975. (NLS Journal -- 12445,)

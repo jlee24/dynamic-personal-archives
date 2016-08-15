@@ -558,18 +558,3 @@ Low-Priority Devices
 This controller accommodates three devices with relatively low data-transfer rates. At this time only the line printer is implemented, with provisions for adding an on-line typewriter (Dura), a plotter, and a terminal for the proposed ARPA computer network.
 
 The line printer is a Potter Model HSP-3502 chain printer with 96 printing characters and a speed of about 230 lines per minute.
-
-
-REFERENCES
-
-(English 1) W K ENGLISH D C ENGELBART B HUDDART Computer-aided display control Final Report Contract NAS 1-3988 SRI Project 5061 Stanford Research Institute Menlo Park California July 1965
-
-(English2) W K ENGLISH D C ENGELBART M L BERMAN Display-selection techniques for text manipulation IEEE Trans on Human Factors in Electronics Vol HFE-8 No 1 1967
-
-(Engelbartl) D C ENGLEBART Augmenting human intellect: A conceptual framework Summary Report Contract AF 49 638 1024 SRI Project 3578 Stanford Research Institute Menlo Park California October 1962
-
-(Engelbart2) D C ENGELBART A conceptual frarnework for the augmentation of man's intellect In Vistas in Information Handling Vol 1 D W Howerton and D C Weeks eds Spartan Books Washington D C 1963
-
-(Hay1) R E HAY J F RULIFSON MOL940 Preliminary speifications for an ALGOL like machine-oriented language for the SDS 940 Interim Technical Report Contract NAS 1-5940 SRI Project 5890 Stanford Research Institute Menlo Park California March 1968
-
-(Pirtle1) M PIRTLE Intercommunication of Processors and memory Proc Fall Joint Computer Conference Anaheim California November 1967

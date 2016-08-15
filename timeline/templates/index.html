@@ -54,16 +54,7 @@ adding screenshots or something to resources -->
 				["1988", 1, "1991", "Bootstrap Seminars"],
 				["1991", 1, "2005", "Bootstrap Alliance"]
 			]
-		}
-		// , {"measure": "Themes",
-		// 	"data": [
-		// 		["1960", 9, "1967", "Period 0"],
-		// 		["1968", 9, "1982", "Period 1"],
-		// 		["1984", 9, "1993", "Period 2"],
-		// 		["1994", 9, "2005", "Period 3"],
-		// 	]
-		// }
-		];
+		}];
 
 		var corpus;
 		var influences;
@@ -76,12 +67,12 @@ adding screenshots or something to resources -->
 		}
 
 		function _get(url, cb) {
-		    var xhr = new XMLHttpRequest();
-		    xhr.open("GET", url, true);
-		    xhr.onload = function() {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", url, true);
+			xhr.onload = function() {
 				cb(this.responseText);
-		    }
-		    xhr.send();
+			}
+			xhr.send();
 		}
 
 		function _get_json(url, cb) {
@@ -91,11 +82,9 @@ adding screenshots or something to resources -->
 		}
 
 		_get_json("static/data/db.json", function(ret_corpus) {
-			corpus = ret_corpus;
 			_get_json("static/data/dim.json", function(ret_influences) {
-				influences = ret_influences;
-				initialize_chart(corpus, influences);
-			});
+				initialize_chart(ret_corpus, ret_influences);
+			})
 		});
 
 	</script>

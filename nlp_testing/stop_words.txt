@@ -30,6 +30,8 @@ um
 yeah
 thing
 things
+sort
+kind
 stuff
 goes
 going
@@ -42,6 +44,8 @@ et
 cetera
 etcetera
 etc
+cx
+cc
 
 a
 able

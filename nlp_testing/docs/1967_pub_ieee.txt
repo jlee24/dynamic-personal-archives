@@ -358,17 +358,3 @@ To pursue this kind of development and evaluation work, it is necessary to consi
 Thus, it seems unrealistic to expect a flat statement that one device is better than another. The details of the usage system in which the device is to be embedded make too much difference.
 
 Irrespective of the speeds with which one can make successive display selections with a given device, the tradeoffs for the characteristics of fatigue, quick transfer to and from a keyboard, etc., will heavily weight the choice among the devices. And these tradeoffs, and the possibilities for designing around them, are not apparent until after a good deal of design and analysis has been done for the rest of the system.
-
-BIBLIOGRAPHY
-
-1 (ENGLISH 1 ) W. K. English, D. C. Engelbart, and Bonnie Huddart, "Computer aided display control," Stanford Research Institute, Menlo Park, Calif., Contract NAS 1-3988, July 1965.
-
-2 (FLETCHER 1 ) W. E. Fletcher, "On-line input of graphical data," presented at the 1963 Digital Equipment Computer Users Society Meeting, Livermore, C.alif.
-
-3 (DAVIS 1) M. R. Davis and T. O. Ellis, "The RAND tablet: a man-machine graphical communication device," Proc. 1964 Fall AFIPS Joint Computer Conf., vol. 26.
-
-4 (BARMACK 1) J. E. Barmack and H. W. Sinaiko, "Human factors problems in computer-generated graphic displays, " Institute for Defense Analyses IDA/HQ 66-4820, April 1966.
-
-5 (ENGELBART 1) D. C. Engelbart, "Augmenting human intellect: a conceptual framework," Stanford Research Institute, Menlo Park, Calif., Summary Report, Contract AF 49(638) 1024, SRI Project 3578, October 1962.
-
-6 (ENGELBART 2) P. W. Howerton and D. C. Weeks, Vistas In Information Handling, vol. 1, The Augmentation of Man's Intellect by Machine. Washington, D. C.: Spartan Books, 1963.

@@ -29,6 +29,12 @@ var show_search_results = function(search_results) {
 	}
 }
 
+var unstem = {
+	'comput': 'computer',
+	'peopl': 'people',
+	'devic': 'device'
+}
+
 var round_down = function(num, divisor) {
 	if (num % divisor != 0) return num - (num % divisor);
 	else return num;
@@ -62,6 +68,7 @@ function visavailChart(corpus, influences) {
 
 	var corpus = corpus;
 	var influences = influences;
+	var themes = influences.themes;
 	var num_slices = influences.info.num_slices;
 	var num_topics = influences.info.num_topics;
 
@@ -100,8 +107,8 @@ function visavailChart(corpus, influences) {
 
 	// global div for tooltip
 	var div = d3.select('body').append('div')
-      .attr('class', 'tooltip_')
-      .style('opacity', 0);
+			.attr('class', 'tooltip_')
+			.style('opacity', 0);
 
 	function chart(selection) {
 		selection.each(function drawGraph(dataset) {
@@ -132,25 +139,13 @@ function visavailChart(corpus, influences) {
 			// check how data is arranged
 			var definedBlocks = 0;
 
-			test_topics = [{
-				"measure": "Period 0",
-				"data": [
-					["1960", 9, "2005", '0.032*will + 0.020*knowledg + 0.020*organ + 0.017*plan + 0.017*work'],
-			]}, 
-
-			{ "measure": "Period 1",
-				"data": [
-					["1970", 9, "2005", '0.071*document + 0.062*augment + 0.048*support + 0.046*journal + 0.041*collabor'],
-					["1970", 9, "1989", '0.086*display + 0.081*target + 0.075*mous + 0.074*fig + 0.066*test'],
-					["1970", 9, "1989", '0.568*dream + 0.000*quantiti + 0.000*multimachin + 0.000*tymnet + 0.000*hawaii']
-				],
-			},
-			{
-				"measure": "Period 2",
-				"data": [
-					["1989", 9, "2005", '0.534*workshop + 0.192*skill + 0.156*arc + 0.000*telecommun + 0.000*sybsystem'],
-				],
-			}];
+			var _themes = [];
+			for (var i = 0; i < themes.length; i++) {
+				_topic = {}
+				_topic['measure'] = "Theme " + i.toString();
+				_topic['data'] = ["1960", 9, "2005", themes[i]];
+				_themes.push(_topic);
+			}
 
 
 			// parse data text strings to JavaScript date stamps
@@ -165,13 +160,11 @@ function visavailChart(corpus, influences) {
 				});
 			});
 
-			test_topics.forEach(function (d) {
-				d.data.forEach(function (d1) {
-					if (!(d1[0] instanceof Date)) {
-						d1[0] = parseDate.parse(d1[0]);
-						d1[2] = parseDate.parse(d1[2]);
-					}
-				});
+			_themes.forEach(function (d) {
+				if (!(d.data[0] instanceof Date)) {
+						d.data[0] = parseDate.parse(d.data[0]);
+						d.data[2] = parseDate.parse(d.data[2]);
+				}
 			});
 
 			// cluster data by dates to form time blocks
@@ -184,13 +177,11 @@ function visavailChart(corpus, influences) {
 				dataset[seriesI].disp_data = tmpData;
 			});
 
-			test_topics.forEach(function (series, seriesI) {
+			_themes.forEach(function (series, seriesI) {
 				var tmpData = [];
 				var dataLength = series.data.length;
-				series.data.forEach(function (d, i) {
-					tmpData.push(d);
-				});
-				test_topics[seriesI].disp_data = tmpData;
+				tmpData.push(series.data);
+				_themes[seriesI].disp_data = tmpData;
 			});
 
 			// determine start and end dates among all nested datasets
@@ -243,6 +234,7 @@ function visavailChart(corpus, influences) {
 			svg.append('g').attr('id', 'g_data');
 			svg.append('g').attr('id', 'g_topics');
 			svg.append('g').attr('id', 'g_slices');
+			svg.append('g').attr('id', 'g_icons');
 			
 			function highlight_res_in_period(start, end) { // start and end years
 				svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res not_selected' })
@@ -256,49 +248,49 @@ function visavailChart(corpus, influences) {
 					})
 			}
 
-			// var show_influenced_documents = function(topic, slice, i_topic) {
-			// 	var topic_index = i_topic;
-			// 	var influencing_docs = [];
+			var show_influenced_documents = function(topic, slice, i_topic) {
+				var topic_index = i_topic;
+				var influencing_docs = [];
 
-			// 	for (var i = slice; i < num_slices-1; i++) {
-			// 		if (i !== slice) { // find the index of the topic
-			// 			var topics = influences['time_slice_' + i.toString() + '_topics'];
-			// 			for (var j = 0; j < num_topics; j++) {
-			// 				if (topics[j] === topic) {
-			// 					topic_index = j;
-			// 				}
-			// 			}
-			// 		}
+				for (var i = slice; i < num_slices-1; i++) {
+					if (i !== slice) { // find the index of the topic
+						var topics = influences['time_slice_' + i.toString() + '_topics'];
+						for (var j = 0; j < num_topics; j++) {
+							if (topics[j] === topic) {
+								topic_index = j;
+							}
+						}
+					}
 
-			// 		var docs = influences['time_slice_' + i.toString()];
-			// 		var max_influence = 0.0;
-			// 		var max_influencing_doc;
-			// 		for (doc in docs) {
-			// 			var influence = docs[doc][topic_index];
-			// 			if (influence > max_influence) {
-			// 				max_influence = influence;
-			// 				max_influencing_doc = doc;
-			// 			}
-			// 		}
-			// 		influencing_docs.push(max_influencing_doc);
-			// 	}
+					var docs = influences['time_slice_' + i.toString()];
+					var max_influence = 0.0;
+					var max_influencing_doc;
+					for (doc in docs) {
+						var influence = docs[doc][topic_index];
+						if (influence > max_influence) {
+							max_influence = influence;
+							max_influencing_doc = doc;
+						}
+					}
+					influencing_docs.push(max_influencing_doc);
+				}
 
-			// 	d3.select('svg').select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
-			// 		.transition()
-			// 		.duration(0)
-			// 		.attr('class', 'rect_res not_selected')
-			// 		.style('fill-opacity', 0.7)
+				d3.select('svg').select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
+					.transition()
+					.duration(0)
+					.attr('class', 'rect_res not_selected')
+					.style('fill-opacity', 0.7)
 
-			// 	for (var i = 0; i < influencing_docs.length; i++) {
-			// 		d3.select('svg').select("rect[id='" + parseInt(influencing_docs[i].match(/\d+/)) + "']")
-			// 			.transition()
-			// 			.duration(0)
-			// 			.attr('class', 'rect_res selected')
-			// 			.style('fill-opacity', function() {
-			// 				return 0.95;
-			// 			})
-			// 	}
-			// }
+				for (var i = 0; i < influencing_docs.length; i++) {
+					d3.select('svg').select("rect[id='" + parseInt(influencing_docs[i].match(/\d+/)) + "']")
+						.transition()
+						.duration(0)
+						.attr('class', 'rect_res selected')
+						.style('fill-opacity', function() {
+							return 0.95;
+						})
+				}
+			}
 
 			// var get_topics = function(slice) {
 			// 	var topic_width = res_width * .6;
@@ -318,6 +310,7 @@ function visavailChart(corpus, influences) {
 			// 		.attr('transform', function (d, i) {
 			// 				return 'translate(0,' + ((lineSpacing + dataHeight) * i) + ')';
 			// 		})
+			// }
 
 			// 	svg.select('#g_topics').selectAll('text')
 			// 		.data(influences['time_slice_' + slice.toString() + '_topics'])
@@ -505,24 +498,24 @@ function visavailChart(corpus, influences) {
 						'height': '45px'
 					})
 
-				// g_topics.selectAll('rect')
-				// 	.each(function(d) {
-				// 		var matrix = this.getScreenCTM().translate(+this.getAttribute('x'), +this.getAttribute('y'));
-				// 		var width = this.getAttribute('width');
-				// 		d3.select('body').append('div')
-				// 		.attr('class', 'tooltip')
-				// 		.style('opacity', 0.9)
-				// 		.text(d[3])
-				// 		.style('width', width + 'px')
-				// 		.style('text-align', 'center')
-				// 		.style('left', function () {
-				// 			return window.pageXOffset + matrix.e + 'px';
-				// 		})
-				// 		.style('top', function () {
-				// 			return window.pageYOffset + matrix.f - 11 + 'px';
-				// 		})
-				// 		.style('height', dataHeight + 11 + 'px');	
-				// 	});
+				var g_icons = svg.select('#g_icons')
+				g_icons.selectAll('image')
+					.data(corpus)
+					.enter()
+					.append('image')
+					.attr({
+						'xlink:href': function(d, i) {
+							if (d.TYPE === 'Video') return "/static/css/icons/Video.png";
+						},
+						'x': function(d) {
+							return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4.5;
+						},
+						'y': function(d) {
+							return determine_y(d) + 4.5;
+						},
+						'width': '80px',
+						'height': '45px'
+					})
 
 			// make y groups for different data series
 			var g = svg.select('#g_data').selectAll('.g_data')
@@ -597,11 +590,11 @@ function visavailChart(corpus, influences) {
 					});
 
 			var g_topics = svg.select('#g_topics').selectAll('.g_data')
-					.data(test_topics.slice(0, test_topics.length))
+					.data(_themes.slice(0, _themes.length))
 					.enter()
 					.append('g')
 					.attr('transform', function (d, i) {
-						return 'translate(0,' + (lineSpacing + (dataHeight / 2)*i) + ')';
+						return 'translate(0,' + (lineSpacing + (dataHeight * .75)*i) + ')';
 					})
 					.attr('class', 'dataset');
 
@@ -618,50 +611,56 @@ function visavailChart(corpus, influences) {
 					.attr('width', function (d) {
 						return (xScale(d[2]) - xScale(d[0]));
 					})
-					.attr('height', dataHeight/2)
-					.attr('class', function (d) {
-						if (d[1] === 1) {
-							return 'rect_has_data';
+					.attr('height', dataHeight * .75)
+					.attr('class', 'time_period')
+					.on('click', function(d, i) {
+						if (this.getAttribute('class') === 'time_period') {
+							this.setAttribute('class', 'time_period_active');
+							show_influenced_documents(d, 1, i);
+						} else if (this.getAttribute('class') === 'time_period_active') {
+							this.setAttribute('class', 'time_period');
+							svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res selected' })
+								.transition()
+								.duration(0)
+								.style('fill-opacity', 0.7);
 						}
-						else if (d[1] === 9) {
-							return 'time_period';
-						}
-						return 'rect_has_no_data';
+						div.transition()
+								.duration(0)
+								.style('opacity', 0.9);
 					})
-					// .on('click', function(d, i) {
-					// 	if (this.getAttribute('class') === 'time_period') {
-					// 		this.setAttribute('class', 'time_period_active');
-					// 		var slice = d[3].slice(-1);
-					// 		get_topics(slice);
-					// 	} else if (this.getAttribute('class') === 'time_period_active') {
-					// 		this.setAttribute('class', 'time_period');
-					// 	}
-					// })
 					.on('mouseover', function (d, i) {
-						highlight_res_in_period(d[0], d[2]);
-            var matrix = this.getScreenCTM().translate(+this.getAttribute('x'), +this.getAttribute('y'));
-            div.transition()
-                .duration(0)
-                .style('opacity', 0.9);
-            div.html(d[3])
-            .style('left', function () {
-              return window.pageXOffset + matrix.e + 'px';
-            })
-            .style('top', function () {
-              return window.pageYOffset + matrix.f - 11 + 'px';
-            })
-            .style('height', dataHeight + 11 + 'px');
-          })
-          .on('mouseout', function () {
-            div.transition()
-                .duration(0)
-                .style('opacity', 0);
-
-            svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res not_selected' })
-							.transition()
-							.duration(0)
-							.style('fill-opacity', 0.7);
-          });
+						// highlight_res_in_period(d[0], d[2]);
+						var matrix = this.getScreenCTM().translate(+this.getAttribute('x'), +this.getAttribute('y'));
+						div.transition()
+								.duration(0)
+								.style('opacity', 0.9);
+						div.html(function() {
+							var output = '';
+							var matches = d[3].match(/[^ 0.\d*\*](\w+)/g);
+							for (var i = 0; i < matches.length; i++) {
+								if (matches[i] in unstem) {
+									matches[i] = unstem[matches[i]];
+								}
+								if (i !== matches.length - 1) output += matches[i] + ', ';
+								else output += matches[i];
+							}
+							return output;
+						})
+						.style('left', function () {
+							return window.pageXOffset + matrix.e + 'px';
+						})
+						.style('top', function () {
+							return window.pageYOffset + matrix.f - 11 + 'px';
+						})
+						.style('height', dataHeight + 11 + 'px');
+					})
+					.on('mouseout', function (d) {
+						if (this.getAttribute('class') === 'time_period') {
+							div.transition()
+									.duration(0)
+									.style('opacity', 0);
+						}
+					});
 
 			// g_topics.selectAll('rect')
 			// 		.each(function(d) {

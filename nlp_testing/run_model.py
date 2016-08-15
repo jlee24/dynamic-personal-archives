@@ -6,6 +6,7 @@ from gensim import corpora, models, utils
 import numpy  # for arrays, array broadcasting etc.
 import numbers
 import json
+import re
 
 # import logging
 # logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -111,13 +112,13 @@ def generate_tfidf():
 			print(my_dictionary[word[0]], word[1])
 
 def main():
-	if sys.argv[1] == 'lda':
+	if model == 'lda':
 		ldamodel = generate_lda()
 		for topic in ldamodel.print_topics(num_topics=5, num_words=15):
 			print(topic)
 			print('\n')
 
-	elif sys.argv[1] == 'dtm':
+	elif model == 'dtm':
 		my_timeslices = [6, 5, 5, 6, 4]
 		num_slices = len(my_timeslices)
 		num_topics = 5
@@ -132,77 +133,87 @@ def main():
 				print(topics[i*j])
 			print('\n')
 
-	elif sys.argv[1] == 'dim':
+	elif model == 'dim':
 		# [-1968, 1968-1984, 1984-1988, 1988-]
 		my_timeslices = [0, 8, 11, 15, 0]
 		num_slices = len(my_timeslices)
-		num_topics = 100
+		num_topics = 10
 		num_words = 5
 
-		dimmodel = generate_dim(num_topics, my_timeslices)
-		dimmodel.save('tmp/dimmodel.model')
+		# dimmodel = generate_dim(num_topics, my_timeslices)
+		# dimmodel.save('tmp/dimmodel2.model')
+		# dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel.model')
+		dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel1.model')
+
+		# structure: {time_slice: {doc: [influence of each topic]}, topics_from_time_slice: [composition of each topic]}
+		dim_influences = {}
 
 		topics_per_slice = []
 
 		# printing out the topics
 		topics = dimmodel.show_topics(topics=num_topics, times=num_slices, topn=num_words, log=False, formatted=True)
 		for i in range(0, num_slices):
-			# print('Time_Slice ' + str(i))
 			topics_slice = []
 			for j in range(0, num_topics):
-				# print('Topic ' + str(j))
-				# print(topics[i*j])
+				# topics_slice.append(tuple(sorted(re.findall(r'0.\d*\*(\w+)', topics[i*j]))))
 				topics_slice.append(topics[i*j])
 			topics_per_slice.append(set(topics_slice));
-			# print('\n')
 
-		for i in range(0, num_slices-1):
-			print('Intersection between Time_Slice ' + str(i) + ' and Time_Slice ' + str(i+1) +'\n')
-			intersection = list(topics_per_slice[i] & topics_per_slice[i+1])
-			print('Length: ' + str(len(intersection)) + '\n')
-			for topic in intersection:
-				print(topic + '\n')
+		def print_topics(topics_set):
+			for topic in topics_set:
+				print(topic)
+				print('\n')
 
-			print('Difference between Time_Slice ' + str(i) + ' and Time_Slice ' + str(i+1) +'\n')
-			difference = list(set(topics_per_slice[i]) - set(topics_per_slice[i+1]))
-			print('Length: ' + str(len(difference)) + '\n')
-			for topic in difference:
-				print(topic + '\n')
+		print('Topics Spanning Time_Slices 1 to 3\n')
+		themes = list(topics_per_slice[1] & topics_per_slice[2] & topics_per_slice[3])
+		dim_influences['themes'] = []
+		# print_topics(themes)
+		for i in range(2):
+			dim_influences['themes'].append(themes[i])
 
+		# for i in range(1, 4):
+		# 	print('Topics Unique to Time_Slice ' + str(i) + '\n')
+		# 	unique = topics_per_slice[i]
+		# 	for j in range(1, 4):
+		# 		if j != i:
+		# 			unique = unique - topics_per_slice[j]
+		# 	print_topics(unique)
 
-		# structure: {time_slice: {doc: [influence of each topic]}, topics_from_time_slice: [composition of each topic]}
-		# dim_influences = {}
+		# print('Topics Spanning Time_Slices 1 to 2\n')
+		# print_topics(topics_per_slice[1] & topics_per_slice[2] - topics_per_slice[3])
+		# print('Topics Spanning Time_Slices 2 to 3\n')
+		# print_topics(topics_per_slice[2] & topics_per_slice[3] - topics_per_slice[1])
 
-		# time_slice_count = 0
-		# docs_count = 0
-		# for time_slice in dimmodel.influences_time:
-		# 	print("Time_Slice " + str(time_slice_count))
+		time_slice_count = 0
+		docs_count = 0
+		for time_slice in dimmodel.influences_time:
+			print("Time_Slice " + str(time_slice_count))
 
-		# 	# add topics
-		# 	dim_influences["time_slice_" + str(time_slice_count) + "_topics"] = []
-		# 	for j in range(0, num_topics):
-		# 		dim_influences["time_slice_" + str(time_slice_count) + "_topics"].append(topics[time_slice_count*j])
+			# add topics
+			dim_influences["time_slice_" + str(time_slice_count) + "_topics"] = []
+			for j in range(0, num_topics):
+				dim_influences["time_slice_" + str(time_slice_count) + "_topics"].append(topics[time_slice_count*j])
 
-		# 	# add document influences
-		# 	dim_influences["time_slice_" + str(time_slice_count)] = {}
-		# 	for doc in time_slice:
-		# 		print("Doc " + str(docs_count))
-		# 		dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)] = []
-		# 		topics_count = 0
-		# 		for topic in doc:
-		# 			print("Topic " + str(topics_count) + ": " + str(topic))
-		# 			dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)].append(topic)
-		# 			topics_count += 1
-		# 		dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)] = sorted(dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)])
-		# 		docs_count += 1
-		# 	time_slice_count += 1
+			# add document influences
+			dim_influences["time_slice_" + str(time_slice_count)] = {}
+			for doc in time_slice:
+				print("Doc " + str(docs_count))
+				dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)] = []
+				topics_count = 0
+				for topic in doc:
+					print("Topic " + str(topics_count) + ": " + str(topic))
+					dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)].append(topic)
+					topics_count += 1
+				dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)] = sorted(dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)])
+				docs_count += 1
+			time_slice_count += 1
 
-		# with open('tmp/dim_influences.json', 'w') as output:
-		# 	dim_influences['info'] = {}
-		# 	dim_influences['info']['num_topics'] = num_topics
-		# 	dim_influences['info']['num_slices'] = num_slices
-		# 	dim_influences['info']['time_slices'] = my_timeslices
-		# 	json.dump(dim_influences, output, sort_keys=True, indent=4, separators=(',',': '))
+		with open('../timeline/static/data/dim.json', 'w') as output:
+			dim_influences['info'] = {}
+			dim_influences['info']['num_topics'] = num_topics
+			dim_influences['info']['num_slices'] = num_slices
+			dim_influences['info']['time_slices'] = my_timeslices
+			json.dump(dim_influences, output, sort_keys=True, indent=4, separators=(',',': '))
 
 	else:
 		generate_tfidf()

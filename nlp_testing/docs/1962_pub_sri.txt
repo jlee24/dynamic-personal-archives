@@ -930,34 +930,3 @@ Second, the ideas presented are to be considered in both of the above senses: th
 Third, it becomes increasingly clear that there should be action now--the sooner the better--action in a number of research communities and on an aggressive scale. We offer a conceptual framework and a plan for action, and we recommend that these be considered carefully as a basis for action If they be considered but found unacceptable, then at least serious and continued effort should be made toward developing a more acceptable conceptual framework within which to view the over-all approach, toward developing a more acceptable plan of action, or both.
 
 This is an open plea to researchers and to those who ultimately motivate, finance, or direct them, to turn serious attention toward the possibility of evolving a dynamic discipline that can-treat the problem of improving intellectual effectiveness in a total sense. This discipline should aim at producing a continuous cycle of improvements--increased understanding of the problem, improved means for developing new aug mentation systems, and improved augmentation systems that can serve the world's problem solvers in general and this discipline's workers in particular. After all, we spend great sums for disciplines aimed at understanding and harnessing nuclear power. Why not consider developing a discipline aimed at understanding and harnessing "neural power?" In the long run, the power of the human intellect is really much the more important of the two.
-
-REFERENCES
-
-Kennedy, J. L and Putt, G. H., "Administration of Research in a Research Corporation," RAND Corporation Report P-847 (20 April 1956).
-Ashby, Ross, Design For a Brain (John Wiley & Sons, New York City, N. Y., 1960).
-Ashby, Ross, "Design for an Intelligence-Amplifier, Automata Studies, edited by C. E. Shannon and J. McCarthy, pp. 215-234 (Princeton University Press, 1956).
-Korzybski, A , Science and Sanity, 1st Ed. (International non Aristotelian Library Publishing Co., Lancaster, Pennsylvania, 1933).
-Whorf, B. L., Language, Thought, and Reality (MIT & John Wiley & Sons, Inc., New York City, N.Y., 1956).
-Bush, Vannevar, "As We May Think," The Atlantic Monthly (July 1945).
-Newell, A. (editor), Information Processing Language-V Manual (Prentice-Hall, Inc., Englewood Cliffs, New Jersey, 1961).
-McCarthy, J., "LISP 1.5 Programmer's Manual," Computation Center and Research Laboratory of Electronics, MIT (14 July 1961).
-Gelernter, H., Hansen, J. R., and Gerberich, C. L., "A Fortran Compiled List-Processing Language," Journal of the Assoc. for Computing Machinery (April 1960).
-Yngve, V. H., "Introduction to COMIT Programming," Technical Report, Research Laboratories of Electronics and Computation Center, MIT (5 November 1961).
-Yngve, V. H., "COMIT Programmer's Reference Manual," Technical Report, Research Laboratories of Electronics and Computation Center, MIT (5 November 1961).
-Perlis, A. J. and Thornton, C., "Symbol Manipulation by Threaded Lists," Communications of the ACM, Vol. 3, No. 4 (April 1960).
-Carr, J. W., III, "Recursive Subscripting Compilers and List-Type Memories," Communications of the ACM, Vol. 2, pp. 4-6 (February 1959).
-Weizenbaum, J., "Knotted List Structures," Communications of the ACM, Vol. 5, No. 3, pp. 161-165 (March 1962).
-Licklider, J. C. R., "Man-Computer Symbiosis," IRE Transactions on Human Factors in Electronics (March 1960).
-Ulam, S. M., A Collection of Mathematical Problems, p. 135 (Interscience Publishers, Inc., New York, N.Y., 1960).
-Good, I. J., "How Much Science Can You Have at Your Fingertips?" IBM Journal of Research and Development, Vol. 2, No. 4 (October 1958)
-Ramo, Simon, "A New Technique of Education," IRE Trans. on Education (June 1958).
-Ramo, Simon, "The Scientific Extension of the Human Intellect," Computers and Automation (February 1961).
-Fein, Louis, "The Computer-Related Science (Synnoetics) at a University in the Year 1975," unpublished paper (December 1960).
-Licklider, J. C. R. and Clark, W. E., "On-Line Man-Computer Communication," Proceedings Spring Joint Computer Conference, Vol. 21, pp. 113-128 (National Press, Palo Alto, California, May 1962).
-Culler, G. J. and Huff, R. W., "Solution of Non-Linear Integral Equations Using On-Line Computer Control," Ramo-Wooldridge, Canoga Park, California, paper for presentation at SJCC, San Francisco (May 1962).
-Teager, H. M.,"Real-Time, Time-Shared Computer Project," report, MIT, Contract Nonr-1841(69) DSR 8644 (1 July 1961).
-Teager, H. M., "Systems Considerations in Real-Time Computer Usage," paper presented at ONR Symposium on Automated Teaching (12 October 1961).
-Randa, Glenn C., "Design of a Remote Display Console," Report ESL, R-132, MIT, Cambridge, Massachusetts (available through ASTIA) (February 1962).
-Vickery, B. C., Classification and Indexing in Science, p. 42 (Academic Press, Inc., New York, 1959).
-Osgood, C. E., Suci, G. J., and Tannenbaum, P. H., The Measurement of Meaning (University of Illinois Press, Urbana, Illinois, 1957).
-Current Research and Development in Scientific Documentation No. 6 NSF-60-25, p. 104 (National Science Foundation, May 1960).

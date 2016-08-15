@@ -82,15 +82,3 @@ For another thing, the vocabulary and procedural skill required to harness these
 If exploration of Workshop use were to occur only where there exists both an appropriate local computer system and trained specialists to maintain the software and train the users, there would be a very much slower evolution toward the increased-effectiveness possibilities offered by computer augmentation.
 
 Finally, the "digital-packet transportation system" aspect of a computer network seems quite essential to the practical, effective support of an augmented Community Knowledge Workshop -- which in turn seems to offer a really important and unique means for sharing among a community of humans the distributed nuclei of human resources represented by individuals with special knowledge, judgement, intuition, imagination, conceptual skills, etc. This human-resource sharing has explosive potential -- I look to it with a biological metaphor as providing a new evolutionary stage for the nervous system of social organisms, from which much more highly developed institutional forms may evolve that are much improved in: awareness of self and environment, situational cognizance and response, visualization of the future, problem-solving capability, etc. (See Ref-5 for expansion of this theme.)
-
-References
-
-Ref-1. Peter F. Drucker. The Effective Executive . Harper & Row, New York. 1966 (XDOC -- 3074,)
-
-Ref-2. Peter F. Drucker. Age of Discontinuity: Guidelines to Our Changing Society . Harper & Row, New York. 1969. (XDOC -- 4247,)
-
-Ref-3. D. C. Engelbart and W. K. English. "A Research Center for Augmenting Human Intellect" , AFIPS Proceedings of the Fall Joint Computer Conference , 1968. Vol. 33, Part 1, p.395-420. Thompson Book Company, Washington, D.C. 1968. (XDOC -- 3954,)
-
-Ref-4. D. C. Engelbart. Experimental Development of a Small Computer-Augmented Information System . Annual Report to Office of Naval Research, Covering Period 15 April 1971 through 15 April 1972. SRI-ARC 10045. April 1972. 13p. (Journal -- 10045,)
-
-Ref-5. D. C. Engelbart. "Intellectual Implications of Multi-Access Computer Networks" . Paper presented at the Interdisciplinary Conference on Multi-Access Computer Networks, April 1970, Austin, Texas. To be published. (Journal -- 5255,) 

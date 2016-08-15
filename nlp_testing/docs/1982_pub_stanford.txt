@@ -142,13 +142,3 @@ I am turning my focus toward developing specially equipped and specially trained
 I also aim to awaken interest in some larger organizations that want to begin developing internal mechanisms and experiences for establishing an effective mode of organizational evolution -- gearing up for the "hill climbing." Lets say that they are willing to start investing now toward evolving into a "high-performance organization." As our laboratory begins to turn out a succession of working-prototype, high-performance augmented teams, we will want them to find active use in support of real-life organizational needs. The participating organizations will serve an important role in helping establish the application targets, and in providing field-test environments and constructive feedback. There seems to be good likelihood that the applications for such teams can be selected to provide very effective facilitation of the organization's hill-climbing process -- a sort of "bootstrapping" strategy.
 
 Much of the development and experience represented in the attached reprint will be used as a base. With the "integrative and evolutionary" character of AUGMENT, we can for instance attach the highest-quality terminal equipment, very easily extend the computer horsepower per worker, and in a straightforward matter bring almost any existing software into "reach-through" access. And for any-sized extension of functional capability, our User Interface System enables us very flexibly to extend the command language and evolve in a powerful and coherent manner.
-
-REFERENCES
-
-Engelbart, D. C., "Toward Integrated, Evolutionary Office Automation Systems," Proceedings of the Joint Engineering Management Conference, Denver, Colo., 16-18 Oct 78, pp 63-68.
-
-Drucker, Peter F., "Age of Discontinuity: Guidelines to Our Changing Society," Harper & Row, New York. 1969.
-
-Engelbart, D. C., "Augmenting Human Intellect: A Conceptual Framework," Stanford Research Institute, Research report, sponsored by the Air Force Office of Scientific Research -- AFOSR-3223, AD-289 565, October 1962.
-
-Engelbart, D. C., "A Conceptual Framework for the Augmentation of Man's Intellect," in Vistas in Information Handling, Howerton and Weeks (Editors), Spartan Books, Washington, D. C., 1963, pp. 1-29.

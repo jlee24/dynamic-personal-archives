@@ -156,31 +156,3 @@ An evolutionary approach seems the only viable alternative when the effects of a
 It will be a long time before there is developed a stable framework within which to (a) design large next-step augmentation increments, or (b) plan an orderly transition for an organization that would adopt a large increment in one, discrete step.
 
 Evolution of the service system, evolution of the indivual's working life, and evolution of the organization's working mode -- all must be provided for if an organization wants to capitalize significantly upon the potential of the technology that is arriving.
-
-REFERENCES
-
-Purchase, Alan, "Office of the Future," SRI Business Intelligence Program, Guidelines, April 1978.
-
-Harkness, R. C. "Office Information Systems: an overview and agenda for public policy research," Telecommunications Policy, V. 2, No. 2, June 1978, pp. 91-105
-
-Engelbart, D. C., "A Conceptual Framework for the Augmentation of Man's Intellect," in Vistas in Information Handling, Howerton and Weeks (Editors), Spartan Books, Washington, D. C., 1963, pp. 1-29.
-
-Engelbart, D. C., English William K., "A Research Center for Augmenting Human Intellect," AFIPS Conference Proceedings, Vol. 33, Fall Joint Computer Conference, San Francisco, December 1968, pp. 395-410.
-
-Engelbart, D. C., "NLS Teleconferencing Features: The Journal, and Shared-Screen Telephoning," Proceedings of 1975 COMPCON, Washington D.C., September 1975.
-
-Engelbart, D. C., "Coordinated Information Services for a Discipline- or Mission-Oriented Community," Proceedings of the Second Annual Computer Communications Conference in San Jose, California, Jan 24, 1973 -- also, Proceedings of the NATO Conference on Computer Networks, University of Sussex, England, September 1974.
-
-Victor, K. E., "A Software Engineering Environment," Proceedings of AIAA/NASA/IEEE/ACM Computers In Aerospace Conference, Los Angeles, Ca., October 31-November 2, 1977, pp. 399-403.
-
-Hall, C., Kessler, M., Kinnie, G., Kopp, R., "NLS Support of Modern Programming Practices," Final Report, IBM Federal Systems Division, for AF Contract F30602-76-C-0115, September 1976, 72 pp.
-
-Victor, K. E., "The Design and Implementation of DAD, a Multiprocess, Multimachine, Multilanguage interactive debugger," Proceedngs of the Tenth Hawaii International Conference on System Sciences, University of Hawaii, 1977, pp. 196-199.
-
-Engelbart, D. C., Watson, R. W., and Norton, J. C. "The Augmented Knowledge Workshop," AFIPS Conference Proceedings, Volume 42, pp. 9-21 , National Computer Conference, June 4-8, 1973.
-
-Watson, R. W., "User Interface Design Issues for a Large Interactive System," AFIPS Conference Proceedings, NCC Vol 45, 1976, pp. 357-364.
-
-Irby, C. H., "The Command Meta Language System," AFIPS Conference Proceedings, NCC Vol. 45, 1976.
-
-White, J. E., "A High-Level Framework for Network-based Resource Sharing," AFIPS Conference Proceedings, 1976, NCC, Vol. 45.

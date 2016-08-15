@@ -245,15 +245,3 @@ If you are interested in investing in the kind of critically important, highly l
 ACKNOWLEDGEMENTS
 
 I would like to recognize the assistance I had from Bill Zoellick in preparing this paper, particularly for his contributions concerning recent copyright activity and regarding the interaction of markets and innovation.
-
-REFERENCES
-
-Engelbart, Douglas C. "Augmenting Human Intellect: A Conceptual Framework." Summary Report, Stanford Research Institute, on Contract AF 49(638)-1024, October 1962.
-
-Zoellick, Bill. CyberRegs. Addison-Wesley, Boston, USA, 2002.
-
-American Library Association. 26 October, 2000. "New Digital Copyright Rules Seen As a Defeat for Library Users and the American Public." Washington Office News Release.
-
-Christensen, Clayton.The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail. Harvard Business School Press, Boston, USA, 1997.
-
-Engelbart, Douglas C. "Toward High-Performance Organizations: A Strategic Role for Groupware," in Proceedings of the GroupWare '92 Conference, San Jose, CA, August 3-5, 1992, (AUGMENT,132811,)

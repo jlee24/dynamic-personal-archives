@@ -178,22 +178,3 @@ ACKNOWLEDGEMENTS
 
 The concepts and the system described above have evolved over more than two decades, greatly aided by the research sponsorship of a number of organizations. Until 1978, at SRI International, research sponsorship by The Air Force Office of Scientific Research provided three years of critical conceptualization and planning support, from '59 through '62; DARPA's Information Processing Techniques Office, NASA, and the Air Force RADC contributed significantly until 1978, when SRI sold its rights to the system to Tymshare, Inc. There, while bringing it into the commercial market, the company has supported further conceptual and development work. During this more than two decades, probably a hundred different people have contributed directly, very significantly affecting the architecture and its implementation, and probably even affecting the way I see these things.
 
-
-REFERENCES
-
-Engelbart, D. C., "Toward Integrated, Evolutionary Office Automation Systems", Proceedings of the 26th Joint Engineering Management Conference, Denver, CO, 1978, pp. 63-68.
-
-Engelbart, D. C., "Evolving the Organization of the Future: A Point of View," published in the book, "Emerging Office Systems Issues," ed. Robert Landau, Ablex, 1982 (Proceedings of the Stanford International Conference on Office Automation, March, 1980).
-
-Drucker, Peter F., "The Age of Discontinuity: Guidelines to Our Changing Society," Harper and Row, New York, 1968.
-
-Engelbart, D. C., Watson, R. W., and Norton, J. C. "The Augmented Knowledge Workshop," AFIPS Conference Proceedings, Volume 42, pp. 9-21, National Computer Conference, June 4-8, 1973.
-
-Irby, C. H., "The Command Meta Language System," AFIPS Conference Proceedings, NCC Vol. 45, 1976.
-
-Watson, R. W., "User Interface Design Issues for a Large Interactive System," AFIPS Conference Proceedings, NCC Vol 45, 1976, pp. 357-364.
-9f
-
-White, J. E., "A High-Level Framework for Network-based Resource Sharing," AFIPS Conference Proceedings, 1976, NCC, Vol. 45.
-
-Engelbart, D. C., "NLS Teleconferencing Features: The Journal, and Shared-Screen Telephoning," Proceedings of 1975 COMPCON, Washington D.C., September 1975.

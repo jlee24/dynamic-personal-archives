@@ -269,22 +269,3 @@ This paper describes part of what is provided to professional knowledge workers 
 It is a basic part of our framework that, to augment human knowledge workers, attention must be given not only to tools, but to methods and skills as well. Because of space limitations, the scope of this paper was restricted to a summary of those tool provisions within AUGMENT that especially facilitate the authorship process. A full description of "How to use AUGMENT to ..." would definitely need to include methods of work that effectively harness these tool provisions, and the special kinds of skills that yield unique payoff in executing these methods. This is true for every tool system, of course, but it seems especially true in this case because many AUGMENT provisions do not fit into the general cultural background of our authorship process.
 
 Perhaps the best way for very brief summarization of what AUGMENT's users feel about its unique features is simply to say that those who leave its working environment really miss them.
-
-
-REFERENCES
-
-Ref-1: Engelbart, D. C., "Toward Integrated, Evolutionary Office Automation Systems," Proceedings of the 26th Joint Engineering Management Conference, Denver, CO, Oct. 16-18, 1978, pp. 63-68. (AUGMENT,71279,)
-
-Ref-2: Engelbart, D. C., R. W. Watson and J. C. Norton, "The Augmented Knowledge Workshop," AFIPS Conference Proceedings, Volume 42, pp. 9-21, National Computer Conference, June 4-8, 1973. (AUGMENT,14724,)
-
-Ref-3: Michael, Elizabeth K., Dirk H. van Nouhuys, Beverly R. Boli, Raphael Rom, and Ann C. Weinberg, "Document Production and Control Systems," Phase One report of Document Production and Control Systems Design Study, by the Augmentation Research Center, SRI International, for AF Rome Air Development Center, Contract F30602-76-C-003, March 1, 1977. (AUGMENT,37730,)
-
-Ref-4: Boli, Beverly R., Harvey G Lehtman, Elizabeth K. Michael, Raphael Rom, Dirk H. van Nouhuys, and Nina Zolotow, "A Model Document Production System," Phase Two report of Document Production and Control Systems Design Study, by the Augmentation Research Center, SRI International, for AF Rome Air Development Center, Contract F30602-76-C-003, July 30, 1977. (AUGMENT,29000,)
-
-Ref-5: Engelbart, D. C., "Toward High-Performance Knowledge Workers," OAC '82 Digest (Proceedings of the 1982, AFIPS Office Automation Conference, San Francisco, Ca., April 5-7), pp. 279-290. (AUGMENT, 81010,)
-
-Ref-6: Watson, Richard W., "User Interface Design Issues for a Large Interactive System," AFIPS Conference Proceedings, Volume 45, AFIPS Press, 1976, Montvale, NJ, pp. 357-364. (AUGMENT,27171,)
-
-Ref-7: Engelbart, D. C., "Design Considerations for Knowledge Workshop Terminals," AFIPS Conference Proceedings, Volume 42, pp. 221-227, National Computer Conference, June 4-8, 1973. (AUGMENT,14851,)
-
-Ref-8: Engelbart, D. C., "Collaboration Support Provisions in AUGMENT," OAC '84 Digest (Proceedings of the 1984, AFIPS Office Automation Conference, Los Angeles, Ca., February 20-22). (OAD,2221,)
