@@ -1,7 +1,7 @@
 TOWARD INTEGRATED, EVOLUTIONARY OFFICE AUTOMATION SYSTEMS 
 
 Douglas C. Engelbart
-Tymshare, Inc. • Cupertino, CA
+Tymshare, Inc. Cupertino, CA
 1978 (AUGMENT,71279,)
 
 INTRODUCTION 
@@ -147,7 +147,7 @@ It is extremely important to note the multiple levels of synergism at work here:
 
 The synergistic effect of integrating many tools into one coherent workshop makes each tool of considerable more value than if it were used alone -- for instance, the value of teleconferencing is very much greater when the participants are already doing a large proportion of their everyday work on line, so that any of the working material is available for selective citing and accessing, and when the users are already at home with the basic techniques of preparing and studying on-line material and of organizing and finding related passages.
 
-And at another level, the synergistic effect of integrating many augmanted individuals into one coherent community makes each element of augmentation of considerable more value than if it were applied just to support its one indiviual -- this is derived from the collaborative communication capabilities as applied through extended organizational methods to integrate the augmented capabilities of individuals into augmented teams and communities.
+And at another level, the synergistic effect of integrating many augmented individuals into one coherent community makes each element of augmentation of considerable more value than if it were applied just to support its one indiviual -- this is derived from the collaborative communication capabilities as applied through extended organizational methods to integrate the augmented capabilities of individuals into augmented teams and communities.
 
 And finally, for any application of significant power -- of which augmentation of an enginnering project would be a good example -- the adaptability and evolutionary flexibility of the computer-communication system is extremely important. The working methods of individuals will shift markedly as they settle into use of a comprehensive workshop, and with these new methods and skills will come payoff potential for changes and additions to their workshops -- a cycle that will be significantly active for many years to come. A similar cycle will be even more dramatically evident at the organizational level.
 

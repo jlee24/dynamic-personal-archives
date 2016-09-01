@@ -23,17 +23,27 @@ adding screenshots or something to resources -->
 		<h1>Dynamic Personal Archives</h1>
 		<!-- <p>The Career of Douglas Engelbart</p> -->
 	</div>
-	<div class="navigation">
-		<div class="pure-form search">
-			<input class="pure-form" id="query" placeholder="Enter query">		  
-			<button class="pure-form pure-button button-small" onclick="search()">Search</button>		
+	<div class="container">
+		<div id="navigation">
+			<div class="pure-form search">
+				<input class="pure-form" id="query" placeholder="Enter query">		  
+				<button class="pure-form pure-button button-small" onclick="search()">Search</button>		
+			</div>
+
+			<div class="chart"><!-- Visavail.js chart will be placed here --></div>
 		</div>
 
-		<p id="chart"><!-- Visavail.js chart will be placed here --></p>
+		<div class="examination">
+			<h3>Overview</h3>
+			<div id="overview">
+			</div>
 
-	</div>
-
-	<div class="examination">
+			<span></span>
+			<button class="pure-form pure-button button-small">Complete Source</button>
+			<button class="pure-form pure-button button-small">Related Sources</button>
+			<div id="full">
+			</div>
+		</div>
 	</div>
 
 	<script type="text/javascript">
@@ -61,9 +71,10 @@ adding screenshots or something to resources -->
 
 		function initialize_chart(corpus, influences) {
 			var chart = visavailChart(corpus, influences).width(800);
-			d3.select("#chart")
+			d3.select(".chart")
 					.datum(dataset)
-					.call(chart);			
+					.call(chart);	
+					
 		}
 
 		function _get(url, cb) {
@@ -82,7 +93,7 @@ adding screenshots or something to resources -->
 		}
 
 		_get_json("static/data/db.json", function(ret_corpus) {
-			_get_json("static/data/dim.json", function(ret_influences) {
+			_get_json("static/data/dimmodel.json", function(ret_influences) {
 				initialize_chart(ret_corpus, ret_influences);
 			})
 		});
@@ -91,7 +102,6 @@ adding screenshots or something to resources -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="static/visavail/js/visavail.js"></script>
 	<script src="static/vendors/moment/moment-with-locales.min.js" type="text/javascript"></script>
-	<script src="static/vendors/masonry/masonry.pkgd.min.js" type="text/javascript"></script>
 	<script src="static/vendors/d3/d3.min.js" charset="utf-8"></script>
 	<script>
 		moment.locale('en');

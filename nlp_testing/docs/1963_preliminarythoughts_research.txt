@@ -1,7 +1,6 @@
 SOURCE:  DCE 26 NOV 63  
 TITLE:  Preliminary thoughts on using our computer facilities to help us in our computer programming activities.  
-FILE FOLDER: 	Research Planning 
-FORMAL DESCRIPTORS:
+FILE FOLDER: Research Planning
 
 ABSTRACT: 	Real-time feedback during writing or debugging a program, and the management of a program-design records (instruction listings, flow-diagram-like listings, etc. ) are cited as the two most likelY special aspects of our computer-aided working system to concentrate upon in the next few months, and some general discussion of the latter is given. 
 

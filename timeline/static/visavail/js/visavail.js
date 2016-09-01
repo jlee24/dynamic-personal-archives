@@ -4,35 +4,36 @@ var search = function() {
 	xhr.open("GET", "/?query=" + query, true);
 	xhr.onload = function(e) {
 			var search_results = xhr.getResponseHeader('search_results');
-			// console.log(search_results);
 			search_results = JSON.parse(search_results);
+			console.log(search_results);
 			show_search_results(search_results);
 	}
 	xhr.send();
 }
 
 var show_search_results = function(search_results) {
-	d3.select('svg').select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
+
+	d3.select('svg').select('#g_clickables').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
 		.transition()
 		.duration(0)
 		.attr('class', 'rect_res not_selected')
-		.style('fill-opacity', 0.5)
+		.style('stroke-opacity', "0")
 
 	for (var i = 0; i < 5; i++) {
-		d3.select('svg').select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
+		d3.select('svg').select('#g_clickables').select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
 			.transition()
 			.duration(0)
 			.attr('class', 'rect_res selected')
-			.style('fill-opacity', function() {
-				return search_results[i.toString()]['sim_score'];
-			})
+			.style('stroke-opacity', "1")
 	}
 }
 
 var unstem = {
 	'comput': 'computer',
 	'peopl': 'people',
-	'devic': 'device'
+	'devic': 'device',
+	'mous': 'mouse',
+	'termin': 'terminate'
 }
 
 var round_down = function(num, divisor) {
@@ -87,8 +88,9 @@ function visavailChart(corpus, influences) {
 	// space for y axis titles
 	var paddingLeft = -100;
 
-	var width = 980 - margin.left - margin.right;
+	// var width = 980 - margin.left - margin.right;
 	// var width = screen.width * 0.60;
+	var width = document.getElementById('navigation').offsetWidth;
 
 	// title of chart is drawn or not (default: yes)
 	var drawTitle = 1;
@@ -147,6 +149,32 @@ function visavailChart(corpus, influences) {
 				_themes.push(_topic);
 			}
 
+			var points_per_theme = [];
+			var ndoc = 0;
+			for (var theme in themes) {
+				var points_in_theme = [];
+				for (var i = 1; i < num_slices-2; i++) {
+					var topics = influences['time_slice_' + i.toString() + '_topics'];
+					var docs = influences['time_slice_' + i.toString()];
+					for (var j = 0; j < Object.keys(docs).length; j++) {
+						var scores = docs['doc_' + ndoc.toString()];
+						var point = {};
+						point['SOURCE'] = corpus[ndoc];
+						point['SCORE'] = 0;
+						
+						for (var k = 0; k < num_topics; k++) {
+							if (topics[k] === themes[theme]) {
+								point['SCORE'] = scores[k];
+								break;
+							}
+						}
+						points_in_theme.push(point);
+						ndoc += 1;
+					}
+				}
+				points_per_theme.push(points_in_theme);
+				ndoc = 0;
+			}
 
 			// parse data text strings to JavaScript date stamps
 			var parseDate = d3.time.format('%Y');
@@ -208,18 +236,114 @@ function visavailChart(corpus, influences) {
 				}
 			});
 
+			function change_fill(rect, turn_on) {
+				if (turn_on) {
+					var fill = "rgb(102, 140, 255)";
+					if (rect.style.fill == "rgb(102, 140, 255)") fill = "rgb(26, 83, 255)";
+					else if (rect.style.fill == "rgb(26, 83, 255)") fill = "rgb(0, 51, 204)";
+					else if (rect.style.fill == "rgb(0, 51, 204)") fill = "rgb(0, 32, 128)";
+					else if (rect.style.fill == "rgb(0, 32, 128)") fill = "rgb(0, 26, 102)";
+					rect.style.fill = fill;
+				} else {
+					if (rect.style.fill == "rgb(26, 83, 255)") fill = "rgb(102, 140, 255)";
+					else if (rect.style.fill == "rgb(0, 51, 204)") fill = "rgb(26, 83, 255)";
+					else if (rect.style.fill == "rgb(0, 32, 128)") fill = "rgb(0, 51, 204)";
+					else if (rect.style.fill == "rgb(0, 26, 102)") fill = "rgb(0, 32, 128)";
+					
+					rect.style.fill = fill;
+				}
+			}
+
+			function highlight_res_in_period(start, end, turn_on) { // start and end years
+				d3.select('svg').select('#g_slices').selectAll('.rect_res')
+					.each(function(d) {
+						// var res_year = parseYear.parse(corpus[this.id]);
+						var res_year = parseYear.parse(corpus[this.id].YEAR);
+						if (res_year >= start && res_year <= end) {
+							var rect = document.getElementById(this.id);
+							// if (turn_on) rect.style.fillOpacity = Number(rect.style.fillOpacity) + 0.12;
+							// else rect.style.fillOpacity = Number(rect.style.fillOpacity) - 0.12;
+							change_fill(rect, turn_on);
+						}
+					})
+				}
+
+			function show_influenced_documents(topic, slice, i_topic, turn_on) {
+				var topic_index = i_topic;
+				var influencing_docs = [];
+
+				for (var i = slice; i < num_slices-1; i++) {
+					// find index of topic
+					var topics = influences['time_slice_' + i.toString() + '_topics'];
+					for (var j = 0; j < num_topics; j++) {
+						if (topics[j] === topic) {
+							topic_index = j;
+						}
+					}
+
+					var docs = influences['time_slice_' + i.toString()];
+					var max_influence = 0.0;
+					var max_influencing_doc;
+
+					var sortable = [];
+					for (var doc in docs) {
+						sortable.push(doc);
+					}
+					sortable.sort(function(a, b) {
+						return docs[b][topic_index] - docs[a][topic_index];
+					})
+					sortable = sortable.slice(0,4);
+					influencing_docs.push.apply(influencing_docs, sortable);
+				}
+
+				for (var i = 0; i < influencing_docs.length; i++) {
+					d3.select('svg').select("rect[id='" + parseInt(influencing_docs[i].match(/\d+/)) + "']")
+						.transition()
+						.duration(0)
+						.each(function() {
+							var rect = document.getElementById(this.id);
+							change_fill(rect, turn_on);			
+						})
+				}
+			}
+
 			// define scales
 			var xScale = d3.time.scale()
 					.domain([startDate, endDate])
 					.range([0, width])
 					.clamp(1);
 
+			var yScale = d3.scale.linear()
+				.range([dataHeight * 2, 0])
+				.clamp(1);
+
 			// define axes
 			var xAxis = d3.svg.axis()
 					.scale(xScale)
-					.ticks(d3.time.years, 10)//should display 1 year intervals
+					.ticks(d3.time.years, 5)//should display 1 year intervals
 					.tickFormat(d3.time.format('%Y'))//%Y-for year boundaries, such as 2011
 					.orient('top');
+
+			var yAxis = d3.svg.axis().scale(yScale)
+				.orient('left').ticks(3);
+
+			// var file = 
+
+			// var examination = d3.select('.examination').append('div')
+			// 	.attr('class', 'overview')
+
+			var examine = function() {
+
+				document.getElementById("overview").innerHTML = "We plan a sequence of tasks, initially involving primitive but essential <b>symbol-manipulation</b> capabilities such as composing and <b>modifying</b> different forms of information portrayal (text, diagrams, etc.)." +
+					"<br />" + "The approach can be succinctly described by saying that our aim is to use the best that technology can offer in providing increased <b>symbol-manipulation</b> power to the human, and then to explore the resulting possibilities for redesigning his structure of concepts and methods in order to make him significantly more effective in <b>solving</b> real-life <b>problems</b>." +
+					"<br />" + "For this application, the stereotyped image of the computer as only a <b>mathematical</b> instrument is too limiting--essentially, a <b>computer</b> can <b>manipulate</b> any <b>symbol</b> in any describable way." +
+					"<br />" + "Several researchers (2-8) have pointed out the gains offered by close integration of modern information-handling equipment with the human <b>problem solver</b>." +
+					"<br />" + "The plan is a long-range one and is based on the premise that a strong, coordinated <b>attack</b> is necessary if significant progress is to be made.";
+			};
+
+				// if (d.TYPE == "Document") {
+				// 	examination.append('text').text('hello world');
+				// }
 
 			// create SVG element
 			var svg = d3.select(this).append('svg')
@@ -232,114 +356,10 @@ function visavailChart(corpus, influences) {
 			svg.append('g').attr('id', 'g_title');
 			svg.append('g').attr('id', 'g_axis');
 			svg.append('g').attr('id', 'g_data');
-			svg.append('g').attr('id', 'g_topics');
+			svg.append('g').attr('id', 'g_topics')
 			svg.append('g').attr('id', 'g_slices');
 			svg.append('g').attr('id', 'g_icons');
-			
-			function highlight_res_in_period(start, end) { // start and end years
-				svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res not_selected' })
-					.transition()
-					.duration(0)
-					.style('fill-opacity', function(d) {
-						var res_year = parseYear.parse(d.YEAR);
-						if (res_year >= start && res_year <= end) {
-							return 0.95;
-						}
-					})
-			}
-
-			var show_influenced_documents = function(topic, slice, i_topic) {
-				var topic_index = i_topic;
-				var influencing_docs = [];
-
-				for (var i = slice; i < num_slices-1; i++) {
-					if (i !== slice) { // find the index of the topic
-						var topics = influences['time_slice_' + i.toString() + '_topics'];
-						for (var j = 0; j < num_topics; j++) {
-							if (topics[j] === topic) {
-								topic_index = j;
-							}
-						}
-					}
-
-					var docs = influences['time_slice_' + i.toString()];
-					var max_influence = 0.0;
-					var max_influencing_doc;
-					for (doc in docs) {
-						var influence = docs[doc][topic_index];
-						if (influence > max_influence) {
-							max_influence = influence;
-							max_influencing_doc = doc;
-						}
-					}
-					influencing_docs.push(max_influencing_doc);
-				}
-
-				d3.select('svg').select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
-					.transition()
-					.duration(0)
-					.attr('class', 'rect_res not_selected')
-					.style('fill-opacity', 0.7)
-
-				for (var i = 0; i < influencing_docs.length; i++) {
-					d3.select('svg').select("rect[id='" + parseInt(influencing_docs[i].match(/\d+/)) + "']")
-						.transition()
-						.duration(0)
-						.attr('class', 'rect_res selected')
-						.style('fill-opacity', function() {
-							return 0.95;
-						})
-				}
-			}
-
-			// var get_topics = function(slice) {
-			// 	var topic_width = res_width * .6;
-			// 	svg.select('#g_topics').selectAll('rect')
-			// 		.data(influences['time_slice_' + slice.toString() + '_topics'])
-			// 		.enter()
-			// 		.append('rect')
-			// 		.transition()
-			// 		.attr({
-			// 			'class': 'ytitle',
-			// 			'x': paddingLeft,
-			// 			'y': (lineSpacing + dataHeight) * (noOfDatasets + 1),
-			// 			'width': topic_width,
-			// 			'height': lineSpacing * 2,
-			// 			'fill': '#e6e6e6'
-			// 		})
-			// 		.attr('transform', function (d, i) {
-			// 				return 'translate(0,' + ((lineSpacing + dataHeight) * i) + ')';
-			// 		})
-			// }
-
-			// 	svg.select('#g_topics').selectAll('text')
-			// 		.data(influences['time_slice_' + slice.toString() + '_topics'])
-			// 		.enter()
-			// 		.append('text')
-			// 		.attr({
-			// 			'class': 'ytitle',
-			// 			'x': paddingLeft + (res_width * .3),
-			// 			'y': (lineSpacing + dataHeight) * (noOfDatasets + 1),
-			// 			'width': topic_width / 2,
-			// 			'height': lineSpacing * 2,
-			// 			'text-anchor': 'middle',
-			// 			'alignment-baseline': 'middle',
-			// 			'fill': 'black'
-			// 		})
-			// 		.on('click', function(d, i) {
-			// 			show_influenced_documents(d, slice, i);
-			// 		})
-			// 		.transition()
-			// 		.text(function (d, i) {
-			// 			return 'Topic ' + i.toString();
-			// 		})
-			// 		.attr('transform', function (d, i) {
-			// 				return 'translate(0,' + ((lineSpacing + dataHeight) * i + lineSpacing) + ')';
-			// 		})
-			// }
-
-			// svg.select('#g_topics').selectAll('text')
-			// 	.data()
+			svg.append('g').attr('id', 'g_clickables');
 
 			labels = ['Organization', 'Project', 'Themes']
 			// create y axis labels
@@ -370,7 +390,7 @@ function visavailChart(corpus, influences) {
 							return xScale(d);
 						},
 						'y1': 0,
-						'y2': dataHeight * (noOfDatasets + 2.5) + lineSpacing * (noOfDatasets - 1) + paddingBottom
+						'y2': dataHeight * (noOfDatasets + 4) + lineSpacing * (noOfDatasets - 1) + paddingBottom
 					});
 
 			// create horizontal grid
@@ -394,6 +414,85 @@ function visavailChart(corpus, influences) {
 					.attr('class', 'axis')
 					.call(xAxis);
 
+			var valueline_0 = d3.svg.line()
+				.x(function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+				.y(function(d, i) { return 2*dataHeight + 4*lineSpacing + yScale(parseFloat(d.SCORE)); });
+
+			var valueline_1 = d3.svg.line()
+				.x(function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+				.y(function(d, i) { return 2*dataHeight + 3.5*lineSpacing + yScale(parseFloat(d.SCORE)); });
+
+			var valueline_2 = d3.svg.line()
+				.x(function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+				.y(function(d, i) { return 2*dataHeight + 3*lineSpacing + yScale(parseFloat(d.SCORE)); });
+
+			yScale.domain([0, d3.max(points_per_theme[2], function(d) { return d.SCORE; })]);
+
+			svg.select('#g_topics').append("path")
+				.attr("class", "line")
+				.attr("id", "theme_0")
+				.attr("d", valueline_0(points_per_theme[0]));
+
+			svg.select('#g_topics').append("path")
+				.attr("class", "line")
+				.attr("id", "theme_1")
+				.attr("d", valueline_1(points_per_theme[1]));
+
+			svg.select('#g_topics').append("path")
+				.attr("class", "line")
+				.attr("id", "theme_2")
+				.attr("d", valueline_2(points_per_theme[2]));
+				
+			svg.select('#g_topics').selectAll(".line")
+				.on('click', function(d, i) {
+					show_influenced_documents(_themes[i], 1, i, true);
+				})
+
+			svg.selectAll("dot")
+				.data(points_per_theme[0])
+				.enter().append("circle")
+					.attr("id", "theme_0")
+					.attr("r", 1.5)
+					.attr("cx", function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+					.attr("cy", function(d) { return 2*dataHeight + 4*lineSpacing + yScale(parseFloat(d.SCORE)); });
+
+			svg.selectAll("dot")
+				.data(points_per_theme[1])
+				.enter().append("circle")
+					.attr("id", "theme_1")
+					.attr("r", 1.5)
+					.attr("cx", function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+					.attr("cy", function(d) { return 2*dataHeight + 3.5*lineSpacing + yScale(parseFloat(d.SCORE)); });
+
+			svg.selectAll("dot")
+				.data(points_per_theme[2])
+				.enter()
+				.append("circle")
+					.attr("id", "theme_2")
+					.attr("r", 1.5)
+					.attr("cx", function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+					.attr("cy", function(d) { return 2*dataHeight + 3*lineSpacing + yScale(parseFloat(d.SCORE)); });
+
+			svg.selectAll("circle")
+				.on("mouseover", function(d) {
+					d3.select('svg').select("rect[id='" + d.SOURCE._id + "']")
+						.transition()
+						.duration(0)
+						.each(function() {
+							var rect = document.getElementById(this.id);
+							change_fill(rect, true);			
+						})
+				})
+				.on("mouseout", function(d) {
+					d3.select('svg').select("rect[id='" + d.SOURCE._id + "']")
+						.transition()
+						.duration(0)
+						.each(function() {
+							var rect = document.getElementById(this.id);
+							change_fill(rect, false);			
+						})
+				})
+
 			var tickArr = xScale.ticks();
 			var res_width = xScale(tickArr[1]) - xScale(tickArr[0]);
 			var res_height = res_width * 9/16 * 2 + 10; // expecting icons to be 16:9 ratio
@@ -413,7 +512,7 @@ function visavailChart(corpus, influences) {
 						max_index = index_for_decade;
 					}
 				}
-				var y = (index_for_decade * res_height) + (((lineSpacing + dataHeight) * (noOfDatasets + 1)) + lineSpacing + dataHeight / 2); 
+				var y = (index_for_decade * res_height) + ((lineSpacing + dataHeight) * (noOfDatasets + 2)) + lineSpacing; 
 				return y;      
 			}
 
@@ -437,8 +536,10 @@ function visavailChart(corpus, influences) {
 					'width': res_width,
 					'height': res_height,
 				})
+				.style({
+					'fill': "#668cff"
+				})
 
-				// temp labels
 				g_slices.selectAll('foreignObject').filter(function() {return this.getAttribute('class') == 'res'})
 					.data(corpus)
 					.enter()
@@ -453,8 +554,6 @@ function visavailChart(corpus, influences) {
 						},
 						'width': res_width - 8,
 						'height': res_height - 8
-						// 'text-anchor': 'middle',
-						// 'alignment-baseline': 'middle'
 					})
 					.text(function(d) {
 						return d.TITLE;
@@ -471,13 +570,11 @@ function visavailChart(corpus, influences) {
 						return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4;
 					},
 					'y': function(d) {
-						return determine_y(d) + 4;
+						return determine_y(d) + 6;
 					},
 					'width': '81px',
 					'height': '46px',
 					'fill': 'black'
-					// 'stroke': 'black',
-					// 'stroke-width': '1'
 				})
 
 				g_slices.selectAll('image')
@@ -492,30 +589,60 @@ function visavailChart(corpus, influences) {
 							return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4.5;
 						},
 						'y': function(d) {
-							return determine_y(d) + 4.5;
+							return determine_y(d) + 7;
 						},
 						'width': '80px',
 						'height': '45px'
 					})
 
-				var g_icons = svg.select('#g_icons')
-				g_icons.selectAll('image')
-					.data(corpus)
-					.enter()
-					.append('image')
-					.attr({
-						'xlink:href': function(d, i) {
+			var g_icons = svg.select('#g_icons')
+			g_icons.selectAll('image')
+				.data(corpus)
+				.enter()
+				.append('image')
+				.attr({
+					'xlink:href': function(d, i) {
 							if (d.TYPE === 'Video') return "/static/css/icons/Video.png";
-						},
-						'x': function(d) {
-							return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4.5;
-						},
-						'y': function(d) {
-							return determine_y(d) + 4.5;
-						},
-						'width': '80px',
-						'height': '45px'
-					})
+					},
+					'x': function(d) {
+						return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4.5;
+					},
+					'y': function(d) {
+						return determine_y(d) + 4.5;
+					},
+					'width': '40px',
+					'height': '22.5px'
+				})
+
+			var g_clickables = svg.select('#g_clickables');
+
+			g_clickables.selectAll('rect')
+				.data(corpus)
+				.enter()
+				.append('rect')
+				.attr({
+					'class': 'rect_res not_selected',
+					'x': function(d) {
+						return xScale(parseYear.parse(round_down(d.YEAR, 5).toString()));
+					},
+					'y': function(d) {
+						return determine_y(d);
+					},
+					'id': function(d) {
+						return d._id.toString();
+					},
+					'width': res_width,
+					'height': res_height,
+				})
+				.on('click', function(d, i) {
+					console.log(this);
+					examine(d);
+				})
+				.style({
+					'stroke': '#001a4d',
+					'stroke-opacity': '0',
+					'fill-opacity': '0'
+				})
 
 			// make y groups for different data series
 			var g = svg.select('#g_data').selectAll('.g_data')
@@ -554,20 +681,15 @@ function visavailChart(corpus, influences) {
 					.on('click', function(d, i) {
 						if (this.getAttribute('class') === 'time_period') {
 							this.setAttribute('class', 'time_period_active');
-							var slice = d[3].slice(-1);
-							get_topics(slice);
 						} else if (this.getAttribute('class') === 'time_period_active') {
 							this.setAttribute('class', 'time_period');
 						}
 					})
 					.on('mouseover', function (d, i) {
-						highlight_res_in_period(d[0], d[2]);
+						highlight_res_in_period(d[0], d[2], true);
 					})
 					.on('mouseout', function (d) {
-						svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res not_selected' })
-							.transition()
-							.duration(0)
-							.style('fill-opacity', 0.7);
+						highlight_res_in_period(d[0], d[2], false);
 					});
 
 				g.selectAll('rect')
@@ -589,96 +711,78 @@ function visavailChart(corpus, influences) {
 						.style('height', dataHeight + 11 + 'px');	
 					});
 
-			var g_topics = svg.select('#g_topics').selectAll('.g_data')
-					.data(_themes.slice(0, _themes.length))
-					.enter()
-					.append('g')
-					.attr('transform', function (d, i) {
-						return 'translate(0,' + (lineSpacing + (dataHeight * .75)*i) + ')';
-					})
-					.attr('class', 'dataset');
-
-			g_topics.selectAll('rect')
-					.data(function(d) {
-						return d.disp_data;
-					})
-					.enter()
-					.append('rect')
-					.attr('x', function (d) {
-						return xScale(d[0]);
-					})
-					.attr('y', (dataHeight + lineSpacing) * noOfDatasets)
-					.attr('width', function (d) {
-						return (xScale(d[2]) - xScale(d[0]));
-					})
-					.attr('height', dataHeight * .75)
-					.attr('class', 'time_period')
-					.on('click', function(d, i) {
-						if (this.getAttribute('class') === 'time_period') {
-							this.setAttribute('class', 'time_period_active');
-							show_influenced_documents(d, 1, i);
-						} else if (this.getAttribute('class') === 'time_period_active') {
-							this.setAttribute('class', 'time_period');
-							svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res selected' })
-								.transition()
-								.duration(0)
-								.style('fill-opacity', 0.7);
-						}
-						div.transition()
-								.duration(0)
-								.style('opacity', 0.9);
-					})
-					.on('mouseover', function (d, i) {
-						// highlight_res_in_period(d[0], d[2]);
-						var matrix = this.getScreenCTM().translate(+this.getAttribute('x'), +this.getAttribute('y'));
-						div.transition()
-								.duration(0)
-								.style('opacity', 0.9);
-						div.html(function() {
-							var output = '';
-							var matches = d[3].match(/[^ 0.\d*\*](\w+)/g);
-							for (var i = 0; i < matches.length; i++) {
-								if (matches[i] in unstem) {
-									matches[i] = unstem[matches[i]];
-								}
-								if (i !== matches.length - 1) output += matches[i] + ', ';
-								else output += matches[i];
-							}
-							return output;
-						})
-						.style('left', function () {
-							return window.pageXOffset + matrix.e + 'px';
-						})
-						.style('top', function () {
-							return window.pageYOffset + matrix.f - 11 + 'px';
-						})
-						.style('height', dataHeight + 11 + 'px');
-					})
-					.on('mouseout', function (d) {
-						if (this.getAttribute('class') === 'time_period') {
-							div.transition()
-									.duration(0)
-									.style('opacity', 0);
-						}
-					});
+			// var g_topics = svg.select('#g_topics').selectAll('.g_data')
+			// 		.data(_themes.slice(0, _themes.length))
+			// 		.enter()
+			// 		.append('g')
+			// 		.attr('transform', function (d, i) {
+			// 			return 'translate(0,' + (lineSpacing + (dataHeight * .6)*i) + ')';
+			// 		})
+			// 		.attr('class', 'dataset');
 
 			// g_topics.selectAll('rect')
-			// 		.each(function(d) {
+			// 		.data(function(d) {
+			// 			return d.disp_data;
+			// 		})
+			// 		.enter()
+			// 		.append('rect')
+			// 		.attr('x', function (d) {
+			// 			return xScale(d[0]);
+			// 		})
+			// 		.attr('y', (dataHeight + lineSpacing) * noOfDatasets)
+			// 		.attr('width', function (d) {
+			// 			return (xScale(d[2]) - xScale(d[0]));
+			// 		})
+			// 		.attr('height', dataHeight * .6)
+			// 		.attr('class', 'time_period')
+			// 		.on('click', function(d, i) {
+			// 			if (this.getAttribute('class') === 'time_period') {
+			// 				this.setAttribute('class', 'time_period_active');
+			// 				show_influenced_documents(d[3], 1, i, true);
+			// 			} else if (this.getAttribute('class') === 'time_period_active') {
+			// 				this.setAttribute('class', 'time_period');
+			// 				show_influenced_documents(d[3], 1, i, false);
+			// 				// svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res selected' })
+			// 				// 	.transition()
+			// 				// 	.duration(0)
+			// 				// 	.attr('class', 'rect_res not_selected');
+			// 			}
+			// 			div.transition()
+			// 					.duration(0)
+			// 					.style('opacity', 0.9);
+			// 		})
+			// 		.on('mouseover', function (d, i) {
+			// 			// highlight_res_in_period(d[0], d[2]);
 			// 			var matrix = this.getScreenCTM().translate(+this.getAttribute('x'), +this.getAttribute('y'));
-			// 			var width = this.getAttribute('width');
-			// 			d3.select('body').append('div')
-			// 			.attr('class', 'tooltip')
-			// 			.style('opacity', 0.9)
-			// 			.text(d[3])
-			// 			.style('width', width + 'px')
-			// 			.style('text-align', 'center')
+			// 			div.transition()
+			// 					.duration(0)
+			// 					.style('opacity', 0.9);
+			// 			div.html(function() {
+			// 				var output = '';
+			// 				var matches = d[3].match(/[^ 0.\d*\*](\w+)/g);
+			// 				for (var i = 0; i < matches.length; i++) {
+			// 					if (matches[i] in unstem) {
+			// 						matches[i] = unstem[matches[i]];
+			// 					}
+			// 					if (i !== matches.length - 1) output += matches[i] + ', ';
+			// 					else output += matches[i];
+			// 				}
+			// 				return output;
+			// 			})
 			// 			.style('left', function () {
 			// 				return window.pageXOffset + matrix.e + 'px';
 			// 			})
 			// 			.style('top', function () {
 			// 				return window.pageYOffset + matrix.f - 11 + 'px';
 			// 			})
-			// 			.style('height', dataHeight + 11 + 'px');	
+			// 			.style('height', dataHeight + 11 + 'px');
+			// 		})
+			// 		.on('mouseout', function (d) {
+			// 			if (this.getAttribute('class') === 'time_period') {
+			// 				div.transition()
+			// 						.duration(0)
+			// 						.style('opacity', 0);
+			// 			}
 			// 		});
 
 			// create title
@@ -700,6 +804,19 @@ function visavailChart(corpus, influences) {
 							+ moment(parseDate(endDate)).format('Y'))
 					.attr('class', 'subheading');
 
+			var extract_keywords = function(theme) {
+				var output = '';
+				var matches = theme.match(/[^ 0.\d*\*](\w+)/g);
+				for (var i = 0; i < matches.length; i++) {
+					if (matches[i] in unstem) {
+						matches[i] = unstem[matches[i]];
+					}
+					if (i !== matches.length - 1) output += matches[i] + ', ';
+					else output += matches[i];
+				}
+				return output;				
+			}
+
 			// create legend
 			var legend = svg.select('#g_title')
 					.append('g')
@@ -707,29 +824,42 @@ function visavailChart(corpus, influences) {
 					.attr('transform', 'translate(0,-12)');
 
 			legend.append('rect')
-					.attr('x', width + margin.right - 150)
-					.attr('y', paddingTopHeading)
-					.attr('height', 15)
-					.attr('width', 15)
-					.attr('class', 'rect_has_data');
+					.attr('x', width + margin.right - 340)
+					.attr('y', paddingTopHeading + 165)
+					.attr('height', 8)
+					.attr('width', 8)
+					.attr('class', 'theme_2');
 
 			legend.append('text')
-					.attr('x', width + margin.right - 150 + 20)
-					.attr('y', paddingTopHeading + 8.5)
-					.text('Project')
+					.attr('x', width + margin.right - 340 + 15)
+					.attr('y', paddingTopHeading + 165 + 6.5)
+					.text(extract_keywords(_themes[2].data[3]))
 					.attr('class', 'legend');
 
 			legend.append('rect')
-					.attr('x', width + margin.right - 150)
-					.attr('y', paddingTopHeading + 17)
-					.attr('height', 15)
-					.attr('width', 15)
-					.attr('class', 'rect_has_no_data');
+					.attr('x', width + margin.right - 340)
+					.attr('y', paddingTopHeading + 175)
+					.attr('height', 8)
+					.attr('width', 8)
+					.attr('class', 'theme_1');
 
 			legend.append('text')
-					.attr('x', width + margin.right - 150 + 20)
-					.attr('y', paddingTopHeading + 8.5 + 15 + 2)
-					.text('Organization')
+					.attr('x', width + margin.right - 340 + 15)
+					.attr('y', paddingTopHeading + 175 + 6.5)
+					.text(extract_keywords(_themes[1].data[3]))
+					.attr('class', 'legend');
+
+			legend.append('rect')
+					.attr('x', width + margin.right - 340)
+					.attr('y', paddingTopHeading + 185)
+					.attr('height', 8)
+					.attr('width', 8)
+					.attr('class', 'theme_0');
+
+			legend.append('text')
+					.attr('x', width + margin.right - 340 + 15)
+					.attr('y', paddingTopHeading + 185 + 6.5)
+					.text(extract_keywords(_themes[0].data[3]))
 					.attr('class', 'legend');
 
 			var height = dataHeight * noOfDatasets + lineSpacing * noOfDatasets + (max_index + 1) * (res_height + lineSpacing);

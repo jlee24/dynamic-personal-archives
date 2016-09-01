@@ -3,10 +3,10 @@ var search = function() {
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", "/?query=" + query, true);
 	xhr.onload = function(e) {
-	  	var search_results = xhr.getResponseHeader('search_results');
-	  	// console.log(search_results);
-	  	search_results = JSON.parse(search_results);
-	  	show_search_results(search_results);
+			var search_results = xhr.getResponseHeader('search_results');
+			// console.log(search_results);
+			search_results = JSON.parse(search_results);
+			show_search_results(search_results);
 	}
 	xhr.send();
 }
@@ -29,19 +29,13 @@ var show_search_results = function(search_results) {
 	}
 }
 
-// svg.select('#g_axis').selectAll('text')
-// 					.data(dataset.slice(startSet, endSet))
-// 					.enter()
-// 					.append('text')
-// 					.attr('x', paddingLeft)
-// 					.attr('y', lineSpacing + dataHeight / 2)
-// 					.text(function (d) {
-// 						return d.measure;
-// 					})
-// 					.attr('transform', function (d, i) {
-// 						return 'translate(0,' + ((lineSpacing + dataHeight) * i) + ')';
-// 					})
-// 					.attr('class', 'ytitle');
+var unstem = {
+	'comput': 'computer',
+	'peopl': 'people',
+	'devic': 'device',
+	'mous': 'mouse',
+	'termin': 'terminate'
+}
 
 var round_down = function(num, divisor) {
 	if (num % divisor != 0) return num - (num % divisor);
@@ -54,9 +48,9 @@ var round_up = function(num, divisor) {
 }
 
 var arraysEqual = function(a, b) {
-  if (a === b) return true;
-  if (a == null || b == null) return false;
-  if (a.length != b.length) return false;
+	if (a === b) return true;
+	if (a == null || b == null) return false;
+	if (a.length != b.length) return false;
 }
 
 function visavailChart(corpus, influences) {
@@ -76,14 +70,10 @@ function visavailChart(corpus, influences) {
 
 	var corpus = corpus;
 	var influences = influences;
+	console.log(influences);
+	var themes = influences.themes;
 	var num_slices = influences.info.num_slices;
 	var num_topics = influences.info.num_topics;
-
-	// re.findall(r'0.\d*\*(\w+)', "0.042*techniqu + 0.036*subject + 0.033*target + 0.029*requir + 0.029*aid + 0.026*equip + 0.024*intellect + 0.022*bug + 0.022*solv + 0.022*test + 0.018*motion + 0.018*light + 0.018*keyboard + 0.018*park + 0.017*close")
-
-
-	// for (var i = 0; i < topics.l)
-
 
 	// height of horizontal data bars
 	var dataHeight = 18;
@@ -100,8 +90,8 @@ function visavailChart(corpus, influences) {
 	// space for y axis titles
 	var paddingLeft = -100;
 
-	// var width = 940 - margin.left - margin.right;
-	var width = screen.width * 0.60;
+	var width = 980 - margin.left - margin.right;
+	// var width = screen.width * 0.60;
 
 	// title of chart is drawn or not (default: yes)
 	var drawTitle = 1;
@@ -119,9 +109,9 @@ function visavailChart(corpus, influences) {
 	var curDisplayFirstDataset = 0;
 
 	// global div for tooltip
-	var div = d3.selectAll('rect').append('div')
-			.attr('class', 'tooltip')
-			.style('opacity', 1);
+	var div = d3.select('body').append('div')
+			.attr('class', 'tooltip_')
+			.style('opacity', 0);
 
 	function chart(selection) {
 		selection.each(function drawGraph(dataset) {
@@ -152,8 +142,19 @@ function visavailChart(corpus, influences) {
 			// check how data is arranged
 			var definedBlocks = 0;
 
+			console.log(themes);
+			var _themes = [];
+			for (var i = 0; i < themes.length; i++) {
+				_topic = {}
+				_topic['measure'] = "Theme " + i.toString();
+				_topic['data'] = ["1960", 9, "2005", themes[i]];
+				_themes.push(_topic);
+			}
+			console.log(_themes);
+
 			// parse data text strings to JavaScript date stamps
 			var parseDate = d3.time.format('%Y');
+
 			dataset.forEach(function (d) {
 				d.data.forEach(function (d1) {
 					if (!(d1[0] instanceof Date)) {
@@ -161,6 +162,13 @@ function visavailChart(corpus, influences) {
 						d1[2] = parseDate.parse(d1[2]);
 					}
 				});
+			});
+
+			_themes.forEach(function (d) {
+				if (!(d.data[0] instanceof Date)) {
+						d.data[0] = parseDate.parse(d.data[0]);
+						d.data[2] = parseDate.parse(d.data[2]);
+				}
 			});
 
 			// cluster data by dates to form time blocks
@@ -171,6 +179,13 @@ function visavailChart(corpus, influences) {
 					tmpData.push(d);
 				});
 				dataset[seriesI].disp_data = tmpData;
+			});
+
+			_themes.forEach(function (series, seriesI) {
+				var tmpData = [];
+				var dataLength = series.data.length;
+				tmpData.push(series.data);
+				_themes[seriesI].disp_data = tmpData;
 			});
 
 			// determine start and end dates among all nested datasets
@@ -221,108 +236,89 @@ function visavailChart(corpus, influences) {
 			svg.append('g').attr('id', 'g_title');
 			svg.append('g').attr('id', 'g_axis');
 			svg.append('g').attr('id', 'g_data');
-			svg.append('g').attr('id', 'g_slices');
 			svg.append('g').attr('id', 'g_topics');
+			svg.append('g').attr('id', 'g_slices');
+			svg.append('g').attr('id', 'g_icons');
+			
+			function highlight_res_in_period(start, end, turn_on) { // start and end years
+				svg.select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') !== 'border'})
+					.transition()
+					.duration(0)
+					.each(function (d) {
+						var res_year = parseYear.parse(d.YEAR);
+						if (res_year >= start && res_year <= end) {
+							var rect = document.getElementById(this.id);
+							if (turn_on) rect.style.fillOpacity = Number(rect.style.fillOpacity) + 0.25;
+							else rect.style.fillOpacity = Number(rect.style.fillOpacity) - 0.25;
+						}
+					})
+				}
 
-			var show_influenced_documents = function(topic, slice, i_topic) {
+			var show_influenced_documents = function(topic, slice, i_topic, turn_on) {
 				var topic_index = i_topic;
 				var influencing_docs = [];
 
 				for (var i = slice; i < num_slices-1; i++) {
-					if (i !== slice) { // find the index of the topic
-						var topics = influences['time_slice_' + i.toString() + '_topics'];
-						for (var j = 0; j < num_topics; j++) {
-							if (topics[j] === topic) {
-								topic_index = j;
-							}
+					// find index of topic
+					var topics = influences['time_slice_' + i.toString() + '_topics'];
+					for (var j = 0; j < num_topics; j++) {
+						if (topics[j] === topic) {
+							topic_index = j;
 						}
 					}
 
 					var docs = influences['time_slice_' + i.toString()];
 					var max_influence = 0.0;
 					var max_influencing_doc;
-					for (doc in docs) {
-						var influence = docs[doc][topic_index];
-						if (influence > max_influence) {
-							max_influence = influence;
-							max_influencing_doc = doc;
-						}
-					}
-					influencing_docs.push(max_influencing_doc);
-				}
-				console.log(influencing_docs);
 
-				d3.select('svg').select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
-					.transition()
-					.duration(0)
-					.attr('class', 'rect_res not_selected')
-					.style('fill-opacity', 0.5)
+					var sortable = [];
+					for (var doc in docs) {
+						sortable.push(doc);
+					}
+					sortable.sort(function(a, b) {
+						return docs[b][topic_index] - docs[a][topic_index];
+					})
+					sortable = sortable.slice(0,4);
+					influencing_docs.push.apply(influencing_docs, sortable);
+				}
 
 				for (var i = 0; i < influencing_docs.length; i++) {
 					d3.select('svg').select("rect[id='" + parseInt(influencing_docs[i].match(/\d+/)) + "']")
 						.transition()
 						.duration(0)
-						.attr('class', 'rect_res selected')
-						.style('fill-opacity', function() {
-							return 0.8;
-						})
-	}
+						.attr('class', function() {
+							var rect = document.getElementById(this.id);
+							if (turn_on) {
+								// if (this.getAttribute('class') === 'rect_res not_selected') return 'rect_res selected';
+								// else return this.getAttribute('class') + '_selected';
+								if (this.getAttribute('class') === 'rect_res not_selected') {
+									rect.style.fillOpacity = 1.25;
+									return 'rect_res selected';
+								} else {
+									rect.style.fillOpacity = Number(rect.style.fillOpacity) + 0.25;
+									return 'rect_res selected';
+								}
+							} else {
+								if (rect.style.fillOpacity === 1) return 'rect_res not_selected';
+								else {
+									rect.style.fillOpacity = Number(rect.style.fillOpacity) - 0.25;
+									return 'rect_res selected';
+								}
+							}
+						}) 
+				}
 			}
 
-			var get_topics = function(slice) {
-				var topic_width = res_width * .6;
-				svg.select('#g_topics').selectAll('rect')
-					.data(influences['time_slice_' + slice.toString() + '_topics'])
-					.enter()
-					.append('rect')
-					.transition()
-					.attr({
-						'class': 'ytitle',
-						'x': paddingLeft,
-						'y': (lineSpacing + dataHeight) * (noOfDatasets + 1),
-						'width': topic_width,
-						'height': lineSpacing * 2,
-						'fill': '#e6e6e6'
-					})
-					.attr('transform', function (d, i) {
-							return 'translate(0,' + ((lineSpacing + dataHeight) * i) + ')';
-					})
-
-				svg.select('#g_topics').selectAll('text')
-					.data(influences['time_slice_' + slice.toString() + '_topics'])
-					.enter()
-					.append('text')
-					.attr({
-						'class': 'ytitle',
-						'x': paddingLeft + (res_width * .3),
-						'y': (lineSpacing + dataHeight) * (noOfDatasets + 1),
-						'width': topic_width / 2,
-						'height': lineSpacing * 2,
-						'text-anchor': 'middle',
-						'alignment-baseline': 'middle',
-						'fill': 'black'
-					})
-					.on('click', function(d, i) {
-						show_influenced_documents(d, slice, i);
-					})
-					.transition()
-					.text(function (d, i) {
-						return 'Topic ' + i.toString();
-					})
-					.attr('transform', function (d, i) {
-							return 'translate(0,' + ((lineSpacing + dataHeight) * i + lineSpacing) + ')';
-					})
-			}
-
+			labels = ['Organization', 'Project', 'Themes']
 			// create y axis labels
 			svg.select('#g_axis').selectAll('text')
-					.data(dataset.slice(startSet, endSet))
+					.data(labels)
 					.enter()
 					.append('text')
 					.attr('x', paddingLeft)
 					.attr('y', lineSpacing + dataHeight / 2)
 					.text(function (d) {
-						return d.measure;
+						return d;
 					})
 					.attr('transform', function (d, i) {
 						return 'translate(0,' + ((lineSpacing + dataHeight) * i) + ')';
@@ -342,7 +338,7 @@ function visavailChart(corpus, influences) {
 							return xScale(d);
 						},
 						'y1': 0,
-						'y2': dataHeight * noOfDatasets + lineSpacing * (noOfDatasets - 1) + paddingBottom
+						'y2': dataHeight * (noOfDatasets + 3) + lineSpacing * (noOfDatasets - 1) + paddingBottom
 					});
 
 			// create horizontal grid
@@ -368,10 +364,10 @@ function visavailChart(corpus, influences) {
 
 			var tickArr = xScale.ticks();
 			var res_width = xScale(tickArr[1]) - xScale(tickArr[0]);
-			var res_height = res_width * 9 / 16; // expecting icons to be 16:9 ratio
+			var res_height = res_width * 9/16 * 2 + 10; // expecting icons to be 16:9 ratio
 			var curr_decade = 0;
 			var index_for_decade = 0;
-			var max_index = 0;
+			var max_index = 0; 
 
 			function determine_y(d) {
 				var decade = round_down(Math.floor(d.YEAR), 5);
@@ -385,11 +381,13 @@ function visavailChart(corpus, influences) {
 						max_index = index_for_decade;
 					}
 				}
-				var y = (index_for_decade * res_height) + (((lineSpacing + dataHeight) * noOfDatasets) + lineSpacing + dataHeight / 2); 
+				var y = (index_for_decade * res_height) + (((lineSpacing + dataHeight) * (noOfDatasets + 1)) + lineSpacing + dataHeight); 
 				return y;      
 			}
 
-			var g_slices = svg.select('#g_slices').selectAll('rect')
+			var g_slices = svg.select('#g_slices');
+
+			g_slices.selectAll('rect')
 				.data(corpus)
 				.enter()
 				.append('rect')
@@ -407,50 +405,84 @@ function visavailChart(corpus, influences) {
 					'width': res_width,
 					'height': res_height,
 				})
+				.each(function(d) {
+					var rect = document.getElementById(this.id);
+					rect.style.fillOpacity = 1.0;
+				})
 
-				// temp labels
-				svg.select('#g_slices').selectAll('text').filter(function() {return this.getAttribute('class') == 'res'})
+				g_slices.selectAll('foreignObject').filter(function() {return this.getAttribute('class') == 'res'})
 					.data(corpus)
 					.enter()
-					.append('text')
+					.append('foreignObject')
 					.attr({
 						'class': 'res',
 						'x': function(d) {
-							return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + res_width / 2;
+							return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4;
 						},
 						'y': function(d) {
 							return determine_y(d) + res_height / 2;
 						},
-						'width': res_width,
-						'height': res_height,
-						'text-anchor': 'middle',
-						'alignment-baseline': 'middle'
+						'width': res_width - 8,
+						'height': res_height - 8
 					})
 					.text(function(d) {
-						return d.TYPE + ' ' + d.YEAR;
+						return d.TITLE;
 					});
 
-				// svg.selectAll('foreignObject')
-				// 	.data(corpus)
-				// 	.enter()
-				// 	.append('foreignObject')
-				// 	.attr({
-				// 		'class': 'title',
-				// 		'x': function(d) {
-				// 			return xScale(parseYear.parse(round_down(d.YEAR, 5).toString()));
-				// 		},
-				// 		'y': function(d) {
-				// 			// return determine_y(d) - 10;
-				// 			return determine_y(d);
-				// 		},
-				// 		'width': res_width,
-				// 		'height': lineSpacing,
-				// 		// 'text-anchor': 'left'
-				// 		// 'alignment-baseline': 'left'
-				// 	})
-				// 	.html(function(d) {
-				// 		return d.TITLE;
-				// 	});
+				// image border
+				g_slices.selectAll('rect').filter(function() {return this.getAttribute('class') == 'border'})
+				.data(corpus)
+				.enter()
+				.append('rect')
+				.attr({
+					'class': 'border',
+					'x': function(d) {
+						return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4;
+					},
+					'y': function(d) {
+						return determine_y(d) + 6;
+					},
+					'width': '81px',
+					'height': '46px',
+					'fill': 'black'
+				})
+
+				g_slices.selectAll('image')
+					.data(corpus)
+					.enter()
+					.append('image')
+					.attr({
+						'xlink:href': function(d, i) {
+							return "/static/images/icons/" + d.ID + "-icon.jpg";
+						},
+						'x': function(d) {
+							return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4.5;
+						},
+						'y': function(d) {
+							return determine_y(d) + 7;
+						},
+						'width': '80px',
+						'height': '45px'
+					})
+
+				var g_icons = svg.select('#g_icons')
+				g_icons.selectAll('image')
+					.data(corpus)
+					.enter()
+					.append('image')
+					.attr({
+						'xlink:href': function(d, i) {
+							if (d.TYPE === 'Video') return "/static/css/icons/Video.png";
+						},
+						'x': function(d) {
+							return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4.5;
+						},
+						'y': function(d) {
+							return determine_y(d) + 4.5;
+						},
+						'width': '80px',
+						'height': '45px'
+					})
 
 			// make y groups for different data series
 			var g = svg.select('#g_data').selectAll('.g_data')
@@ -462,25 +494,9 @@ function visavailChart(corpus, influences) {
 					})
 					.attr('class', 'dataset');
 
-			function highlight_res_in_period(start, end) { // start and end years
-				svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res not_selected' })
-					.transition()
-					.duration(0)
-					.style('fill-opacity', function(d) {
-						var res_year = parseYear.parse(d.YEAR);
-						if (res_year >= start && res_year <= end) {
-							var opacity = Number(d3.select(this).style('fill-opacity'));
-							if (opacity === 0.5) return 0.8;
-							else return 0.5;
-						}
-					})
-			}
-
-			var measure;
 			// add data series
 			g.selectAll('rect')
 					.data(function(d) {
-						measure = d.measure;
 						return d.disp_data;
 					})
 					.enter()
@@ -505,20 +521,15 @@ function visavailChart(corpus, influences) {
 					.on('click', function(d, i) {
 						if (this.getAttribute('class') === 'time_period') {
 							this.setAttribute('class', 'time_period_active');
-							var slice = d[3].slice(-1);
-							get_topics(slice);
 						} else if (this.getAttribute('class') === 'time_period_active') {
 							this.setAttribute('class', 'time_period');
 						}
 					})
 					.on('mouseover', function (d, i) {
-						highlight_res_in_period(d[0], d[2]);
+						highlight_res_in_period(d[0], d[2], true);
 					})
 					.on('mouseout', function (d) {
-						svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res not_selected' })
-							.transition()
-							.duration(0)
-							.style('fill-opacity', 0.5);
+						highlight_res_in_period(d[0], d[2], false);
 					});
 
 				g.selectAll('rect')
@@ -538,6 +549,80 @@ function visavailChart(corpus, influences) {
 							return window.pageYOffset + matrix.f - 11 + 'px';
 						})
 						.style('height', dataHeight + 11 + 'px');	
+					});
+
+			var g_topics = svg.select('#g_topics').selectAll('.g_data')
+					.data(_themes.slice(0, _themes.length))
+					.enter()
+					.append('g')
+					.attr('transform', function (d, i) {
+						return 'translate(0,' + (lineSpacing + (dataHeight * .6)*i) + ')';
+					})
+					.attr('class', 'dataset');
+
+			g_topics.selectAll('rect')
+					.data(function(d) {
+						return d.disp_data;
+					})
+					.enter()
+					.append('rect')
+					.attr('x', function (d) {
+						return xScale(d[0]);
+					})
+					.attr('y', (dataHeight + lineSpacing) * noOfDatasets)
+					.attr('width', function (d) {
+						return (xScale(d[2]) - xScale(d[0]));
+					})
+					.attr('height', dataHeight * .6)
+					.attr('class', 'time_period')
+					.on('click', function(d, i) {
+						if (this.getAttribute('class') === 'time_period') {
+							this.setAttribute('class', 'time_period_active');
+							show_influenced_documents(d[3], 1, i, true);
+						} else if (this.getAttribute('class') === 'time_period_active') {
+							this.setAttribute('class', 'time_period');
+							show_influenced_documents(d[3], 1, i, false);
+							// svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res selected' })
+							// 	.transition()
+							// 	.duration(0)
+							// 	.attr('class', 'rect_res not_selected');
+						}
+						div.transition()
+								.duration(0)
+								.style('opacity', 0.9);
+					})
+					.on('mouseover', function (d, i) {
+						// highlight_res_in_period(d[0], d[2]);
+						var matrix = this.getScreenCTM().translate(+this.getAttribute('x'), +this.getAttribute('y'));
+						div.transition()
+								.duration(0)
+								.style('opacity', 0.9);
+						div.html(function() {
+							var output = '';
+							var matches = d[3].match(/[^ 0.\d*\*](\w+)/g);
+							for (var i = 0; i < matches.length; i++) {
+								if (matches[i] in unstem) {
+									matches[i] = unstem[matches[i]];
+								}
+								if (i !== matches.length - 1) output += matches[i] + ', ';
+								else output += matches[i];
+							}
+							return output;
+						})
+						.style('left', function () {
+							return window.pageXOffset + matrix.e + 'px';
+						})
+						.style('top', function () {
+							return window.pageYOffset + matrix.f - 11 + 'px';
+						})
+						.style('height', dataHeight + 11 + 'px');
+					})
+					.on('mouseout', function (d) {
+						if (this.getAttribute('class') === 'time_period') {
+							div.transition()
+									.duration(0)
+									.style('opacity', 0);
+						}
 					});
 
 			// create title
@@ -592,6 +677,7 @@ function visavailChart(corpus, influences) {
 					.attr('class', 'legend');
 
 			var height = dataHeight * noOfDatasets + lineSpacing * noOfDatasets + (max_index + 1) * (res_height + lineSpacing);
+			// var height = dataHeight * noOfDatasets + lineSpacing * noOfDatasets;
 			d3.select('svg').attr('height', height + margin.top + margin.bottom);
 		});
 		

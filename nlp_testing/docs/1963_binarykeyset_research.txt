@@ -1,4 +1,4 @@
-SOURCE: DCE 	9 OCT 63 
+SOURCE: DCE 9 OCT 63 
 TITLE: Binary-Keyset Code 
 
 ABSTRACT: Current code for five-key handset, providing beginning of shortharrl features, and discussion of future bina:ry-keyset transcription possibilities. 
@@ -24,7 +24,6 @@ In Control Case are a number of special features. Codes 1, 2, 3 and 4 designate 
 Codes Cc. 15 through Cc. 19 -are used for deleting preceding characters. They all have the effect upon the eventual output text of backspacing a magic typewriter that erases any character in a position to which it backspaces. Cc.15 can be hit n times successively to cause n such effective backspace-deletes, each of which eats up one line space. Cc,l6 is used for the last of such a string of backspace-deletes (or when you just want one) if you want to transfer automtically thereafter back to ex. Cc. 17 will automatically do backspace-deletes back to but not including the previous "space" and then will transfer you back to Cx. Cc.l8 will automatically do backspace-deletes back to and including (i.e., through) the previous "period," and then transfer you to Cx. Cc .19 will automatically do backspace-deletes back to an including (i.e. , through) the previous "tab", and then transfer you to Cx. IMPORTANT NOTE: A delete command is not actually executed until the next printing-case code other than Code 27.
 
 Code Cc. 21, "Hand Spec," is used as part of a procedure to tell the interpretive device which hand you are going to use on the keyset, Following recognition of this code, the computer will assume that the very next input code will use either or both the thumb and index finger but no others -- i.e. you must jump to Cl, C2 or C3 on the next stroke--and it deduces the specified hand from this stroke. Notice that getting to this code from any state can be done entirely with symmetrical codes (codes that are the same for both hands), so that it doesn't matter what hand the interpretation was assuming, or what interpretive case was being used, when you choose to use a give hand to specify the hand-interpretation made. (A Hand_Spec code automatically actuates a Cc.27 code as part of its response.) 
-
 
 
 CONTROL CASE 
@@ -88,7 +87,7 @@ Personally, I would think there are few enough normal words beginning with z or 
 
 (6) Control Trees. We could forsee possibility in the foregoing section of a number of different control commands associated with setting up or deleting abheviations. These wouldn't be too frequently used, and Cc codes will become precious as we learn more use for them. For less-frequent control commands, it could pay to bundle them in one or more second-level control cases to which entry is made from the first-level Control Case (the one we now have). For still-less-frequent commands, third-level control cases might be fitting, etc. 
 
-b. Special Two-Handed Possibilities. Alternating two hands on two keysets definitely seems a usefUl possibility for faster transcription. The interpreter hal!l to keep track of which keyeet provides a given entry, and separate Hand Spec procedure is needed for each keyset. Otherwise the string of sequential input codes is interpreted without regard for which keyset enters which code. 
+b. Special Two-Handed Possibilities. Alternating two hands on two keysets definitely seems a usefUl possibility for faster transcription. The interpreter hal!l to keep track of which keyset provides a given entry, and separate Hand Spec procedure is needed for each keyset. Otherwise the string of sequential input codes is interpreted without regard for which keyset enters which code. 
 
 We can stipulate that the use, for this type of interpretation, never overlaps his key strokes -- i.e. only one set of keys is depressed at a time. We can then etipulat.e that. if overlap exists, the two overlapped codes are to be interpreted differently. 
 

@@ -1,9 +1,7 @@
-SOURCE: 	DCE 25 NOV 63 
-TITLE: 	Records, Skill, and our Research Planning 
+SOURCE: DCE 25 NOV 63 
+TITLE: 	Records, Skill, and our Research Planning
+FILE FOLDER: Research Planning 
 
-FILE FOLDER: 	Research Planning 
-
-FORMAL DESCRIPTORS: 
 ABSTRACT: 	Points up central importance of the "coordinated working system" that is to represent both our environment and our subject of research. Anticipated requirements for nerw concentration on the recording of our thoughts and actions and for learning and using new skills are pointed out as immediately visible changes in our working life. 
 
 TEXT: 
@@ -30,7 +28,7 @@ The hope that computer aid can significantly increase the working effectiveness 
 
 	The urgency for transcription of your PDOC entries will often be much like that associated with the coding sheets a programmer is working with during debug time--you will what it done right away s o that you can use it in the problem in which you are currently engrossed. 
  
-	2.3.3 We may well find that some portion of off-line work by AHI researchers could be done to considerable advantage directly on a tape-punch typewriter. With our new transcription codes most errors are easily corrected by a few strokes on the keyboard, and insert or delete in J;B.st work can be specified rather directly. The short "turn-around time" thus obtained, for getting one's working data into the computer and being able to get back new-version hard copy or being able to work with the data on line, is likely to be very  valuable to one's working cycle. 
+	2.3.3 We may well find that some portion of off-line work by AHI researchers could be done to considerable advantage directly on a tape-punch typewriter. With our new transcription codes most errors are easily corrected by a few strokes on the keyboard, and insert or delete in work can be specified rather directly. The short "turn-around time" thus obtained, for getting one's working data into the computer and being able to get back new-version hard copy or being able to work with the data on line, is likely to be very  valuable to one's working cycle. 
 
 3.0 New-skill training for AHI researchers. 
 Another practical implication from the foregoing discussion is that AHI researchers are continually going to be faced with learning new skills. Our research planning must accommodate this fact. It will be no seri ous evaluation of a new development if its test application is done by users who have not mastered the basic skills involved. 

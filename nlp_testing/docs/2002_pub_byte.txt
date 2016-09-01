@@ -1,5 +1,5 @@
 IMPROVING OUR ABILITY TO IMPROVE: 
-A CALL FOR INVESTMENT IN A NEW FUTURE 0
+A CALL FOR INVESTMENT IN A NEW FUTURE
 Douglas C. Engelbart
 The Bootstrap Alliance
 April 23, 2002 (AUGMENT,133320,) 
@@ -8,7 +8,8 @@ Keynote Address, World Library Summit, April 23 - 26, 2002, Singapore.
 Republished for the IBM Co-Evolution Symposium September 24, 2003. (biblio-32).
 Click here for print version (pdf.)
 Summary. In the past fifty years we have seen enormous growth in computing capability - computing is everywhere and has impacted nearly everything. In this talk, Dr. Douglas Engelbart, who pioneered much of what we now take for granted as interactive computing, examines the forces that have shaped this growth. He argues that our criteria for investment in innovation are, in fact, short-sighted and focused on the wrong things. He proposes, instead, investment in an improvement infrastructure that can result in sustained, radical innovation capable of changing computing and expanding the kinds of problems that we can address through computing. In this talk, Dr. Engelbart describes both the processes that we need to put in place and the capabilities that we must support in order to stimulate this higher rate of innovation. The talk closes with a call to action for this World Library Summit audience, since this is a group that has both a stake in innovation and the ability to shape its direction.
-GOOD NEWS AND BAD NEWS 1
+
+GOOD NEWS AND BAD NEWS
 
 The development of new computing technologies over the past fifty years - in hardware and software - has provided stunningly important changes in the way we work and in the way we solve problems.
 

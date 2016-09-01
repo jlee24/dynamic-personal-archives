@@ -1,5 +1,23 @@
 http://www.ranks.nl/stopwords
 
+dont
+cant
+wont
+therere
+wouldve
+couldve
+shouldnt
+havent
+wouldnt
+theyll
+theyre
+youre
+neednt
+theyve
+youve
+hes
+hell
+shell
 alright
 ha
 oh
@@ -11,6 +29,8 @@ would've
 could've
 ve
 re
+podium
+spell
 torgerson
 joe
 je
@@ -28,6 +48,8 @@ um
 yeah
 thing
 things
+sort
+kind
 stuff
 goes
 going
@@ -40,6 +62,8 @@ et
 cetera
 etcetera
 etc
+cx
+cc
 
 a
 able

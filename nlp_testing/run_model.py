@@ -1,28 +1,16 @@
 from nltk.tokenize import RegexpTokenizer
 from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
+import nltk.data
 import sys, os, subprocess, operator, argparse
 from gensim import corpora, models, utils
-import numpy  # for arrays, array broadcasting etc.
-import numbers
 import json
 import re
+import pprint
+import codecs 
 
 # import logging
 # logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-
-parser = argparse.ArgumentParser()
-parser.add_argument('model')
-parser.add_argument('--save_memory', default='False')
-parser.add_argument('--regenerate', default='False')
-parser.add_argument('--doc_folder', default='docs')
-args = parser.parse_args()
-model = args.model
-save_memory = (args.save_memory == 'True') # if flag off, stores corpus in memory; else, streams docs one at a time 
-regenerate = (args.regenerate == 'True')  # if flag off, uses existing data; else, regenerates dict and corpus
-doc_folder = str(args.doc_folder)   # where corpus files are located
-dict_name = 'my_dictionary.dict'  # name of dictionary file
-texts = [] 						  # all the cleaned, tokenized documents
 
 tokenizer = RegexpTokenizer(r'[a-zA-Z]+\'[a-zA-Z]+|[a-zA-Z]+')
 en_stop = get_stop_words('en') # create English stop words list
@@ -40,16 +28,14 @@ class MyCorpus(object):
 			print('streamed a doc')
 			yield self.dictionary.doc2bow(clean_text(doc_location))
 
-def clean_text(doc_location):
-	# command = "sumy luhn --file=" + doc_location # summarize document string
-	# raw = subprocess.check_output(command, shell=True)
-	file = open(doc_location, 'r')
-	raw = file.read()
-	raw = unicode(raw, errors='replace')
+def clean_text(raw):
 	raw = raw.lower()
+	raw = "".join(c for c in raw if c not in ('!','.',':',';',"?",'"',','))
+	if model != 'tfidf':
+		raw = unicode(raw, errors='replace')
 	tokens = tokenizer.tokenize(raw)
 	stopped_tokens = [i for i in tokens if not i in en_stop]
-	stemmed_tokens = [p_stemmer.stem(i) for i in stopped_tokens]
+	stemmed_tokens = [p_stemmer.stem(i) for i in stopped_tokens if i != 'nls']
 	return stemmed_tokens
 
 def create_dictionary():
@@ -61,7 +47,9 @@ def create_dictionary():
 	else:
 		for doc in os.listdir(doc_folder):
 			doc_location = doc_folder + '/' + doc
-			texts.append(clean_text(doc_location))
+			file = codecs.open('docs/' + doc, 'r', "utf-8")
+			raw = file.read()
+			texts.append(clean_text(raw))
 		my_dictionary = corpora.Dictionary(texts)
 		my_dictionary.save('tmp/' + dict_name)
 		print('created new dict')
@@ -97,19 +85,24 @@ def generate_lda():
 	return ldamodel
 
 def generate_tfidf():
+	tfidf_scores = {}
 	my_dictionary = create_dictionary()
 	# convert tokenized documents into a document-term matrix
-	my_corpus = [my_dictionary.doc2bow(text) for text in texts]
+	my_corpus = create_corpus(my_dictionary)
 	tfidf = models.tfidfmodel.TfidfModel(my_corpus)
 	corpus_tfidf = tfidf[my_corpus]
+
 	count = 0
 	for doc in corpus_tfidf:
+		tfidf_scores[count] = {}
 		doc.sort(key=operator.itemgetter(1), reverse=True)
-		print(count)
+		for word in doc:
+			if word[1] >= 0.10:
+				tfidf_scores[count][my_dictionary[word[0]]] = word[1]
+			else:
+				break
 		count += 1
-		for i in range(0,10):
-			word = doc[i]
-			print(my_dictionary[word[0]], word[1])
+	return tfidf_scores
 
 def main():
 	if model == 'lda':
@@ -137,13 +130,13 @@ def main():
 		# [-1968, 1968-1984, 1984-1988, 1988-]
 		my_timeslices = [0, 8, 11, 15, 0]
 		num_slices = len(my_timeslices)
-		num_topics = 10
-		num_words = 5
+		num_topics = 5
+		num_words = 7
 
-		# dimmodel = generate_dim(num_topics, my_timeslices)
-		# dimmodel.save('tmp/dimmodel2.model')
+		dimmodel = generate_dim(num_topics, my_timeslices)
+		dimmodel.save('tmp/dimmodel3.model')
 		# dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel.model')
-		dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel1.model')
+		# dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel1.model')
 
 		# structure: {time_slice: {doc: [influence of each topic]}, topics_from_time_slice: [composition of each topic]}
 		dim_influences = {}
@@ -164,11 +157,9 @@ def main():
 				print(topic)
 				print('\n')
 
-		print('Topics Spanning Time_Slices 1 to 3\n')
 		themes = list(topics_per_slice[1] & topics_per_slice[2] & topics_per_slice[3])
 		dim_influences['themes'] = []
-		# print_topics(themes)
-		for i in range(2):
+		for i in range(3):
 			dim_influences['themes'].append(themes[i])
 
 		# for i in range(1, 4):
@@ -187,8 +178,7 @@ def main():
 		time_slice_count = 0
 		docs_count = 0
 		for time_slice in dimmodel.influences_time:
-			print("Time_Slice " + str(time_slice_count))
-
+			# print("Time_Slice " + str(time_slice_count))
 			# add topics
 			dim_influences["time_slice_" + str(time_slice_count) + "_topics"] = []
 			for j in range(0, num_topics):
@@ -197,18 +187,18 @@ def main():
 			# add document influences
 			dim_influences["time_slice_" + str(time_slice_count)] = {}
 			for doc in time_slice:
-				print("Doc " + str(docs_count))
+				# print("Doc " + str(docs_count))
 				dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)] = []
 				topics_count = 0
 				for topic in doc:
-					print("Topic " + str(topics_count) + ": " + str(topic))
+					# print("Topic " + str(topics_count) + ": " + str(topic))
 					dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)].append(topic)
 					topics_count += 1
 				dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)] = sorted(dim_influences["time_slice_" + str(time_slice_count)]["doc_" + str(docs_count)])
 				docs_count += 1
 			time_slice_count += 1
 
-		with open('../timeline/static/data/dim.json', 'w') as output:
+		with open('tmp/dim_influences.json', 'w') as output:
 			dim_influences['info'] = {}
 			dim_influences['info']['num_topics'] = num_topics
 			dim_influences['info']['num_slices'] = num_slices
@@ -216,7 +206,53 @@ def main():
 			json.dump(dim_influences, output, sort_keys=True, indent=4, separators=(',',': '))
 
 	else:
-		generate_tfidf()
+		tfidf_scores = generate_tfidf()
+		print(tfidf_scores)
+		with open('tmp/tfidf_scores.json', 'w') as output:
+			json.dump(tfidf_scores, output, sort_keys=True, indent=4, separators=(',',': '))			
+
+		# summaries = []
+		# docs = os.listdir('docs')
+		# doc_count = 0
+		# for doc in docs:
+		# 	file = codecs.open('docs/' + doc, 'r', "utf-8")
+		# 	text = file.read()
+		# 	sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
+		# 	sentences = sent_detector.tokenize(text.strip())
+
+		# 	sentence_scores = {}
+		# 	for sentence in sentences:
+		# 		score = 0
+		# 		stopped_tokens = clean_text(sentence)
+		# 		num_tokens = 0
+		# 		for token in stopped_tokens:
+		# 			if token in tfidf_scores[doc_count]:
+		# 				num_tokens += 1
+		# 				score += tfidf_scores[doc_count][token] 
+		# 		if score != 0 and score > 0.10:
+		# 			sentence_scores[sentence] = score 
+
+		# 	doc_count += 1
+
+		# 	sentence_scores = sorted(sentence_scores.items(), key=operator.itemgetter(1), reverse=True)
+		# 	sentence_scores = [x[0] for x in sentence_scores[0:10]]
+		# 	# pp.pprint(sentence_scores)
+		# 	summaries.append(sentence_scores)
+
+		# pp.pprint(summaries)
 
 if __name__ == "__main__":
+	parser = argparse.ArgumentParser()
+	parser.add_argument('model')
+	parser.add_argument('--save_memory', default='False')
+	parser.add_argument('--regenerate', default='False')
+	parser.add_argument('--doc_folder', default='docs')
+	args = parser.parse_args()
+	model = args.model
+	save_memory = (args.save_memory == 'True') # if flag off, stores corpus in memory; else, streams docs one at a time 
+	regenerate = (args.regenerate == 'True')  # if flag off, uses existing data; else, regenerates dict and corpus
+	doc_folder = str(args.doc_folder)   # where corpus files are located
+	dict_name = 'my_dictionary.dict'  # name of dictionary file
+	texts = [] 						  # all the cleaned, tokenized documents
+
 	main()

@@ -1,7 +1,20 @@
 /* style for visavail.js */
 
-.navigation {
-    width: 75%;
+#navigation {
+    width: 70%;
+    float:left;
+}
+
+#overview {
+    font-size: 11px;
+    font-family: "Muli", "Helvetica", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 20px;
+}
+
+.examination {
+    width: 30%;
+    overflow:hidden;
 }
 
 .heading {
@@ -17,12 +30,20 @@ body {
 }
 
 rect.not_selected {
-    fill-opacity: 0.7;
+    fill: #002b80;
+    /*fill-opacity: 0.8;*/
+    fill-opacity: 0.4;
 }
 
-/*rect.selected {
-    fill-opacity: 0.8;
-}*/
+rect.selected {
+    /*fill: #1a8cff;*/
+    fill: #002266;
+}
+
+rect.highlighted {
+    fill: #000099;
+    /*fill-opacity: 1.25;*/
+}
 
 .res {
     font-size: 9px;
@@ -54,15 +75,11 @@ rect.not_selected {
 }
 
 rect.rect_res {
-    fill: #0052cc;
     stroke: white;
     stroke-width: 2;
+    fill: #668cff;
+    fill-opacity: 1;
 }
-
-rect.not_selected {
-    fill-opacity: 0.7;
-}
-
 
 .rect_has_data {
     /* blocks that have data */
@@ -165,6 +182,66 @@ div.tooltip_ {
     display: none;
 }
 
+#theme_0 { 
+    stroke: darkorange;
+    stroke-width: 2;
+    fill: none;
+}
+
+#theme_0:hover { 
+    stroke-width: 3;
+}
+
+#theme_1 { 
+    stroke: tomato;
+    stroke-width: 2;
+    fill: none;
+}
+
+#theme_1:hover { 
+    stroke-width: 3;
+}
+
+#theme_2 { 
+    stroke: orangered;
+    stroke-width: 2;
+    fill: none;
+}
+
+#theme_2:hover { 
+    stroke-width: 3;
+}
+
+.theme_0 { 
+    fill: darkorange;
+    stroke: white;
+    stroke-width: 1;
+}
+
+.theme_1 { 
+    fill: tomato;
+    stroke: white;
+    stroke-width: 1;
+}
+
+.theme_2 { 
+    fill: orangered;
+    stroke: white;
+    stroke-width: 1;
+}
+
+/*circle #theme_2 {
+    fill:steelblue;
+}*/
+
+/*.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}*/
+
 .axis text {
     font-size: 12px;
     font-family: "Muli", "Helvetica", Arial, sans-serif;
@@ -206,8 +283,8 @@ div.tooltip_ {
 
 .legend {
     dominant-baseline: middle;
-    font-size: 12px;
     font-family: "Muli", "Helvetica", Arial, sans-serif;
     -moz-osx-font-smoothing: grayscale;
-    fill: #777;
+    font-size: 10px;
+    /*fill: #777;*/
 }

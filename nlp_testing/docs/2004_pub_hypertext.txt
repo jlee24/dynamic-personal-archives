@@ -1,4 +1,3 @@
-
 AUGMENTING SOCIETY'S COLLECTIVE IQ
 
 Keynote Abstract Hypertext 2004
@@ -6,8 +5,6 @@ Douglas C. Engelbart
 Bootstrap Institute
 (AUGMENT,133319,)
 
-Republished from the Hypertext 2004 Conference Proceedings 
-� Copyright 2004 by ACM, Inc.
 The complexity and urgency of the problems faced by us earth-bound humans are increasing much faster than are our aggregate capabilities for understanding and coping with them. This is a very serious problem; and there are strategic actions we can take, collectively.
 
 Consider a community's "Collective IQ" to represent its capability for dealing with complex, urgent problems-i.e., to understand them adequately, to unearth the best candidate solutions, to assess resources and operational capabilities and select appropriate solution commitments, to be effective in organizing and executing the selected approach, to monitor the progress and be able to adjust rapidly and appropriately to unforeseen complications, etc.

@@ -1,5 +1,23 @@
 http://www.ranks.nl/stopwords
 
+dont
+cant
+wont
+therere
+wouldve
+couldve
+shouldnt
+havent
+wouldnt
+theyll
+theyre
+youre
+neednt
+theyve
+youve
+hes
+hell
+shell
 alright
 ha
 oh
