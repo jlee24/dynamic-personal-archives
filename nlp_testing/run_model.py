@@ -211,36 +211,6 @@ def main():
 		with open('tmp/tfidf_scores.json', 'w') as output:
 			json.dump(tfidf_scores, output, sort_keys=True, indent=4, separators=(',',': '))			
 
-		# summaries = []
-		# docs = os.listdir('docs')
-		# doc_count = 0
-		# for doc in docs:
-		# 	file = codecs.open('docs/' + doc, 'r', "utf-8")
-		# 	text = file.read()
-		# 	sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
-		# 	sentences = sent_detector.tokenize(text.strip())
-
-		# 	sentence_scores = {}
-		# 	for sentence in sentences:
-		# 		score = 0
-		# 		stopped_tokens = clean_text(sentence)
-		# 		num_tokens = 0
-		# 		for token in stopped_tokens:
-		# 			if token in tfidf_scores[doc_count]:
-		# 				num_tokens += 1
-		# 				score += tfidf_scores[doc_count][token] 
-		# 		if score != 0 and score > 0.10:
-		# 			sentence_scores[sentence] = score 
-
-		# 	doc_count += 1
-
-		# 	sentence_scores = sorted(sentence_scores.items(), key=operator.itemgetter(1), reverse=True)
-		# 	sentence_scores = [x[0] for x in sentence_scores[0:10]]
-		# 	# pp.pprint(sentence_scores)
-		# 	summaries.append(sentence_scores)
-
-		# pp.pprint(summaries)
-
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('model')

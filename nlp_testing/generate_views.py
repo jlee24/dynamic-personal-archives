@@ -37,9 +37,8 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 		sentences = sent_detector.tokenize(text.strip())
 
 		resource = {}
-		resource["overview"] = []
 
-		# sentence_scores = {}
+		sentence_scores = {}
 		for sentence in sentences:
 			score = 0
 			stopped_tokens = clean_text(sentence)
@@ -54,16 +53,21 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 					stem = p_stemmer.stem(word)
 					if stem in ranked_words.keys():
 						sentence = sentence.replace(word, "<b>" + word + "</b>")
-				# sentence_scores[sentence] = score 
-				resource["overview"].append(sentence.decode())
+				sentence_scores[sentence] = score 
 		
+		sentence_scores = sorted(sentence_scores.items(), key=operator.itemgetter(1), reverse=True)
+		sentences = [x[0] for x in sentence_scores[0:5]]
+		resource["overview"] = sentences
+
+		text = text.replace("\r\n\r\n", "</div><br><div>")
+		text = "<div>" + text + "</div>"
+		resource["full"] = text
 		resources.append(resource)
 		doc_count += 1
-		# sentence_scores = sorted(sentence_scores.items(), key=operator.itemgetter(1), reverse=True)
-		# sentences = [x[0] for x in sentence_scores[0:10]]
+		
 
-	print(resources)
-
-
+	# pp.pprint(resources)
+	with open('tmp/doc_views.json', 'w') as output:
+		json.dump(resources, output, sort_keys=True, indent=4, separators=(',',': '))
 
 	# pp.pprint(summaries)
