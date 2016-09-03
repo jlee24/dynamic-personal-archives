@@ -330,7 +330,7 @@ function visavailChart(corpus, influences, views) {
 				// if (d.TYPE == "Document") {
 				var html = "";
 				for (var sentence of views[resource["_id"]]["overview"]) {
-					html += "<div>" + sentence + "</div>" + "<br>";
+					html += sentence + "<br>";
 				}
 				html = html.substring(0, html.length-4);
 				document.getElementById("overview").innerHTML = html;

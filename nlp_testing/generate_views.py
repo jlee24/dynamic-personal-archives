@@ -39,7 +39,8 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 		resource = {}
 
 		sentence_scores = {}
-		for sentence in sentences:
+		sentence_scores_raw = {}
+		for index, sentence in enumerate(sentences):
 			score = 0
 			stopped_tokens = clean_text(sentence)
 			num_tokens = 0
@@ -49,24 +50,32 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 					num_tokens += 1
 					score += ranked_words[token] 
 			if score != 0 and score > 0.10:
+				sentence_scores_raw[sentence] = score
 				for word in tokenizer.tokenize(sentence):
 					stem = p_stemmer.stem(word)
 					if stem in ranked_words.keys():
 						sentence = sentence.replace(word, "<b>" + word + "</b>")
-				sentence = sentence.replace("\r\n", "<br>")
+				sentence = sentence.replace("\r\n\r\n", "<br>")
+				sentence = "<div id='overview_" + str(index) + "'>" + sentence + "</div>"
 				sentence_scores[sentence] = score 
 		
 		sentence_scores = sorted(sentence_scores.items(), key=operator.itemgetter(1), reverse=True)
+		sentence_scores_raw = sorted(sentence_scores_raw.items(), key=operator.itemgetter(1), reverse=True)
 		sentences = [x[0] for x in sentence_scores[0:5]]
+		sentences_raw = [x[0] for x in sentence_scores_raw[0:5]]
+
 		resource["overview"] = sentences
+
+		for sentence_raw in sentences_raw:
+			text = text.replace(sentence_raw, "<mark id='full_" + str(index) + "'>" + sentence_raw + "</mark>")
 
 		for word in tokenizer.tokenize(text):
 			stem = p_stemmer.stem(word)
 			if stem in ranked_words.keys():
 				text = text.replace(word, "<b>" + word + "</b>")
-		text = text.replace("\r\n\r\n", "</div><br><div>")
+		# text = text.replace("\r\n\r\n", "</div><br><div>")
 		text = text.replace("\r\n", "<br>")
-		text = "<div>" + text + "</div>"
+		# text = "<div>" + text + "</div>"
 		
 		resource["full"] = text
 		resources.append(resource)

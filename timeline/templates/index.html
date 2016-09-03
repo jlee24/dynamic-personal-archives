@@ -117,7 +117,7 @@ adding screenshots or something to resources -->
 
 		_get_json("static/data/db.json", function(ret_corpus) {
 			_get_json("static/data/dimmodel.json", function(ret_influences) {
-				_get_json("static/data/doc_views.json", function(ret_views) {
+				_get_json("static/data/document_views.json", function(ret_views) {
 					initialize_chart(ret_corpus, ret_influences, ret_views);
 				})
 			})
