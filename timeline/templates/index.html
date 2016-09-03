@@ -69,12 +69,11 @@ adding screenshots or something to resources -->
 		var corpus;
 		var influences;
 
-		function initialize_chart(corpus, influences) {
-			var chart = visavailChart(corpus, influences).width(800);
+		function initialize_chart(corpus, influences, views) {
+			var chart = visavailChart(corpus, influences, views).width(800);
 			d3.select(".chart")
 					.datum(dataset)
-					.call(chart);	
-					
+					.call(chart);				
 		}
 
 		function _get(url, cb) {
@@ -94,7 +93,9 @@ adding screenshots or something to resources -->
 
 		_get_json("static/data/db.json", function(ret_corpus) {
 			_get_json("static/data/dimmodel.json", function(ret_influences) {
-				initialize_chart(ret_corpus, ret_influences);
+				_get_json("static/data/doc_views.json", function(ret_views) {
+					initialize_chart(ret_corpus, ret_influences, ret_views);
+				})
 			})
 		});
 

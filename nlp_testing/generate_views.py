@@ -53,6 +53,7 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 					stem = p_stemmer.stem(word)
 					if stem in ranked_words.keys():
 						sentence = sentence.replace(word, "<b>" + word + "</b>")
+				sentence = sentence.replace("\r\n", "<br>")
 				sentence_scores[sentence] = score 
 		
 		sentence_scores = sorted(sentence_scores.items(), key=operator.itemgetter(1), reverse=True)
@@ -60,6 +61,7 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 		resource["overview"] = sentences
 
 		text = text.replace("\r\n\r\n", "</div><br><div>")
+		text = text.replace("\r\n", "<br>")
 		text = "<div>" + text + "</div>"
 		resource["full"] = text
 		resources.append(resource)
@@ -67,7 +69,5 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 		
 
 	# pp.pprint(resources)
-	with open('tmp/doc_views.json', 'w') as output:
+	with open('../timeline/static/data/doc_views.json', 'w') as output:
 		json.dump(resources, output, sort_keys=True, indent=4, separators=(',',': '))
-
-	# pp.pprint(summaries)

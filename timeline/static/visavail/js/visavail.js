@@ -52,7 +52,7 @@ var arraysEqual = function(a, b) {
 	if (a.length != b.length) return false;
 }
 
-function visavailChart(corpus, influences) {
+function visavailChart(corpus, influences, views) {
 	// define chart layout
 	var margin = {
 		// top margin includes title and legend
@@ -72,6 +72,7 @@ function visavailChart(corpus, influences) {
 	var themes = influences.themes;
 	var num_slices = influences.info.num_slices;
 	var num_topics = influences.info.num_topics;
+	var views = views;
 
 	// height of horizontal data bars
 	var dataHeight = 18;
@@ -261,8 +262,6 @@ function visavailChart(corpus, influences) {
 						var res_year = parseYear.parse(corpus[this.id].YEAR);
 						if (res_year >= start && res_year <= end) {
 							var rect = document.getElementById(this.id);
-							// if (turn_on) rect.style.fillOpacity = Number(rect.style.fillOpacity) + 0.12;
-							// else rect.style.fillOpacity = Number(rect.style.fillOpacity) - 0.12;
 							change_fill(rect, turn_on);
 						}
 					})
@@ -332,18 +331,15 @@ function visavailChart(corpus, influences) {
 			// var examination = d3.select('.examination').append('div')
 			// 	.attr('class', 'overview')
 
-			var examine = function() {
-
-				document.getElementById("overview").innerHTML = "We plan a sequence of tasks, initially involving primitive but essential <b>symbol-manipulation</b> capabilities such as composing and <b>modifying</b> different forms of information portrayal (text, diagrams, etc.)." +
-					"<br />" + "The approach can be succinctly described by saying that our aim is to use the best that technology can offer in providing increased <b>symbol-manipulation</b> power to the human, and then to explore the resulting possibilities for redesigning his structure of concepts and methods in order to make him significantly more effective in <b>solving</b> real-life <b>problems</b>." +
-					"<br />" + "For this application, the stereotyped image of the computer as only a <b>mathematical</b> instrument is too limiting--essentially, a <b>computer</b> can <b>manipulate</b> any <b>symbol</b> in any describable way." +
-					"<br />" + "Several researchers (2-8) have pointed out the gains offered by close integration of modern information-handling equipment with the human <b>problem solver</b>." +
-					"<br />" + "The plan is a long-range one and is based on the premise that a strong, coordinated <b>attack</b> is necessary if significant progress is to be made.";
-			};
-
+			var examine = function(resource) {
 				// if (d.TYPE == "Document") {
-				// 	examination.append('text').text('hello world');
-				// }
+				var html = "";
+				for (var sentence of views[resource["_id"]]["overview"]) {
+					html += "<div>" + sentence + "</div>" + "<br>";
+				}
+				// html -= "<br>";
+				document.getElementById("overview").innerHTML = html;				
+			};
 
 			// create SVG element
 			var svg = d3.select(this).append('svg')
@@ -635,8 +631,19 @@ function visavailChart(corpus, influences) {
 					'height': res_height,
 				})
 				.on('click', function(d, i) {
-					console.log(this);
+					// console.log(d);
 					examine(d);
+					var rect = document.getElementById(this.id);
+					d3.select('svg').select('#g_slices').selectAll('.rect_res')
+						.each(function(d) {
+							change_fill(this, false)
+						})
+					if (rect.style.fill == "rgb(102, 140, 255)") {
+						change_fill(rect, true);
+					} else {
+						change_fill(rect, false);
+					}
+					
 				})
 				.style({
 					'stroke': '#001a4d',
@@ -710,80 +717,6 @@ function visavailChart(corpus, influences) {
 						})
 						.style('height', dataHeight + 11 + 'px');	
 					});
-
-			// var g_topics = svg.select('#g_topics').selectAll('.g_data')
-			// 		.data(_themes.slice(0, _themes.length))
-			// 		.enter()
-			// 		.append('g')
-			// 		.attr('transform', function (d, i) {
-			// 			return 'translate(0,' + (lineSpacing + (dataHeight * .6)*i) + ')';
-			// 		})
-			// 		.attr('class', 'dataset');
-
-			// g_topics.selectAll('rect')
-			// 		.data(function(d) {
-			// 			return d.disp_data;
-			// 		})
-			// 		.enter()
-			// 		.append('rect')
-			// 		.attr('x', function (d) {
-			// 			return xScale(d[0]);
-			// 		})
-			// 		.attr('y', (dataHeight + lineSpacing) * noOfDatasets)
-			// 		.attr('width', function (d) {
-			// 			return (xScale(d[2]) - xScale(d[0]));
-			// 		})
-			// 		.attr('height', dataHeight * .6)
-			// 		.attr('class', 'time_period')
-			// 		.on('click', function(d, i) {
-			// 			if (this.getAttribute('class') === 'time_period') {
-			// 				this.setAttribute('class', 'time_period_active');
-			// 				show_influenced_documents(d[3], 1, i, true);
-			// 			} else if (this.getAttribute('class') === 'time_period_active') {
-			// 				this.setAttribute('class', 'time_period');
-			// 				show_influenced_documents(d[3], 1, i, false);
-			// 				// svg.select('#g_slices').selectAll('rect').filter(function() { return this.getAttribute('class') == 'rect_res selected' })
-			// 				// 	.transition()
-			// 				// 	.duration(0)
-			// 				// 	.attr('class', 'rect_res not_selected');
-			// 			}
-			// 			div.transition()
-			// 					.duration(0)
-			// 					.style('opacity', 0.9);
-			// 		})
-			// 		.on('mouseover', function (d, i) {
-			// 			// highlight_res_in_period(d[0], d[2]);
-			// 			var matrix = this.getScreenCTM().translate(+this.getAttribute('x'), +this.getAttribute('y'));
-			// 			div.transition()
-			// 					.duration(0)
-			// 					.style('opacity', 0.9);
-			// 			div.html(function() {
-			// 				var output = '';
-			// 				var matches = d[3].match(/[^ 0.\d*\*](\w+)/g);
-			// 				for (var i = 0; i < matches.length; i++) {
-			// 					if (matches[i] in unstem) {
-			// 						matches[i] = unstem[matches[i]];
-			// 					}
-			// 					if (i !== matches.length - 1) output += matches[i] + ', ';
-			// 					else output += matches[i];
-			// 				}
-			// 				return output;
-			// 			})
-			// 			.style('left', function () {
-			// 				return window.pageXOffset + matrix.e + 'px';
-			// 			})
-			// 			.style('top', function () {
-			// 				return window.pageYOffset + matrix.f - 11 + 'px';
-			// 			})
-			// 			.style('height', dataHeight + 11 + 'px');
-			// 		})
-			// 		.on('mouseout', function (d) {
-			// 			if (this.getAttribute('class') === 'time_period') {
-			// 				div.transition()
-			// 						.duration(0)
-			// 						.style('opacity', 0);
-			// 			}
-			// 		});
 
 			// create title
 			if (drawTitle) {
