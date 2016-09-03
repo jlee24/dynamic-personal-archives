@@ -60,9 +60,14 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 		sentences = [x[0] for x in sentence_scores[0:5]]
 		resource["overview"] = sentences
 
+		for word in tokenizer.tokenize(text):
+			stem = p_stemmer.stem(word)
+			if stem in ranked_words.keys():
+				text = text.replace(word, "<b>" + word + "</b>")
 		text = text.replace("\r\n\r\n", "</div><br><div>")
 		text = text.replace("\r\n", "<br>")
 		text = "<div>" + text + "</div>"
+		
 		resource["full"] = text
 		resources.append(resource)
 		doc_count += 1

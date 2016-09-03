@@ -326,19 +326,16 @@ function visavailChart(corpus, influences, views) {
 			var yAxis = d3.svg.axis().scale(yScale)
 				.orient('left').ticks(3);
 
-			// var file = 
-
-			// var examination = d3.select('.examination').append('div')
-			// 	.attr('class', 'overview')
-
 			var examine = function(resource) {
 				// if (d.TYPE == "Document") {
 				var html = "";
 				for (var sentence of views[resource["_id"]]["overview"]) {
 					html += "<div>" + sentence + "</div>" + "<br>";
 				}
-				// html -= "<br>";
-				document.getElementById("overview").innerHTML = html;				
+				html = html.substring(0, html.length-4);
+				document.getElementById("overview").innerHTML = html;
+
+				document.getElementById("full").innerHTML = views[resource["_id"]]["full"];
 			};
 
 			// create SVG element
