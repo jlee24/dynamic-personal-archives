@@ -40,7 +40,7 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 
 		sentence_scores = {}
 		sentence_scores_raw = {}
-		for index, sentence in enumerate(sentences):
+		for sentence in sentences:
 			score = 0
 			stopped_tokens = clean_text(sentence)
 			num_tokens = 0
@@ -56,17 +56,18 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 					if stem in ranked_words.keys():
 						sentence = sentence.replace(word, "<b>" + word + "</b>")
 				sentence = sentence.replace("\r\n\r\n", "<br>")
-				sentence = "<div id='overview_" + str(index) + "'>" + sentence + "</div>"
 				sentence_scores[sentence] = score 
 		
 		sentence_scores = sorted(sentence_scores.items(), key=operator.itemgetter(1), reverse=True)
 		sentence_scores_raw = sorted(sentence_scores_raw.items(), key=operator.itemgetter(1), reverse=True)
-		sentences = [x[0] for x in sentence_scores[0:5]]
-		sentences_raw = [x[0] for x in sentence_scores_raw[0:5]]
+		highest_ranked = [x[0] for x in sentence_scores[0:5]]
+		highest_ranked_raw = [x[0] for x in sentence_scores_raw[0:5]]
 
-		resource["overview"] = sentences
+		resource["overview"] = []
+		for index, sent in enumerate(highest_ranked):
+			resource["overview"].append("<div id='overview_" + str(index) + "'>" + sent + "</div>")
 
-		for sentence_raw in sentences_raw:
+		for index, sentence_raw in enumerate(highest_ranked_raw):
 			text = text.replace(sentence_raw, "<mark id='full_" + str(index) + "'>" + sentence_raw + "</mark>")
 
 		for word in tokenizer.tokenize(text):
@@ -83,5 +84,5 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 		
 
 	# pp.pprint(resources)
-	with open('../timeline/static/data/doc_views.json', 'w') as output:
+	with open('../timeline/static/data/document_views.json', 'w') as output:
 		json.dump(resources, output, sort_keys=True, indent=4, separators=(',',': '))
