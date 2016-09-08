@@ -326,48 +326,57 @@ function visavailChart(corpus, influences, views) {
 			var yAxis = d3.svg.axis().scale(yScale)
 				.orient('left').ticks(3);
 
-			var examine = function(resource) {
-				// if (d.TYPE == "Document") {
+			var examine_doc = function(resource) {
+				document.getElementById("overview").style.height = '350px';
 				var html = "";
 				for (var sentence of views[resource["_id"]]["overview"]) {
 					html += sentence + "<br>";
 				}
 				html = html.substring(0, html.length-4);
 				document.getElementById("overview").innerHTML = html;
-
 				document.getElementById("full").innerHTML = views[resource["_id"]]["full"];
+				make_scrollable();
+			};
 
+			var examine_video = function(resource) {
+				var video_player = document.getElementById("player");
+				video_player.style.visibility = "visible";
+
+				// document.getElementById("video_player").innerHTML = "<video id='video' width='360' height='240' preload='auto' controls><source src='" + resource["VIDEO"].toString() + "' type='video/mp4'></video>";
+				var html = "";
+				for (var sentence of views[resource["_id"]]["overview"]) {
+					html += sentence + "<br>";
+				}
+				document.getElementById("overview").style.height = '100px';
+				document.getElementById("overview").innerHTML = html;
+				document.getElementById("full").innerHTML = views[resource["_id"]]["full"];
+				make_scrollable();
+			}
+
+			function make_scrollable() {
 				$("#overview_0").click(function() {
-					console.log("something happened");
-				    $('#full').animate({
-				        scrollTop: $("#full_0").offset().top
-				    }, 2000);
+					document.getElementById('full_0').scrollIntoView({behavior: "smooth"});
+					// $('#full').animate({
+					//     scrollTop: $("#full_0").offset().top - $("#full").offset().top + $("#full").scrollTop()
+					// }, 1500);
 				});
 
 				$("#overview_1").click(function() {
-				    $('html, body').animate({
-				        scrollTop: $("#full_1").offset().top
-				    }, 2000);
+					document.getElementById('full_1').scrollIntoView({behavior: "smooth"});
 				});
 
 				$("#overview_2").click(function() {
-				    $('html, body').animate({
-				        scrollTop: $("full_2").offset().top
-				    }, 2000);
+					document.getElementById('full_2').scrollIntoView({behavior: "smooth"});
 				});
 
 				$("#overview_3").click(function() {
-				    $('html, body').animate({
-				        scrollTop: $("#full_3").offset().top
-				    }, 2000);
+					 document.getElementById('full_3').scrollIntoView({behavior: "smooth"});
 				});
 
 				$("#overview_4").click(function() {
-				    $('html, body').animate({
-				        scrollTop: $("#full_4").offset().top
-				    }, 2000);
+					document.getElementById('full_4').scrollIntoView({behavior: "smooth"});
 				});
-			};
+			}
 
 			// create SVG element
 			var svg = d3.select(this).append('svg')
@@ -626,7 +635,7 @@ function visavailChart(corpus, influences, views) {
 				.append('image')
 				.attr({
 					'xlink:href': function(d, i) {
-							if (d.TYPE === 'Video') return "/static/css/icons/Video.png";
+						if (d.TYPE === 'Video') return "/static/css/icons/Video.png";
 					},
 					'x': function(d) {
 						return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4.5;
@@ -660,7 +669,6 @@ function visavailChart(corpus, influences, views) {
 				})
 				.on('click', function(d, i) {
 					// console.log(d);
-					examine(d);
 					var rect = document.getElementById(this.id);
 					d3.select('svg').select('#g_slices').selectAll('.rect_res')
 						.each(function(d) {
@@ -670,6 +678,11 @@ function visavailChart(corpus, influences, views) {
 						change_fill(rect, true);
 					} else {
 						change_fill(rect, false);
+					}
+					if (d.TYPE == "Document") {
+						examine_doc(d);
+					} else {
+						examine_video(d);
 					}
 					
 				})

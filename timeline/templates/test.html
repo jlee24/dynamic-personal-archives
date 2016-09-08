@@ -6,35 +6,33 @@
 </head>
 
 <body onload="set_up()">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script type="text/javascript">
-		var set_up = function() {
-			var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-			                11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
-
-			var svg = d3.select("body").select(".full").append("svg")
-				.attr("width", 500)
-				.attr("height", 500);
-
-			svg.selectAll("rect")
-			   .data(dataset)
-			   .enter()
-			   .append("rect")
-			   .attr("x", function(d, i) {
-				    return i * 21;  //Bar width of 20 plus 1 for padding
-				})
-			   .attr("y", 0)
-			   .attr("width", 20)
-			   .attr("height", 100);
-
-		}
+				var tag = document.createElement('script');	
+				tag.src = "https://www.youtube.com/iframe_api";
+			  	var firstScriptTag = document.getElementsByTagName('script')[0];
+			  	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				
+				function onYouTubeIframeAPIReady() {
+					player = new YT.Player('player', {
+						height: '240',
+						width: '360',
+						videoId: 'yJDv-zdhzMY',
+						events: {
+							'onReady': onPlayerReady
+						}
+					});
+				}
+			    function onPlayerReady(event) {
+					event.target.playVideo();
+			    }
 	</script>
-	<div id="full" class="full" style="height: 25%; width: 25%;">
-	
-	</div>
-	<mark>Hello</mark>
-	<mark id='hello'>Hello<br>Hello <b>Ok</b></mark>
-	<mark id='full_0'>Program On Human Effectiveness<br><br>by Douglas C. Engelbart <br>Stanford Research Institute, Computer Techniques Laboratory, Menlo Park, California.</mark>
-</body>
+	<div id="player"> </div>
+	<span><mark>daddkf</mark>
 
+</body>
+<script>
+				
+</script>
 </html>

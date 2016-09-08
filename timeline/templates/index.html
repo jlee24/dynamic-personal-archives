@@ -24,6 +24,10 @@ adding screenshots or something to resources -->
 		moment.locale('en');
 	</script>
 
+<!-- 	<script src="static/vendors/PinScroll/libs/prototype-1.6.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/vendors/PinScroll/libs/effects.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/vendors/PinScroll/PinScroll.js" type="text/javascript" charset="utf-8"></script> -->
+
 	<!-- Latest compiled and minified CSS -->
 	<link href="static/vendors/bootstrap-3.3.7-dist/css/bootstrap.css" rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
@@ -35,6 +39,7 @@ adding screenshots or something to resources -->
 </head>
 
 <body>
+	<!-- <a id="bluepin" style="display:none">Blue?</a> -->
 	<div class="heading">
 		<h1>Dynamic Personal Archives</h1>
 		<!-- <p>The Career of Douglas Engelbart</p> -->
@@ -51,6 +56,8 @@ adding screenshots or something to resources -->
 
 		<div class="examination">
 			<h3>Overview</h3>
+			<div id="player">
+			</div>
 			<div id="overview">
 			</div>
 
@@ -65,7 +72,7 @@ adding screenshots or something to resources -->
 			  <div id="full" class="tab-pane fade in active">
 			  </div>
 			  <div id="related" class="tab-pane fade">
-			    <br>
+				<br>
 			  </div>
 			</div>
 		</div>
@@ -94,6 +101,29 @@ adding screenshots or something to resources -->
 		var corpus;
 		var influences;
 
+				var video_player = document.getElementById("player");
+				video_player.style.visibility = "hidden";
+
+				var tag = document.createElement('script');	
+				tag.src = "https://www.youtube.com/iframe_api";
+			  	var firstScriptTag = document.getElementsByTagName('script')[0];
+			  	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				
+				var player;
+				function onYouTubeIframeAPIReady() {
+					player = new YT.Player('player', {
+						height: '240',
+						width: '360',
+						videoId: 'yJDv-zdhzMY',
+						events: {
+							// 'onReady': onPlayerReady
+						}
+					});
+				}
+			    function onPlayerReady(event) {
+					event.target.playVideo();
+			    }
+
 		function initialize_chart(corpus, influences, views) {
 			var chart = visavailChart(corpus, influences, views).width(800);
 			d3.select(".chart")
@@ -118,7 +148,7 @@ adding screenshots or something to resources -->
 
 		_get_json("static/data/db.json", function(ret_corpus) {
 			_get_json("static/data/dimmodel.json", function(ret_influences) {
-				_get_json("static/data/document_views.json", function(ret_views) {
+				_get_json("static/data/doc_views.json", function(ret_views) {
 					initialize_chart(ret_corpus, ret_influences, ret_views);
 				})
 			})

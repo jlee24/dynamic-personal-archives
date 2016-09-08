@@ -4,12 +4,13 @@ from nltk.stem.porter import PorterStemmer
 import nltk.data
 import json
 import os, operator
+import re
 import codecs
 import pprint
 
 pp = pprint.PrettyPrinter(indent=4)
 
-tokenizer = RegexpTokenizer(r'[a-zA-Z]+\'[a-zA-Z]+|[a-zA-Z]+')
+tokenizer = RegexpTokenizer(r'[a-zA-Z]+\'[a-zA-Z]+|[a-zA-Z]+|\d+|\_+')
 en_stop = get_stop_words('en') # create English stop words list
 stop_words = open('./stop_words.txt', 'r').readlines()
 for word in stop_words:
@@ -37,6 +38,8 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 		sentences = sent_detector.tokenize(text.strip())
 
 		resource = {}
+		ranked_words = tfidf_scores[str(doc_count)]
+		ranked_words_tokens = ranked_words.keys()
 
 		sentence_scores = {}
 		sentence_scores_raw = {}
@@ -44,7 +47,6 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 			score = 0
 			stopped_tokens = clean_text(sentence)
 			num_tokens = 0
-			ranked_words = tfidf_scores[str(doc_count)]
 			for token in stopped_tokens:
 				if token in ranked_words:
 					num_tokens += 1
@@ -53,8 +55,10 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 				sentence_scores_raw[sentence] = score
 				for word in tokenizer.tokenize(sentence):
 					stem = p_stemmer.stem(word)
-					if stem in ranked_words.keys():
+					ranked_words_tokens = ranked_words.keys()
+					if stem in ranked_words_tokens:
 						sentence = sentence.replace(word, "<b>" + word + "</b>")
+						ranked_words_tokens.remove(stem)
 				sentence = sentence.replace("\r\n\r\n", "<br>")
 				sentence_scores[sentence] = score 
 		
@@ -67,22 +71,65 @@ with open('tmp/tfidf_scores.json', 'r') as tfidf:
 		for index, sent in enumerate(highest_ranked):
 			resource["overview"].append("<div id='overview_" + str(index) + "'>" + sent + "</div>")
 
-		for index, sentence_raw in enumerate(highest_ranked_raw):
-			text = text.replace(sentence_raw, "<mark id='full_" + str(index) + "'>" + sentence_raw + "</mark>")
+		ranked_words_tokens = ranked_words.keys()
 
-		for word in tokenizer.tokenize(text):
-			stem = p_stemmer.stem(word)
-			if stem in ranked_words.keys():
-				text = text.replace(word, "<b>" + word + "</b>")
-		# text = text.replace("\r\n\r\n", "</div><br><div>")
-		text = text.replace("\r\n", "<br>")
-		# text = "<div>" + text + "</div>"
+		transcript = os.path.splitext(doc)[0] + ".json"
+		if transcript in os.listdir("aligned_transcripts"):
+			true_text = ""
+			info = json.loads(codecs.open('aligned_transcripts/' + transcript, 'r', "utf-8").read())
+			alignment_times = info["words"]
+			transcript_sentences = sent_detector.tokenize(info["transcript"])
+
+			word_counter = 0
+			seek_time = 0
+			for transcript_sentence in transcript_sentences:
+				# print(word_counter)
+				if alignment_times[word_counter]["case"] == "success":
+					seek_time = alignment_times[word_counter]["start"]
+				else:
+					count = word_counter + 1
+					while alignment_times[count]["case"] != "success":
+						count += 1
+					seek_time = alignment_times[count]["start"]
+				# print(seek_time)
+
+				if transcript_sentence in highest_ranked_raw:
+					true_text += "<span id='full_" + str(highest_ranked_raw.index(transcript_sentence)) + "' onclick='player.seekTo(" + str(seek_time) + ")'><mark>" + transcript_sentence + " </mark></span><br><br>"
+				else:
+					true_text += "<span onclick='player.seekTo(" + str(seek_time) + ")'>" + transcript_sentence + " </span><br><br>"
+				
+				for token in tokenizer.tokenize(transcript_sentence):
+					# token = re.findall(ur'(\w+\'\w+|\w+)', token, re.UNICODE)[0]
+					if token == alignment_times[word_counter]["word"]:
+						print(token)
+						print(alignment_times[word_counter]["word"])
+						word_counter += 1
+
+			for word in tokenizer.tokenize(true_text):
+				stem = p_stemmer.stem(word)
+				if stem in ranked_words_tokens:
+					true_text = true_text.replace(word, "<b>" + word + "</b>")
+					ranked_words_tokens.remove(stem)
+
+			resource["full"] = true_text
 		
-		resource["full"] = text
+		else: 
+			for index, sentence_raw in enumerate(highest_ranked_raw):
+				text = text.replace(sentence_raw, "</div><div id='full_" + str(index) + "'><mark>" + sentence_raw + "</mark></div><div>")
+			for word in tokenizer.tokenize(text):
+				stem = p_stemmer.stem(word)
+				if stem in ranked_words_tokens:
+					text = text.replace(word, "<b>" + word + "</b>")
+					ranked_words_tokens.remove(stem)
+			# text = text.replace("\r\n\r\n", "</div><br><div>")
+			text = text.replace("\r\n", "<br>")
+			text = "<div>" + text + "</div>"
+			resource["full"] = text
+
 		resources.append(resource)
 		doc_count += 1
 		
 
 	# pp.pprint(resources)
-	with open('../timeline/static/data/document_views.json', 'w') as output:
+	with open('../timeline/static/data/doc_views.json', 'w') as output:
 		json.dump(resources, output, sort_keys=True, indent=4, separators=(',',': '))

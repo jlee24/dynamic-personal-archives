@@ -1,4 +1,5 @@
 /* style for visavail.js */
+#bluepin {border:2px solid white;background:blue;color:white;padding:3px;-webkit-box-shadow:0px 1px 2px black;border-radius:3px;}
 
 #navigation {
     width: 940px;
@@ -13,7 +14,8 @@
     -moz-osx-font-smoothing: grayscale;
     margin-bottom: 20px;
     height: 350px;
-    overflow-y:auto;
+    width: 360px;
+    overflow-y:scroll;
 }
 
 #full {
@@ -24,7 +26,8 @@
     margin-top: 10px;
     margin-bottom: 20px;
     height: 400px;
-    overflow-y:auto;
+    width: 360px;
+    overflow-y:scroll;
 }
 
 .examination {
@@ -35,6 +38,26 @@
 
 .heading {
     text-align: left;
+}
+
+#overview_0 {
+    cursor: pointer;
+}
+
+#overview_1 {
+    cursor: pointer;
+}
+
+#overview_2 {
+    cursor: pointer;
+}
+
+#overview_3 {
+    cursor: pointer;
+}
+
+#overview_4 {
+    cursor: pointer;
 }
 
 body {
