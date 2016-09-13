@@ -101,28 +101,27 @@ adding screenshots or something to resources -->
 		var corpus;
 		var influences;
 
-				var video_player = document.getElementById("player");
-				video_player.style.visibility = "hidden";
-
-				var tag = document.createElement('script');	
-				tag.src = "https://www.youtube.com/iframe_api";
-			  	var firstScriptTag = document.getElementsByTagName('script')[0];
-			  	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		var tag = document.createElement('script');	
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 				
-				var player;
-				function onYouTubeIframeAPIReady() {
-					player = new YT.Player('player', {
-						height: '240',
-						width: '360',
-						videoId: 'yJDv-zdhzMY',
-						events: {
-							// 'onReady': onPlayerReady
-						}
-					});
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				height: '240',
+				width: '360',
+				videoId: 'yJDv-zdhzMY',
+				events: {
+					// 'onReady': onPlayerReady
 				}
-			    function onPlayerReady(event) {
-					event.target.playVideo();
-			    }
+			});
+		}
+		function onPlayerReady(event) {
+			// event.target.playVideo();
+		}
+
+		$('#player').css('display','none');
 
 		function initialize_chart(corpus, influences, views) {
 			var chart = visavailChart(corpus, influences, views).width(800);

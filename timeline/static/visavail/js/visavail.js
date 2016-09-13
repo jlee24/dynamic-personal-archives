@@ -5,7 +5,7 @@ var search = function() {
 	xhr.onload = function(e) {
 			var search_results = xhr.getResponseHeader('search_results');
 			search_results = JSON.parse(search_results);
-			console.log(search_results);
+			// console.log(search_results);
 			show_search_results(search_results);
 	}
 	xhr.send();
@@ -25,6 +25,16 @@ var show_search_results = function(search_results) {
 			.duration(0)
 			.attr('class', 'rect_res selected')
 			.style('stroke-opacity', "1")
+	}
+
+	for (var i = 5; i < 13; i++) {
+		if (search_results[i.toString()]['sim_score'] > 0.80) {
+			d3.select('svg').select('#g_clickables').select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
+				.transition()
+				.duration(0)
+				.attr('class', 'rect_res selected')
+				.style('stroke-opacity', "1")
+		}
 	}
 }
 
@@ -327,6 +337,7 @@ function visavailChart(corpus, influences, views) {
 				.orient('left').ticks(3);
 
 			var examine_doc = function(resource) {
+				$('#player').css('display','none');
 				document.getElementById("overview").style.height = '350px';
 				var html = "";
 				for (var sentence of views[resource["_id"]]["overview"]) {
@@ -339,9 +350,9 @@ function visavailChart(corpus, influences, views) {
 			};
 
 			var examine_video = function(resource) {
-				var video_player = document.getElementById("player");
-				video_player.style.visibility = "visible";
-
+				$('#player').css('display','block');
+				console.log(resource["VIDEO"]);
+				player.loadVideoById(resource["VIDEO"]);
 				// document.getElementById("video_player").innerHTML = "<video id='video' width='360' height='240' preload='auto' controls><source src='" + resource["VIDEO"].toString() + "' type='video/mp4'></video>";
 				var html = "";
 				for (var sentence of views[resource["_id"]]["overview"]) {
@@ -668,21 +679,22 @@ function visavailChart(corpus, influences, views) {
 					'height': res_height,
 				})
 				.on('click', function(d, i) {
-					// console.log(d);
-					var rect = document.getElementById(this.id);
+
 					d3.select('svg').select('#g_slices').selectAll('.rect_res')
 						.each(function(d) {
 							change_fill(this, false)
 						})
+
+					var rect = document.getElementById(this.id);
 					if (rect.style.fill == "rgb(102, 140, 255)") {
 						change_fill(rect, true);
 					} else {
 						change_fill(rect, false);
 					}
-					if (d.TYPE == "Document") {
-						examine_doc(d);
+					if (corpus[this.id]["TYPE"] == "Document") {
+						examine_doc(corpus[this.id]);
 					} else {
-						examine_video(d);
+						examine_video(corpus[this.id]);
 					}
 					
 				})

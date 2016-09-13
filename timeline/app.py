@@ -20,7 +20,7 @@ def index():
 			results[key] = {}
 			results[key]['doc_id'] = str(search_results[i][0])
 			results[key]['sim_score'] = str(search_results[i][1])
-		# print(type(results))
+		print(type(results))
 		resp.headers['search_results'] = json.dumps(results)
 	return resp
 	

@@ -22,7 +22,7 @@ p_stemmer = PorterStemmer()
 def clean_text(raw):
 	raw = raw.lower()
 	raw = "".join(c for c in raw if c not in ('!','.',':',';',"?",'"',','))
-	raw = unicode(raw, errors='replace')
+	# raw = unicode(raw, errors='replace')
 	tokens = tokenizer.tokenize(raw)
 	stopped_tokens = [i for i in tokens if not i in en_stop]
 	stemmed_tokens = [p_stemmer.stem(i) for i in stopped_tokens if i != 'nls']
