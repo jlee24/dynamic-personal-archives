@@ -8,13 +8,6 @@ WASHINGTON 25, D.C.
 
 By: D. C. Engelbart
 
-SRI Project No. 3578
-
-Approved:
-
-R. C. Amara, Manager System Engineering Department
-J. D. Noe, Director Engineering Science Division
-
 Abstract
 
 This is an initial summary report of a project taking a new and systematic approach to improving the intellectual effectiveness of the individual human being. A detailed conceptual framework explores the nature of the system composed of the individual and the tools, concepts, and methods that match his basic capabilities to his problems. One of the tools that shows the greatest immediate promise is the computer, when it can be harnessed for direct on-line assistance, integrated with new concepts and methods.

@@ -164,7 +164,7 @@ function visavailChart(corpus, influences, views) {
 			var ndoc = 0;
 			for (var theme in themes) {
 				var points_in_theme = [];
-				for (var i = 1; i < num_slices-2; i++) {
+				for (var i = 1; i < 3; i++) {
 					var topics = influences['time_slice_' + i.toString() + '_topics'];
 					var docs = influences['time_slice_' + i.toString()];
 					for (var j = 0; j < Object.keys(docs).length; j++) {
@@ -188,7 +188,8 @@ function visavailChart(corpus, influences, views) {
 			}
 
 			// parse data text strings to JavaScript date stamps
-			var parseDate = d3.time.format('%Y');
+			// var parseDate = d3.time.format('%Y');
+			var parseDate = d3.time.format('%Y-%m-%d');
 
 			dataset.forEach(function (d) {
 				d.data.forEach(function (d1) {
@@ -227,40 +228,44 @@ function visavailChart(corpus, influences, views) {
 			var startDate = 0;
 			var endDate = 0;
 			var parseYear = d3.time.format('%Y');
+			// var parseYear = d3.time.format('%Y-%m-%d');
+
+			console.log(dataset);
 
 			dataset.forEach(function (series, seriesI) {
 				if (seriesI === 0) {
-					// startDate = series.disp_data[0][0];
-					var startYear = round_down(series.disp_data[0][0].getFullYear(), 10);
-					startDate = parseYear.parse(startYear.toString());
-					var endYear = round_up(series.disp_data[series.disp_data.length - 1][2].getFullYear(), 5);
-					endDate = parseYear.parse(endYear.toString());
+					startDate = series.disp_data[0][0];
+					endDate = series.disp_data[series.disp_data.length - 1][2];
+					// var startYear = round_down(series.disp_data[0][0].getFullYear(), 10);
+					// startDate = parseYear.parse(startYear.toString());
+					// var endYear = round_up(series.disp_data[series.disp_data.length - 1][2].getFullYear(), 5);
+					// endDate = parseYear.parse(endYear.toString());
 				} else {
 					if (series.disp_data[0][0] < startDate) {
-						var startYear = round_down(series.disp_data[0][0].getFullYear(), 10);
-						startDate = parseYear.parse(startYear.toString());
+						startDate = series.disp_data[0][0];
+						// var startYear = round_down(series.disp_data[0][0].getFullYear(), 10);
+						// startDate = parseYear.parse(startYear.toString());
 					}
 					if (series.disp_data[series.disp_data.length - 1][2] > endDate) {
-						var endYear = round_up(series.disp_data[series.disp_data.length - 1][2].getFullYear(), 10);
-						endDate = parseYear.parse(endYear.toString());
+						endDate = series.disp_data[series.disp_data.length - 1][2];
+						// var endYear = round_up(series.disp_data[series.disp_data.length - 1][2].getFullYear(), 10);
+						// endDate = parseYear.parse(endYear.toString());
 					}
 				}
 			});
 
 			function change_fill(rect, turn_on) {
 				if (turn_on) {
-					var fill = "rgb(102, 140, 255)";
-					if (rect.style.fill == "rgb(102, 140, 255)") fill = "rgb(26, 83, 255)";
-					else if (rect.style.fill == "rgb(26, 83, 255)") fill = "rgb(0, 51, 204)";
-					else if (rect.style.fill == "rgb(0, 51, 204)") fill = "rgb(0, 32, 128)";
-					else if (rect.style.fill == "rgb(0, 32, 128)") fill = "rgb(0, 26, 102)";
+					var fill = "rgb(0, 102, 255)";
+					if (rect.style.fill == "rgb(0, 102, 255)") fill = "rgb(0, 71, 179)";
+					else if (rect.style.fill == "rgb(0, 71, 179)") fill = "rgb(0, 41, 102)";
+					// else if (rect.style.fill == "rgb(0, 32, 128)") fill = "rgb(0, 26, 102)";
 					rect.style.fill = fill;
 				} else {
-					if (rect.style.fill == "rgb(26, 83, 255)") fill = "rgb(102, 140, 255)";
-					else if (rect.style.fill == "rgb(0, 51, 204)") fill = "rgb(26, 83, 255)";
-					else if (rect.style.fill == "rgb(0, 32, 128)") fill = "rgb(0, 51, 204)";
-					else if (rect.style.fill == "rgb(0, 26, 102)") fill = "rgb(0, 32, 128)";
-					
+					// if (rect.style.fill == "rgb(26, 83, 255)") fill = "rgb(0, 102, 255)";
+					if (rect.style.fill == "rgb(0, 71, 179)") fill = "rgb(0, 102, 255)";
+					else if (rect.style.fill == "rgb(0, 41, 102)") fill = "rgb(0, 71, 179)";
+					// else if (rect.style.fill == "rgb(0, 26, 102)") fill = "rgb(0, 32, 128)";
 					rect.style.fill = fill;
 				}
 			}
@@ -337,31 +342,85 @@ function visavailChart(corpus, influences, views) {
 				.orient('left').ticks(3);
 
 			var examine_doc = function(resource) {
+				player.stopVideo();
 				$('#player').css('display','none');
 				document.getElementById("overview").style.height = '350px';
-				var html = "";
+				var overview_html = "";
 				for (var sentence of views[resource["_id"]]["overview"]) {
-					html += sentence + "<br>";
+					overview_html += sentence + "<br>";
 				}
-				html = html.substring(0, html.length-4);
-				document.getElementById("overview").innerHTML = html;
+				overview_html = overview_html.substring(0, overview_html.length-4);
+				document.getElementById("overview").innerHTML = overview_html;
+
+				var related_html = "";
+
+				for (var num of views[resource["_id"]]["related"]) {
+					related_html += "<div>";
+					var related_doc = corpus[num];
+					if (resource.TITLE !== related_doc.TITLE) { 
+						related_html += "<b>" + related_doc.TITLE + "</b><br>";
+						related_html += related_doc.TYPE;
+						related_html += "</div><br>";
+					}
+
+				}
+				document.getElementById("related").innerHTML = related_html;
+
 				document.getElementById("full").innerHTML = views[resource["_id"]]["full"];
 				make_scrollable();
 			};
 
 			var examine_video = function(resource) {
-				$('#player').css('display','block');
-				console.log(resource["VIDEO"]);
 				player.loadVideoById(resource["VIDEO"]);
+				$('#player').css('display','block');
+				document.getElementById("overview").style.height = '100px';
 				// document.getElementById("video_player").innerHTML = "<video id='video' width='360' height='240' preload='auto' controls><source src='" + resource["VIDEO"].toString() + "' type='video/mp4'></video>";
 				var html = "";
 				for (var sentence of views[resource["_id"]]["overview"]) {
 					html += sentence + "<br>";
 				}
-				document.getElementById("overview").style.height = '100px';
 				document.getElementById("overview").innerHTML = html;
+
+				var related_html = "";
+				for (var num of views[resource["_id"]]["related"]) {
+					related_html += "<div>";
+					var related_doc = corpus[num];
+					if (resource.TITLE !== related_doc.TITLE) { 
+						related_html += "<b>" + related_doc.TITLE + "</b><br>";
+						related_html += related_doc.TYPE;
+						related_html += "</div><br>";
+					}
+
+				}
+				document.getElementById("related").innerHTML = related_html;
+
 				document.getElementById("full").innerHTML = views[resource["_id"]]["full"];
 				make_scrollable();
+			}
+
+			var examine_photo = function(resource) {
+				player.stopVideo();
+				$('#player').css('display','none');
+				document.getElementById("overview").style.height = '100px';
+				document.getElementById("overview").innerHTML = views[resource["_id"]]["overview"];
+				var related_html = "";
+				for (var num of views[resource["_id"]]["related"]) {
+					related_html += "<div>";
+					var related_doc = corpus[num];
+					if (resource.TITLE !== related_doc.TITLE) { 
+						related_html += "<b>" + related_doc.TITLE + "</b><br>";
+						related_html += related_doc.TYPE;
+						related_html += "</div><br>";
+					}
+
+				}
+				document.getElementById("related").innerHTML = related_html;
+				if (resource.TITLE == "Photo Album: SRI Lab") {
+					document.getElementById("full").innerHTML = "<iframe src='//embedsocial.com/facebook_album/album_photos/307477725222' width='360px' height='400px' frameborder='0' scrolling='yes' marginheight='0' marginwidth='0'></iframe>"
+				} else {
+					document.getElementById("full").innerHTML = "<iframe src='//embedsocial.com/facebook_album/album_photos/10154835413795223' width='360px' height='400px' frameborder='0' scrolling='yes' marginheight='0' marginwidth='0'></iframe>"
+				}
+
 			}
 
 			function make_scrollable() {
@@ -459,15 +518,15 @@ function visavailChart(corpus, influences, views) {
 					.call(xAxis);
 
 			var valueline_0 = d3.svg.line()
-				.x(function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+				.x(function(d) { return xScale(parseDate.parse(d.SOURCE.DATE)); })
 				.y(function(d, i) { return 2*dataHeight + 4*lineSpacing + yScale(parseFloat(d.SCORE)); });
 
 			var valueline_1 = d3.svg.line()
-				.x(function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+				.x(function(d) { return xScale(parseDate.parse(d.SOURCE.DATE)); })
 				.y(function(d, i) { return 2*dataHeight + 3.5*lineSpacing + yScale(parseFloat(d.SCORE)); });
 
 			var valueline_2 = d3.svg.line()
-				.x(function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+				.x(function(d) { return xScale(parseDate.parse(d.SOURCE.DATE)); })
 				.y(function(d, i) { return 2*dataHeight + 3*lineSpacing + yScale(parseFloat(d.SCORE)); });
 
 			yScale.domain([0, d3.max(points_per_theme[2], function(d) { return d.SCORE; })]);
@@ -497,7 +556,7 @@ function visavailChart(corpus, influences, views) {
 				.enter().append("circle")
 					.attr("id", "theme_0")
 					.attr("r", 1.5)
-					.attr("cx", function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+					.attr("cx", function(d) { return xScale(parseDate.parse(d.SOURCE.DATE)); })
 					.attr("cy", function(d) { return 2*dataHeight + 4*lineSpacing + yScale(parseFloat(d.SCORE)); });
 
 			svg.selectAll("dot")
@@ -505,7 +564,7 @@ function visavailChart(corpus, influences, views) {
 				.enter().append("circle")
 					.attr("id", "theme_1")
 					.attr("r", 1.5)
-					.attr("cx", function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+					.attr("cx", function(d) { return xScale(parseDate.parse(d.SOURCE.DATE)); })
 					.attr("cy", function(d) { return 2*dataHeight + 3.5*lineSpacing + yScale(parseFloat(d.SCORE)); });
 
 			svg.selectAll("dot")
@@ -514,7 +573,7 @@ function visavailChart(corpus, influences, views) {
 				.append("circle")
 					.attr("id", "theme_2")
 					.attr("r", 1.5)
-					.attr("cx", function(d) { return xScale(parseYear.parse(d.SOURCE.YEAR)); })
+					.attr("cx", function(d) { return xScale(parseDate.parse(d.SOURCE.DATE)); })
 					.attr("cy", function(d) { return 2*dataHeight + 3*lineSpacing + yScale(parseFloat(d.SCORE)); });
 
 			svg.selectAll("circle")
@@ -581,7 +640,7 @@ function visavailChart(corpus, influences, views) {
 					'height': res_height,
 				})
 				.style({
-					'fill': "#668cff"
+					'fill': "#0066ff"
 				})
 
 				g_slices.selectAll('foreignObject').filter(function() {return this.getAttribute('class') == 'res'})
@@ -686,15 +745,17 @@ function visavailChart(corpus, influences, views) {
 						})
 
 					var rect = document.getElementById(this.id);
-					if (rect.style.fill == "rgb(102, 140, 255)") {
+					if (rect.style.fill == "rgb(0, 102, 255)") {
 						change_fill(rect, true);
 					} else {
 						change_fill(rect, false);
 					}
 					if (corpus[this.id]["TYPE"] == "Document") {
 						examine_doc(corpus[this.id]);
-					} else {
+					} else if (corpus[this.id]["TYPE"] == "Video") {
 						examine_video(corpus[this.id]);
+					} else {
+						examine_photo(corpus[this.id]);
 					}
 					
 				})

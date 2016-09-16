@@ -1,0 +1,41 @@
+MEMORANDUM
+
+May 18, 1960
+
+TO: SRI Teaching Machine Activity File
+
+cc: Wm. Madow
+
+FROM: D. C. Engelbart
+
+SUBJECT: Possibilities for Teaching Machine Activity at SRI
+
+1. My Background and Relevant Interests
+
+My professional background is in the digital computer field as an engineer concerned with internal organization of computers and with the development of basic new physical techniques for their construction. My professional motivations are strongly oriented toward maximizing the benefit which society might derive from the advancements in the computer field. I might say then that my professional interests are toward the application of automatic information-handling equipment for helping human society, in the most significant way possible.
+
+I hope to help build up a program aimed at the very basic goal of developing techniques such that an intelligent person and a powerful computer can work directly together as an extremely capable team, in the sort of intellectual activity domain that most professional men spend their working days. I also hope to see facilities and techniques developed at SRI for more direct and more extensive utilization of computers in experimental research, particularly in the social sciences. It seems that realtime monitoring, evaluating, and complexly programmed controlling of experiments involving physiological, psychological, intellectual, and/or sociological dynamics of animals or humans could be made available to many different types of research by a common core of computer and terminal equipment.
+
+The two program hopes that are mentioned above overlap very nicely, and one activity area which is relevant to both is research on learning theory and teaching machines. I would very much like to see SRI become engaged in this latter activity, and would hope that it could be done in conjunction with general socialscience computeraided experimentation, as well as with an "intelligent team" research program.
+
+2. General Thoughts on Teaching Machine Activity at SRI
+
+I think that, in general, SRI is just the type of institution to play a significant role in the development of teaching machine techniques. Our notforprofit research nature puts us nicely between the academic educational psychology researchers, the industrial machine developers and builders, the industrial, educational, and military users, and the governmental and philanthropic foundation research sponsors. We have the capability to develop special equipment for experimentation, we can plan and conduct research on theory and application of automated teaching, we can take on "system" studies for potential users, we can develop equipment specifications for a user, see that he gets good bids and equipment, and oversee installation and early utilization. It would seem that only another institution such as ours could play a more effective role in getting teaching machine techniques developed and into practice.
+
+3. My Contacts in the Teaching Machine Field
+
+a. Dr. Bert Kersh, Systems Development Corporation. An educational psychologist by training and experience, he first got me interested in this area several years ago when he was at the University of Oregon. He is still quite interested in the area, but is now doing other things. Is interested in coming to SRI sometime in the future would probably be interested in participating in teaching machine work and has explicitly stated that he is interested in the intelligent machine area.
+
+b. Dr. Robert Mager, Research Scientist, U. S. Army Air Defense Human Research Unit, Fort Bliss, Texas. A psychologist engaged in an active program in the teaching machine area.
+
+c. Dr. Edward Herold, Vice President, in charge of research, Varian Associates. I met him at the same time as Mager, who was visiting Varian. Herold is very much interested in teaching machines, had encouraged thinking about it at RCA when he was there, and is apparently getting activity going at Varian now. He thought SRI could do very well to get going in this area (this was last Fall).
+
+4. Recommendations for SRI.
+
+I think we should definitely make plans to get into this area. We should do it gently enough that we are well oriented and so that we can apply our talents effectively. Probably the possibilities that Kincaid and Sorenson are exploring now, active field work with educators, would make a verygood start. With some activity going on, we should be able to focus more realistically upon the needs and possibilities for contribution.
+
+I would hope that the computer-oriented activities in the Engineering Division can mature in the directions outlined in Part 1 of this memo, so that eventually there can develop some well-coordinated experimental facilities. In any event, I think that the psychological, the sociological, and the "systems engineering" aspects of this can all flourish within SRI, and should present a coordinated structure to the outside world. We should look to this coordination early.
+
+As I said in Part 2, I think that SRI is admirably suited to contribute very effectively in the development of the machines and the techniques for using them (including practical and thoughtful guidance of development and application). I think that we should plan on being a significant force in this area and move into it with that in mind.
+
+D. C. Engelbart

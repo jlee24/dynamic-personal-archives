@@ -1,0 +1,189 @@
+13 December 1960
+
+Proposal for Research
+
+AUGMENTED HUMAN INTELLECT STUDY
+
+Prepared for
+Headquarters Air Force Office of Scientific Research Washington 25, D. C.
+
+1. PRECIS
+
+a. Project Title: The Augmented Human Intellect: Search for a Framework
+b. Organization:	 Stanford Research Institute, Menlo Park, California
+c. Principal Investigator: Douglas C. Engelbart
+
+d. Brief: Stanford Research Institute has committed itself to the internal support of a preprogram study in a previously undefined area that can be identified generally as "giving overall attention to the individual human as an effective problemsolving agent." In this proposal the Institute solicits joint support from the AFOSR for this studynaming a sum corresponding to half the effort that the Institute has planned for the forthcoming year. The vocabulary doesn't seem to exist with which to communicate briefly the subject range involved in this multidisciplinary study. The best summary of the proposed research would seem to be a statement that we are going to try to determine what the range of subject matter must be within which to give rational, overall consideration to the problem of making humans more effective as problem solvers, and to try to provide perspective for a coordinated attack upon this problem.
+
+
+2. OBJECTIVES OF THE STUDY
+
+The objective of this study is to establish a conceptual framework within which could grow a coordinated research and development program whose goals would be the following: (1) to find the factors that limit the effectiveness of the human individual's basic informationhandling capabilities in meeting the various needs of society for problem solving in its most general sense; and (2) to develop new techniques, procedures, or systems that will better match these basic capabilities to the needs or problems of society.
+
+
+3. APPROACH
+
+This will be a paper study, done principally by one Senior Research Engineer and one Research Assistant. Although most of the work will involve literature search and study, plans exist for extended discussions with personnel in other disciplines, and for several interdisciplinary seminars at SRI and Stanford University. It is expected that several crosscountry trips will be taken during the year to make possible personal discussion with people that our literature search, local discussions, and correspondence have "discovered."
+
+To stimulate interest, criticism, and useful acquaintanceships, we plan to publish material before different relevant readerships. We recently presented a paper at the 1960 Annual Meeting of the American Documentation Institute, Berkeley, California, October 2327, (entitled "Special Considerations of the Individual as a User, Generator, and Retriever of Information"). We also hope to present a more general and comprehensive paper at the 1961 Western Joint Computer Conference in Los Angeles next Maywhere the theme of the conference is, "Extending Man's Intellect."
+
+The two questions whose answers represent the goal of the prospective program decompose into a host of subsidiary questions. Many of the meatiest of these will have to be dealt with later by people with appropriate backgrounds and within projects having sensibly specialized objectives. Many other questions, however, should be pursued before the rest can be ordered into a reasonable hierarchy of succession, relevance, and project or team areas This hierarchy of questions will grow as part of a maturing conceptual framework. It will be the job of this proposed study to ferret out as many meaningful questions as possible, and to deal with those that are necessary for the construction of the framework and its included hierarchy of research questions.
+
+Here are a few typical questions of the hundreds we want to answer:
+
+Has anyone or any discipline ever given serious consideration to the individual in a way similar to ours? Why has such consideration not been givenif not? Is this an unmanageable enterprise? (To a people shooting for the moon?) What do the psychologists who specialize in problemsolving theory have to offer us? What value might there be in developing ways for a human to receive or transmit encoded information that are different from our conventional methodse.g., is "tactile literacy" promising to us? What about formal decision theory? Can "time and motion" techniques be borrowed usefully from the industrial engineer for analysis and synthesis of effective intellectual procedure? How soon could we begin making use of what the psychologists working on "concept attributes are learning? Are the motivations and objectives of people working in that field likely to induce them naturally to pursue the type of understanding that we would find most useful within that field; or does it look as if specially directed research would have to be stimulated somewhere if our prospective program were to want direct help from this field? Are the practical limitations that block those who propose dynamic usage of formal logical languages (e.g., Rudolph Carnap) something that could be overcome if we gave the individual a little automatic aid in his formal manipulation of the symbology? How much of the approach taken by the "intelligent machine" researcher is adaptable advantageously to a dynamically cooperative manmachine "intelligent team?"
+
+For further details of our method of approach, see Exhibit A, a copy of a recent internal SRI memo which gives a fairly detailed picture of current activity on this study.
+
+ 
+4. BACKGROUND AND HISTORY
+
+A reasonable representation of the background of work that has already been done at Stanford Research Institute is provided in Exhibit A. As far as is known, no work has been done elsewhere that pursues similar overall objectives, although there are a great many contributions by others that will prove highly relevant to various aspects of our study.
+
+The principal investigator has wanted to pursue this study for many yearsand, in fact, can say that the possibilities to be explored here are essentially identical to those that motivated him to quit the job he held in 1951 and enter graduate school to specialize in digital computers. His choice of Stanford Research Institute as a place to work was largely based upon the appropriate vehicle it represented for initiating a program such as is projected here. There was thus a reasonably extensive bibliographic and conceptual structure already in existence when the Institute first authorized parttime effort in this area early in 1959.
+
+
+5. STATEMENT OF WORK
+
+We shall browse, search, sift, analyze, evaluate, hypothesize, and integrate, in cyclic fashion, through a large collection of facts, concepts, and considerations gleaned from personal discussions and from the literature. This will be our main activity, and our work will be of three concurrent kinds. First, we shall be engrossed in the abovementioned cyclic journeys through the subject information. Second, we shall stand aside from time to time to engage in introspection regarding the way we are handling our problems, and to try designing relatively simple techniques and procedures for us to use to increase our effectiveness it may actually make us more effective, and it probably will help our orientation to today's reality. Third, we shall construct messages to communicate to the outside world. At least one reasonably comprehensive paper is planned, and more will be considered. Then we plan to prepare a report, probably coinciding with the AFOSR contract anniversary (if a contract is forthcoming) J that provides a summary of our search results. We hope to be able to provide by that time a reasonably comprehensive treatment of (a) an analysis of the factors involved in matching a human's basic capabilities to society's problems, (b) an analysis and evaluation of the various areas where improved matching seems possible, and (c) some definite recommendations for research. We hope that this report can be significant enough to warrant publication in some form that could carry overall perspective to people who might be stimulated toward accepting some of the challenges which we expect to provide.
+
+
+6. ACCEPTANCE PERIOD
+
+This proposal will remain in effect until 28 February 1961. If consideration of the proposal requires a longer period, the Institute would be glad to consider a request for an extension in time.
+
+
+7. ESTIMATED TIME AND CHARGES
+
+The estimated time required to complete this project and report its results is twelve (12) months. The Institute could begin work within one month after receipt of an executed contract. The estimated maximum charges for this project are $26,924. A cost breakdown is included in Sec. 10 of this proposal.
+
+
+8. CONTRACT FORM
+
+It is requested that any contract resulting from this proposal be awarded under Basic Agreement AF 33(600)7374 between the United States Air Force and Stanford Research Institute.
+
+
+9. PERSONNEL
+
+Engelbart, Douglas C. Senior Research Engineer,
+
+Computer Techniques Laboratory
+
+Dr. Engelbart received a B.S. degree in Electrical Engineering from Oregon State College in 1948. In 1953 he received the E.E. degree from the University of California; his thesis described the logical design and programming of a drumtype generalpurpose computer to obtain increased flexibility and speed by optimizing the utilization of the electronic register capacity. In 1955 he received a Ph.D. degree in Electrical Engineering, also from the University of California; his thesis dealt with the development of special gasdischarge tubes for computer usage. While studying at the University of California he was an Associate in Electrical Engineering. He became an Assistant Professor in 19551956.
+
+From 1948 to 1951 Dr. Engelbart was an Electrical Engineer in the Electrical Section at the Ames Laboratory at Moffett Field, California. In 19551956 he was a consultant to Marchant Research, Inc., Oakland, who were carrying on development work on patents they had bought from Dr. Engelbart. In 1956 he formed and directed a corporation, Digital Techniques, Inc., which, in 19561957J did further development work on his inventions. In October 1957 Dr. Engelbart joined the staff of Stanford Research Institute, where he has been concerned with basic developmental work on magnetic components for computers and with information retrieval problems.
+
+His fields of specialty include circuits, special components, logical design, and programming of digital computers; vacuum and gas discharge techniques; large intercommunication systems; wind tunnel drive and control systems; electromechanical control systems; and information retrieval systems.
+
+Dr. Engelbart is a member of Pi Mu Epsilon, Sigma Tau, Tau Beta Pi, Phi Kappa Phi, Sigma Xi, Eta Kappa Nu, the Institute of Radio Engineers, the IRE Professional Group on Electronic Computers, and the IRE Solid State Circuits Subcommittee 4.10, and Chairman (19591960) of the San Francisco Chapter of IRE PGEC.
+
+
+10. COST ESTIMATE
+
+ Personnel Costs	 
+ 	 
+ Senior Research Engineer, 6 manmonths	 $8,520
+ Editing, 1/2 manmonth	 $300
+ Lab Assistant, 6 manmonths	 $2,520
+ *Total Direct Labor	 $11,340
+ **Overhead Allowance at 100% of Total Direct Labor	 $11,340
+ Total Personnel Costs	 $22,680
+ 	 
+ Direct Costs	 
+ 	 
+ Travel and Subsistence	 $870
+ Materials and Supplies	 $300
+ Telephone and Telegraph	 $50
+ Report Costs	 $1,500
+ Total Direct Costs	 $2,720
+ TOTAL ESTIMATED COST	 $25,400
+ Fixed Fee at 6% of Total Estimated Contract Cost	  $1,524
+ TOTAL ESTIMATED PRICE	 $26,924
+*Included in direct labor are all salary base costs such as vacation, holiday, and sick leave pay, social security taxes, and contributions to employee benefit plans.
+
+**The overhead rate quoted represents current cost experience. It is requested that the contract provide for reimbursement at this rate on a provisional basis, subject to the retroactive adjustment to fixed rates negotiated on the basis of historical cost data in accordance with ASPR 3704. It is also requested that any contract resulting from this proposal provide for the determination of costs in accordance with ASPR Chapter XV, Part 2, as in effect prior to Revision 50 for the period through December 31, 1960, and in accordance with Revision 50 thereafter.
+
+
+EXHIBIT A
+
+Internal Memorandum
+
+STANFORD RESEARCH INSTITUTE
+
+To: Project A File Date: 5 December 1960
+
+From: D. C. Engelbart
+
+Subj: Current Status of Internally Supported Work on the Augmented Human Intellect "Snapshot" View to Supplement Previous Memos and to Update Specific Project Aspects
+
+ 
+This memorandum is intended to present a description of the objectives, motivation, basic thinking, and general method of approach for a current, internally sponsored preprogram search activity at Stanford Research Institute. The purpose of this activity is to explore the possibilities for initiating a coordinated research and development program aimed at the following objectives: (1) to find the factors which limit the effectiveness of the human individual's basic informationhandling capabilities in meeting the various needs of society for problem solving in its most general sense; and (2) to develop new techniques, procedures, or systems which will better match these basic capabilities to the society (or, to its problems). A more detailed picture of these objectives and their implications should emerge from reading the rest of the memorandum.
+
+It is expected that this program which is being "designed" (and which we call Program A) will give balanced consideration to longrange research, for the individual of the 1970's, as well as to shorterrange research and development, for the individual of the 1960's. On the one hand, there are very sophisticated possibilities for the highly trained and highly automated individual (for special situations in this decade, or more general use in the next), which can allow the individual effectively to assimilate, organize, manipulate and analyze information relevant to a complex problem with a capability that would leave the genius of today still sharpening his pencils at the starting line. On the other hand, there seems to be a good chance that relatively primitive measures could soon be developed to increase the effectiveness of the individual in today's real worldhelp him to make use of more information, to handle routine things more quickly, to organize and integrate more complex problems, to cooperate more effectively in a dynamic way with other humans in tackling a problem, etc.
+
+ABOUT A FRAMEWORK FOR R&D, AND THE SEARCH PROCESS
+
+A very stimulating report, written at RAND by Kennedy and Putt in 1956 [1], provides a good picture of the need in a research program for a suitable framework within which researchers are oriented and by which administrators and researchers, and researchers and developers, can interact. It is pointed out that every established discipline has such a framework built into it, and that every researcher who has passed through the formal training of that discipline views the world, is interested in certain types of information, approaches problems with certain methodology, and has preferred ways of presenting results according to the framework which his discipline has developed. It seems that, in interdisciplinary research programs, the establishment of a framework within which the research for a given program may take place is something which should be given more recognition as a vital and difficult task. A meaningful difference is thus made clear between the "search" for a structure, and the subsequent research within that structure. Some excerpts from the report will, I think, have value here:
+
+"In the early days of science, when the men who contributed were generalists and natural philosophers, they were unhampered by the accumulated culture of science. They built their own frameworks for understanding the world. They were primarily engaged in 'search' as opposed to research. They developed ways of discovering how to think about problems as opposed to getting answers to questions posed within an established or traditional framework. Searching appears to be the traditional function of the philosopher. With the sharp line drawn in modern times between philosophy and science, searching for the better framework in science seems to be confined to the very few philosophers of science and technologythe many do the research ... A basic problem for administering interdisciplinary research is how to induce the members of the team to indulge in search for the adequate framework rather than research. A framework is needed within which to integrate the answers on the different components of a problem. How to choose a framework that is suitable for all of the different specialists involved is a real problem. Many a specialist feels, in a framework made by another, that his particular contribution is all distorted or unrecognizable. Frameworks are most difficult to communicate because one quickly runs into fundamental philosophical and cultural issues.
+
+"..... The first conviction of the research specialist is that a problem can be factored in such a way that his particular specialty is the only important aspect.... The research specialists, like all other living organisms, will go to great lengths to maintain a comfortable position. Having invested much time and energy to become specialists in a given methodology, they can be expected to resist efforts to expand the boundaries of the methodology or to warp the methodology in an unfamiliar framework.
+
+" The fact that individual contributions tend to be distorted or to disappear in a larger framework also is an unsolved problem for the administrator. Our research culture is based upon rewards to the individual not to the team. The perceptive research specialist knows this perfectly well: hence the interdisciplinary team is unstable, on at least two counts the sweat, blood and tears of trying to resolve conflicting values, and the problem of reward to individual members. The appropriate expectation for interdisciplinary teams appears to be that they will be unstable associations. But interdisciplinary research and search behavior is very significant. Research can be done by the individual, once the farmework has been established, although a certain large problem will require continued close cooperation during the research and development phases.
+
+" When an interdisciplinary research team sets out first on its problem, it may spend a good deal of time setting out to observe complex phenomena in ways that would lead to a scientific framework in which to work. Observations carried out in a laboratory can be made for the purpose of establishing a framework which now makes possible decisions regarding what research should be conducted and how it should be conducted. A serious problem here is that the team may be apparently unproductive for a long time. Unless it is completely understood that search rather than research is going on, observers might tend to apply inappropriate criteria to this work. Much of the searching is not publishable in standard research journals, nor is it of great interest to those not engaged in the process. It is tentative, rapidly changing, full of sudden insights and long fallow periods, unpredictable, and unpopular with colleagues engaged in exploiting more traditional frameworks by more traditional techniques. But search is the lifeblood of the research corporation because new tools come from new frameworks. Specifically, the new tools for the solution of new complex systems problems will come from the searching of interdisciplinary teams if we can find a way to stimulate and reinforce the team concept."
+
+The considerations raised by Kennedy and Putt are relevant here from two points of view. First, the program which we consider initiating is most definitely of the multidisciplinary sort, and their wellstated case for an adequate search phase preceding such a research program is a very welcome reinforcement to our determination to provide such a phase. One of the reasons that the search to date has gone on under Institute sponsorship is that the early attempts to write proposals for support of what needed doing (the searching) tried to tie down the problem within the usual "research project" package. It proved to be too difficult (for me) to do so, and it was decided that the Institute would support a modest preprogram survey activity (now called "searching") from which could stem a series of proposals for explicit research projects that would be integrated as well as possible toward pursuit of the program goals.
+
+A second feature of the KennedyPutt report which is of relevance to us is that the technique which they reported upon to "...stimulate and reinforce the team concept." is among the kinds of things which our program would like to develop in the futureand, indeed, some of the possibilities we anticipate pursuing, for individuals and small groups, would promise real improvements in the ability of individuals to work together.
+
+ 
+HOW OUR FRAMEWORK SEEMS TO BE DEVELOPING
+
+Our motivation for focusing upon the individual stems from considering his inherent basic position in any society. No matter what social organization we wish to consider, the real source of its ability to adapt to a changing environment, to recognize and solve its problems, and to mature in a rational fashion, lies in the abilities of the individuals who compose that organization; progress results from the abilities of a very few. Upon the effectiveness of this type of individual (I call him a "problem-solving individual" for want of a better term) depends the stability and progress of our society. In today's world, this stability and progress are threatened with problems whose complexity and urgency surpass any in our history; our dependence upon the capability of our problemsolving individuals to handle complex problems seems overdue for some critical social concern.
+
+Let us take a brief and basic look at the problem of "doing something to improve the capability of the problemsolving individual." The following model, though grossly simplified, seems to serve well the need for perspective:
+
+What really runs our society is the central nervous system of each of its individuals; this system can receive information from the environment through peripheral sensory systems, and can utilize its peripheral motor systems to communicate to the outside world. As far as seems to be demonstrable, the only way an individual human affects his environment in an active sense is by means of the communications sent out by his central nervous system. The problem of increasing the effectiveness of an individual human as a problem solver seems thus reducible to the problem of improving the match between the inherent capabilities of the central nervous system and problems and environments to be faced.
+
+The inherent capabilities of which we speak are such as the following: memory, pattern recognition, abstraction, visualization, induction, deduction, intuition, judgment, originality, etc. (the list is not presented as being complete or uniform). There are some very complex codeconversion capabilities associated with the peripheral systems, too. There are also some characteristics involving emotions, motivations, irrationalities and the like which cannot be ignored even though there seems no way to take them into account in our initial model.
+
+These basic capabilities must be coupled to the problemsthis we have stated as being basic. What sort of things might we be talking about, then, that make up a means for coupling these capabilities to "those problems?" Well, language is a good example. It provides us the means for abstracting basic concepts, symbolizing them, and synthesizing representations of more complex concepts in communicable vocal symbols. Techniques of graphic representation of these symbols allow us to develop the procedures for recording our thoughts and for more complex concept manipulation than our minds could otherwise accomodate. There are a great many techniques and procedures which have been developed for us to use so that our basic capabilities can more effectively be matched to the worldour ballpoint pens, our desks and filing cabinets, our office duplicating equipment, our telephones, all offer us procedures that help, and our techniques of organizing our work so that we decompose the big problems into little problems whose solutions our minds can encompass is cleverly adapted to the formal procedures which our different disciplines have developed. The early part of our "search" activity seems to be quite involved in gaining an understanding and a perspective of the means that have been developed in the past for matching our central nervous systems to the problems we face.
+
+ 
+
+5
+
+We can observe at the outset, however, that the means developed in the past have settled upon the general procedure of separating the symbolicmanipulation activities of the individual into two domainsone internal and the other external. The external domain of activity mostly involves graphic representation of symbols, and serves principally to bolster the internal capabilities of memory and visualization. These two domains form a system which represents to the rest of the world the activity of an individual human. Communications exchanged between this system and the outside world in effect provide the only means by which the given individual influences that world. If individuals are organized into a team, it is usually an organization among separate twodomain systems that is set up.
+
+In the long run, we can expect to consider extensive changes in techniques and procedures used in both of the symbolmanipulation domains associated with the individual. In the internal domain this will involve changing languages, symbology, modes of abstraction, and the like, and will usually be made practical by (and thus must be coordinated with) changes in the external domain. We can expect these changes to be slower in coming than those which affect mostly the external domain.
+
+There should be many improved techniques and procedures which can be used in the external domain, and which will demand little basic change in the internal domain or in the world outside the twodomain system. It is principally improvements of this type that will represent the "near future" developments of Program A.
+
+
+HOW OUR PROGRAM SEEMS LIKELY TO DEVELOP
+
+A number of activities seem to be emerging as possible definite steps toward development of our program. The following list is tentative, but representative.
+
+1. The Basic Search Process. There will be a continuing need to explore, to examine for relevance, and to integrate into the growing framework new facts, concepts, considerations, etc. There will be a need for coordination of projects and a continual integration of their findings into the framework. It may be that only one person needs to participate full time in this activitythat discussions with other active or interested individuals can provide all of the extra aid neededbut care must be taken that a framework for such a multidisciplinary program is not distorted by too little representation of the different important disciplines involved.
+
+(It will be noted that this list of possible projects does not include any that are directly aimed at the longrange verybasic problems, but are mostly aimed at immediate problems in the external domain or in the intercommunications between the two domains. It will take more search work to determine likely research relative to longerrange problemsthe problems have to be isolated a little more clearly, and we need more orientation relative to the knowledge and research trends in the various disciplines relevant to these problems.)
+
+
+2. Observation and Analysis of Typical "TwoDomain" Systems of Today. We need to know, in a quantitative and factual manner, just what are the actual techniques and procedures used by the problemsolving type of individual today, and how they integrate into a system. We should like to have a fairly basic analysis of the different types of tasks that are faced in operating in different typical environments, and we should like to know more about the different sorts of symbolic (information) manipulation which are involved. Analysis of such factors should lead to some realistic assessments of possibilities for making direct improvements in these systems, as well as to a basis upon which to estimate gains in effectiveness which might accrue by future innovations. This type of study should be done by a team (at least three fulltime professionals) that can make use of techniques from humanfactors, analysis, industrial engineering timeandmotion studies, informationprocessingsystems, and other pertinent fields.
+
+3. Microdocumentation. This concerns, essentially, a documentation system specially designed for the external domain of the individual's system. Discussion found in my paper, [2] "Special Considerations of the Individual as a User, Generator, and Retriever of Information," provides specific background material.
+
+There is some question as to how wise it would be to begin a research activity of this nature before the results of activity under Item 2 were available for guidance. It seems quite certain, however, that systemizing and automating manipulations in the individual's external domain are bound to be a part of future developments. Getting our feet wet by actually developing special systems of this sort will provide a very useful service of "keeping us down to earth," as well as being a very good check on the perspective and approach being utilized by personnel under Item 2.
+
+For this project, I would suggest a nucleus of three or four people who can incorporate system thinking, classification techniques, graphicscience techniques, and equipmentdesign talents. Systems should be developed, and then adapted by various local personnel who are utilized as "test subjects." The test subjects will need special training, but then they should be put to work on their regular jobs and our research team should observe and evaluate. Support for a microdocumentation research project may well have to include funds to pay for the cost of equipment and extra time involved in the subjects' participation, unless the sponsor of their principal effort is willing to experiment outside of what will probably be his direct interest.
+
+4. Physical Communication Channels, and Special Codes. In the long run, it seems very likely that the effective use of closely coupled aid in the individual's symbolmanipulation systeme.g., another human, or machineswill require improved methods of transmitting information between the informationhandling entities. This may not be far in the future, either. A professional person might be able to make a great deal more effective use of symbolprinting or symbolrecording devices if communicating control and symbolic data to them were significantly more convenient and faster than it is with a typewriter. In any event, the possibilities which we have developed promise to be of considerable interest to other segments of our technical society, and do not have to be justified completely within our Program A. My own feeling is that work on sophisticated binary transmitting and receiving techniques for human communication would be very appropriate and stimulating for our Program, and should be started as soon as possible.
+
+5. Automated Training for Physical Skills. Parts of this are closely related to the above communicationchannel work, but there are extensive activities in either field that remain separate. Both possibilities (Items 4 and 5) are discussed briefly in the memo of 23 September 1960.
+
+It seems reasonable that fundamentally new aspects of learning theory and technique could emerge from this work, and that some very interesting experimental techniques for plumbing other functional aspects of the nervous systems of men and animals could be developed. A research team might include three people with skills in educational psychology and digital technology, and with access to consultation in neurophysiology.
+
+6. Long-Term SmallGroup Teamwork. How a group of individuals can cooperate closely upon the long-term solution of a complex problem, or interrelated set of problems, can most likely be affected considerably by the techniques and procedures for communicating, for representing the changing state of affairs, for integrating the many different kinds of contributions each can make, etc. Kennedy and Putt [1] discussed what they called a "contextual map," which was a way of representing the status and projections for a program by classifying the activity segments that would make up the program, laying out a twodimensional coordinate system that gave temporal significance to the relative locations of the "segments" (on the wall of a room, or on a big board), and by tacking to these locations notecards that described relevant status or plans. It seems very likely that the same kinds of techniques and procedures proposed for the microdocumentation project could be utilized by a group of individuals to give them the means to communicate and represent meaningful information, and allow them to develop special procedures for group cooperation, that could do a great deal toward improving the effectiveness of the coupling of the different individuals to the problem(s) at hand. No specific planning has been undertaken yet.
+
+7. SmallGroup Teamwork, on the Spot. Apparently no effective set of techniques and procedures has ever been developed to enable a group of individuals to sit down together and tackle a problem in a way that makes any kind of efficient usage of the total intellectual resources at hand. Roberts' Rules of Order at least provide stability and systematic procedure for situations where they are applicable, but there surely are systems that could be developed which would be at least as satisfactory in these respects and yet be a good deal more efficient. Some relatively crude innovations in parallel communication (channels that would allow information exchange without interrupting the "speaker") in individual and group display devices, and in procedures utilizing these, could offer significant improvements, and would provide very good experience in trying to do something about this problem which bothers almost every committee participant. Work under Items 3 and 4 would be quite pertinent. No specific planning yet.

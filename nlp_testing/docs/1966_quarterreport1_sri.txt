@@ -1,0 +1,214 @@
+12 May 1966
+
+Quarterly Technical Letter Report 1
+
+Covering the Period 8 February through 7 May 1966
+Stanford Research Institute Project 5890
+
+STUDY FOR THE DEVELOPMENT
+OF
+HUMAN INTELLECT AUGMENTATION TECHNIQUES
+
+by
+
+D. C. Engelbart
+
+Prepared for
+National Aeronautics and Space Administration
+Langley Research Center, Langley Station
+Langley, Virginia 23365, Mail Stop 126
+
+1 Progress to Date
+
+1a Hardware
+
+1a1 Display: A Straza vector generator has been added to the Straza character generator to extend the capability of our display system (SRI capital equipment expenditure ).
+
+1a2 Movie Camera: An H-16 Bolex Rex camera (purchased as SRI capital equipment)
+
+1a2b We modified the camera slightly and added a photoelectric pickup to provide two output pulses per exposed-frame cycle--one at the start of the shutter-full-open period, and one at the start of the shutter-full-close period.
+
+1a2c We built a remote switching control so that, from the display station, one can switch the computer interrupt input between either the standard 60-cps source or the 32-cps camera source.
+
+1a2d This allows us to switch easily between ordinary viewing of the display (e.g., getting material prepared for filming) and the actual filming operation, in which we need to synchronize display frames with the movie-camera shutter.
+
+1a3 Binary Keyset: We put together a new and better-looking binary keyset.
+
+1a3a Unfortunately, the "feel" is not as good as with the old model.
+
+1a3b We are going to have to learn more about what makes a good keyset "feel." A travel and pressure difference that was hardly noticeable to nonusers made a significant difference in the speed and accuracy.
+
+1b Software
+
+1b1 COPE: COPE is our modified 3100 assembler which provides for on-line CRT debugging
+
+1b1a A FORTRAN program was written to translate from the CDC assembly language (COMPASS) to COPE.
+
+1b1b This program was used to map the COPE assembler-debugger program from COMPASS (in which it was originally written) into COPE, so that additions and changes can now be made more easily.
+
+1b1b1 This new version of COPE was assembled by the old version, and then the new version was used successfully in assembling itself.
+
+1b1c We have also added a feature that gives this assembler access to the symbolic files on the disc, which are also accessible and manipulable with our on-line text system (NLTS).
+
+1b2 SNOBOL: This system has been carried to the point where it will compile and run simple programs, but we have not been pushing particularly hard on its completion, since other aspects of our software systems are currently more important to us.
+
+1c Service System, First Stage: This system consists of the facilities to provide us with initial structured-text manipulation capabilities.
+
+1c1 On-line text system (NLTS)
+
+1c1a The on-line text system was mapped from the 160A version onto the 3100 and was written in COMPASS.
+
+1c1a1 This choice was deemed expedient at the time, since we expected to make a direct, quick map-over and did not want to experiment with FORTRAN overlays and possible degradation of response times.
+
+1c1a2 A second pass through the COMPASS version was made to put most of the important subroutines into a form compatible with the FORTRAN calling sequence so that they could be called and used by a FORTRAN program.
+
+1c1a3 A third pass has been made through the program. Its lower-level structure has been organized for compatibility with the expected linked-statement documentation techniques and to facilitate conversion to COPE.
+
+1c1b A number of useful features have been added:
+
+1c1b1 A disc file system allows quick loading or storing of core-held file modules by the on-line user. Some 2-1/2 million characters of textual data are now available (in file modules up to 30,000 characters) to the on-line NLTS user.
+
+1c1b2 A set of "structure jumping" commands were added, enabling a user to select a given statement on the screen and jump directly to any one of the following structurally related statements:
+
+1c1b2a List Successor--for example, from 2b directly to 2c, skipping over any intermediate substatements of 2b.
+
+1c1b2b List Predecessor--for example, jumping directly from 2b to 2a, passing over any intervening substructure of 2a.
+
+1c1b2c List Tail--for example, jumping directly from 2b to 2h> assuming that 2h was the last statement of the list 2a,2b,....,2h (the sublist of Statement 2) of which Statement 2b is a member.
+
+1c1b2d List Head--for example, jumping directly from 2d to 2a, which is the head statement of the list 2a,2b,....,2h, of which 2d is a member.
+
+1c1b2e List Source--for example, jumping directly from 2d to 2, which is the source statement of the list 2a,2b,....,2h.
+
+1c1c Very detailed documentation has been developed for NLTS.
+
+1c1c1 This documentation involves 11 separate "memos" (in linked-statement form), each of which will represent a "file" on the disc.
+
+1c1c1a A set of these memos is being mailed under separate cover to Mr. A. E. Gribble (project monitor) for reference.
+
+1c1c2 This documentation represents a first step in our experimentation with linked-statement software documentation, and as such deserves significant future attention by us relative to conventions, organization, and detail of content.
+
+1c2 Off-line Text System (FLTS)
+
+1c2a This system is an improved version of that described in our earlier User's Guide--giving a user (at a tape-punching typewriter) the ability to specify both intrastatement editing commands and powerful structure-manipulation commands.
+
+1c2b- This system wa programmed in FORTRAN to run on the 3100, and its first working version is in the final checkout stages.
+
+1c2c The output of this system (paper tape) is compatible for input to NLTS.
+
+1c2d The paper-tape output from NLTS may be inputted to FLTS, along with a new paper-tape containing modification commands and new text, to effect extensive modification and updating to an NLTS file.
+
+1d Service System, Second Stage: We are currently engaged rather intensively in studying the needs and possibilities for a second-stage NLS (an on-line system capable of handling more than just text).
+
+1d1 The primary features which we hope to achieve are:
+
+1d1a Generalized-data packets
+
+1d1a1 The entity which we have referred to as a "statement" in NLTS (which can include an arbitrary text string) needs generalization so that it can contain other kinds of data as well as (or instead of) text.
+
+1d1a1a For instance, this feature permits us to embed representations of a graphic construct, or a vector representation of a function (as used in the Culler-Fried system).
+
+1d1a2 We feel that there is much to gain by embedding these other types of data within the linked-statement structure--wherein a user may append any textual descriptions to, and provide flexible structuring and linkages among, his specialized packets of data.
+
+1d1b Mixed language processes
+
+1d1b1 For any of the programming and special processes with which we implement our experimental on-line user systems, we would like to be able to have a choice of the most appropriate language.
+
+1d1b2 For speed and flexibility in implementing different system functions, we would like powerful high-level languages. The occasional importance to the user of rapid response is expected sometimes to dictate the efficient coding achievable with an assembly language.
+
+1d1b3 We are currently favoring the combination of COPE and FORTRAN, with perhaps SNOBOL added later.
+
+1d1c Flexible overlay system
+
+1d1c1 The complete "overlay" generabi1ity afforded by some modern batch-processing operating systems is not expected to be appropriate for our needs. We want to have relatively close control of where an overlay is put and when it is loaded or flushed.
+
+1d1d User macros: The user macros is an easy means for a user to compose new on-line commands
+
+1d1d1 Ideally, he should be able to do this when he is working on line at the console.
+
+1d1d2 This has long been on our "needs" list and is very important to flexibile experimentation. Good examples exist in the Culler-Fried system; in the OPS-3 system of Greenburger, et. al. (on the MIT MAC system); in the TRAC system of Mooers and Deutsch; and in the recent developments by Ellis and Sibley (RAND Corporation) and Bert Sutherland (Lincoln Laboratories).
+
+1d2 At least two other projects are planning to build upon this basic second-stage NLS, and the work of specification and implementation would be shared among us.
+
+1e Visitors: Demonstrations and explanations were given to the following visitors during this first quarter:
+
+1e1 Kenneth Thompson and Ralph Love, University of California, Berkeley
+
+1e2 Mr. Rinia, Phillips, Eindhoven
+
+1e3 Dr. Fred C. Lindvall, California Institute of Technology
+
+1e4 Mr. S. Clark Beise, Bank of America
+
+1e5 Mr. Roger Ashby and associates, Autonetics, Division of North American
+
+1e6 Professor Allen Newell, Carnegie Institute of Technology
+
+1e7 Messrs. D. Shearer, D. Christianson, A. Humphrys, R. Stewart, SRI Long Range Planning Service
+
+1e8 Mr. J. Matheson, SRI System Sciences Division
+
+1e9 Dr. E. Calhoun, Bell Telephone Laboratories
+
+1e10 Dr. L. Clapp, Mr. Pollock, and Mr. Cohen, Computer Research Corporation, Belmont, Massachusetts
+
+1e11 Professor Fox and associates, San Francisco State College (field trip, student engineering society)
+
+1e12 Mr. F. M. Blanke, United Kingdom Scientific Mission
+
+1e13 Mr. George Michael, LRL-Livermore
+
+1e14 Messrs. H. Peterson and P. Friedel, IBM
+
+1e15 Messrs. William Huber and Richard Liselle, Signal Corps,
+
+Fort Monmouth, N. J.
+
+1e16 Dr. P. L. Garvin, Bunker-Ramo
+
+1e17 Dr. E. H. Herold, RCA
+
+1f Travel, Visits, and Presentations
+
+1f1 D. C. Engelbart made a two-day trip to the Los Angeles area and gave formal presentations at Systems Development Corporation and at California Institute of Technology (Computer Center), showing the movies made under the prior ARPA contract. He also gave an informal presentation (accompanied by associated discussion) to William Sibley and Thomas Ellis at RAND Corporation.
+
+1f2 W. K. English attended the ARPA Contractors Graphics Meeting at Lincoln Laboratories, April 5-7. He also visited Mr. D. Lincicome, CDC Digigraphic, Burlington, Massachusetts; Mr. T. E. Johnson; Lincoln Laboratories, and Mr. L. W. Clapp, Computer Research Corporation.
+
+1f3 Dr. Engelbart traveled to the Spring Joint Computer Conference, Boston, where he chaired a session (conceived and organized by him) composed of real-time demonstrations of six current man-computer-display research activities. Within that session, he also presented a movie made during this quarter under this project (for which the film contains due acknowledgement). 
+
+1f4 During the same trip, full presentations (movies, slides, and discussion) were given to:
+
+1f4a Inforonics, Inc., Maynard, Massachusetts 
+
+1f4b Information Sciences Seminar, Ohio State University
+
+1f4c Information Sciences Seminar, Lehigh University
+
+1f4d Research Laboratories, Phillips Petroleum Corporation, Bartlesville, Oklahoma*
+
+1f4e SDD laboratory, IBM Corporation, Boulder, Colorado*
+
+1f4f *Note: Time and travel associated with the last two presentations were not charged to the project.
+
+
+2 Plans for the Next Quarter
+
+2a Facility Expansion: Mr. Robert Taylor has encouraged us to provide more extensive availablility of the real-time computer service to this project. 
+
+2a1 He suggested that ARPA could perhaps provide the additional funds to give us essentially full-time availability of one computer-driven display. The current installation is an SRI capital-equipment facility, and the growing number of other projects is making use of this system more restrictive.
+
+2a2 The tentative plan under consideration by SRI is:
+
+2a2a To add another processor and another 16K of core, and to expand slightly the peripheral equipment to be shared between the two processors.
+
+2a2b This project tentatively plans to add a CDC Model 250 display system, which will give UB two relatively independent on-line facilities.
+
+2a2c Time-sharing of one processor has been considered, but it looks as though trying to develop time sharing at this time would impede our user-system research.
+
+2a2c1 The added processor will probably be a CDC 3300, which will allow later addition of the multiprocessing feature and the development of time sharing if this is desirable.
+
+2b NLS Service System, Second Stage: We will push on with the specification and implementation.
+
+2c The off-line system will probably be extended to permit direct interaction with the disc files, which will allow an off-line user to modify any file, or merge and modify any sets of files, without the bother of so much intermediate paper tape.
+
+2d We plan to begin serious development of the user techniques for linked-statement documentation of our various types of records and to integrate their use into our everyday planning and system development.

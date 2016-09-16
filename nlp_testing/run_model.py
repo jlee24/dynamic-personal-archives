@@ -31,8 +31,8 @@ class MyCorpus(object):
 def clean_text(raw):
 	raw = raw.lower()
 	raw = "".join(c for c in raw if c not in ('!','.',':',';',"?",'"',','))
-	if model != 'tfidf':
-		raw = unicode(raw, errors='replace')
+	# if model != 'tfidf':
+	# 	raw = unicode(raw, errors='replace')
 	tokens = tokenizer.tokenize(raw)
 	stopped_tokens = [i for i in tokens if not i in en_stop]
 	stemmed_tokens = [p_stemmer.stem(i) for i in stopped_tokens if i != 'nls']
@@ -128,15 +128,16 @@ def main():
 
 	elif model == 'dim':
 		# [-1968, 1968-1984, 1984-1988, 1988-]
-		my_timeslices = [0, 8, 11, 15, 0]
+		my_timeslices = [0, 14, 13, 15, 0]
 		num_slices = len(my_timeslices)
-		num_topics = 5
+		num_topics = 10
 		num_words = 7
 
-		dimmodel = generate_dim(num_topics, my_timeslices)
-		dimmodel.save('tmp/dimmodel3.model')
-		# dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel.model')
-		# dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel1.model')
+		# dimmodel = generate_dim(num_topics, my_timeslices)
+		# dimmodel.save('tmp/dimmodel3.model')
+		dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel1.model')
+		# dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel2.model')
+		# dimmodel = models.wrappers.DtmModel.load('tmp/dimmodel3.model')
 
 		# structure: {time_slice: {doc: [influence of each topic]}, topics_from_time_slice: [composition of each topic]}
 		dim_influences = {}
@@ -161,6 +162,10 @@ def main():
 		dim_influences['themes'] = []
 		for i in range(3):
 			dim_influences['themes'].append(themes[i])
+		# dim_influences['themes'] = themes
+
+		# for i in range(1, 4):
+		# 	print_topics(topics_per_slice[i])
 
 		# for i in range(1, 4):
 		# 	print('Topics Unique to Time_Slice ' + str(i) + '\n')
