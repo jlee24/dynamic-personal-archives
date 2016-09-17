@@ -97,7 +97,7 @@ def generate_tfidf():
 		tfidf_scores[count] = {}
 		doc.sort(key=operator.itemgetter(1), reverse=True)
 		for word in doc:
-			if word[1] >= 0.10:
+			if word[1] >= 0.02:
 				tfidf_scores[count][my_dictionary[word[0]]] = word[1]
 			else:
 				break

@@ -5,31 +5,56 @@ var search = function() {
 	xhr.onload = function(e) {
 			var search_results = xhr.getResponseHeader('search_results');
 			search_results = JSON.parse(search_results);
-			// console.log(search_results);
 			show_search_results(search_results);
 	}
 	xhr.send();
 }
 
+function change_fill(rect, turn_on) {
+	if (turn_on) {
+		var fill = "rgb(0, 102, 255)";
+		if (rect.style.fill == "rgb(0, 102, 255)") fill = "rgb(0, 71, 179)";
+		else if (rect.style.fill == "rgb(0, 71, 179)") fill = "rgb(0, 41, 102)";
+		// else if (rect.style.fill == "rgb(0, 32, 128)") fill = "rgb(0, 26, 102)";
+		rect.style.fill = fill;
+	} else {
+		// if (rect.style.fill == "rgb(26, 83, 255)") fill = "rgb(0, 102, 255)";
+		if (rect.style.fill == "rgb(0, 71, 179)") fill = "rgb(0, 102, 255)";
+		else if (rect.style.fill == "rgb(0, 41, 102)") fill = "rgb(0, 71, 179)";
+		// else if (rect.style.fill == "rgb(0, 26, 102)") fill = "rgb(0, 32, 128)";
+		rect.style.fill = fill;
+	}
+}
+
 var show_search_results = function(search_results) {
 
-	d3.select('svg').select('#g_clickables').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
+	d3.select('svg').select('#g_slices').selectAll('rect').filter(function() {return this.getAttribute('class') == 'rect_res selected'})
+		.each(function(d) {
+			change_fill(this, false);
+		})
 		.transition()
 		.duration(0)
 		.attr('class', 'rect_res not_selected')
 		.style('stroke-opacity', "0")
+		
 
 	for (var i = 0; i < 5; i++) {
-		d3.select('svg').select('#g_clickables').select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
+		d3.select('svg').select('#g_slices').select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
+			.each(function(d) {
+				change_fill(this, true);
+			})
 			.transition()
 			.duration(0)
 			.attr('class', 'rect_res selected')
 			.style('stroke-opacity', "1")
 	}
 
-	for (var i = 5; i < 13; i++) {
-		if (search_results[i.toString()]['sim_score'] > 0.80) {
-			d3.select('svg').select('#g_clickables').select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
+	for (var i = 5; i < 20; i++) {
+		if (search_results[i.toString()]['sim_score'] > 0.763) {
+			d3.select('svg').select('#g_slices').select("rect[id='" + parseInt(search_results[i.toString()]['doc_id']) + "']")
+				.each(function(d) {
+					change_fill(this, true);
+				})
 				.transition()
 				.duration(0)
 				.attr('class', 'rect_res selected')
@@ -254,21 +279,6 @@ function visavailChart(corpus, influences, views) {
 				}
 			});
 
-			function change_fill(rect, turn_on) {
-				if (turn_on) {
-					var fill = "rgb(0, 102, 255)";
-					if (rect.style.fill == "rgb(0, 102, 255)") fill = "rgb(0, 71, 179)";
-					else if (rect.style.fill == "rgb(0, 71, 179)") fill = "rgb(0, 41, 102)";
-					// else if (rect.style.fill == "rgb(0, 32, 128)") fill = "rgb(0, 26, 102)";
-					rect.style.fill = fill;
-				} else {
-					// if (rect.style.fill == "rgb(26, 83, 255)") fill = "rgb(0, 102, 255)";
-					if (rect.style.fill == "rgb(0, 71, 179)") fill = "rgb(0, 102, 255)";
-					else if (rect.style.fill == "rgb(0, 41, 102)") fill = "rgb(0, 71, 179)";
-					// else if (rect.style.fill == "rgb(0, 26, 102)") fill = "rgb(0, 32, 128)";
-					rect.style.fill = fill;
-				}
-			}
 
 			function highlight_res_in_period(start, end, turn_on) { // start and end years
 				d3.select('svg').select('#g_slices').selectAll('.rect_res')
@@ -706,12 +716,13 @@ function visavailChart(corpus, influences, views) {
 				.attr({
 					'xlink:href': function(d, i) {
 						if (d.TYPE === 'Video') return "/static/css/icons/Video.png";
+						else if (d.TYPE === 'Photo') return "/static/css/icons/Photos.png";
 					},
 					'x': function(d) {
-						return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) + 4.5;
+						return xScale(parseYear.parse(round_down(d.YEAR, 5).toString())) - 3;
 					},
 					'y': function(d) {
-						return determine_y(d) + 4.5;
+						return determine_y(d) + 4;
 					},
 					'width': '40px',
 					'height': '22.5px'
@@ -761,6 +772,7 @@ function visavailChart(corpus, influences, views) {
 				})
 				.style({
 					'stroke': '#001a4d',
+					'stroke-width': '4',
 					'stroke-opacity': '0',
 					'fill-opacity': '0'
 				})

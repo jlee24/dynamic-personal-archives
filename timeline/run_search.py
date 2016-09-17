@@ -7,6 +7,7 @@ import numpy  # for arrays, array broadcasting etc.
 import numbers
 import math
 import pprint
+import json
 
 my_dictionary = corpora.Dictionary.load('static/data/my_dictionary.dict')
 my_corpus = corpora.MmCorpus('static/data/my_corpus.mm')
@@ -38,10 +39,26 @@ def get_related_works(query):
 	# index = similarities.MatrixSimilarity.load('/tmp/lsi.index')
 
 	sims = index[vec_lsi] # perform a similarity query against the corpus
-	# print(list(enumerate(sims))) # print (document_number, document_similarity) 2-tuples
 	sims = sorted(enumerate(sims), key=lambda item: -item[1])
-	print(sims)
-	return sims
+	# return sims
+	
+	ranked_sims = []
+	with open('../nlp_testing/tmp/tfidf_scores.json', 'r') as tfidf_scores:
+		tfidf = json.load(tfidf_scores)
+		for sim in sims:
+			ranked_sim = [0] * 2
+			ranked_sim[0] = sim[0]
+			ranked_sim[1] = sim[1]
+			for word in clean_text(query):
+				if word in tfidf[str(sim[0])]:
+					print(ranked_sim)
+					ranked_sim[1] += tfidf[str(sim[0])][word]
+					print(ranked_sim)
+			ranked_sims.append(ranked_sim)
+	ranked_sims.sort(key=lambda item: -item[1])
+	print(ranked_sims)
+	return ranked_sims
+
 
 # def get_related_works(query):
 # 	mutual_info_scores = []
